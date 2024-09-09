@@ -39,51 +39,15 @@ dependencies:
   flutter_screenutil: ^5.9.0
   flutter_svg:
   google_fonts: ^6.2.1
-  flutter_custom_clippers:
   smooth_page_indicator: ^1.1.0
   pinput: ^4.0.0
   pin_code_fields: ^8.0.0
   image_picker: ^1.1.0
   animated_notch_bottom_bar: ^1.0.1
   curved_labeled_navigation_bar: ^2.0.2
-  another_xlider: ^3.0.2
-  firebase_core:
-  firebase_auth:
-  cloud_firestore:
-  mailer: ^6.1.0
-  intl:
-  firebase_storage:
-  google_sign_in:
-  image:
-  url_launcher:
 
-  fluttertoast:
-  firebase_messaging:
-  flutter_local_notifications:
-  app_settings:
-  http:
-  timeago:
-  cached_network_image:
-  flutter_stripe: ^10.1.1
-  flutter_barcode_scanner:
-  flutter_image_compress:
-  qr_code_scanner: ^1.0.1
-  cryptology: ^0.0.6
-  encrypt: ^5.0.3
-  shimmer: ^3.0.0
-  mailto: ^2.0.0
-  flutter_dotenv:
-  firebase_dynamic_links:
-  bech32:
-  base58check:
-  equatable:
-  cloud_functions:
-  sidebarx: ^0.17.1
-  stripe_sdk: ^5.0.0
-  flutter_stripe_web: ^5.0.0
-  mask_text_input_formatter:
-  permission_handler:
-  qr_bar_code_scanner_dialog:
+
+
 
 dev_dependencies:
   flutter_test:
