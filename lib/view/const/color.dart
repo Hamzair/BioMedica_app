@@ -12,7 +12,7 @@ const lightColor = Color(0xff919191);
 const greenColor = Color(0xff57C4B7);
 const lightWhiteColor = Color(0xffFEFEFE);
 const lightBlackColor = Color(0xff545454);
-const blackShadeColor = Color(0xff404040);
+const blackColor = Color(0xff000000);
 const headingBlackColor = Color(0xff454545);
 const titleColor = Color(0xff1E1E1E);
 const lightPrimaryColor = Color(0xff447867);
@@ -21,5 +21,6 @@ const lightDarkColor = Color(0xff78838D);
 const redColor = Color(0xffB83232);
 const blackTitleColor = Color(0xff263238);
 const lightTitleColor = Color(0xff898989);
+const greyColor = Colors.grey;
 final bgColor=Colors.grey.shade100;
 

@@ -6,6 +6,7 @@ import 'package:bio_medica/view/on_boarding/on_boarding_two.dart';
 import 'package:bio_medica/widget/custom_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class MainOnBoardingView extends StatefulWidget {
@@ -17,10 +18,11 @@ class MainOnBoardingView extends StatefulWidget {
 
 class _MainOnBoardingViewState extends State<MainOnBoardingView> {
   PageController pageController = PageController();
-  bool onLastPage = false;
+  // bool onLastPage = false;
   int currentpage = 0;
   void _moveToNextPage() {
     print(pageController);
+    print(currentpage);
     // Check if there is a next page
     if (currentpage < 2) {
       // Assuming there are three pages (0, 1, 2)
@@ -29,21 +31,29 @@ class _MainOnBoardingViewState extends State<MainOnBoardingView> {
         curve: Curves.ease,
       );
     } else if (currentpage == 2) {
-       CustomRoute.navigateTo(context, const LoginView());
+      // CustomRoute.navigateTo(context, const LoginView());
+      Get.offAll(LoginView());
     }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print(currentpage);
   }
 
   @override
   Widget build(BuildContext context) {
     double progress = (currentpage + 1) / 3;
     return Scaffold(
-       backgroundColor: secondaryColor,
+        backgroundColor: secondaryColor,
         body: SafeArea(
           child: Stack(
             children: [
               GestureDetector(
                 onHorizontalDragEnd: (details) {
-                  if (currentpage < 4) {
+                  if (currentpage < 2) {
                     // Assuming there are three pages (0, 1, 2)
                     pageController.nextPage(
                       duration: const Duration(milliseconds: 300),
@@ -55,7 +65,7 @@ class _MainOnBoardingViewState extends State<MainOnBoardingView> {
                   controller: pageController,
                   onPageChanged: (index) {
                     setState(() {
-                      onLastPage = (index == 3);
+                      // onLastPage = (index == 2);
                       currentpage = index;
                     });
                   },
@@ -63,7 +73,6 @@ class _MainOnBoardingViewState extends State<MainOnBoardingView> {
                     OnBoardingOne(),
                     OnBoardingTwo(),
                     OnBoardingThree(),
-
                   ],
                 ),
               ),
@@ -84,7 +93,6 @@ class _MainOnBoardingViewState extends State<MainOnBoardingView> {
                             ),
                             controller: pageController,
                             count: 3),
-                    
                         GestureDetector(
                           onTap: () {
                             _moveToNextPage();
@@ -99,10 +107,8 @@ class _MainOnBoardingViewState extends State<MainOnBoardingView> {
                                   shape: BoxShape.circle,
                                   color: buttonColor2, // Change color as needed
                                 ),
-                                child: const Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: primaryColor
-                                ),
+                                child: const Icon(Icons.arrow_forward_ios,
+                                    color: primaryColor),
                               ),
                               SizedBox(
                                 width: 65,
@@ -110,9 +116,11 @@ class _MainOnBoardingViewState extends State<MainOnBoardingView> {
                                 child: CircularProgressIndicator(
                                   value: progress,
                                   strokeWidth: 1.5,
-                                  backgroundColor: buttonColor2.withOpacity(0.3),
-                                  valueColor: const AlwaysStoppedAnimation<Color>(
-                                      buttonColor2),
+                                  backgroundColor:
+                                      buttonColor2.withOpacity(0.3),
+                                  valueColor:
+                                      const AlwaysStoppedAnimation<Color>(
+                                          buttonColor2),
                                 ),
                               ),
                             ],
