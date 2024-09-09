@@ -1,5 +1,6 @@
-import 'package:bio_medica/course_details.dart';
-import 'package:bio_medica/view/courses.dart';
+import 'package:bio_medica/view/course/course_details.dart';
+import 'package:bio_medica/view/course/courses.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
