@@ -1,6 +1,8 @@
+import 'package:bio_medica/view/auth/forgot_password/forgot_main.dart';
 import 'package:bio_medica/view/auth/signup_view/signup_view.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
+import 'package:bio_medica/view/navbar/nav_bar.dart';
 import 'package:bio_medica/widget/custom_button.dart';
 import 'package:bio_medica/widget/custom_route.dart';
 import 'package:bio_medica/widget/custom_text.dart';
@@ -124,11 +126,16 @@ class _LoginViewState extends State<LoginView> {
                     SizedBox(
                       width: 25.w,
                     ),
-                    CustomText(
-                        text: 'Forgot password?',
-                        fontsize: 14.sp,
-                        textColor: buttonColor2,
-                        fontWeight: FontWeight.w400)
+                    GestureDetector(
+                      onTap: () {
+                        CustomRoute.navigateTo(context, ForgetPasswordScreen());
+                      },
+                      child: CustomText(
+                          text: 'Forgot password?',
+                          fontsize: 14.sp,
+                          textColor: buttonColor2,
+                          fontWeight: FontWeight.w400),
+                    )
                   ],
                 ),
               ),
@@ -140,7 +147,9 @@ class _LoginViewState extends State<LoginView> {
                 height: 51.h,
                 width: 311.w,
                 color: buttonColor,
-                onTap: () {},
+                onTap: () {
+                  CustomRoute.navigateTo(context, AppNavBar());
+                },
                 title: 'Login',
               ),
               SizedBox(
