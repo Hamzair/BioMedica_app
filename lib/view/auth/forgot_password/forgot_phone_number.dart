@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:bio_medica/controller/selected_type_controller.dart';
 import 'package:bio_medica/view/auth/signup_view/signup_view.dart';
 import 'package:bio_medica/view/const/color.dart';

@@ -1,16 +1,15 @@
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/course/chapters.dart';
-import 'package:bio_medica/view/course/course_content.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CourseDetailScreen extends StatefulWidget {
+class CourseContent extends StatefulWidget {
   @override
-  _CourseDetailScreenState createState() => _CourseDetailScreenState();
+  _CourseContentState createState() => _CourseContentState();
 }
 
-class _CourseDetailScreenState extends State<CourseDetailScreen> {
+class _CourseContentState extends State<CourseContent> {
   int _selectedIndex = 0; // 0 for About, 1 for Lessons
 
   @override
@@ -66,7 +65,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
 
                   Container(
                     decoration: BoxDecoration(
-                      color: Color(0xFF001A2E).withOpacity(0.6),
+                      color: Color(0xFF001A2E).withOpacity(0.4),
                       borderRadius:
                           BorderRadius.circular(10), // Rounded corners
                     ),
@@ -81,7 +80,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                             },
                             child: Container(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 10),
+                                  horizontal: 10, vertical: 10),
                               decoration: BoxDecoration(
                                 color: _selectedIndex == 0
                                     ? Colors.cyan
@@ -90,7 +89,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                               ),
                               child: Center(
                                 child: CustomText(
-                                  text: 'About',
+                                  text: 'Overview',
                                   fontsize: 13.sp,
                                   textColor: Colors.white,
                                   fontWeight: _selectedIndex == 0
@@ -110,7 +109,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                             },
                             child: Container(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 10),
+                                  horizontal: 10, vertical: 10),
                               decoration: BoxDecoration(
                                 color: _selectedIndex == 1
                                     ? Colors.cyan
@@ -130,125 +129,145 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                             ),
                           ),
                         ),
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {
+                              setState(() {
+                                _selectedIndex = 2;
+                              });
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 10),
+                              decoration: BoxDecoration(
+                                color: _selectedIndex == 2
+                                    ? Colors.cyan
+                                    : Colors.transparent,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Center(
+                                child: CustomText(
+                                  text: 'Quiz',
+                                  fontsize: 13.sp,
+                                  textColor: Colors.white,
+                                  fontWeight: _selectedIndex == 2
+                                      ? FontWeight.bold
+                                      : FontWeight.normal,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {
+                              setState(() {
+                                _selectedIndex = 3;
+                              });
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(vertical: 10),
+                              decoration: BoxDecoration(
+                                color: _selectedIndex == 3
+                                    ? Colors.cyan
+                                    : Colors.transparent,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Center(
+                                child: CustomText(
+                                  text: 'Resources',
+                                  fontsize: 13.sp,
+                                  textColor: Colors.white,
+                                  fontWeight: _selectedIndex == 3
+                                      ? FontWeight.bold
+                                      : FontWeight.normal,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
 
                   SizedBox(height: 20),
 
-                  // Content based on selected index
                   if (_selectedIndex == 0)
                     // About Section
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // Course Description
-                        CustomText(
-                          text:
-                              'Transformative journey through our comprehensive course, '
-                              '‘Master Digital Product Design: UX Research & UI Design’. Created especially for budding UX/UI designers, '
-                              'this immersive program invites you to explore the intricate art of crafting exceptional digital experiences....',
-                          fontWeight: FontWeight.w500,
-                          textColor: Colors.white,
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          'Read more',
-                          style: TextStyle(color: buttonColor2),
-                        ),
-                        SizedBox(height: 20),
 
-                        // Key Points
-                        CustomText(
-                            text: 'Key points',
-                            fontsize: 18,
-                            fontWeight: FontWeight.bold,
-                            textColor: Colors.white),
-                        SizedBox(height: 10),
-                        ListTile(
-                            leading:
-                                Icon(Icons.check_circle, color: Colors.cyan),
-                            title: CustomText(
-                              text: 'Critical Thinking',
-                              textColor: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            )),
-                        ListTile(
-                            leading:
-                                Icon(Icons.check_circle, color: Colors.cyan),
-                            title: CustomText(
-                              text: 'User Experience Research',
-                              textColor: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            )),
-                        ListTile(
-                            leading:
-                                Icon(Icons.check_circle, color: Colors.cyan),
-                            title: CustomText(
-                              text: 'User Interface Design',
-                              textColor: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            )),
-                        ListTile(
-                            leading:
-                                Icon(Icons.check_circle, color: Colors.cyan),
-                            title: CustomText(
-                              text: 'Usability Testing',
-                              textColor: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            )),
-                      ],
-                    )
-                  else
+                    CustomText(
+                      text:
+                          'Transformative journey through our comprehensive course, ',
+                      fontWeight: FontWeight.w500,
+                      textColor: Colors.white,
+                    ),
+
+                  if (_selectedIndex == 1)
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CustomText(
-                          text: 'Course Lessons',
-                          textColor: buttonColor2,
-                          fontWeight: FontWeight.w500,
-                          fontsize: 22,
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: CustomText(
+                              text: 'Course Content',
+                              textColor: whiteColor,
+                              fontsize: 15.sp,
+                              fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(height: 20),
                         SizedBox(
-                          width: double.infinity,
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment
-                                    .spaceBetween, // Space evenly between cards
-                                children: [
-                                  _LessonCard(
-                                    title: 'Instructor\nIntroduction',
-                                    imagePath: 'assets/images/person.png',
-                                  ),
-                                  _LessonCard(
-                                    title: 'Design\nShortage',
-                                    imagePath: 'assets/images/pen.png',
-                                  ),
-                                  _LessonCard(
-                                    title: 'Make it \nPretty',
-                                    imagePath: 'assets/images/tulip.png',
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: 20),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  _LessonCard(
-                                    title: 'Copy\nInspiration',
-                                    imagePath: 'assets/images/doc.png',
-                                  ),
-                                  // Add more lesson cards as needed in this row
-                                ],
-                              ),
-                            ],
+                          height: 10.h,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xFF001A2E).withOpacity(0.4),
+                          ),
+                          child: ExpansionTile(
+                            title: CustomText(
+                              text: 'Introduction',
+                              fontWeight: FontWeight.w600,
+                              textColor: whiteColor,
+                              fontsize: 13.sp,
+                            ),
+                            collapsedIconColor: whiteColor,
                           ),
                         ),
+                        SizedBox(
+                          height: 15.h,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xFF001A2E).withOpacity(0.4),
+                          ),
+                          child: ExpansionTile(
+                            title: CustomText(
+                              text: 'What is Design',
+                              fontWeight: FontWeight.w600,
+                              textColor: whiteColor,
+                              fontsize: 13.sp,
+                            ),
+                            collapsedIconColor: whiteColor,
+                          ),
+                        )
                       ],
                     ),
+
+                  if (_selectedIndex == 2)
+                    Center(
+                      child: CustomText(
+                          text: 'Quiz',
+                          textColor: whiteColor,
+                          fontsize: 22,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  if (_selectedIndex == 3)
+                    Center(
+                      child: CustomText(
+                          text: 'Resources',
+                          textColor: whiteColor,
+                          fontsize: 22,
+                          fontWeight: FontWeight.w500),
+                    )
                 ],
               ),
             ),
@@ -260,7 +279,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
         child: ElevatedButton(
           onPressed: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CourseContent()));
+                MaterialPageRoute(builder: (context) => LessonScreen()));
           },
           style: ElevatedButton.styleFrom(
             padding: EdgeInsets.symmetric(vertical: 15),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const primaryColor = Color(0xff134064);
 const secondaryColor = Color(0xffC0D0DD);
+const appBarColor = Color.fromRGBO(192, 208, 221, 1);
 const buttonColor = Color(0xff0CC0DF);
 const buttonColor2 = Color(0xffDB5C00);
 const whiteColor = Colors.white;
@@ -22,7 +23,6 @@ const redColor = Color(0xffB83232);
 const blackTitleColor = Color(0xff263238);
 const lightTitleColor = Color(0xff898989);
 const greyColor = Color(0xff9CA3AF);
-final bgColor=Colors.grey.shade100;
-final transparentColor=Colors.transparent;
-final drawerBg=Color(0xff153C5A);
-
+final bgColor = Colors.grey.shade100;
+final transparentColor = Colors.transparent;
+final drawerBg = Color(0xff153C5A);

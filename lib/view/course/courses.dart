@@ -1,33 +1,37 @@
-
-import 'package:bio_medica/main.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'course_details.dart';
-
 
 class CoursesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:primaryColor,
+      backgroundColor: primaryColor,
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(192, 208, 221, 1),
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
-              decoration: BoxDecoration(color:Color(0xFF001A2E),borderRadius: BorderRadius.circular(50)),
-              child:  Icon(Icons.menu,color: buttonColor2,)),
+              decoration: BoxDecoration(
+                  color: Color(0xFF001A2E),
+                  borderRadius: BorderRadius.circular(50)),
+              child: Icon(
+                Icons.menu,
+                color: buttonColor2,
+              )),
         ),
-        title: CustomText(text: 'Courses', textColor:Color(0xFF001A2E) , fontWeight: FontWeight.bold,),
+        title: CustomText(
+          text: 'Courses',
+          textColor: Color(0xFF001A2E),
+          fontWeight: FontWeight.bold,
+        ),
         actions: [],
       ),
       body: Column(
         children: [
           ClipRRect(
-
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
             child: Container(
               height: 70,
@@ -44,15 +48,15 @@ class CoursesScreen extends StatelessWidget {
                           decoration: InputDecoration(
                             hintText: 'Search for anything',
                             hintStyle: TextStyle(color: Colors.white),
-                            prefixIcon: Image.asset('assets/images/search.png'),
+                            prefixIcon: Image.asset(
+                              'assets/images/search.png',
+                            ),
                             filled: true,
                             fillColor: Color(0xFF001A2E),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
-                              borderSide: BorderSide(
-                                  width: 0.96,
-                                  color:Colors.white
-                              ),
+                              borderSide:
+                                  BorderSide(width: 0.96, color: Colors.white),
                             ),
                           ),
                         ),
@@ -68,19 +72,27 @@ class CoursesScreen extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-
                         backgroundColor: Color(0xFF001A2E),
                       ),
                       child: Row(
                         children: [
-                          Icon(Icons.tune,color: Colors.white,size: 25,),
+                          Icon(
+                            Icons.tune,
+                            color: Colors.white,
+                            size: 25,
+                          ),
                           SizedBox(width: 10),
-                          Text("Filter",style: TextStyle(color: Colors.white),)
+                          Text(
+                            "Filter",
+                            style: TextStyle(color: Colors.white),
+                          )
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(width: 10,)
+                  SizedBox(
+                    width: 10,
+                  )
                 ],
               ),
             ),
@@ -103,7 +115,6 @@ class CoursesScreen extends StatelessWidget {
           ),
         ],
       ),
-
     );
   }
 }
@@ -113,45 +124,56 @@ class CourseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => CourseDetailScreen()),
-        );
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => CourseDetailScreen()));
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-        child: Card(
-          color: primaryColor.withOpacity(0.1),
-          shape: RoundedRectangleBorder(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          decoration: BoxDecoration(
+            color: primaryColor.withOpacity(0.1),
             borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                offset: Offset(0, 4),
+              ),
+            ],
           ),
-          elevation: 4,
-          child: Stack(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.fromLTRB(8, 15, 10, 0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(5),
+                    topRight: Radius.circular(5),
+                  ),
+                  child: Image.asset(
+                    'assets/images/c1.png', // Your image path
+                    height: 120,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(15)),
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/c2.png'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: CustomText(
-                          text:  'UX Research in Digital Product Design: Master Class',
-                          fontWeight: FontWeight.bold,  textColor:  Colors.white),
-                    ),
+                    // Label at the top right
 
+                    SizedBox(height: 8),
+                    // Course title
+                    CustomText(
+                      text:
+                          'UX Research in Digital Product Design: Master Class',
+                      fontsize: 16,
+                      fontWeight: FontWeight.bold,
+                      textColor: Colors.white,
+                    ),
                   ],
                 ),
               ),
@@ -162,5 +184,3 @@ class CourseCard extends StatelessWidget {
     );
   }
 }
-
-

@@ -2,6 +2,7 @@ import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_not
 import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
+import 'package:bio_medica/view/course/courses.dart';
 import 'package:bio_medica/view/home_Screen/home_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -38,7 +39,7 @@ class _AppNavBarState extends State<AppNavBar> {
   List<Widget> bottomBarPages = [
     const HomeScreen(),
     const HomeScreen(),
-    const HomeScreen(),
+    CoursesScreen(),
     const HomeScreen(),
     const HomeScreen(),
   ];
@@ -75,7 +76,6 @@ class _AppNavBarState extends State<AppNavBar> {
                 fontWeight: FontWeight.w400,
                 fontSize: 10.sp,
               ),
-
               blurFilterY: 10,
               blurFilterX: 10,
               notchBottomBarController: _controller,
