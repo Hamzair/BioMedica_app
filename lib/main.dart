@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
               title: 'Bio Medica',
               debugShowCheckedModeBanner: false,
-              home: CoursesScreen()
+              home: SplashScreen()
               // initialBinding: UserBinding(),
               );
         });

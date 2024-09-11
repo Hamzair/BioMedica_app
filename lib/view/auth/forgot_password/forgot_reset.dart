@@ -298,8 +298,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                           // Passwords don't match
                           Get.snackbar("Error", "Passwords do not match",
                               colorText: Colors.white,
-                              backgroundColor:
-                                  Colors.blueGrey[800]!.withOpacity(0.5));
+                             );
                         }
                       },
                     ),
