@@ -27,7 +27,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                     BorderRadius.vertical(bottom: Radius.circular(30)),
                 child: Image.asset(
                   'assets/images/rectangle.png', // Replace with actual image
-                  height: 300,
+                  height: 300.h,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
@@ -51,7 +51,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                   CustomText(
                       text: '• UX Design',
                       textColor: buttonColor2,
-                      fontsize: 16,
+                      fontsize: 16.sp,
                       fontWeight: FontWeight.bold),
 
                   SizedBox(height: 8),
@@ -60,9 +60,9 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                         'Master Digital Product Design: UX Research & UI Design',
                     textColor: Colors.white,
                     fontWeight: FontWeight.w600,
-                    fontsize: 22,
+                    fontsize: 22.sp,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 20.h),
 
                   Container(
                     decoration: BoxDecoration(
@@ -81,7 +81,9 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                             },
                             child: Container(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 10),
+                                  horizontal: 30.w
+                                  , vertical: 10.h
+                              ),
                               decoration: BoxDecoration(
                                 color: _selectedIndex == 0
                                     ? Colors.cyan
@@ -110,7 +112,8 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                             },
                             child: Container(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 10),
+                                  horizontal: 30.w
+                                  , vertical: 10.h),
                               decoration: BoxDecoration(
                                 color: _selectedIndex == 1
                                     ? Colors.cyan
@@ -134,7 +137,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                     ),
                   ),
 
-                  SizedBox(height: 20),
+                  SizedBox(height: 20.h),
 
                   // Content based on selected index
                   if (_selectedIndex == 0)
@@ -151,12 +154,12 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                           fontWeight: FontWeight.w500,
                           textColor: Colors.white,
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 10.h),
                         Text(
                           'Read more',
                           style: TextStyle(color: buttonColor2),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 20.h),
 
                         // Key Points
                         CustomText(
@@ -164,7 +167,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                             fontsize: 18,
                             fontWeight: FontWeight.bold,
                             textColor: Colors.white),
-                        SizedBox(height: 10),
+                        SizedBox(height: 10.h),
                         ListTile(
                             leading:
                                 Icon(Icons.check_circle, color: Colors.cyan),
@@ -207,9 +210,9 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                           text: 'Course Lessons',
                           textColor: buttonColor2,
                           fontWeight: FontWeight.w500,
-                          fontsize: 22,
+                          fontsize: 22.sp,
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 20.h),
                         SizedBox(
                           width: double.infinity,
                           child: Column(
@@ -232,7 +235,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 20),
+                              SizedBox(height: 20.h),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -266,12 +269,13 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
             padding: EdgeInsets.symmetric(vertical: 15),
             backgroundColor: Colors.cyan,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(30.r
+              ),
             ),
           ),
           child: Text(
             'Start Now',
-            style: TextStyle(fontSize: 18, color: Colors.white),
+            style: TextStyle(fontSize: 18.sp, color: Colors.white),
           ),
         ),
       ),
@@ -306,7 +310,7 @@ class _LessonCard extends StatelessWidget {
               width: 43.w, // Adjust image fit as needed
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 10.h),
           Text(
             title,
             style: TextStyle(

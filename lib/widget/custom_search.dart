@@ -30,7 +30,7 @@ class CustomSearch extends StatelessWidget {
           focusNode: focusNode,
           // textAlign: TextAlign.start,
           decoration: InputDecoration(
-            fillColor: primaryColor,
+            fillColor: Color.fromRGBO(0, 26, 46, 1),
             filled: true,
             contentPadding: EdgeInsets.symmetric(),
             prefixIcon: Image.asset(

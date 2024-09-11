@@ -37,11 +37,11 @@ class _AppNavBarState extends State<AppNavBar> {
   }
 
   List<Widget> bottomBarPages = [
-    const HomeScreen(),
-    const HomeScreen(),
+     HomeScreen(),
+     HomeScreen(),
     CoursesScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
+     HomeScreen(),
+     HomeScreen(),
   ];
 
   final NavBarController navBarController = Get.put(NavBarController());
