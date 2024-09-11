@@ -1,4 +1,5 @@
 import 'package:bio_medica/view/const/color.dart';
+import 'package:bio_medica/widget/custom_search.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,36 +35,17 @@ class CoursesScreen extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
             child: Container(
-              height: 70,
+              height: 70.h,
               color: secondaryColor,
               child: Row(
                 children: [
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Container(
-                        height: 38.h,
-                        width: 249.w,
-                        child: TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Search for anything',
-                            hintStyle: TextStyle(color: Colors.white),
-                            prefixIcon: Image.asset(
-                              'assets/images/search.png',
-                            ),
-                            filled: true,
-                            fillColor: Color(0xFF001A2E),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide:
-                                  BorderSide(width: 0.96, color: Colors.white),
-                            ),
-                          ),
-                        ),
-                      ),
+                      child: CustomSearch()
                     ),
                   ),
-                  SizedBox(width: 5),
+                  SizedBox(width: 5.w),
                   SizedBox(
                     height: 38.h,
                     child: ElevatedButton(
@@ -79,9 +61,9 @@ class CoursesScreen extends StatelessWidget {
                           Icon(
                             Icons.tune,
                             color: Colors.white,
-                            size: 25,
+                            size: 25.sp,
                           ),
-                          SizedBox(width: 10),
+                          SizedBox(width: 10.w),
                           Text(
                             "Filter",
                             style: TextStyle(color: Colors.white),
@@ -91,13 +73,13 @@ class CoursesScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 10,
+                    width: 10.w,
                   )
                 ],
               ),
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 20.h),
           // Course Grid
           Expanded(
             child: GridView.builder(
@@ -147,12 +129,12 @@ class CourseCard extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(8, 15, 10, 0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(5),
-                    topRight: Radius.circular(5),
+                    topLeft: Radius.circular(5.r),
+                    topRight: Radius.circular(5.r),
                   ),
                   child: Image.asset(
                     'assets/images/c1.png', // Your image path
-                    height: 120,
+                    height: 120.h,
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
@@ -165,12 +147,12 @@ class CourseCard extends StatelessWidget {
                   children: [
                     // Label at the top right
 
-                    SizedBox(height: 8),
+                    SizedBox(height: 8.h),
                     // Course title
                     CustomText(
                       text:
                           'UX Research in Digital Product Design: Master Class',
-                      fontsize: 16,
+                      fontsize: 11.sp,
                       fontWeight: FontWeight.bold,
                       textColor: Colors.white,
                     ),
