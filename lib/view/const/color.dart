@@ -27,6 +27,6 @@ final bCgolor = Colors.grey.shade100;
 final transparentColor = Colors.transparent;
 final tapColor =  Color.fromRGBO(20, 55, 82 ,1);
 final drawerBg = Color(0xff153C5A);
-final container = Color.fromRGBO(0, 28, 49, 1).withOpacity(0.25);
+final container = Color.fromRGBO(18, 26, 26, 0.25);
 final Darkcontainer = Color.fromRGBO(0, 28, 49, 1);
 

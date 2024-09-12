@@ -4,6 +4,7 @@ import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/view/course/courses.dart';
 import 'package:bio_medica/view/home_Screen/home_screen.dart';
+import 'package:bio_medica/view/profile/profile_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,7 +42,7 @@ class _AppNavBarState extends State<AppNavBar> {
      HomeScreen(),
     CoursesScreen(),
      HomeScreen(),
-     HomeScreen(),
+     ProfileScreen()
   ];
 
   final NavBarController navBarController = Get.put(NavBarController());

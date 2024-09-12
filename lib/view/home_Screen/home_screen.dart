@@ -82,7 +82,9 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                       height: 38.h,
                       width: 38.w,
-                      child: Image.asset(AppImages.drawer)),
+                      child: GestureDetector(
+                          onTap: (){},
+                          child: Image.asset(AppImages.drawer))),
                   Flexible(
                     child: CustomSearch(),
                   ),
