@@ -1,5 +1,7 @@
 import 'package:bio_medica/view/course/courses.dart';
+import 'package:bio_medica/view/course/quiz.dart';
 import 'package:bio_medica/view/home_Screen/home_screen.dart';
+import 'package:bio_medica/view/tech_support.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
               title: 'Bio Medica',
               debugShowCheckedModeBanner: false,
-              home:SplashScreen()
+              home: SplashScreen(),
               // initialBinding: UserBinding(),
               );
         });

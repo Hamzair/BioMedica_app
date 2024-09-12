@@ -194,12 +194,15 @@ class Neurology extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset(
-                    'assets/images/n1.png',
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      'assets/images/n1.png',
 
-                    fit: BoxFit.cover, // Replace with your image path
-                    height: 100,
-                    width: double.infinity,
+                      fit: BoxFit.cover, // Replace with your image path
+                      height: 100,
+                      width: double.infinity,
+                    ),
                   ),
                   const SizedBox(height: 10),
                   const CustomText(
@@ -254,12 +257,14 @@ class Neurology extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset(
-                    'assets/images/n2.png',
-
-                    fit: BoxFit.cover, // Replace with your image path
-                    height: 100,
-                    width: double.infinity,
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      'assets/images/n2.png',
+                      fit: BoxFit.cover,
+                      height: 100,
+                      width: double.infinity,
+                    ),
                   ),
                   const SizedBox(height: 10),
                   const CustomText(
@@ -313,12 +318,15 @@ class Neurology extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset(
-                    'assets/images/n3.png',
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      'assets/images/n3.png',
 
-                    fit: BoxFit.cover, // Replace with your image path
-                    height: 100,
-                    width: double.infinity,
+                      fit: BoxFit.cover, // Replace with your image path
+                      height: 100,
+                      width: double.infinity,
+                    ),
                   ),
                   const SizedBox(height: 10),
                   const CustomText(

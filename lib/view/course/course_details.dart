@@ -54,13 +54,13 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                       fontsize: 16.sp,
                       fontWeight: FontWeight.bold),
 
-                  SizedBox(height: 8),
+                  SizedBox(height: 8.h),
                   CustomText(
                     text:
                         'Master Digital Product Design: UX Research & UI Design',
                     textColor: Colors.white,
                     fontWeight: FontWeight.w600,
-                    fontsize: 22.sp,
+                    fontsize: 17.sp,
                   ),
                   SizedBox(height: 20.h),
 
@@ -68,7 +68,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                     decoration: BoxDecoration(
                       color: Color(0xFF001A2E).withOpacity(0.6),
                       borderRadius:
-                          BorderRadius.circular(10), // Rounded corners
+                          BorderRadius.circular(10.r), // Rounded corners
                     ),
                     child: Row(
                       children: [
@@ -164,7 +164,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                         // Key Points
                         CustomText(
                             text: 'Key points',
-                            fontsize: 18,
+                            fontsize: 18.sp,
                             fontWeight: FontWeight.bold,
                             textColor: Colors.white),
                         SizedBox(height: 10.h),
@@ -223,16 +223,17 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                 children: [
                                   _LessonCard(
                                     title: 'Instructor\nIntroduction',
-                                    imagePath: 'assets/images/person.png',
+                                //    imagePath: 'assets/images/person.png',
                                   ),
                                   _LessonCard(
                                     title: 'Design\nShortage',
-                                    imagePath: 'assets/images/pen.png',
+                                 //   imagePath: 'assets/images/pen.png',
                                   ),
                                   _LessonCard(
                                     title: 'Make it \nPretty',
-                                    imagePath: 'assets/images/tulip.png',
+                                  //  imagePath: 'assets/images/tulip.png',
                                   ),
+
                                 ],
                               ),
                               SizedBox(height: 20.h),
@@ -242,7 +243,15 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                 children: [
                                   _LessonCard(
                                     title: 'Copy\nInspiration',
-                                    imagePath: 'assets/images/doc.png',
+
+                                  ),
+                                  _LessonCard(
+                                    title: 'Make it \nPretty',
+                                    //  imagePath: 'assets/images/tulip.png',
+                                  ),
+                                  _LessonCard(
+                                    title: 'Design \nShortage',
+                                    //  imagePath: 'assets/images/tulip.png',
                                   ),
                                   // Add more lesson cards as needed in this row
                                 ],
@@ -273,9 +282,10 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
               ),
             ),
           ),
-          child: Text(
-            'Start Now',
-            style: TextStyle(fontSize: 18.sp, color: Colors.white),
+          child: CustomText(
+        text:     'Start Now',
+              fontsize: 18.sp, textColor: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
@@ -284,10 +294,10 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
 }
 
 class _LessonCard extends StatelessWidget {
-  final String imagePath; // Path to the image
+
   final String title;
 
-  const _LessonCard({required this.imagePath, required this.title});
+  const _LessonCard({ required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -298,27 +308,25 @@ class _LessonCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 92.w, // Set the width of the image container
+            width: 92.w,
             height: 82.h,
             decoration: BoxDecoration(
               color: Color(0xFF001A2E).withOpacity(0.4),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Image.asset(
-              imagePath, // Load image from assets
-              height: 34.h,
-              width: 43.w, // Adjust image fit as needed
+            child: Center(
+              child: CustomText(
+               text:  title,
+
+                  textColor: Colors.white,
+                  fontWeight: FontWeight.bold,
+
+                textAlign: TextAlign.center, // Center the title text
+              ),
             ),
           ),
           SizedBox(height: 10.h),
-          Text(
-            title,
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-            textAlign: TextAlign.center, // Center the title text
-          ),
+
         ],
       ),
     );
