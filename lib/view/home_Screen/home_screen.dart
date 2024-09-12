@@ -18,38 +18,47 @@ class HomeScreen extends StatelessWidget {
     {
       'image': AppImages.Therapeutic,
       'title': 'Therapeutic\nDevices',
+      'page': DeviceLibrary()
     },
     {
       'image': AppImages.ClinicalEngineering,
       'title': 'Clinical\nEngineering',
+      'page': DeviceLibrary()
     },
     {
       'image': AppImages.HumanAnatomy,
       'title': 'Human\nAnatomy',
+      'page': DeviceLibrary()
     },
     {
       'image': AppImages.HumanPhyscology,
       'title': 'Human\nPhysiology ',
+      'page': DeviceLibrary()
     },
     {
       'image': AppImages.BioMechanics,
       'title': 'Bio-\nmechanics',
+      'page': DeviceLibrary()
     },
     {
       'image': AppImages.MedicalImaging,
       'title': 'Medical \nImaging',
+      'page': DeviceLibrary()
     },
     {
       'image': AppImages.AdvancedDesign,
       'title': 'Advanced\nDevice',
+      'page': DeviceLibrary()
     },
     {
       'image': AppImages.BioMaterials,
       'title': 'Biomaterials',
+      'page': DeviceLibrary()
     },
     {
       'image': AppImages.ProstheicDevice,
       'title': 'Prosthetic\nDevices',
+      'page': DeviceLibrary()
     },
   ];
 
@@ -101,7 +110,10 @@ class HomeScreen extends StatelessWidget {
                       Icons.notifications,
                       color: Color(0xffBDD0EA),
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    width: 12.w,
+                  ),
                 ],
               ),
             ],

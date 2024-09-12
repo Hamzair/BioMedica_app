@@ -3,6 +3,7 @@ import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/view/course/courses.dart';
+import 'package:bio_medica/view/course/quiz.dart';
 import 'package:bio_medica/view/home_Screen/home_screen.dart';
 import 'package:bio_medica/view/profile/profile_screen.dart';
 
@@ -41,7 +42,7 @@ class _AppNavBarState extends State<AppNavBar> {
      HomeScreen(),
      HomeScreen(),
     CoursesScreen(),
-     HomeScreen(),
+     QuizPage(),
      ProfileScreen()
   ];
 

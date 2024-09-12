@@ -69,7 +69,6 @@ class ChatScreen extends StatelessWidget {
             ),
             child: Row(
               children: [
-                // Text input field
                 Expanded(
                   child: Container(
                     height: 53.h,

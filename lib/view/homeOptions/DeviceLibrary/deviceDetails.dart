@@ -46,7 +46,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
         actions: [
           Container(
             height: 38.h,
-            width: 92.w,
+
             decoration: BoxDecoration(
                 color: Darkcontainer, borderRadius: BorderRadius.circular(15)),
             child: Padding(
@@ -70,7 +70,8 @@ class _DeviceDetailsState extends State<DeviceDetails> {
           ),
           SizedBox(
             width: 12.w,
-          )
+          ),
+
         ],
       ),
       body: Column(

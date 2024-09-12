@@ -1,4 +1,5 @@
 import 'package:bio_medica/view/course/courses.dart';
+import 'package:bio_medica/view/course/quiz.dart';
 import 'package:bio_medica/view/home_Screen/home_screen.dart';
 import 'package:bio_medica/view/tech_support.dart';
 import 'package:flutter/material.dart';

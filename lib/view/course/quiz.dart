@@ -34,6 +34,11 @@ class _QuizPageState extends State<QuizPage> {
       "answers": ["Usable", "Undersanable", "Useful", "Findable"],
       "correctAnswer": 0,
     },
+    {
+      "question": "",
+      "answers": [],
+      "correctAnswer": null,
+    },
     // Add more questions here...
   ];
 
@@ -71,7 +76,8 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: LinearProgressIndicator(
               minHeight: 7.h,
-              value: (_currentPage + 1) / questions.length,
+              value: (_currentPage + 1) /
+                  (questions.length + 1), // Adjusted for extra page
               backgroundColor: Colors.grey[200],
               borderRadius: BorderRadius.circular(20),
               valueColor: AlwaysStoppedAnimation<Color>(Colors.cyan),
@@ -86,138 +92,206 @@ class _QuizPageState extends State<QuizPage> {
                   _currentPage = page;
                 });
               },
-              itemCount: questions.length,
+              itemCount: questions.length +
+                  1, // Include an extra page for the dropdown
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Card(
-                    color: Color.fromRGBO(0, 28, 49, 1.0).withOpacity(0.4),
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.r),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // Question Number (inside the card)
-                          CustomText(
-                            text:
-                                "Question ${index + 1} of ${questions.length}",
-                            textColor: Colors.cyan,
-                            fontWeight: FontWeight.bold,
-                            fontsize: 18.sp,
-                          ),
-                          SizedBox(height: 16.h),
-                          // Question Text
-                          CustomText(
-                            text: questions[index]['question'],
-                            fontsize: 16.sp,
-                            textColor: Colors.white,
-                            fontWeight: FontWeight.w600,
-                          ),
+                if (index == 3) {
+                  // Display a dropdown on the 4th page
+                  return Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Card(
+                      color: Color.fromRGBO(0, 28, 49, 1.0).withOpacity(0.4),
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.r),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // Display question before the dropdown
+                            CustomText(
+                              text: "Personal Study Question",
+                              fontsize: 18.sp,
+                              textColor: buttonColor2,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            SizedBox(height: 35.h),
+                            // Dropdown with description
+                            Theme(
+                              data: Theme.of(context).copyWith(
+                                dividerColor: Colors.transparent,
+                              ),
+                              child: ExpansionTile(
 
-                          SizedBox(height: 34.h),
-                          // Options List
-                          Expanded(
-                            child: ListView.builder(
-                              shrinkWrap: true,
-                              itemCount: questions[index]['answers'].length,
-                              itemBuilder: (context, answerIndex) {
-                                bool isCorrect = answerIndex ==
-                                    questions[index]['correctAnswer'];
-                                bool isSelected =
-                                    _selectedAnswers[index] == answerIndex;
-                                return GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      _selectedAnswers[index] = answerIndex;
-                                    });
-                                  },
-                                  child: Container(
-                                    margin: EdgeInsets.only(bottom: 11),
-                                    padding: EdgeInsets.symmetric(
-                                        vertical: 16, horizontal: 16),
-                                    decoration: BoxDecoration(
-                                      color: isSelected
-                                          ? (isCorrect
-                                              ? Color.fromRGBO(90, 231, 51, 1.0)
-                                              : Color.fromRGBO(255, 56, 56, 1))
-                                          : Color.fromRGBO(0, 28, 49, 1.0)
-                                              .withOpacity(0.1),
-                                      borderRadius: BorderRadius.circular(8.r),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.2),
-                                          blurRadius: 4,
-                                          offset: Offset(0, 2), // Shadow offset
-                                        ),
-                                      ],
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          width: 30.w,
-                                          height: 30.h,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: isSelected
-                                                ? (isCorrect
-                                                    ? Colors.white
-                                                    : Colors.white)
-                                                : Colors.transparent,
-                                            border: Border.all(
-                                              color: isSelected
-                                                  ? (isCorrect
-                                                      ? Colors.green
-                                                      : Colors.red)
-                                                  : Colors.grey,
-                                              width: 2,
-                                            ),
-                                          ),
-                                          child: Center(
-                                            child: Icon(
-                                              isSelected
-                                                  ? (isCorrect
-                                                      ? Icons.check
-                                                      : Icons.close)
-                                                  : null,
-                                              color: isSelected
-                                                  ? Colors.green
-                                                  : Colors.red,
-                                              size: 20,
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(width: 16.w),
-                                        Expanded(
-                                          child: Text(
-                                            questions[index]['answers']
-                                                [answerIndex],
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                                title: CustomText(
+                                  text: 'What is Failure Mode and Effects Analysis (FMEA), and how is it used in medical device risk management?',
+                                  fontWeight: FontWeight.w600,
+                                  textColor: Colors.white,
+                                  fontsize: 12.sp,
+
+                                ),
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: CustomText(
+                                     text:  'FMEA is a structured approach used to identify potential failure modes in a device, assess the impact of those failures, and prioritize corrective actions. By systematically evaluating each component of the device, clinical engineers can identify weaknesses and implement changes to improve safety and performance before the device reaches the market..',
+                                    fontWeight: FontWeight.w600,
+                                      textColor: Colors.white,
+                                      fontsize: 12.sp,
+
                                     ),
                                   ),
-                                );
-                              },
+                                ],
+                                collapsedIconColor: Colors.white,
+                                iconColor: Colors.white,
+                                tilePadding:
+                                    EdgeInsets.symmetric(horizontal: 16.0),
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                );
+                  );
+                } else {
+                  // Regular quiz question card
+                  return Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Card(
+                      color: Color.fromRGBO(0, 28, 49, 1.0).withOpacity(0.4),
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.r),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // Question Number
+                            CustomText(
+                              text:
+                                  "Question ${index + 1} of ${questions.length}",
+                              textColor: Colors.cyan,
+                              fontWeight: FontWeight.bold,
+                              fontsize: 18.sp,
+                            ),
+                            SizedBox(height: 16.h),
+                            // Question Text
+                            CustomText(
+                              text: questions[index]['question'],
+                              fontsize: 16.sp,
+                              textColor: Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            SizedBox(height: 34.h),
+                            if (questions[index]['answers'].isNotEmpty)
+                              Expanded(
+                                child: ListView.builder(
+                                  shrinkWrap: true,
+                                  itemCount: questions[index]['answers'].length,
+                                  itemBuilder: (context, answerIndex) {
+                                    bool isCorrect = answerIndex ==
+                                        questions[index]['correctAnswer'];
+                                    bool isSelected =
+                                        _selectedAnswers[index] == answerIndex;
+                                    return GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          _selectedAnswers[index] = answerIndex;
+                                        });
+                                      },
+                                      child: Container(
+                                        margin: EdgeInsets.only(bottom: 11),
+                                        padding: EdgeInsets.symmetric(
+                                            vertical: 16, horizontal: 16),
+                                        decoration: BoxDecoration(
+                                          color: isSelected
+                                              ? (isCorrect
+                                                  ? Color.fromRGBO(
+                                                      90, 231, 51, 1.0)
+                                                  : Color.fromRGBO(
+                                                      255, 56, 56, 1))
+                                              : Color.fromRGBO(0, 28, 49, 1.0)
+                                                  .withOpacity(0.1),
+                                          borderRadius:
+                                              BorderRadius.circular(8.r),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color:
+                                                  Colors.black.withOpacity(0.2),
+                                              blurRadius: 4,
+                                              offset: Offset(0, 2),
+                                            ),
+                                          ],
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                              width: 30.w,
+                                              height: 30.h,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: isSelected
+                                                    ? (isCorrect
+                                                        ? Colors.white
+                                                        : Colors.white)
+                                                    : Colors.transparent,
+                                                border: Border.all(
+                                                  color: isSelected
+                                                      ? (isCorrect
+                                                          ? Colors.green
+                                                          : Colors.red)
+                                                      : Colors.grey,
+                                                  width: 2,
+                                                ),
+                                              ),
+                                              child: Center(
+                                                child: Icon(
+                                                  isSelected
+                                                      ? (isCorrect
+                                                          ? Icons.check
+                                                          : Icons.close)
+                                                      : null,
+                                                  color: isSelected
+                                                      ? Colors.green
+                                                      : Colors.red,
+                                                  size: 20,
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(width: 16.w),
+                                            Expanded(
+                                              child: Text(
+                                                questions[index]['answers']
+                                                    [answerIndex],
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                }
               },
             ),
           ),
+
           // Continue Button
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(20.0),
             child: SizedBox(
               width: double.infinity,
               height: 50.h,
@@ -225,7 +299,7 @@ class _QuizPageState extends State<QuizPage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.cyan, // Background color
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(30),
                   ),
                 ),
                 onPressed: () {
