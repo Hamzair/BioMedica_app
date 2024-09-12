@@ -63,7 +63,9 @@ class _GoalSettingsState extends State<GoalSettings> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
-      appBar: AppBar(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(104),
+    child: AppBar(
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(13.r),
@@ -87,9 +89,9 @@ class _GoalSettingsState extends State<GoalSettings> {
                           onTap: (){
                             Get.back();
                           },
-                          child: Image.asset('assets/images/backArrow.png')),
+                          child: Image.asset('assets/images/back_icon.png')),
                       SizedBox(
-                        width: 1.w,
+                        width: 7.w,
                       ),
                       CustomText(
                         text: "Goal Setting",
@@ -106,7 +108,7 @@ class _GoalSettingsState extends State<GoalSettings> {
           ],
         ),
         backgroundColor: secondaryColor,
-      ),
+      ),),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -215,7 +217,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                             text: 'Quiz Points',
                             textColor: whiteColor,
                             fontWeight: FontWeight.w700,
-                            fontsize: 20.sp,
+                            fontsize: 16.sp,
                           ),
                           Row(
                             children: [
@@ -223,13 +225,13 @@ class _GoalSettingsState extends State<GoalSettings> {
                                 text: 'Total achievable:',
                                 textColor: whiteColor,
                                 fontWeight: FontWeight.w500,
-                                fontsize: 13.sp,
+                                fontsize: 12.sp,
                               ),
                               CustomText(
                                 text: ' 200',
                                 textColor: buttonColor2,
                                 fontWeight: FontWeight.w500,
-                                fontsize: 13.sp,
+                                fontsize: 12.sp,
                               ),
                             ],
                           ),
@@ -242,7 +244,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                           Container(
                             padding: EdgeInsets.all(1), // Adds space for the border
                             decoration: BoxDecoration(
-                              border: Border.all(color: Color.fromRGBO(0, 28, 49, 1), width: 1), // Dark blue border
+                              border: Border.all(color: Color.fromRGBO(0, 28, 49, 1), width: 1.w), // Dark blue border
                               shape: BoxShape.circle, // Keeps the circular shape
                             ),
                             child: CircleAvatar(
@@ -264,7 +266,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                             width: 58.w,
                             decoration: BoxDecoration(
                               color: Color.fromRGBO(19, 64, 100, 1),
-                              border: Border.all(color: Color.fromRGBO(0, 28, 49, 1), width: 1), // Dark blue border
+                              border: Border.all(color: Color.fromRGBO(0, 28, 49, 1), width: 1.w), // Dark blue border
                               borderRadius: BorderRadius.circular(8.r), // Adjust radius as needed
                             ),
                             alignment: Alignment.center, // Center the text within the Container
@@ -283,7 +285,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                           Container(
                             padding: EdgeInsets.all(1), // Adds space for the border
                             decoration: BoxDecoration(
-                              border: Border.all(color: Color.fromRGBO(0, 28, 49, 1), width: 1), // Dark blue border
+                              border: Border.all(color: Color.fromRGBO(0, 28, 49, 1), width: 1.w), // Dark blue border
                               shape: BoxShape.circle, // Keeps the circular shape
                             ),
                             child: CircleAvatar(
@@ -330,7 +332,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                             text: 'Quiz Points',
                             textColor: whiteColor,
                             fontWeight: FontWeight.w700,
-                            fontsize: 20.sp,
+                            fontsize: 16.sp,
                           ),
                           Row(
                             children: [
@@ -338,13 +340,13 @@ class _GoalSettingsState extends State<GoalSettings> {
                                 text: 'Total achievable:',
                                 textColor: whiteColor,
                                 fontWeight: FontWeight.w500,
-                                fontsize: 13.sp,
+                                fontsize: 12.sp,
                               ),
                               CustomText(
                                 text: ' 200',
                                 textColor: buttonColor2,
                                 fontWeight: FontWeight.w500,
-                                fontsize: 13.sp,
+                                fontsize: 12.sp,
                               ),
                             ],
                           ),
@@ -357,7 +359,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                           Container(
                             padding: EdgeInsets.all(1), // Adds space for the border
                             decoration: BoxDecoration(
-                              border: Border.all(color: Color.fromRGBO(0, 28, 49, 1), width: 1), // Dark blue border
+                              border: Border.all(color: Color.fromRGBO(0, 28, 49, 1), width: 1.w), // Dark blue border
                               shape: BoxShape.circle, // Keeps the circular shape
                             ),
                             child: CircleAvatar(
@@ -387,7 +389,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                               '$secondquizPoints',
                               style: TextStyle(
                                 color: whiteColor,
-                                fontSize: 20.sp,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
@@ -398,7 +400,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                           Container(
                             padding: EdgeInsets.all(1), // Adds space for the border
                             decoration: BoxDecoration(
-                              border: Border.all(color: Color.fromRGBO(0, 28, 49, 1), width: 1), // Dark blue border
+                              border: Border.all(color: Color.fromRGBO(0, 28, 49, 1), width: 1.w), // Dark blue border
                               shape: BoxShape.circle, // Keeps the circular shape
                             ),
                             child: CircleAvatar(
@@ -421,6 +423,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                 ),
               ),
               SizedBox(height:68.h),
+              /// Button Save Goals
               SizedBox(
                   width:311.w ,
                   height: 51.h,

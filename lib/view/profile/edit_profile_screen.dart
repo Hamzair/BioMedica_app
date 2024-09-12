@@ -17,7 +17,9 @@ class EditProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: primaryColor,
-        appBar: AppBar(
+        appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100),
+    child:AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(13.r),
@@ -41,9 +43,9 @@ class EditProfileScreen extends StatelessWidget {
                     onTap: (){
                       Get.back();
                     },
-                            child: Image.asset('assets/images/backArrow.png')),
+                            child: Image.asset('assets/images/back_icon.png')),
                         SizedBox(
-                          width: 1.w,
+                          width: 7.w,
                         ),
                         CustomText(
                           text: "Settings",
@@ -60,6 +62,7 @@ class EditProfileScreen extends StatelessWidget {
             ],
           ),
           backgroundColor: secondaryColor,
+        ),
         ),
         body: SingleChildScrollView(
           child: Column(
