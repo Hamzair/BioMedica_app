@@ -74,7 +74,7 @@ class ResultScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15.12.r),
                 border: Border.all(
                   color: Darkcontainer, // Set the border color to dark blue
-                  width: 1.0, // Adjust the border width as needed
+                  width: 1.0.w, // Adjust the border width as needed
                 ),
               ),
                 child: Column(
@@ -98,7 +98,7 @@ class ResultScreen extends StatelessWidget {
 
                     ),
                     SizedBox(height: 34.48.h),
-                    /// Circle Avatar Green
+                    /// Circle Avatar Image
                     Container(
                       height: 138.91.h,
                       width: 138.91.w,
@@ -217,6 +217,7 @@ class ResultScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(height: 100.h),
 
 
 

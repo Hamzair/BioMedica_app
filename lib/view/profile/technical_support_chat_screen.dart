@@ -14,7 +14,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: primaryColor,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(137.h),
+          preferredSize: Size.fromHeight(140.h),
           child:AppBar(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
@@ -68,7 +68,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       fontsize: 12.86.sp,
                     ),
-                    SizedBox(width: 4),
+                    SizedBox(width: 4.w),
                     Icon(Icons.circle, color: Color.fromRGBO(37, 208, 118, 1), size: 8),
                   ],
                 ),
@@ -85,7 +85,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                       fontsize: 11.06.sp,
                     ),
                     SizedBox(width: 4),
-                    Icon(Icons.circle, color: Color.fromRGBO(37, 208, 118, 1), size: 8),
+                    Icon(Icons.circle, color: Color.fromRGBO(37, 208, 118, 1), size: 8.sp),
                   ],
                 ),
               ],
@@ -134,7 +134,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
         Flexible(
           child: Container(
             padding: EdgeInsets.all(12),
-            margin: EdgeInsets.symmetric(vertical: 6),
+            margin: EdgeInsets.symmetric(vertical: 6.h),
             decoration: BoxDecoration(
               color: tapColor, // Support bubble color
               borderRadius: BorderRadius.circular(5.69.r),
@@ -161,7 +161,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
         Flexible(
           child: Container(
             padding: EdgeInsets.all(12),
-            margin: EdgeInsets.symmetric(vertical: 6),
+            margin: EdgeInsets.symmetric(vertical: 6.h),
             decoration: BoxDecoration(
               color: buttonColor, // User bubble color
               borderRadius: BorderRadius.circular(5.69.r),
@@ -197,7 +197,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                     hintStyle: TextStyle(color: Colors.white54),
                     filled: true,
                     fillColor: tapColor,
-                    contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16.w),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(11.52.r),
                       borderSide: BorderSide.none,
@@ -206,7 +206,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
               ),
-              SizedBox(width: 8),
+              SizedBox(width: 8.w),
               Container(
                 height: 38.4.h,
                 width: 38.4.w,
@@ -217,9 +217,8 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                 ),
                 child: GestureDetector(
                   onTap: (){
-                    Get.to(()=> PrivacyPolicy());
                   },
-                    child: Icon(Icons.send, color: buttonColor2,size: 17,)),
+                    child: Icon(Icons.send, color: buttonColor2,size: 17.sp,)),
               ),
             ],
           ),

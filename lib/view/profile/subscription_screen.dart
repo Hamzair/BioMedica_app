@@ -65,7 +65,7 @@ class SubscriptionScreen extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 27),
+            padding:  EdgeInsets.symmetric(horizontal: 27.w),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 46.h),
@@ -257,7 +257,7 @@ class SubscriptionScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     text: TextSpan(
                       text: 'By continuing the purchase, you acknowledge that you have read our ',
-                      style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w600), // Default style for white text
+                      style: TextStyle(color: Colors.white, fontSize: 14.sp, fontWeight: FontWeight.w600), // Default style for white text
                       children: [
                         TextSpan(
                           text: 'Terms & Condition',

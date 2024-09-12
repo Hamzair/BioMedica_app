@@ -291,7 +291,7 @@ class _QuizPageState extends State<QuizPage> {
 
           // Continue Button
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding:EdgeInsets.fromLTRB(16, 10, 16, 110),
             child: SizedBox(
               width: double.infinity,
               height: 50.h,
