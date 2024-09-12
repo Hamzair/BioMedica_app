@@ -29,7 +29,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
         backgroundColor: primaryColor,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(100), // Set the preferred height
+          preferredSize: Size.fromHeight(100.h), // Set the preferred height
           child: AppBar(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
@@ -228,6 +228,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
               /// TAB MyCourses,Goals,Resources
               Container(
+               
                 height: 37.92.h,
                 width: 310.81.w,
                 decoration: BoxDecoration(
@@ -251,7 +252,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           });
                         },
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
+                          padding: EdgeInsets.symmetric(horizontal: 4.w),
                           child: Container(
                             width: 100.81.w,
                             height: 30.34.h,
@@ -381,7 +382,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        padding: EdgeInsets.symmetric(horizontal: 4.w),
                         child: Row(
                           children: [
                             SizedBox(
@@ -393,7 +394,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                             SizedBox(width: 9.62.w),
                             Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 8),
+                              padding:  EdgeInsets.symmetric(vertical: 8.h),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -458,7 +459,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        padding: EdgeInsets.symmetric(horizontal: 4.w),
                         child: Row(
                           children: [
                             SizedBox(
@@ -470,7 +471,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                             SizedBox(width: 9.62.w),
                             Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 8),
+                              padding: EdgeInsets.symmetric(vertical: 8.h),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -532,7 +533,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Get.to(() => GoalSettings());
                       },
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 27),
+                        padding: EdgeInsets.symmetric(horizontal: 27.w),
                         child: Align(
                           alignment: Alignment.topRight,
                           child: Container(
@@ -584,7 +585,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        padding:  EdgeInsets.symmetric(horizontal: 4.w),
                         child: Row(
                           children: [
                             SizedBox(
@@ -596,7 +597,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                             SizedBox(width: 6.w),
                             Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 12),
+                              padding:  EdgeInsets.symmetric(vertical: 12.h),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -683,7 +684,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],
                 ),
-
+              SizedBox(height: 36.h),
               if (_selectedIndex == 2)
                 Column(
                   children: [
@@ -702,7 +703,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal:18.39 ),
+                        padding: EdgeInsets.symmetric(horizontal:18.39.w ),
                         child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
@@ -768,7 +769,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal:18.39 ),
+                        padding: EdgeInsets.symmetric(horizontal:18.39.w ),
                         child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
@@ -790,7 +791,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 ),
                                 /// Courser landing Text
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(vertical:11.21 ),
+                                  padding:  EdgeInsets.symmetric(vertical:11.21.h ),
                                   child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       CustomText(
@@ -834,7 +835,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal:18.39 ),
+                        padding: EdgeInsets.symmetric(horizontal:18.39.w ),
                         child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
@@ -856,7 +857,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 ),
                                 /// Courser_Dashboard.fig Text
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(vertical:11.21 ),
+                                  padding:  EdgeInsets.symmetric(vertical:11.21.h ),
                                   child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       CustomText(
@@ -886,6 +887,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],
                 ),
+              SizedBox(height: 100.h),
+
             ],
           ),
         ),

@@ -1,5 +1,4 @@
 import 'package:bio_medica/view/const/color.dart';
-import 'package:bio_medica/view/profile/technical_support_chat_screen.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -62,7 +61,7 @@ class PrivacyPolicy extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 27),
+            padding: EdgeInsets.symmetric(horizontal: 27.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -85,6 +84,7 @@ class PrivacyPolicy extends StatelessWidget {
                     fontsize: 22.sp,
                   ),
                 ),
+                SizedBox(height: 7.h),
                 Container(
                   // height: 538.h,
                   width: 340.w,
@@ -93,7 +93,7 @@ class PrivacyPolicy extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5.69.r),
                     border: Border.all(
                       color: Darkcontainer, // Set the border color to dark blue
-                      width: 1.0, // Adjust the border width as needed
+                      width: 1.0.w, // Adjust the border width as needed
                     ),
                   ),
 

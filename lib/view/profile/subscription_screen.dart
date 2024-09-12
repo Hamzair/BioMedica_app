@@ -1,7 +1,9 @@
 import 'package:bio_medica/view/const/color.dart';
+import 'package:bio_medica/view/profile/privacy_policy.dart';
 import 'package:bio_medica/view/profile/technical_support_chat_screen.dart';
 import 'package:bio_medica/view/profile/result_screen.dart';
 import 'package:bio_medica/widget/custom_text.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -248,37 +250,41 @@ class SubscriptionScreen extends StatelessWidget {
             ),
                 SizedBox(height: 43.h),
             /// long Text Terms & Condition & Privacy policy
-            SizedBox(
-              height: 66.h,
-              width: 307.w,
-              child: RichText(
-                textAlign: TextAlign.center,
-                text: TextSpan(
-                  text: 'By continuing the purchase, you acknowledge that you have read our ',
-                  style: TextStyle(color: Colors.white, fontSize: 14,fontWeight: FontWeight.w600), // Default style for white text
-                  children: [
-                    TextSpan(
-                      text: 'Terms & Condition',
-                      style: TextStyle(
-                        color: greenColor, // Green color for Terms & Condition
-                        fontWeight: FontWeight.bold, // Optional: bold text
-                      ),
+                SizedBox(
+                  height: 66.h,
+                  width: 307.w,
+                  child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      text: 'By continuing the purchase, you acknowledge that you have read our ',
+                      style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w600), // Default style for white text
+                      children: [
+                        TextSpan(
+                          text: 'Terms & Condition',
+                          style: TextStyle(
+                            color: greenColor, // Green color for Terms & Condition
+                            fontWeight: FontWeight.bold, // Optional: bold text
+                          ),
+                        ),
+                        TextSpan(
+                          text: ' and that you agree to our ',
+                          style: TextStyle(color: Colors.white), // White color for the rest of the text
+                        ),
+                        TextSpan(
+                          text: 'Privacy Policy.',
+                          style: TextStyle(
+                            color: greenColor, // Green color for Privacy Policy
+                            fontWeight: FontWeight.bold, // Optional: bold text
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                            Get.to(()=> PrivacyPolicy());
+                            },
+                        ),
+                      ],
                     ),
-                    TextSpan(
-                      text: ' and that you agree to our ',
-                      style: TextStyle(color: Colors.white), // White color for the rest of the text
-                    ),
-                    TextSpan(
-                      text: 'Privacy Policy.',
-                      style: TextStyle(
-                        color: greenColor, // Green color for Privacy Policy
-                        fontWeight: FontWeight.bold, // Optional: bold text
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
                 SizedBox(height: 13.9.h),
 
                 /// Free Trial Users Container

@@ -18,7 +18,7 @@ class EditProfileScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: primaryColor,
         appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(100.h),
     child:AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -165,8 +165,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 330,
-      height: 43.75,
+      width: 330.w,
+      height: 43.75.h,
       child: TextField(
         obscureText: widget.obscureText ? _obscureText : false,
         style: TextStyle(color: mainTextColor,),
@@ -190,7 +190,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           )
               : null,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(13.31),
+            borderRadius: BorderRadius.circular(13.31.r),
             borderSide: BorderSide.none,
           ),
           contentPadding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 12.w),

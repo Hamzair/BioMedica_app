@@ -64,7 +64,7 @@ class _GoalSettingsState extends State<GoalSettings> {
     return Scaffold(
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(104),
+        preferredSize: Size.fromHeight(104.h),
     child: AppBar(
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -183,7 +183,6 @@ class _GoalSettingsState extends State<GoalSettings> {
                   }).toList(),
                 ),
               ),
-
               SizedBox(height: 36.h),
               /// Text Enter Goals
               CustomText(
@@ -206,7 +205,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical:6,horizontal: 13),
+                  padding: EdgeInsets.symmetric(vertical:6.h,horizontal: 13.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

@@ -6,6 +6,7 @@ import 'package:bio_medica/widget/custom_search.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:model_viewer_plus/model_viewer_plus.dart';
 
 class DeviceDetails extends StatefulWidget {
   @override
@@ -89,10 +90,18 @@ class _DeviceDetailsState extends State<DeviceDetails> {
               child: Column(
                 children: [
                   Container(
+                    height: 300,
                     padding: EdgeInsets.all(8),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                          child: Image.asset('assets/images/sthethoscope.png',height: 215.h,width: 318.w,fit: BoxFit.cover,))),
+                      child: ModelViewer(
+                        backgroundColor: Color.fromARGB(0xFF, 0xEE, 0xEE, 0xEE),
+                        src: 'https://modelviewer.dev/shared-assets/models/Astronaut.glb',
+                        alt: 'A 3D model of an astronaut',
+                        ar: true,
+                        autoRotate: true,
+                        iosSrc: 'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
+                        disableZoom: true,
+                      ),
+            ),
 
 
                      Row(

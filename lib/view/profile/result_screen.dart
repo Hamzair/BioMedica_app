@@ -107,7 +107,7 @@ class ResultScreen extends StatelessWidget {
                     SizedBox(height: 27.24.h),
                     /// Answers Detail
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal:22.68),
+                      padding:  EdgeInsets.symmetric(horizontal:20.60.w),
                       child: Row(
                         children: [
                           /// Small Green Circle
