@@ -55,7 +55,7 @@ class _QuizPageState extends State<QuizPage> {
             text: 'UX Design Quiz',
             fontWeight: FontWeight.bold,
             textColor: drawerBg,
-            fontsize: 22,
+            fontsize: 22.sp,
           ),
         ),
         centerTitle: true,
@@ -77,7 +77,7 @@ class _QuizPageState extends State<QuizPage> {
               valueColor: AlwaysStoppedAnimation<Color>(Colors.cyan),
             ),
           ),
-          SizedBox(height: 16),
+          SizedBox(height: 16.h),
           Expanded(
             child: PageView.builder(
               controller: _pageController,
@@ -94,7 +94,7 @@ class _QuizPageState extends State<QuizPage> {
                     color: Color.fromRGBO(0, 28, 49, 1.0).withOpacity(0.4),
                     elevation: 0,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(15.r),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
@@ -146,7 +146,7 @@ class _QuizPageState extends State<QuizPage> {
                                               : Color.fromRGBO(255, 56, 56, 1))
                                           : Color.fromRGBO(0, 28, 49, 1.0)
                                               .withOpacity(0.1),
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.r),
                                       boxShadow: [
                                         BoxShadow(
                                           color: Colors.black.withOpacity(0.2),
@@ -158,8 +158,8 @@ class _QuizPageState extends State<QuizPage> {
                                     child: Row(
                                       children: [
                                         Container(
-                                          width: 30,
-                                          height: 30,
+                                          width: 30.w,
+                                          height: 30.h,
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                             color: isSelected
@@ -190,7 +190,7 @@ class _QuizPageState extends State<QuizPage> {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(width: 16),
+                                        SizedBox(width: 16.w),
                                         Expanded(
                                           child: Text(
                                             questions[index]['answers']
@@ -220,7 +220,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(16.0),
             child: SizedBox(
               width: double.infinity,
-              height: 50,
+              height: 50.h,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.cyan, // Background color
@@ -243,7 +243,7 @@ class _QuizPageState extends State<QuizPage> {
                 child: Text(
                   _currentPage == questions.length - 1 ? 'Finish' : 'Continue',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 18.sp,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),

@@ -26,7 +26,7 @@ class _CourseContentState extends State<CourseContent> {
                     BorderRadius.vertical(bottom: Radius.circular(30)),
                 child: Image.asset(
                   'assets/images/rectangle.png', // Replace with actual image
-                  height: 300,
+                  height: 300.h,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
@@ -41,6 +41,7 @@ class _CourseContentState extends State<CourseContent> {
                       child: Image.asset('assets/images/backArrow.png')))
             ],
           ),
+
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -50,24 +51,24 @@ class _CourseContentState extends State<CourseContent> {
                   CustomText(
                       text: '• UX Design',
                       textColor: buttonColor2,
-                      fontsize: 16,
+                      fontsize: 16.sp,
                       fontWeight: FontWeight.bold),
 
-                  SizedBox(height: 8),
+                  SizedBox(height: 8.h),
                   CustomText(
                     text:
                         'Master Digital Product Design: UX Research & UI Design',
                     textColor: Colors.white,
                     fontWeight: FontWeight.w600,
-                    fontsize: 22,
+                    fontsize: 22.sp,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 20.h),
 
                   Container(
                     decoration: BoxDecoration(
                       color: Color(0xFF001A2E).withOpacity(0.4),
                       borderRadius:
-                          BorderRadius.circular(10), // Rounded corners
+                          BorderRadius.circular(10.r), // Rounded corners
                     ),
                     child: Row(
                       children: [
@@ -85,7 +86,7 @@ class _CourseContentState extends State<CourseContent> {
                                 color: _selectedIndex == 0
                                     ? Colors.cyan
                                     : Colors.transparent,
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(10.r),
                               ),
                               child: Center(
                                 child: CustomText(
@@ -114,7 +115,7 @@ class _CourseContentState extends State<CourseContent> {
                                 color: _selectedIndex == 1
                                     ? Colors.cyan
                                     : Colors.transparent,
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(10.r),
                               ),
                               child: Center(
                                 child: CustomText(
@@ -143,7 +144,7 @@ class _CourseContentState extends State<CourseContent> {
                                 color: _selectedIndex == 2
                                     ? Colors.cyan
                                     : Colors.transparent,
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(10.r),
                               ),
                               child: Center(
                                 child: CustomText(
@@ -171,7 +172,7 @@ class _CourseContentState extends State<CourseContent> {
                                 color: _selectedIndex == 3
                                     ? Colors.cyan
                                     : Colors.transparent,
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(10.r),
                               ),
                               child: Center(
                                 child: CustomText(
@@ -190,7 +191,7 @@ class _CourseContentState extends State<CourseContent> {
                     ),
                   ),
 
-                  SizedBox(height: 20),
+                  SizedBox(height: 20.h),
 
                   if (_selectedIndex == 0)
                     // About Section
@@ -218,7 +219,7 @@ class _CourseContentState extends State<CourseContent> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(10.r),
                             color: Color(0xFF001A2E).withOpacity(0.4),
                           ),
                           child: ExpansionTile(
@@ -236,7 +237,7 @@ class _CourseContentState extends State<CourseContent> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(10.r),
                             color: Color(0xFF001A2E).withOpacity(0.4),
                           ),
                           child: ExpansionTile(
@@ -257,7 +258,7 @@ class _CourseContentState extends State<CourseContent> {
                       child: CustomText(
                           text: 'Quiz',
                           textColor: whiteColor,
-                          fontsize: 22,
+                          fontsize: 22.sp,
                           fontWeight: FontWeight.w500),
                     ),
                   if (_selectedIndex == 3)
@@ -265,7 +266,7 @@ class _CourseContentState extends State<CourseContent> {
                       child: CustomText(
                           text: 'Resources',
                           textColor: whiteColor,
-                          fontsize: 22,
+                          fontsize: 22.sp,
                           fontWeight: FontWeight.w500),
                     )
                 ],
@@ -285,12 +286,12 @@ class _CourseContentState extends State<CourseContent> {
             padding: EdgeInsets.symmetric(vertical: 15),
             backgroundColor: Colors.cyan,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(30.r),
             ),
           ),
           child: Text(
             'Start Now',
-            style: TextStyle(fontSize: 18, color: Colors.white),
+            style: TextStyle(fontSize: 18.sp, color: Colors.white),
           ),
         ),
       ),
@@ -325,7 +326,7 @@ class _LessonCard extends StatelessWidget {
               width: 43.w, // Adjust image fit as needed
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 10.h),
           Text(
             title,
             style: TextStyle(

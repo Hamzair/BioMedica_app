@@ -54,7 +54,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                       fontsize: 16.sp,
                       fontWeight: FontWeight.bold),
 
-                  SizedBox(height: 8),
+                  SizedBox(height: 8.h),
                   CustomText(
                     text:
                         'Master Digital Product Design: UX Research & UI Design',
@@ -68,7 +68,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                     decoration: BoxDecoration(
                       color: Color(0xFF001A2E).withOpacity(0.6),
                       borderRadius:
-                          BorderRadius.circular(10), // Rounded corners
+                          BorderRadius.circular(10.r), // Rounded corners
                     ),
                     child: Row(
                       children: [

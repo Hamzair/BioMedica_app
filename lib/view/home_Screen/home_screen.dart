@@ -56,8 +56,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: primaryColor,
-        appBar: AppBar(
+      backgroundColor: primaryColor,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100),
+        child: AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(13.r),
@@ -71,6 +73,7 @@ class HomeScreen extends StatelessWidget {
                 height: 30.h,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
@@ -80,10 +83,9 @@ class HomeScreen extends StatelessWidget {
                       height: 38.h,
                       width: 38.w,
                       child: Image.asset(AppImages.drawer)),
-                  SizedBox(
-                    width: 12.w,
+                  Flexible(
+                    child: CustomSearch(),
                   ),
-                  CustomSearch(),
                   SizedBox(
                     width: 12.w,
                   ),
@@ -104,9 +106,14 @@ class HomeScreen extends StatelessWidget {
           ),
           backgroundColor: secondaryColor,
         ),
-        body: Column(
+      ),
+      body: SingleChildScrollView(
+        // Wrap the entire body in SingleChildScrollView
+        child: Column(
           children: [
-            Expanded(
+            // Grid View for home options
+            Container(
+              height: 350.h, // Set fixed height for GridView
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4, // 4 columns
@@ -123,7 +130,8 @@ class HomeScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => item['page'],
+                          builder: (context) =>
+                              item['page'] ?? const SizedBox.shrink(),
                         ),
                       );
                     },
@@ -159,18 +167,25 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
             ),
+
+
             Container(
-              height: 380.h,
+              padding: EdgeInsets.all(10),
+              // height: 321.h,
               width: 348.w,
+              margin: EdgeInsets.only(bottom: 150),
               decoration: BoxDecoration(
-                  color: container,
-                  borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(color: Colors.black, width: 1.w)),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Row(
+                color: container,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.black, width: 1),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CustomText(
@@ -180,108 +195,101 @@ class HomeScreen extends StatelessWidget {
                           fontsize: 17.sp,
                         ),
                         CustomText(
-                          text: 'See More',
+                          text: 'See more',
                           textColor: buttonColor2,
                           fontWeight: FontWeight.w600,
                           fontsize: 15.sp,
-                        )
+                        ),
                       ],
                     ),
-                  ),
-                  SizedBox(
-                    height: 19.h,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: SingleChildScrollView(
+                    SizedBox(
+                      height: 14.h,
+                    ),
+                    SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
-
                         children: [
                           Container(
-                            height: 242.h,
-                            width: 239.w,
+                            padding: EdgeInsets.all( 16),
+
+                            width: 249.w,
                             decoration: BoxDecoration(
                               color: container,
-                              border: Border.all(color: Colors.black, width: 0.5.w),
                               borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: Colors.black, width: 0.5),
                             ),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: CustomText(
-                                      text:
-                                          'Breakthrough in Wearable Cardiac Monitors',
-                                      textColor: Colors.white,
-                                      fontWeight: FontWeight.w600),
+                                SizedBox(height: 10,),
+                                CustomText(
+                                  text: 'Breakthrough in Wearable Cardiac Monitors',
+                                  textColor: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                  fontsize: 14.sp,
                                 ),
                                 Image.asset(
-                                  alignment: Alignment.topLeft,
-                                  AppImages.laptop,
-                                  height: 133.h,
                                   width: 215.w,
+                                  fit: BoxFit.cover,
+                                    alignment: Alignment.topLeft, AppImages.laptop),
+                                SizedBox(height: 5,),
+                                CustomText(
+                                  text:
+                                      'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
+                                  textColor: Colors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontsize: 11.sp,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                                  child: CustomText(
-                                    text:
-                                        'The chest piece, placed on the patient’s chest or back, transmits body sounds to the diaphragm.',
-                                    textColor: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                    fontsize: 10.sp,
-                                  ),
-                                )
                               ],
                             ),
                           ),
-                          SizedBox(width: 10.w,),
+                          SizedBox(width: 10.w
+                            ,),
                           Container(
-                            height: 242.h,
-                            width: 239.w,
+                            padding: EdgeInsets.all( 16),
+
+                            width: 249.w,
                             decoration: BoxDecoration(
                               color: container,
-                              border: Border.all(color: Colors.black, width: 0.5),
                               borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: Colors.black, width: 0.5),
                             ),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: CustomText(
-                                      text:
-                                      'Breakthrough in Wearable Cardiac Monitors',
-                                      textColor: Colors.white,
-                                      fontWeight: FontWeight.w600),
+                                SizedBox(height: 10,),
+                                CustomText(
+                                  text: 'Breakthrough in Wearable Cardiac Monitors',
+                                  textColor: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                  fontsize: 14.sp,
                                 ),
                                 Image.asset(
-                                  alignment: Alignment.topLeft,
-                                  AppImages.laptop,
-                                  height: 133.h,
-                                  width: 215.w,
+                                    width: 215.w,
+                                    fit: BoxFit.cover,
+                                    alignment: Alignment.topLeft, AppImages.laptop),
+                                SizedBox(height: 5,),
+                                CustomText(
+                                  text:
+                                  'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
+                                  textColor: Colors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontsize: 11.sp,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                                  child: CustomText(
-                                    text:
-                                    'The chest piece, placed on the patient’s chest or back, transmits body sounds to the diaphragm. These sounds travel through the tubing ions.',
-                                    textColor: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                    fontsize: 10.sp,
-                                  ),
-                                )
                               ],
                             ),
                           )
                         ],
                       ),
                     ),
-                  )
-                ],
+
+                  ],
+                ),
               ),
             )
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
-
