@@ -91,7 +91,7 @@ class _CourseContentState extends State<CourseContent> {
                               child: Center(
                                 child: CustomText(
                                   text: 'Overview',
-                                  fontsize: 13.sp,
+                                  fontsize: 12.sp,
                                   textColor: Colors.white,
                                   fontWeight: _selectedIndex == 0
                                       ? FontWeight.bold

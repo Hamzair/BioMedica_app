@@ -1,11 +1,17 @@
+
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/course/courses.dart';
 import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceDetails.dart';
 import 'package:bio_medica/widget/custom_button.dart';
 import 'package:bio_medica/widget/custom_search.dart';
 import 'package:bio_medica/widget/custom_text.dart';
+import 'package:bio_medica/widget/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:bio_medica/controller/nav_bar_controller.dart';
+
+
 
 class DeviceLibrary extends StatefulWidget {
   @override
@@ -15,8 +21,10 @@ class DeviceLibrary extends StatefulWidget {
 class _DeviceLibraryState extends State<DeviceLibrary> {
   // List of tabs
   List<String> tabs = ['Cardiology', 'Neurology', 'Orthopedics', 'Radiology'];
-
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int selectedIndex = 0;
+  final NavBarController navBarController = Get.put(NavBarController());
+
 
   List<Widget> content = [
     Center(
@@ -40,21 +48,33 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const AppDrawer(),
+      key: _scaffoldKey,
+
       backgroundColor: primaryColor,
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(192, 208, 221, 1),
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-              decoration: BoxDecoration(
-                  color: Color(0xFF001A2E),
-                  borderRadius: BorderRadius.circular(50)),
-              child: Icon(
-                Icons.menu,
-                color: buttonColor2,
-              )),
+      padding: const EdgeInsets.all(8.0),
+      child: GestureDetector(
+        onTap: () {
+          // Open the drawer using the scaffold key
+          _scaffoldKey.currentState?.openDrawer();
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            color: Color(0xFF001A2E),
+            borderRadius: BorderRadius.circular(50),
+          ),
+          child: Icon(
+            Icons.menu,
+            color: buttonColor2,
+          ),
         ),
-        title: CustomText(
+      ),
+    ),
+
+    title: CustomText(
           text: 'Device Library',
           textColor: Color(0xFF001A2E),
           fontWeight: FontWeight.bold,
@@ -267,9 +287,9 @@ class Neurology extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  const CustomText(
+                 CustomText(
                     text: 'Pacemaker',
-                    fontsize: 16,
+                    fontsize: 16.sp,
                     textColor: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
@@ -283,7 +303,7 @@ class Neurology extends StatelessWidget {
                   ),
                   Spacer(),
                   SizedBox(
-                    width: 154.w,
+                    width: double.infinity,
                     height: 34.h,
                     child: ElevatedButton(
                       onPressed: () {
@@ -338,7 +358,7 @@ class Neurology extends StatelessWidget {
                   const SizedBox(height: 5),
                   CustomText(
                     text:
-                        'used to listen to heartbeats, lung sounds, and other body sounds.',
+                        'used to listen to heartbeats, lung sounds,',
                     textAlign: TextAlign.start,
                     fontWeight: FontWeight.w500,
                     fontsize: 10.sp,
@@ -346,7 +366,7 @@ class Neurology extends StatelessWidget {
                   ),
                   Spacer(),
                   SizedBox(
-                    width: 154.w,
+                    width: double.infinity,
                     height: 34.h,
                     child: ElevatedButton(
                       onPressed: () {

@@ -1,14 +1,17 @@
+import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceLibrary.dart';
 import 'package:bio_medica/widget/custom_search.dart';
 import 'package:bio_medica/widget/custom_text.dart';
+import 'package:bio_medica/widget/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
-
+  final NavBarController navBarController=Get.put(NavBarController());
   final List<Map<String, dynamic>> gridItems = [
     {
       'image': AppImages.DeviceLibrary,
@@ -61,13 +64,16 @@ class HomeScreen extends StatelessWidget {
       'page': DeviceLibrary()
     },
   ];
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const AppDrawer(),
+      key: _scaffoldKey,
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(100.h),
         child: AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -91,9 +97,26 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                       height: 38.h,
                       width: 38.w,
-                      child: GestureDetector(
-                          onTap: (){},
-                          child: Image.asset(AppImages.drawer))),
+                      child:  GestureDetector(
+                        onTap: () {
+                          // Open the drawer using the scaffold key
+                          _scaffoldKey.currentState?.openDrawer();
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xFF001A2E),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Icon(
+                            Icons.menu,
+                            color: buttonColor2,
+                          ),
+                        ),
+                      ),
+                  ),
+                  SizedBox(
+                    width: 11.w,
+                  ),
                   Flexible(
                     child: CustomSearch(),
                   ),
@@ -235,18 +258,19 @@ class HomeScreen extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                SizedBox(height: 10,),
+                                SizedBox(height: 10.h,),
                                 CustomText(
                                   text: 'Breakthrough in Wearable Cardiac Monitors',
                                   textColor: Colors.white,
                                   fontWeight: FontWeight.w600,
                                   fontsize: 14.sp,
                                 ),
+                                SizedBox(height: 10.h,),
                                 Image.asset(
                                   width: 215.w,
                                   fit: BoxFit.cover,
                                     alignment: Alignment.topLeft, AppImages.laptop),
-                                SizedBox(height: 5,),
+                                SizedBox(height: 5.h,),
                                 CustomText(
                                   text:
                                       'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
@@ -271,18 +295,19 @@ class HomeScreen extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                SizedBox(height: 10,),
+                                SizedBox(height: 10.h,),
                                 CustomText(
                                   text: 'Breakthrough in Wearable Cardiac Monitors',
                                   textColor: Colors.white,
                                   fontWeight: FontWeight.w600,
                                   fontsize: 14.sp,
                                 ),
+                                SizedBox(height: 10.h,),
                                 Image.asset(
                                     width: 215.w,
                                     fit: BoxFit.cover,
                                     alignment: Alignment.topLeft, AppImages.laptop),
-                                SizedBox(height: 5,),
+                                SizedBox(height: 5.h,),
                                 CustomText(
                                   text:
                                   'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',

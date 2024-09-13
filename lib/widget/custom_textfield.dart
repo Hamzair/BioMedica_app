@@ -52,6 +52,7 @@ class CustomTextFiled extends StatelessWidget {
     this.isObscure,
     this.afterPasswordIcon,
     required this.readOnly,
+
   });
 
   final _focusNode = FocusNode();

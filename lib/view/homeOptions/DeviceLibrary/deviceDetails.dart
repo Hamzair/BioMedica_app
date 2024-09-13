@@ -1,8 +1,5 @@
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
-import 'package:bio_medica/view/course/courses.dart';
-import 'package:bio_medica/widget/custom_button.dart';
-import 'package:bio_medica/widget/custom_search.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -47,7 +44,6 @@ class _DeviceDetailsState extends State<DeviceDetails> {
         actions: [
           Container(
             height: 38.h,
-
             decoration: BoxDecoration(
                 color: Darkcontainer, borderRadius: BorderRadius.circular(15)),
             child: Padding(
@@ -72,39 +68,36 @@ class _DeviceDetailsState extends State<DeviceDetails> {
           SizedBox(
             width: 12.w,
           ),
-
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Container(
-
-              width: 341.w,
-              decoration: BoxDecoration(
-                  color: container,
-                  borderRadius: BorderRadius.circular(12)
-              ),
-              child: Column(
-                children: [
-                  Container(
-                    height: 300,
-                    padding: EdgeInsets.all(8),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                width: 341.w,
+                decoration: BoxDecoration(
+                    color: container, borderRadius: BorderRadius.circular(12)),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 300,
+                      padding: EdgeInsets.all(8),
                       child: ModelViewer(
                         backgroundColor: Color.fromARGB(0xFF, 0xEE, 0xEE, 0xEE),
-                        src: 'https://modelviewer.dev/shared-assets/models/Astronaut.glb',
+                        src:
+                        'https://modelviewer.dev/shared-assets/models/Astronaut.glb',
                         alt: 'A 3D model of an astronaut',
                         ar: true,
                         autoRotate: true,
-                        iosSrc: 'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
+                        iosSrc:
+                        'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
                         disableZoom: true,
                       ),
-            ),
-
-
-                     Row(
+                    ),
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         buildImageItem('assets/images/n1.png'),
@@ -113,45 +106,45 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                         buildImageItem('assets/images/n2.png'),
                       ],
                     ),
-
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Container(
-              height: 37.92.h,
-              decoration: BoxDecoration(
-                color: tapColor,
-                borderRadius: BorderRadius.circular(11.38.r),
-                border: Border.all(
-                  color: Color.fromRGBO(0, 28, 49, 1),
-                  width: 1.w,
-                ),
-              ),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    buildTabItem(0, 'Overview'),
-                    buildDivider(),
-                    buildTabItem(1, 'Operations'),
-                    buildDivider(),
-                    buildTabItem(2, 'Importance'),
-                    buildDivider(),
-                    buildTabItem(3, 'Features'),
                   ],
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 19.h,
-          ),
-          // Visibility widgets for tab contents
-          buildTabContent(),
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Container(
+                height: 37.92.h,
+                decoration: BoxDecoration(
+                  color: tapColor,
+                  borderRadius: BorderRadius.circular(11.38.r),
+                  border: Border.all(
+                    color: Color.fromRGBO(0, 28, 49, 1),
+                    width: 1.w,
+                  ),
+                ),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      buildTabItem(0, 'Overview'),
+                      buildDivider(),
+                      buildTabItem(1, 'Operations'),
+                      buildDivider(),
+                      buildTabItem(2, 'Importance'),
+                      buildDivider(),
+                      buildTabItem(3, 'Features'),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 19.h,
+            ),
+            // Visibility widgets for tab contents
+            buildTabContent(),
+          ],
+        ),
       ),
     );
   }
@@ -180,9 +173,8 @@ class _DeviceDetailsState extends State<DeviceDetails> {
               textColor: _selectedIndex == index
                   ? Colors.white
                   : Color.fromRGBO(182, 182, 182, 1),
-              fontWeight: _selectedIndex == index
-                  ? FontWeight.w700
-                  : FontWeight.w700,
+              fontWeight:
+              _selectedIndex == index ? FontWeight.w700 : FontWeight.w700,
             ),
           ),
         ),
@@ -198,7 +190,6 @@ class _DeviceDetailsState extends State<DeviceDetails> {
       color: buttonColor,
     );
   }
-
 
   Widget buildTabContent() {
     switch (_selectedIndex) {
@@ -234,7 +225,9 @@ class _DeviceDetailsState extends State<DeviceDetails> {
             fontWeight: FontWeight.w400,
             fontsize: 12.sp,
           ),
-          SizedBox(height: 17.h,),
+          SizedBox(
+            height: 17.h,
+          ),
           CustomText(
             text: 'Anatomy',
             textColor: buttonColor,
@@ -272,7 +265,9 @@ class _DeviceDetailsState extends State<DeviceDetails> {
             fontWeight: FontWeight.w400,
             fontsize: 12.sp,
           ),
-          SizedBox(height: 17.h,),
+          SizedBox(
+            height: 17.h,
+          ),
           CustomText(
             text: 'Operation Steps',
             textColor: buttonColor,
@@ -305,21 +300,23 @@ class _DeviceDetailsState extends State<DeviceDetails> {
           ),
           CustomText(
             text:
-            'Stethoscopes are commonly used in cardiology, pulmonology, and general diagnostics to assess heart and lung health.',
+            'Stethoscopes are commonly used in cardiology, pulmonology, and general medicine to assess heart, lung, and vascular health.',
             textColor: Colors.white,
             fontWeight: FontWeight.w400,
             fontsize: 12.sp,
           ),
-          SizedBox(height: 17.h,),
+          SizedBox(
+            height: 17.h,
+          ),
           CustomText(
-            text: 'Common Use Cases:',
+            text: 'Importance',
             textColor: buttonColor,
             fontWeight: FontWeight.w600,
             fontsize: 16.sp,
           ),
           CustomText(
             text:
-            'The chest piece, placed on the patient’s chest or back, transmits body sounds to the diaphragm. These sounds travel through the tubing to the earpieces, allowing the physician to detect abnormalities in heart or lung functions.',
+            'The stethoscope is essential for diagnosing and monitoring various health conditions. It helps in detecting irregular heart rhythms, lung obstructions, and other critical conditions.',
             textColor: Colors.white,
             fontWeight: FontWeight.w400,
             fontsize: 12.sp,
@@ -336,28 +333,14 @@ class _DeviceDetailsState extends State<DeviceDetails> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomText(
-            text: 'Key Features:',
+            text: 'Features',
             textColor: buttonColor,
             fontWeight: FontWeight.w600,
             fontsize: 16.sp,
           ),
           CustomText(
             text:
-            'High acoustic sensitivity, lightweight design, and tunable diaphragms are some of the standout features of this stethoscope model.',
-            textColor: Colors.white,
-            fontWeight: FontWeight.w400,
-            fontsize: 12.sp,
-          ),
-          SizedBox(height: 17.h,),
-          CustomText(
-            text: 'Additional Features:',
-            textColor: buttonColor,
-            fontWeight: FontWeight.w600,
-            fontsize: 16.sp,
-          ),
-          CustomText(
-            text:
-            'This stethoscope is also available with noise-cancelling features, reducing ambient sounds and enhancing diagnostic capabilities in noisy environments.',
+            '1. High sound quality for accurate diagnosis.\n2. Lightweight and portable design.\n3. Durable construction for long-lasting use.',
             textColor: Colors.white,
             fontWeight: FontWeight.w400,
             fontsize: 12.sp,
@@ -366,22 +349,25 @@ class _DeviceDetailsState extends State<DeviceDetails> {
       ),
     );
   }
-}
 
-// Method to build an image item
-Widget buildImageItem(String imagePath) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(vertical: 14.0),
-    child: Container(
-      height: 50.h,
-      width: 70.w,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(10),
-        child: Image.asset(
-          imagePath,
-          fit: BoxFit.cover,
+  Widget buildImageItem(String imagePath) {
+    return GestureDetector(
+      onTap: () {
+        // Handle image click if needed
+      },
+      child: Container(
+        height: 60,
+        width: 60,
+        padding: EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: Colors.white,
+            width: 1,
+          ),
         ),
+        child: Image.asset(imagePath),
       ),
-    ),
-  );
+    );
+  }
 }

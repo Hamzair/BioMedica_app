@@ -86,7 +86,7 @@ class SubscriptionScreen extends StatelessWidget {
                 /// Free Trial Container
                 GestureDetector(
                   onTap: (){
-                    Get.to(() => TechnicalSupportChatScreen());
+
                   },
                   child: Container(
                     width: 134.w, // Set the width of the container
@@ -158,7 +158,7 @@ class SubscriptionScreen extends StatelessWidget {
                 /// Premium Container
                 GestureDetector(
                   onTap: (){
-                    Get.to(()=>ResultScreen());
+
                   },
                   child: Container(
                     width: 134.w, // Set the width of the container

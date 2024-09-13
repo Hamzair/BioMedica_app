@@ -1,5 +1,10 @@
+import 'package:bio_medica/view/auth/login_view/login_view.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
+import 'package:bio_medica/view/home_Screen/home_screen.dart';
+import 'package:bio_medica/view/profile/privacy_policy.dart';
+import 'package:bio_medica/view/profile/subscription_screen.dart';
+import 'package:bio_medica/view/profile/technical_support_chat_screen.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,7 +18,7 @@ class AppDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // GlobalKey<NavigatorState> navigate = GlobalKey<NavigatorState>();
+     GlobalKey<NavigatorState> navigate = GlobalKey<NavigatorState>();
     return SafeArea(
       child: Drawer(
           backgroundColor: drawerBg,
@@ -62,9 +67,9 @@ class AppDrawer extends StatelessWidget {
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                   onTap: () {
-                    // Define what happens when tapped
+               Navigator.pop(context);
                     print('Home tapped');
-                    // You can navigate to another screen or execute any function
+
                   },
                 ),
                 CustomHomeItem(
@@ -75,8 +80,8 @@ class AppDrawer extends StatelessWidget {
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                   onTap: () {
-                    // Define what happens when tapped
-                    print('Home tapped');
+                    Navigator.pop(context);
+                    print('wish tapped');
                     // You can navigate to another screen or execute any function
                   },
                 ),
@@ -88,8 +93,8 @@ class AppDrawer extends StatelessWidget {
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                   onTap: () {
-                    // Define what happens when tapped
-                    print('Home tapped');
+                 Get.to(()=> SubscriptionScreen());
+                    print('Subscriptions tapped');
                     // You can navigate to another screen or execute any function
                   },
                 ),
@@ -114,8 +119,8 @@ class AppDrawer extends StatelessWidget {
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                   onTap: () {
-                    // Define what happens when tapped
-                    print('Home tapped');
+                    Get.to(()=> TechnicalSupportChatScreen());
+                    print('Online tapped');
                     // You can navigate to another screen or execute any function
                   },
                 ),
@@ -127,7 +132,7 @@ class AppDrawer extends StatelessWidget {
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                   onTap: () {
-                    // Define what happens when tapped
+                    Get.to(()=> PrivacyPolicy());
                     print('Home tapped');
                     // You can navigate to another screen or execute any function
                   },
@@ -135,24 +140,28 @@ class AppDrawer extends StatelessWidget {
                 SizedBox(
                   height: 50.h,
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 29.w),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                          height: 51.h,
-                          width: 41.w,
-                          child: Image.asset(AppImages.logout)),
-                      SizedBox(
-                        width: 15.w,
-                      ),
-                      CustomText(
-                        text: 'Logout',
-                        textColor: whiteColor,
-                        fontWeight: FontWeight.w700,
-                        fontsize: 24.sp,
-                      )
-                    ],
+                GestureDetector(
+                  onTap: (){    Get.to(()=>LoginView());},
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 29.w),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                            height: 51.h,
+                            width: 41.w,
+                            child: Image.asset(AppImages.logout)),
+                        SizedBox(
+                          width: 15.w,
+                        ),
+                        CustomText(
+                          text: 'Logout',
+                          textColor: whiteColor,
+                          fontWeight: FontWeight.w700,
+                          fontsize: 24.sp,
+
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(

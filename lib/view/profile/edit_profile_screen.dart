@@ -165,7 +165,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 330.w,
+      width: 311.w,
       height: 43.75.h,
       child: TextField(
         obscureText: widget.obscureText ? _obscureText : false,

@@ -107,7 +107,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                   _buildUserMessage("That's good to know."),
                   // User Message
                   _buildUserMessage(
-                      "Thank you so much for your help! I appreciate it."),
+                      "Thank you so much for your help! "),
                   // Support Message
                   _buildSupportMessage(
                     "You’re very welcome!\n\nIf you have any more questions in the future or need assistance with anything else, feel free to reach out.",

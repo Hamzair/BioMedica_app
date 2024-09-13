@@ -1,27 +1,37 @@
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/widget/custom_search.dart';
 import 'package:bio_medica/widget/custom_text.dart';
+import 'package:bio_medica/widget/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'course_details.dart';
 
 class CoursesScreen extends StatelessWidget {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const AppDrawer(),
+      key: _scaffoldKey,
       backgroundColor: primaryColor,
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(192, 208, 221, 1),
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Container(
-              decoration: BoxDecoration(
-                  color: Color(0xFF001A2E),
-                  borderRadius: BorderRadius.circular(50)),
-              child: Icon(
-                Icons.menu,
-                color: buttonColor2,
-              )),
+          child: GestureDetector(
+            onTap: () {
+              // Open the drawer using the scaffold key
+              _scaffoldKey.currentState?.openDrawer();
+            },
+            child: Container(
+                decoration: BoxDecoration(
+                    color: Color(0xFF001A2E),
+                    borderRadius: BorderRadius.circular(50)),
+                child: Icon(
+                  Icons.menu,
+                  color: buttonColor2,
+                )),
+          ),
         ),
         title: CustomText(
           text: 'Courses',

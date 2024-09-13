@@ -66,11 +66,13 @@ class _LoginViewState extends State<LoginView> {
                   readOnly: false,
                   // hintTextSize: 11.sp,
                   hintColor: Color(0xff134064),
+               //   prefixIconSize: 20.sp, // Adjust the size as needed
                 ),
               ),
               SizedBox(
                 height: 26.25.h,
               ),
+
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25.w),
                 child: CustomTextFiled(
@@ -83,6 +85,7 @@ class _LoginViewState extends State<LoginView> {
                     return null;
                   },
                   prefixIcon: AppImages.password,
+                //  prefixIconSize: 10.sp,
                   // isBorder: true,
                   isPassword: true,
                   isObscure: isChecked,
@@ -113,7 +116,7 @@ class _LoginViewState extends State<LoginView> {
                         value: rememberPass,
                         onChanged: (bool? value) {
                           setState(
-                            () {
+                                () {
                               rememberPass = value!;
                             },
                           );
