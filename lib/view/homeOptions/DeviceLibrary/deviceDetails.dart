@@ -12,9 +12,18 @@ class DeviceDetails extends StatefulWidget {
 
 class _DeviceDetailsState extends State<DeviceDetails> {
   int _selectedIndex = 0;
+  String _selectedImage = ''; // To store the selected image path
 
   // List of tabs
   List<String> tabs = ['Overview', 'Operations', 'Importance', 'Features'];
+
+  // List of images
+  List<String> images = [
+    'assets/images/n1.png',
+    'assets/images/n2.png',
+    'assets/images/n3.png',
+    'assets/images/n2.png',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -79,14 +88,18 @@ class _DeviceDetailsState extends State<DeviceDetails> {
               child: Container(
                 width: 341.w,
                 decoration: BoxDecoration(
+
                     color: container, borderRadius: BorderRadius.circular(12)),
                 child: Column(
                   children: [
+                    // Main Image
                     Container(
-                      height: 300,
+                      height: 303.h,
                       padding: EdgeInsets.all(8),
-                      child: ModelViewer(
-                        backgroundColor: Color.fromARGB(0xFF, 0xEE, 0xEE, 0xEE),
+                      child: _selectedImage.isEmpty
+                          ? ModelViewer(
+                        backgroundColor:
+                        Color.fromARGB(0xFF, 0xEE, 0xEE, 0xEE),
                         src:
                         'https://modelviewer.dev/shared-assets/models/Astronaut.glb',
                         alt: 'A 3D model of an astronaut',
@@ -95,16 +108,17 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                         iosSrc:
                         'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
                         disableZoom: true,
-                      ),
+                      )
+                          : Image.asset(_selectedImage,
+                        fit: BoxFit.cover,), // Display the selected image
                     ),
+
+                    // Image Row
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        buildImageItem('assets/images/n1.png'),
-                        buildImageItem('assets/images/n2.png'),
-                        buildImageItem('assets/images/n3.png'),
-                        buildImageItem('assets/images/n2.png'),
-                      ],
+                      children: images.map((imagePath) {
+                        return buildImageItem(imagePath);
+                      }).toList(),
                     ),
                   ],
                 ),
@@ -350,23 +364,27 @@ class _DeviceDetailsState extends State<DeviceDetails> {
     );
   }
 
+// Method to build an image item
   Widget buildImageItem(String imagePath) {
     return GestureDetector(
       onTap: () {
-        // Handle image click if needed
+        setState(() {
+          _selectedImage = imagePath; // Update the selected image path
+        });
       },
-      child: Container(
-        height: 60,
-        width: 60,
-        padding: EdgeInsets.all(5),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            color: Colors.white,
-            width: 1,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 14.0),
+        child: Container(
+          height: 50.h,
+          width: 70.w,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
-        child: Image.asset(imagePath),
       ),
     );
   }

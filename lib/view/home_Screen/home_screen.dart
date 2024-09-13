@@ -2,6 +2,7 @@ import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceLibrary.dart';
+import 'package:bio_medica/view/home_Screen/article_detail.dart';
 import 'package:bio_medica/widget/custom_search.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:bio_medica/widget/drawer.dart';
@@ -231,11 +232,17 @@ class HomeScreen extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                           fontsize: 17.sp,
                         ),
-                        CustomText(
-                          text: 'See more',
-                          textColor: buttonColor2,
-                          fontWeight: FontWeight.w600,
-                          fontsize: 15.sp,
+                        GestureDetector(
+
+                          onTap: (){
+                            Get.to(()=>ArticleDetail());
+                          },
+                          child: CustomText(
+                            text: 'See more',
+                            textColor: buttonColor2,
+                            fontWeight: FontWeight.w600,
+                            fontsize: 15.sp,
+                          ),
                         ),
                       ],
                     ),
