@@ -6,8 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnBoardingTwo extends StatelessWidget {
-  const OnBoardingTwo({super.key});
+class OnBoardingFive extends StatelessWidget {
+  const OnBoardingFive({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +20,15 @@ class OnBoardingTwo extends StatelessWidget {
           SizedBox(
             height: 30.h,
           ),
-          ///  Text Interactive Learning Courses & Quizzes.
+          ///  Incredible Keyword Search Engine.
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5.w),
+            padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Interactive Learning Courses & Quizzes',
+                    text: 'Monthly Updates and New Courses',
                     style: GoogleFonts.jost(
                       fontSize: 28.sp,
                       color: primaryColor,
@@ -47,24 +47,22 @@ class OnBoardingTwo extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: 10.h,
-          ),
-          /// Text long
+          /// Long Text
           Padding(
             padding:  EdgeInsets.symmetric(horizontal: 5.w),
 
             child: CustomText(
                 textAlign: TextAlign.center,
                 text:
-                'Thorough, text-based learning modules that dive into critical areas of biomedical engineering, breaking down complex topics into readable, easy-to-understand sections, coupled with a variety of interactive quizez to test your knowledge and skills gained in a certain area.',
+                "Stay ahead with fresh content! Every month, we bring you new course releases, updates, and cutting-edge information. Our commitment is to continuously expand and refine the app, keeping you up to date with the latest advancements in the field of biomedical engineering and the MedTech industry as a whole. You'll never stop learning!",
                 fontsize: 14.sp,
                 textColor: textColor,
                 fontWeight: FontWeight.w500),
           ),
           SizedBox(
-            height: 13.h,
+            height: 4.h,
           ),
+          /// Background Blue Circle Image & Center Image
           Expanded(
             child: Container(
               width: double.infinity,
@@ -75,17 +73,17 @@ class OnBoardingTwo extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 67.h,
+                    height: 89.h,
                   ),
                   SizedBox(
-                      height: 274.h,
-                      width: 309.w,
+                      height: 267.h,
+                      width: 222.w,
                       child: Image.asset(
-                        "assets/images/onboarding_screen_two_image.png",
+                        "assets/images/onboarding_screen_five_image.png",
                         fit: BoxFit.contain,
                       )),
                   SizedBox(
-                    height: 50.h,
+                    height: 33.h,
                   ),
 
                 ],

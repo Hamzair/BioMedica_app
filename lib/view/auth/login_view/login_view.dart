@@ -36,7 +36,7 @@ class _LoginViewState extends State<LoginView> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: 80.h,
+                height: 70.h,
               ),
               Center(
                 child: SizedBox(
@@ -46,7 +46,7 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ),
               SizedBox(
-                height: 57.h,
+                height: 57.65.h,
               ),
               CustomText(
                 text: 'Login',
@@ -100,8 +100,9 @@ class _LoginViewState extends State<LoginView> {
                   afterPasswordIcon: Icons.visibility,
                 ),
               ),
+              SizedBox(height: 6.25.h),
               Padding(
-                padding: EdgeInsets.only(left: 10.w, right: 25.w),
+                padding: EdgeInsets.only(left: 15.w, right: 25.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

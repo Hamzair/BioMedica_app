@@ -23,17 +23,17 @@ class ForgetPasswordBackWidget extends StatelessWidget {
                 Image.asset(
                   color: buttonColor2,
                   AppImages.bigArrow,
-                  scale: 1.2,
+                  scale: 2,
                 ),
                 Image.asset(
                   color: buttonColor2,
                   AppImages.bigArrow,
-                  scale: 1.9,
+                  scale: 3,
                 ),
                 CustomText(
                   text: "  Back",
                   textColor: buttonColor2,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w600,
                   fontsize: 20.sp,
                 )
               ],

@@ -71,178 +71,174 @@ class SubscriptionScreen extends StatelessWidget {
                 SizedBox(height: 46.h),
                 /// Text Please choose the plan that best suits your needs.
                 SizedBox(
+              width: 300.w,
                   height: 76.h,
-                  width: 300.w,
-                  child: CustomText(
+                  child: Center(
+                    child: CustomText(
                       text: 'Please choose the plan that best suits your needs.',
                       textColor: whiteColor,
                       fontWeight: FontWeight.w700,
-                    fontsize: 24.sp,
+                      fontsize: 24.sp,
+                      textAlign: TextAlign.center, // This aligns the text horizontally in the center
+                    ),
                   ),
                 ),
-            SizedBox(height: 22.h),
+
+                SizedBox(height: 22.h),
             Row(
               children: [
                 /// Free Trial Container
-                GestureDetector(
-                  onTap: (){
-
-                  },
-                  child: Container(
-                    width: 134.w, // Set the width of the container
-                    height: 139.h, // Set the height of the container
-                    decoration: BoxDecoration(
-                      color: Colors.white, // Background color of the container
-                      border: Border.all(
-                        color: Color.fromRGBO(1, 203, 196, 0.53), // Border color
-                        width: 3, // Border width
-                      ),
-                      borderRadius: BorderRadius.circular(7.51.r), // Border radius
+                Container(
+                  width: 134.w, // Set the width of the container
+                  height: 139.h, // Set the height of the container
+                  decoration: BoxDecoration(
+                    color: Colors.white, // Background color of the container
+                    border: Border.all(
+                      color: Color.fromRGBO(1, 203, 196, 0.53), // Border color
+                      width: 3, // Border width
                     ),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 8.h),
-                        /// Text Free Trial
-                        CustomText(
-                          text: 'Free Trial',
+                    borderRadius: BorderRadius.circular(7.51.r), // Border radius
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 8.h),
+                      /// Text Free Trial
+                      CustomText(
+                        text: 'Free Trial',
+                        textColor: Color.fromRGBO(44, 54, 88, 1),
+                        fontWeight: FontWeight.w700,
+                        fontsize: 16.sp,
+                      ),
+                      SizedBox(height: 3.h),
+                      /// Text 1 Week
+                      CustomText(
+                        text: '1 Week',
+                        textColor: Color.fromRGBO(44, 54, 88, 1),
+                        fontWeight: FontWeight.w600,
+                        fontsize: 12.sp,
+                      ),
+                      SizedBox(height: 6.h),
+                      /// Text Access the $ free
+                      SizedBox(
+                        height: 32.h,
+                        width: 112.w,
+                        child: CustomText(
+                          text: 'Access the 4 free courses',
                           textColor: Color.fromRGBO(44, 54, 88, 1),
-                          fontWeight: FontWeight.w700,
-                          fontsize: 16.sp,
+                          fontWeight: FontWeight.w500,
+                          fontsize: 10.sp,
+                          textAlign: TextAlign.center,
                         ),
-                        SizedBox(height: 3.h),
-                        /// Text 1 Week
-                        CustomText(
-                          text: '1 Week',
-                          textColor: Color.fromRGBO(44, 54, 88, 1),
-                          fontWeight: FontWeight.w600,
-                          fontsize: 12.sp,
-                        ),
-                        SizedBox(height: 6.h),
-                        /// Text Access the $ free
-                        SizedBox(
-                          height: 32.h,
-                          width: 112.w,
-                          child: CustomText(
-                            text: 'Access the 4 free courses',
-                            textColor: Color.fromRGBO(44, 54, 88, 1),
-                            fontWeight: FontWeight.w500,
-                            fontsize: 11.sp,
-                          ),
-                        ),
-                        SizedBox(height: 10.h),
-                        /// Elevated Button Free
-                        SizedBox(
-                            height: 20.h,
-                            width: 106.w,
-                            child: ElevatedButton(onPressed: (){},
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: greenColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25.03.r), // Set the border radius
-                                  ),
-                              ),
-                                child: CustomText(
-                                    text: 'Free',
-                                    textColor: whiteColor,
-                                    fontWeight: FontWeight.w700,
-                                  fontsize: 7.51.sp,
-
+                      ),
+                      SizedBox(height: 10.h),
+                      /// Elevated Button Free
+                      SizedBox(
+                          height: 20.h,
+                          width: 106.w,
+                          child: ElevatedButton(onPressed: (){},
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: greenColor,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(25.03.r), // Set the border radius
                                 ),
                             ),
-                        ),
-                      ],
-                    ),
+                              child: CustomText(
+                                  text: 'Free',
+                                  textColor: whiteColor,
+                                  fontWeight: FontWeight.w700,
+                                fontsize: 7.51.sp,
+
+                              ),
+                          ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(width: 21.w),
                 /// Premium Container
-                GestureDetector(
-                  onTap: (){
-
-                  },
-                  child: Container(
-                    width: 134.w, // Set the width of the container
-                    height: 139.h, // Set the height of the container
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(12, 192, 223, 1), // Background color of the container
-                      border: Border.all(
-                        color: Color.fromRGBO(151, 142, 240, 0.26), // Border color
-                        width: 3, // Border width
-                      ),
-                      borderRadius: BorderRadius.circular(7.51.r), // Border radius
+                Container(
+                  width: 134.w, // Set the width of the container
+                  height: 139.h, // Set the height of the container
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(12, 192, 223, 1), // Background color of the container
+                    border: Border.all(
+                      color: Color.fromRGBO(151, 142, 240, 0.26), // Border color
+                      width: 3, // Border width
                     ),
-                    child:Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                      child: Column(
-                        children: [
-                          SizedBox(height: 6.h),
-                          /// Text Premium
-                          Row(
-                            children: [
-                              CustomText(
-                                text: 'Premium',
-                                textColor: whiteColor,
-                                fontWeight: FontWeight.w700,
-                                fontsize: 20.sp,
-                              ),
-                              SizedBox(
-                                height:15.02.h,
-                                  width:15.02.w,
-                                  child: Image.asset('assets/images/crown.png')),
-                            ],
-                          ),
-                          SizedBox(height: 3.h),
-                          /// Text $ 14.99/Month
-                          Row(
-                            children: [
-                              CustomText(
-                                text: '\$ 14.99',
-                                textColor: Color.fromRGBO(0, 28, 49, 1),
-                                fontWeight: FontWeight.w600,
-                                fontsize: 16.sp,
-                              ),
-                              CustomText(
-                                text: '/Month',
-                                textColor: whiteColor,
-                                fontWeight: FontWeight.w500,
-                                fontsize: 10.sp,
-                              ),
-                            ],
-                          ),
-                          /// Text Access to unlimited premium features
-                          SizedBox(
-                            height: 32.h,
-                            width: 112.w,
-                            child: CustomText(
-                              text: 'Access to unlimited premium features.',
+                    borderRadius: BorderRadius.circular(7.51.r), // Border radius
+                  ),
+                  child:Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 2.h),
+                        /// Text Premium
+                        Row(
+                          children: [
+                            CustomText(
+                              text: 'Premium',
+                              textColor: whiteColor,
+                              fontWeight: FontWeight.w700,
+                              fontsize: 20.sp,
+                            ),
+                            SizedBox(
+                              height:15.02.h,
+                                width:15.02.w,
+                                child: Image.asset('assets/images/crown.png')),
+                          ],
+                        ),
+                        SizedBox(height: 2.h),
+                        /// Text $ 14.99/Month
+                        Row(
+                          children: [
+                            CustomText(
+                              text: '\$ 14.99',
+                              textColor: Color.fromRGBO(0, 28, 49, 1),
+                              fontWeight: FontWeight.w600,
+                              fontsize: 16.sp,
+                            ),
+                            CustomText(
+                              text: '/Month',
                               textColor: whiteColor,
                               fontWeight: FontWeight.w500,
                               fontsize: 10.sp,
                             ),
+                          ],
+                        ),
+                        /// Text Access to unlimited premium features
+                        SizedBox(
+                          height: 34.h,
+                          width: 112.w,
+                          child: CustomText(
+                            text: 'Access to unlimited premium features.',
+                            textColor: whiteColor,
+                            fontWeight: FontWeight.w500,
+                            fontsize: 10.sp,
+                            textAlign: TextAlign.center,
                           ),
-                          SizedBox(height: 5.h),
-                          /// Elevated Button Upgrade
-                          SizedBox(
-                            height: 20.h,
-                            width: 106.w,
-                            child: ElevatedButton(onPressed: (){},
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: buttonColor2,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25.03.r), // Set the border radius
-                                ),
-                              ),
-                              child: CustomText(
-                                text: 'UPGRADE',
-                                textColor: whiteColor,
-                                fontWeight: FontWeight.w700,
-                                fontsize: 7.51.sp,
-
+                        ),
+                        SizedBox(height: 8.h),
+                        /// Elevated Button Upgrade
+                        SizedBox(
+                          height: 20.h,
+                          width: 106.w,
+                          child: ElevatedButton(onPressed: (){},
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: buttonColor2,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25.03.r), // Set the border radius
                               ),
                             ),
+                            child: CustomText(
+                              text: 'UPGRADE',
+                              textColor: whiteColor,
+                              fontWeight: FontWeight.w700,
+                              fontsize: 7.51.sp,
+
+                            ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -254,7 +250,6 @@ class SubscriptionScreen extends StatelessWidget {
                   height: 66.h,
                   width: 307.w,
                   child: RichText(
-                    textAlign: TextAlign.center,
                     text: TextSpan(
                       text: 'By continuing the purchase, you acknowledge that you have read our ',
                       style: TextStyle(color: Colors.white, fontSize: 14.sp, fontWeight: FontWeight.w600), // Default style for white text
@@ -263,7 +258,7 @@ class SubscriptionScreen extends StatelessWidget {
                           text: 'Terms & Condition',
                           style: TextStyle(
                             color: greenColor, // Green color for Terms & Condition
-                            fontWeight: FontWeight.bold, // Optional: bold text
+                            fontWeight: FontWeight.w600, // Optional: bold text
                           ),
                         ),
                         TextSpan(
@@ -274,7 +269,7 @@ class SubscriptionScreen extends StatelessWidget {
                           text: 'Privacy Policy.',
                           style: TextStyle(
                             color: greenColor, // Green color for Privacy Policy
-                            fontWeight: FontWeight.bold, // Optional: bold text
+                            fontWeight: FontWeight.w600, // Optional: bold text
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
@@ -285,7 +280,7 @@ class SubscriptionScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 13.9.h),
+                SizedBox(height: 13.89.h),
 
                 /// Free Trial Users Container
                 Container(
@@ -319,7 +314,7 @@ class SubscriptionScreen extends StatelessWidget {
                               textColor: whiteColor,
                               fontWeight: FontWeight.w600,
                               fontsize: 11.57.sp,
-
+                              textAlign: TextAlign.center,
                             ),
 
                           ],

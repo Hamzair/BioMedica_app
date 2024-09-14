@@ -1,5 +1,7 @@
 import 'package:bio_medica/view/auth/login_view/login_view.dart';
 import 'package:bio_medica/view/const/color.dart';
+import 'package:bio_medica/view/on_boarding/on_boarding_five.dart';
+import 'package:bio_medica/view/on_boarding/on_boarding_four.dart';
 import 'package:bio_medica/view/on_boarding/on_boarding_one.dart';
 import 'package:bio_medica/view/on_boarding/on_boarding_three.dart';
 import 'package:bio_medica/view/on_boarding/on_boarding_two.dart';
@@ -24,13 +26,13 @@ class _MainOnBoardingViewState extends State<MainOnBoardingView> {
     print(pageController);
     print(currentpage);
     // Check if there is a next page
-    if (currentpage < 2) {
+    if (currentpage < 4) {
       // Assuming there are three pages (0, 1, 2)
       pageController.nextPage(
         duration: const Duration(seconds: 1),
         curve: Curves.ease,
       );
-    } else if (currentpage == 2) {
+    } else if (currentpage == 4) {
       // CustomRoute.navigateTo(context, const LoginView());
       Get.offAll(LoginView());
     }
@@ -45,7 +47,7 @@ class _MainOnBoardingViewState extends State<MainOnBoardingView> {
 
   @override
   Widget build(BuildContext context) {
-    double progress = (currentpage + 1) / 3;
+    double progress = (currentpage + 1) / 5;
     return Scaffold(
         backgroundColor: secondaryColor,
         body: SafeArea(
@@ -53,7 +55,7 @@ class _MainOnBoardingViewState extends State<MainOnBoardingView> {
             children: [
               GestureDetector(
                 onHorizontalDragEnd: (details) {
-                  if (currentpage < 2) {
+                  if (currentpage < 4) {
                     // Assuming there are three pages (0, 1, 2)
                     pageController.nextPage(
                       duration: const Duration(milliseconds: 300),
@@ -73,6 +75,8 @@ class _MainOnBoardingViewState extends State<MainOnBoardingView> {
                     OnBoardingOne(),
                     OnBoardingTwo(),
                     OnBoardingThree(),
+                    OnBoardingFour(),
+                    OnBoardingFive(),
                   ],
                 ),
               ),
@@ -92,7 +96,7 @@ class _MainOnBoardingViewState extends State<MainOnBoardingView> {
                               dotColor: secondaryColor,
                             ),
                             controller: pageController,
-                            count: 3),
+                            count: 5),
                         GestureDetector(
                           onTap: () {
                             _moveToNextPage();

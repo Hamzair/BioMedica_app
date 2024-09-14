@@ -50,10 +50,10 @@ class _ForgetPasswordEmailPhoneViewState
               ),
               const ForgetPasswordBackWidget(),
               SizedBox(
-                height: 25.h,
+                height: 42.h,
               ),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 20.sp),
+                margin: EdgeInsets.symmetric(horizontal: 20.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -147,14 +147,14 @@ class _ForgetPasswordEmailPhoneViewState
                       ),
                     ),
                     SizedBox(
-                      height: 10.h,
+                      height: 8.h,
                     ),
                     Obx(
                       () => CustomText(
                         text: selectedTypeController.selectedType.value ==
                                 'email'
                             ? "Please enter a email address to request\na password reset."
-                            : "Please enter a phone number to Sign In.",
+                            : "Please enter a phone number to request a password reset.",
                         fontsize: 16.sp,
                         maxLines: 2,
                         fontWeight: FontWeight.w500,
@@ -204,7 +204,7 @@ class _ForgetPasswordEmailPhoneViewState
                             suffixIcon: Icons.cancel,
                           ),
                     SizedBox(
-                      height: 30.h,
+                      height: 24.h,
                     ),
                     CustomButton(
                         height: 51.h,
@@ -220,7 +220,7 @@ class _ForgetPasswordEmailPhoneViewState
               ),
               // const Spacer(),
               SizedBox(
-                height: 30.h,
+                height: 260.25.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

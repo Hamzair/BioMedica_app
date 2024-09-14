@@ -37,16 +37,14 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
             height: 10.h,
           ),
           const ForgetPasswordBackWidget(),
-          SizedBox(
-            height: 25.h,
-          ),
+          SizedBox(height:25.h),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 25.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomText(
-                  text: "Forgot Password",
+                  text: "Forgot password?",
                   fontsize: 24.sp,
                   textColor: primaryColor,
                   fontWeight: FontWeight.w600,
@@ -61,7 +59,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   fontWeight: FontWeight.w500,
                 ),
                 SizedBox(
-                  height: 20.h,
+                  height: 25.h,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -86,57 +84,60 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                             : Colors.transparent,
                         //Color(0xffF9FAFB),
 
-                        borderRadius: BorderRadius.circular(12)),
+                        borderRadius: BorderRadius.circular(11.38.r)),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Row(
-                          children: [
-                            Container(
-                                height: 38.h,
-                                width: 38.w,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(9)),
-                                child: Image.asset(AppImages.email,
-                                    color: tappedContainerIndex == 1
-                                        ? primaryColor
-                                        : const Color(0xff9CA3AF),
-                                    scale: 2.2)),
-                            SizedBox(
-                              width: 4.w,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(
-                                  text: "Your email",
-                                  fontsize: 13.27.sp,
-                                  textColor: const Color(0xff111827),
-                                  fontWeight: FontWeight.w600,
-                                ),
-                                CustomText(
-                                  text: "Enter your email",
-                                  fontsize: 11.38.sp,
-                                  textColor: const Color(0xff6B7280),
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ],
-                            ),
-                            const Spacer(),
-                            const Icon(
-                              Icons.arrow_forward_ios_outlined,
-                              size: 18,
-                              color: Color(0xff6B7280),
-                            )
-                          ],
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 15.7.w),
+                          child: Row(
+                            children: [
+                              Container(
+                                  height: 38.h,
+                                  width: 38.w,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(9)),
+                                  child: Image.asset(AppImages.email,
+                                      color: tappedContainerIndex == 1
+                                          ? primaryColor
+                                          : const Color(0xff9CA3AF),
+                                      scale: 2.2)),
+                              SizedBox(
+                                width: 15.7.w,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  CustomText(
+                                    text: "Your email",
+                                    fontsize: 13.27.sp,
+                                    textColor: const Color(0xff111827),
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                  CustomText(
+                                    text: "Enter your email",
+                                    fontsize: 11.38.sp,
+                                    textColor: const Color(0xff6B7280),
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ],
+                              ),
+                              const Spacer(),
+                              const Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                size: 17,
+                                color: Color(0xff6B7280),
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 11.h,
+                  height: 11.38.h,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -162,49 +163,52 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Row(
-                          children: [
-                            Container(
-                                height: 38.h,
-                                width: 38.w,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(9)),
-                                child: Image.asset(
-                                  // fit: BoxFit.fill,
-                                  AppImages.phone,
-                                  color: tappedContainerIndex == 2
-                                      ? primaryColor
-                                      : const Color(0xff9CA3AF),
-                                  scale: 2.6,
-                                )),
-                            SizedBox(
-                              width: 4.w,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(
-                                  text: "Phone number",
-                                  fontsize: 13.27.sp,
-                                  textColor: const Color(0xff111827),
-                                  fontWeight: FontWeight.w600,
-                                ),
-                                CustomText(
-                                  text: "Enter your phone number",
-                                  fontsize: 11.38.sp,
-                                  textColor: const Color(0xff6B7280),
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ],
-                            ),
-                            const Spacer(),
-                            const Icon(
-                              Icons.arrow_forward_ios_outlined,
-                              size: 18,
-                              color: Color(0xff6B7280),
-                            )
-                          ],
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 15.7.w),
+                          child: Row(
+                            children: [
+                              Container(
+                                  height: 38.h,
+                                  width: 38.w,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(9)),
+                                  child: Image.asset(
+                                    // fit: BoxFit.fill,
+                                    AppImages.phone,
+                                    color: tappedContainerIndex == 2
+                                        ? primaryColor
+                                        : const Color(0xff9CA3AF),
+                                    scale: 2.6,
+                                  )),
+                              SizedBox(
+                                width: 15.17.w,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  CustomText(
+                                    text: "Phone number",
+                                    fontsize: 13.27.sp,
+                                    textColor: const Color(0xff111827),
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                  CustomText(
+                                    text: "Enter your phone number",
+                                    fontsize: 11.38.sp,
+                                    textColor: const Color(0xff6B7280),
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ],
+                              ),
+                              const Spacer(),
+                              const Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                size: 17,
+                                color: Color(0xff6B7280),
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     ),

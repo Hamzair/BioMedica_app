@@ -93,7 +93,7 @@ class _PhoneNumberAuthenticationViewState
                       fontWeight: FontWeight.w700,
                     ),
                     SizedBox(
-                      height: 60.h,
+                      height: 46.32.h,
                     ),
                     CustomButton(
                         height: 51.h,

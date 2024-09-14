@@ -3,6 +3,7 @@ import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingThree extends StatelessWidget {
@@ -19,18 +20,35 @@ class OnBoardingThree extends StatelessWidget {
           SizedBox(
             height: 30.h,
           ),
+          ///  Text Latest MedTech Innovations & Updates..
           Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 5.w),
-
-            child: CustomText(
-                textAlign: TextAlign.center,
-                text: 'Latest MedTech Innovations & Updates.',
-                fontsize: 28.sp,
-                textColor: primaryColor,
-                fontWeight: FontWeight.w700),
+            padding: EdgeInsets.symmetric(horizontal: 5.w),
+            child: RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'Latest MedTech Innovations & Updates',
+                    style: GoogleFonts.jost(
+                      fontSize: 28.sp,
+                      color: primaryColor,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  TextSpan(
+                    text: '.', // The full stop in orange color
+                    style: TextStyle(
+                      fontSize: 28.sp,
+                      color: buttonColor2, // Set the color to orange
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
           SizedBox(
-            height: 21.h,
+            height: 8.h,
           ),
           Padding(
             padding:  EdgeInsets.symmetric(horizontal: 5.w),
@@ -44,7 +62,7 @@ class OnBoardingThree extends StatelessWidget {
                 fontWeight: FontWeight.w500),
           ),
           SizedBox(
-            height: 22.h,
+            height: 15.h,
           ),
           Expanded(
             child: Container(
@@ -56,11 +74,11 @@ class OnBoardingThree extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 136.h,
+                    height: 93.h,
                   ),
                   SizedBox(
-                      height: 212.h,
-                      width: 243.w,
+                      height: 263.h,
+                      width: 266.w,
                       child: Image.asset(
                         AppImages.onboarding3,
                         fit: BoxFit.contain,

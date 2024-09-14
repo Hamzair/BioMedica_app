@@ -6,8 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnBoardingTwo extends StatelessWidget {
-  const OnBoardingTwo({super.key});
+class OnBoardingFour extends StatelessWidget {
+  const OnBoardingFour({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class OnBoardingTwo extends StatelessWidget {
           SizedBox(
             height: 30.h,
           ),
-          ///  Text Interactive Learning Courses & Quizzes.
+          ///  Incredible Keyword Search Engine.
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 5.w),
             child: RichText(
@@ -28,7 +28,7 @@ class OnBoardingTwo extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Interactive Learning Courses & Quizzes',
+                    text: 'Incredible Keyword Search Engine',
                     style: GoogleFonts.jost(
                       fontSize: 28.sp,
                       color: primaryColor,
@@ -47,24 +47,22 @@ class OnBoardingTwo extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: 10.h,
-          ),
-          /// Text long
+          /// Long Text
           Padding(
             padding:  EdgeInsets.symmetric(horizontal: 5.w),
 
             child: CustomText(
                 textAlign: TextAlign.center,
                 text:
-                'Thorough, text-based learning modules that dive into critical areas of biomedical engineering, breaking down complex topics into readable, easy-to-understand sections, coupled with a variety of interactive quizez to test your knowledge and skills gained in a certain area.',
+                "Find exactly what you need in seconds! Our powerful keyword search engine is designed to deliver instant results, so you can easily access all the content you're looking for. Whether it's devices, courses, or detailed explanations, type in a keyword, and everything you need will be right at your fingertips—fast, accurate, and effortless.",
                 fontsize: 14.sp,
                 textColor: textColor,
                 fontWeight: FontWeight.w500),
           ),
           SizedBox(
-            height: 13.h,
+            height: 4.h,
           ),
+          /// Background Blue Circle Image & Center Image
           Expanded(
             child: Container(
               width: double.infinity,
@@ -75,17 +73,17 @@ class OnBoardingTwo extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 67.h,
+                    height: 65.h,
                   ),
                   SizedBox(
-                      height: 274.h,
-                      width: 309.w,
+                      height: 286.h,
+                      width: 287.w,
                       child: Image.asset(
-                        "assets/images/onboarding_screen_two_image.png",
+                        "assets/images/onboarding_screen_four_image.png",
                         fit: BoxFit.contain,
                       )),
                   SizedBox(
-                    height: 50.h,
+                    height: 38.h,
                   ),
 
                 ],
