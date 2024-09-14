@@ -1,18 +1,21 @@
+import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/widget/custom_search.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:bio_medica/widget/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'course_details.dart';
 
 class CoursesScreen extends StatelessWidget {
+  final NavBarController navBarController=Get.put(NavBarController());
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const AppDrawer(),
-      key: _scaffoldKey,
+      // drawer: const AppDrawer(),
+      // key: _scaffoldKey,
       backgroundColor: primaryColor,
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(192, 208, 221, 1),
@@ -21,7 +24,7 @@ class CoursesScreen extends StatelessWidget {
           child: GestureDetector(
             onTap: () {
               // Open the drawer using the scaffold key
-              _scaffoldKey.currentState?.openDrawer();
+              navBarController.scaffoldKey.currentState?.openDrawer();
             },
             child: Container(
                 decoration: BoxDecoration(

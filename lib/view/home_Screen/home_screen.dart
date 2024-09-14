@@ -70,8 +70,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const AppDrawer(),
-      key: _scaffoldKey,
+      // drawer:  AppDrawer(),
+      // key: navBarController.scaffoldKey,
       backgroundColor: primaryColor,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100.h),
@@ -101,7 +101,7 @@ class HomeScreen extends StatelessWidget {
                       child:  GestureDetector(
                         onTap: () {
                           // Open the drawer using the scaffold key
-                          _scaffoldKey.currentState?.openDrawer();
+                          navBarController.scaffoldKey.currentState?.openDrawer();
                         },
                         child: Container(
                           decoration: BoxDecoration(
@@ -146,7 +146,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        // Wrap the entire body in SingleChildScrollView
+
         child: Column(
           children: [
             // Grid View for home options

@@ -7,6 +7,7 @@ import 'package:bio_medica/view/course/quiz.dart';
 import 'package:bio_medica/view/home_Screen/home_screen.dart';
 import 'package:bio_medica/view/profile/profile_screen.dart';
 import 'package:bio_medica/view/profile/subscription_screen.dart';
+import 'package:bio_medica/widget/drawer.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -62,7 +63,10 @@ class _AppNavBarState extends State<AppNavBar> {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       key: navBarController.scaffoldKey,
+      drawer: AppDrawer(),
+
       body: PageView(
         controller: _pageController,
         physics: const NeverScrollableScrollPhysics(),

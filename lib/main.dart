@@ -1,3 +1,4 @@
+import 'package:bio_medica/view/ProgressTracking/progress.dart';
 import 'package:bio_medica/view/course/courses.dart';
 import 'package:bio_medica/view/course/quiz.dart';
 import 'package:bio_medica/view/home_Screen/home_screen.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
               title: 'Bio Medica',
               debugShowCheckedModeBanner: false,
-              home: SplashScreen(),
+              home:SplashScreen(),
               // initialBinding: UserBinding(),
               );
         });

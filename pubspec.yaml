@@ -47,6 +47,7 @@ dependencies:
   curved_labeled_navigation_bar: ^2.0.2
   country_code_picker: ^3.0.0
   model_viewer_plus: ^1.9.0
+  fl_chart: ^0.69.0
 
 
 

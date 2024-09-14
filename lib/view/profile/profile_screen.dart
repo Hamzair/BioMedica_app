@@ -1,3 +1,4 @@
+import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/view/profile/edit_profile_screen.dart';
@@ -23,17 +24,18 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  final NavBarController navBarController=Get.put(NavBarController());
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const AppDrawer(),
-      key: _scaffoldKey,
+      // drawer: const AppDrawer(),
+      // key: _scaffoldKey,
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100.h), // Set the preferred height
+        preferredSize: Size.fromHeight(100.h),
         child: AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -60,7 +62,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: GestureDetector(
                             onTap: (){
                               // Open the drawer using the scaffold key
-                              _scaffoldKey.currentState?.openDrawer();
+                              navBarController.scaffoldKey.currentState?.openDrawer();
                             },
                             child: Image(
                                 image: AssetImage('assets/images/drawer.png')),
