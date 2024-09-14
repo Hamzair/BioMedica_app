@@ -9,13 +9,27 @@ import 'package:get/get.dart';
 import 'course_details.dart';
 
 class CoursesScreen extends StatelessWidget {
-  final NavBarController navBarController=Get.put(NavBarController());
+  final NavBarController navBarController = Get.put(NavBarController());
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  // Add a list of course images and names
+  final List<String> courseImages = [
+    'assets/images/z3.png',
+    'assets/images/z2.png',
+    'assets/images/z1.png',
+    'assets/images/z6.png'
+  ];
+
+  final List<String> courseNames = [
+    'UX Research in Digital Product Design: Master Class',
+    'The Full-Fledged Investment Banking Course 2023',
+    'Photoshop: Master the Blend Tool to Enhance Your Photos',
+    'End-to-End Web Design: Figma to Webflow Master'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // drawer: const AppDrawer(),
-      // key: _scaffoldKey,
       backgroundColor: primaryColor,
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(192, 208, 221, 1),
@@ -23,17 +37,18 @@ class CoursesScreen extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: GestureDetector(
             onTap: () {
-              // Open the drawer using the scaffold key
               navBarController.scaffoldKey.currentState?.openDrawer();
             },
             child: Container(
-                decoration: BoxDecoration(
-                    color: Color(0xFF001A2E),
-                    borderRadius: BorderRadius.circular(50)),
-                child: Icon(
-                  Icons.menu,
-                  color: buttonColor2,
-                )),
+              decoration: BoxDecoration(
+                color: Color(0xFF001A2E),
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: Icon(
+                Icons.menu,
+                color: buttonColor2,
+              ),
+            ),
           ),
         ),
         title: CustomText(
@@ -41,12 +56,11 @@ class CoursesScreen extends StatelessWidget {
           textColor: Color(0xFF001A2E),
           fontWeight: FontWeight.bold,
         ),
-        actions: [],
       ),
       body: Column(
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(20.r)),
             child: Container(
               height: 70.h,
               color: secondaryColor,
@@ -54,8 +68,8 @@ class CoursesScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: CustomSearch()
+                      padding: EdgeInsets.symmetric(horizontal: 8.0.w),
+                      child: CustomSearch(),
                     ),
                   ),
                   SizedBox(width: 5.w),
@@ -80,23 +94,20 @@ class CoursesScreen extends StatelessWidget {
                           Text(
                             "Filter",
                             style: TextStyle(color: Colors.white),
-                          )
+                          ),
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(
-                    width: 10.w,
-                  )
+                  SizedBox(width: 10.w),
                 ],
               ),
             ),
           ),
           SizedBox(height: 20.h),
-          // Course Grid
           Expanded(
             child: GridView.builder(
-              itemCount: 4, // Number of courses
+              itemCount: courseImages.length, // Adjust the count dynamically
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
@@ -104,7 +115,10 @@ class CoursesScreen extends StatelessWidget {
                 childAspectRatio: 0.8,
               ),
               itemBuilder: (context, index) {
-                return CourseCard();
+                return CourseCard(
+                  image: courseImages[index], // Pass image
+                  name: courseNames[index],   // Pass course name
+                );
               },
             ),
           ),
@@ -115,19 +129,26 @@ class CoursesScreen extends StatelessWidget {
 }
 
 class CourseCard extends StatelessWidget {
+  final String image;
+  final String name;
+
+  CourseCard({required this.image, required this.name});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CourseDetailScreen()));
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => CourseDetailScreen()),
+        );
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
           decoration: BoxDecoration(
             color: primaryColor.withOpacity(0.1),
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(9.r),
             boxShadow: [
               BoxShadow(
                 color: Colors.black26,
@@ -146,7 +167,7 @@ class CourseCard extends StatelessWidget {
                     topRight: Radius.circular(5.r),
                   ),
                   child: Image.asset(
-                    'assets/images/c1.png', // Your image path
+                    image, // Use the passed image
                     height: 120.h,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -158,13 +179,9 @@ class CourseCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Label at the top right
-
                     SizedBox(height: 8.h),
-                    // Course title
                     CustomText(
-                      text:
-                          'UX Research in Digital Product Design: Master Class',
+                      text: name,
                       fontsize: 11.sp,
                       fontWeight: FontWeight.bold,
                       textColor: Colors.white,

@@ -1,9 +1,12 @@
 import 'package:bio_medica/main.dart';
 import 'package:bio_medica/view/const/color.dart';
+import 'package:bio_medica/view/course/courses.dart';
 import 'package:bio_medica/view/course/quiz.dart';
+import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceLibrary.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class LessonScreen extends StatelessWidget {
   @override
@@ -190,8 +193,7 @@ class LessonScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => QuizPage()));
+               Navigator.pop(context);
                 },
                 child: Text(
                   'Continue',

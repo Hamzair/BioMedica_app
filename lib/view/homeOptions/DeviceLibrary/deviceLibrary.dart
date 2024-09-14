@@ -175,7 +175,7 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       decoration: BoxDecoration(
         color: container, // Tab background color
-        borderRadius: BorderRadius.circular(8), // Rounded corners
+        borderRadius: BorderRadius.circular(5.r), // Rounded corners
         border: Border.all(
           color: isSelected
               ? buttonColor2
@@ -215,23 +215,23 @@ class Neurology extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(8.r),
                     child: Image.asset(
-                      'assets/images/n1.png',
+                      'assets/images/def.png',
 
                       fit: BoxFit.cover, // Replace with your image path
-                      height: 100,
+                      height: 100.h,
                       width: double.infinity,
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  const CustomText(
+                   SizedBox(height: 10.h),
+                   CustomText(
                     text: 'Defibrillator',
-                    fontsize: 16,
+                    fontsize: 16.sp,
                     textColor: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
-                  const SizedBox(height: 5),
+                   SizedBox(height: 5.h),
                   CustomText(
                     text:
                         'life-saving device that delivers electric shocks to the heart....',
@@ -250,10 +250,10 @@ class Neurology extends StatelessWidget {
                             MaterialPageRoute(builder: (context) => DeviceDetails()));
                       },
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 5),
+                        padding: EdgeInsets.symmetric(vertical: 5.h),
                         backgroundColor: Colors.cyan,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(8.r),
                         ),
                       ),
                       child: CustomText(
@@ -278,22 +278,22 @@ class Neurology extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(8.r),
                     child: Image.asset(
-                      'assets/images/n2.png',
+                      'assets/images/pace.png',
                       fit: BoxFit.cover,
-                      height: 100,
+                      height: 100.h,
                       width: double.infinity,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                  CustomText(
                     text: 'Pacemaker',
                     fontsize: 16.sp,
                     textColor: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
-                  const SizedBox(height: 5),
+                 SizedBox(height: 5.h),
                   CustomText(
                     text: 'Regulates heartbeats in patients with arrhythmia',
                     textAlign: TextAlign.start,
@@ -311,10 +311,10 @@ class Neurology extends StatelessWidget {
                         //     MaterialPageRoute(builder: (context) => CourseContent()));
                       },
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 5),
+                        padding: EdgeInsets.symmetric(vertical: 5.h),
                         backgroundColor: Colors.cyan,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(8.r),
                         ),
                       ),
                       child: CustomText(
@@ -339,23 +339,23 @@ class Neurology extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(8.r),
                     child: Image.asset(
-                      'assets/images/n3.png',
+                      'assets/images/stheth.png',
 
                       fit: BoxFit.cover, // Replace with your image path
                       height: 100,
                       width: double.infinity,
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  const CustomText(
+                 SizedBox(height: 10.h),
+                  CustomText(
                     text: 'Stethoscope',
-                    fontsize: 16,
+                    fontsize: 16.sp,
                     textColor: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
-                  const SizedBox(height: 5),
+                 SizedBox(height: 5.h),
                   CustomText(
                     text:
                         'used to listen to heartbeats, lung sounds,',
@@ -374,10 +374,10 @@ class Neurology extends StatelessWidget {
                         //     MaterialPageRoute(builder: (context) => CourseContent()));
                       },
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 5),
+                        padding: EdgeInsets.symmetric(vertical: 5.h),
                         backgroundColor: Colors.cyan,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(8.r),
                         ),
                       ),
                       child: CustomText(

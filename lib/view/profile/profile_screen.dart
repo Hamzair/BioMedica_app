@@ -397,7 +397,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             height: 91.01.h,
                             child: Image(
                                 image: AssetImage(
-                                    'assets/images/my_courses_tab_image1.png')),
+                                    'assets/images/z2.png')),
                           ),
                           SizedBox(width: 9.62.w),
                           Padding(
@@ -596,9 +596,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           SizedBox(
                             width: 91.01.w,
                             height: 91.01.h,
-                            child: Image(
-                                image: AssetImage(
-                                    'assets/images/my_courses_tab_image1.png')),
+                            child:Image.asset(AppImages.laptop)
+                               
                           ),
                           SizedBox(width: 6.w),
                           Padding(

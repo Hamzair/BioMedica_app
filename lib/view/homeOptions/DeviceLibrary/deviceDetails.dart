@@ -3,6 +3,7 @@ import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
 
 class DeviceDetails extends StatefulWidget {
@@ -19,66 +20,87 @@ class _DeviceDetailsState extends State<DeviceDetails> {
 
   // List of images
   List<String> images = [
-    'assets/images/n1.png',
-    'assets/images/n2.png',
-    'assets/images/n3.png',
-    'assets/images/n2.png',
+    'assets/images/pace.png',
+    'assets/images/def.png',
+    'assets/images/stheth.png',
+    'assets/images/def.png',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(192, 208, 221, 1),
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-              decoration: BoxDecoration(
-                  color: Color(0xFF001A2E),
-                  borderRadius: BorderRadius.circular(50)),
-              child: GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Image.asset(
-                    AppImages.backArrow,
-                  ))),
-        ),
-        title: CustomText(
-          text: 'Pacemaker',
-          textColor: Color(0xFF001A2E),
-          fontWeight: FontWeight.bold,
-        ),
-        actions: [
-          Container(
-            height: 38.h,
-            decoration: BoxDecoration(
-                color: Darkcontainer, borderRadius: BorderRadius.circular(15)),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.quiz,
-                    color: Colors.yellow,
-                  ),
-                  SizedBox(
-                    width: 5.w,
-                  ),
-                  CustomText(
-                      text: 'Quiz me',
-                      textColor: Colors.white,
-                      fontWeight: FontWeight.w500),
-                ],
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100.h),
+        child: AppBar(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(13.r),
+                  bottomRight: Radius.circular(13.r))),
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+          flexibleSpace: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 30.h,
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        GestureDetector(
+                            onTap: (){
+                              Get.back();
+                            },
+                            child: Image.asset('assets/images/back_icon.png')),
+                        SizedBox(
+                          width: 7.w,
+                        ),
+                        CustomText(
+                          text: "Pacemaker",
+                          textColor: primaryColor,
+                          fontWeight: FontWeight.bold,
+                          fontsize: 22.sp,
+                        ),
+
+                      ],
+                    ),
+                    Container(
+                      height: 38.h,
+                      decoration: BoxDecoration(
+                          color: Darkcontainer, borderRadius: BorderRadius.circular(15)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.quiz,
+                              color: Colors.yellow,
+                            ),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            CustomText(
+                                text: 'Quiz me',
+                                textColor: Colors.white,
+                                fontWeight: FontWeight.w500),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+            ],
           ),
-          SizedBox(
-            width: 12.w,
-          ),
-        ],
-      ),
+          backgroundColor: secondaryColor,
+        ),),
+
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,7 +111,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                 width: 341.w,
                 decoration: BoxDecoration(
 
-                    color: container, borderRadius: BorderRadius.circular(12)),
+                    color: container, borderRadius: BorderRadius.circular(8.r)),
                 child: Column(
                   children: [
                     // Main Image
@@ -125,7 +147,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              padding:  EdgeInsets.symmetric(horizontal: 8.0.w),
               child: Container(
                 height: 37.92.h,
                 decoration: BoxDecoration(
@@ -222,7 +244,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
 
   Widget buildOverviewContent() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding:  EdgeInsets.symmetric(horizontal: 8.0.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -262,7 +284,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
 
   Widget buildOperationsContent() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding:  EdgeInsets.symmetric(horizontal: 8.0.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -302,7 +324,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
 
   Widget buildImportanceContent() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8),
+      padding: EdgeInsets.symmetric(horizontal: 8.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -342,8 +364,8 @@ class _DeviceDetailsState extends State<DeviceDetails> {
 
   Widget buildFeaturesContent() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8),
-      child: Column(
+      padding: EdgeInsets.symmetric(horizontal: 8.w),
+      child:Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomText(
@@ -352,15 +374,41 @@ class _DeviceDetailsState extends State<DeviceDetails> {
             fontWeight: FontWeight.w600,
             fontsize: 16.sp,
           ),
-          CustomText(
-            text:
-            '1. High sound quality for accurate diagnosis.\n2. Lightweight and portable design.\n3. Durable construction for long-lasting use.',
-            textColor: Colors.white,
-            fontWeight: FontWeight.w400,
-            fontsize: 12.sp,
+          SizedBox(height: 8), // Add some space between the title and the list
+          RichText(
+            text: TextSpan(
+              style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
+              children: [
+                TextSpan(
+                  text: '• ',
+                  style: TextStyle(color: Colors.orange),
+                ),
+                TextSpan(
+                  text: 'High sound quality for accurate diagnosis.\n',
+                  style: TextStyle(color: Colors.white),
+                ),
+                TextSpan(
+                  text: '• ',
+                  style: TextStyle(color: Colors.orange),
+                ),
+                TextSpan(
+                  text: 'Lightweight and portable design.\n',
+                  style: TextStyle(color: Colors.white),
+                ),
+                TextSpan(
+                  text: '• ',
+                  style: TextStyle(color: Colors.orange),
+                ),
+                TextSpan(
+                  text: 'Durable construction for long-lasting use.',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ],
+            ),
           ),
         ],
-      ),
+      )
+
     );
   }
 
@@ -369,11 +417,11 @@ class _DeviceDetailsState extends State<DeviceDetails> {
     return GestureDetector(
       onTap: () {
         setState(() {
-          _selectedImage = imagePath; // Update the selected image path
+          _selectedImage = imagePath;
         });
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 14.0),
+        padding:EdgeInsets.symmetric(vertical: 14.0.h),
         child: Container(
           height: 50.h,
           width: 70.w,

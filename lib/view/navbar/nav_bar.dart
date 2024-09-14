@@ -43,7 +43,6 @@ class _AppNavBarState extends State<AppNavBar> {
   List<Widget> bottomBarPages = [
      HomeScreen(),
      HomeScreen(),
-
     CoursesScreen(),
      QuizPage(),
      ProfileScreen()

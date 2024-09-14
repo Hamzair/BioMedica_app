@@ -148,16 +148,19 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
 
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // Grid View for home options
             Container(
-              height: 350.h, // Set fixed height for GridView
+              height: 400.h,
               child: GridView.builder(
+
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4, // 4 columns
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
                   childAspectRatio: 0.9,
+
                 ),
                 padding: EdgeInsets.all(10.r),
                 itemCount: gridItems.length,
@@ -180,10 +183,11 @@ class HomeScreen extends StatelessWidget {
                           width: 1.w,
                         ),
                         color: container,
-                        borderRadius: BorderRadius.circular(8.r),
+                        borderRadius: BorderRadius.circular(5.r),
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
+
                         children: [
                           Image.asset(
                             item['image'],
@@ -209,12 +213,12 @@ class HomeScreen extends StatelessWidget {
 
             Container(
               padding: EdgeInsets.all(10),
-              // height: 321.h,
+
               width: 348.w,
               margin: EdgeInsets.only(bottom: 150),
               decoration: BoxDecoration(
                 color: container,
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(13.r),
                 border: Border.all(color: Colors.black, width: 1),
               ),
               child: Padding(
@@ -235,7 +239,7 @@ class HomeScreen extends StatelessWidget {
                         GestureDetector(
 
                           onTap: (){
-                            Get.to(()=>ArticleDetail());
+
                           },
                           child: CustomText(
                             text: 'See more',
@@ -253,76 +257,84 @@ class HomeScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
-                          Container(
-                            padding: EdgeInsets.all( 16),
+                          GestureDetector(
+                            onTap:(){ Get.to(()=>ArticleDetail());},
+                            child: Container(
+                              padding: EdgeInsets.all( 16),
 
-                            width: 249.w,
-                            decoration: BoxDecoration(
-                              color: container,
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(color: Colors.black, width: 0.5),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 10.h,),
-                                CustomText(
-                                  text: 'Breakthrough in Wearable Cardiac Monitors',
-                                  textColor: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontsize: 14.sp,
-                                ),
-                                SizedBox(height: 10.h,),
-                                Image.asset(
-                                  width: 215.w,
-                                  fit: BoxFit.cover,
-                                    alignment: Alignment.topLeft, AppImages.laptop),
-                                SizedBox(height: 5.h,),
-                                CustomText(
-                                  text:
-                                      'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
-                                  textColor: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                  fontsize: 11.sp,
-                                ),
-                              ],
+                              width: 249.w,
+                              decoration: BoxDecoration(
+                                color: container,
+                                borderRadius: BorderRadius.circular(5.r),
+                                border: Border.all(color: Colors.black, width: 0.5),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 10.h,),
+                                  CustomText(
+                                    text: 'Breakthrough in Wearable Cardiac Monitors',
+                                    textColor: Colors.white,
+                                    fontWeight: FontWeight.w600,
+                                    fontsize: 14.sp,
+                                  ),
+                                  SizedBox(height: 10.h,),
+                                  Image.asset(
+                                    width: 215.w,
+                                    fit: BoxFit.cover,
+                                      alignment: Alignment.topLeft, AppImages.laptop),
+                                  SizedBox(height: 5.h,),
+                                  CustomText(
+                                    text:
+                                        'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
+                                    textColor: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontsize: 11.sp,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                           SizedBox(width: 10.w
                             ,),
-                          Container(
-                            padding: EdgeInsets.all( 16),
+                          GestureDetector(
+                            onTap: (){
+                              Get.to(()=>ArticleDetail());
+                            },
+                            child: Container(
+                              padding: EdgeInsets.all( 16),
 
-                            width: 249.w,
-                            decoration: BoxDecoration(
-                              color: container,
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(color: Colors.black, width: 0.5),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 10.h,),
-                                CustomText(
-                                  text: 'Breakthrough in Wearable Cardiac Monitors',
-                                  textColor: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontsize: 14.sp,
-                                ),
-                                SizedBox(height: 10.h,),
-                                Image.asset(
-                                    width: 215.w,
-                                    fit: BoxFit.cover,
-                                    alignment: Alignment.topLeft, AppImages.laptop),
-                                SizedBox(height: 5.h,),
-                                CustomText(
-                                  text:
-                                  'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
-                                  textColor: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                  fontsize: 11.sp,
-                                ),
-                              ],
+                              width: 249.w,
+                              decoration: BoxDecoration(
+                                color: container,
+                                borderRadius: BorderRadius.circular(12),
+                                border: Border.all(color: Colors.black, width: 0.5),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 10.h,),
+                                  CustomText(
+                                    text: 'Breakthrough in Wearable Cardiac Monitors',
+                                    textColor: Colors.white,
+                                    fontWeight: FontWeight.w600,
+                                    fontsize: 14.sp,
+                                  ),
+                                  SizedBox(height: 10.h,),
+                                  Image.asset(
+                                      width: 215.w,
+                                      fit: BoxFit.cover,
+                                      alignment: Alignment.topLeft, AppImages.laptop),
+                                  SizedBox(height: 5.h,),
+                                  CustomText(
+                                    text:
+                                    'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
+                                    textColor: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontsize: 11.sp,
+                                  ),
+                                ],
+                              ),
                             ),
                           )
                         ],

@@ -3,6 +3,7 @@ import 'package:bio_medica/view/course/chapters.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class CourseContent extends StatefulWidget {
   @override
@@ -25,7 +26,7 @@ class _CourseContentState extends State<CourseContent> {
                 borderRadius:
                     BorderRadius.vertical(bottom: Radius.circular(30)),
                 child: Image.asset(
-                  'assets/images/rectangle.png', // Replace with actual image
+                  'assets/images/rect.png', // Replace with actual image
                   height: 300.h,
                   width: double.infinity,
                   fit: BoxFit.cover,
@@ -240,16 +241,132 @@ class _CourseContentState extends State<CourseContent> {
                             borderRadius: BorderRadius.circular(10.r),
                             color: Color(0xFF001A2E).withOpacity(0.4),
                           ),
-                          child: ExpansionTile(
-                            title: CustomText(
-                              text: 'What is Design',
-                              fontWeight: FontWeight.w600,
-                              textColor: whiteColor,
-                              fontsize: 13.sp,
+                          child: Theme(
+                            data: Theme.of(context).copyWith(
+                              dividerColor: Colors.transparent,
                             ),
-                            collapsedIconColor: whiteColor,
+                            child: ExpansionTile(children: [
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Image.asset('assets/images/sbook.png',height: 17.h,),
+                                            SizedBox(width: 10.h,),
+                                            CustomText(text: 'Overview', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+
+
+                                          ],
+                                        ),
+                                        SizedBox(height: 10.h,),
+
+                                      Row(
+                                        children: [
+                                          Image.asset('assets/images/sbook.png',height: 17.h,),
+                                          SizedBox(width: 10.h,),
+                                          CustomText(text: 'Hypertension', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+                                        ],
+                                      ),
+                                      SizedBox(height: 10.h,),
+                                      Row(
+                                        children: [
+                                          Image.asset('assets/images/sbook.png',height: 17.h,),
+                                          SizedBox(width: 10.h,),
+                                          CustomText(text: 'Wrong Rules', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+
+
+                                        ],
+                                      ),
+                                      SizedBox(height: 10.h,),
+                                      Row(
+                                        children: [
+                                          Image.asset('assets/images/sbook.png',height: 17.h,),
+                                          SizedBox(width: 10.h,),
+                                          CustomText(text: 'Summary', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+
+
+                                        ],
+                                      ),
+                                      SizedBox(height: 10.h,),
+                                      Row(
+                                        children: [
+                                          Image.asset('assets/images/sbook.png',height: 17.h,),
+                                          SizedBox(width: 10.h,),
+                                          CustomText(text: 'Quiz', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+
+
+                                        ],
+                                      ),
+                                        SizedBox(height: 15.h)
+
+
+                                    ],),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                      Row(
+                                        children: [
+                                          Text('03:23',style: TextStyle(color: Colors.white,fontSize: 11.sp),
+                                         ),
+                                          SizedBox(width: 10.h,),
+                                          Image.asset('assets/images/check.png',height: 13.h,)
+                                        ],
+                                      ),
+                                        SizedBox(height: 10.h,),
+                                        Row(
+                                          children: [
+                                            Text('03:23',style: TextStyle(color: Colors.white,fontSize: 11.sp),
+                                            ),
+                                            SizedBox(width: 10.h,),
+                                            Image.asset('assets/images/check.png',height: 13.h,)
+                                          ],
+                                        ),
+                                        SizedBox(height: 10.h,),
+                                      Text('03:23',style: TextStyle(color: Colors.white,fontSize: 11.sp),),
+                                        SizedBox(height: 10.h,),
+                                      Text('03:23',style: TextStyle(color: Colors.white,fontSize: 11.sp),),
+                                        SizedBox(height: 10.h,),
+                                      CustomText(text: 'Start Quiz',textColor: buttonColor,fontWeight: FontWeight.w600,fontsize: 11.sp,),
+                                      SizedBox(height: 15.h
+                                        ,)
+                                      
+                                    ],)
+
+                                   
+                                    // SizedBox(height: 10.h,),
+                                    // Row(
+                                    //
+                                    //   children: [
+                                    //     Image.asset('assets/images/sbook.png',height: 17.h,),
+                                    //     SizedBox(width: 10.h,),
+                                    //     CustomText(text: 'Quiz', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+                                    //     Align(
+                                    //         alignment: Alignment.centerRight,
+                                    //         child: CustomText(text: 'Start Quiz', textColor: buttonColor, fontWeight: FontWeight.w600)),
+                                    //
+                                    //   ],
+                                    // )
+                                  ],
+                                ),
+                              )
+                            ],
+                              title: CustomText(
+                                text: 'What is Design',
+                                fontWeight: FontWeight.w600,
+                                textColor: whiteColor,
+                                fontsize: 13.sp,
+                              ),
+                              collapsedIconColor: whiteColor,
+                            ),
                           ),
-                        )
+                        ),
+                        SizedBox(height: 100,)
                       ],
                     ),
 
@@ -276,23 +393,38 @@ class _CourseContentState extends State<CourseContent> {
         ],
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => LessonScreen()));
-          },
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.symmetric(vertical: 15),
-            backgroundColor: Colors.cyan,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.r),
+        padding: const EdgeInsets.all(12.0),
+        child: Row(
+
+          children: [
+            Image.asset('assets/images/favIcon.png',height: 50.h,width: 50.w,),
+            SizedBox(width: 5.w,),
+            SizedBox(
+              width: 249.w,
+              //  height: 53.h,
+              child: ElevatedButton(
+
+                onPressed: () {
+                  Get.to(() => LessonScreen());
+                },
+                style: ElevatedButton.styleFrom(
+
+                  padding: EdgeInsets.symmetric(vertical: 13.h,horizontal: 8.w
+                  ),
+                  backgroundColor: Colors.cyan,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.r
+                    ),
+                  ),
+                ),
+                child: CustomText(
+                  text:     'Start Now',
+                  fontsize: 18.sp, textColor: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-          ),
-          child: Text(
-            'Start Now',
-            style: TextStyle(fontSize: 18.sp, color: Colors.white),
-          ),
+          ],
         ),
       ),
     );
