@@ -11,7 +11,7 @@ class CourseDetailScreen extends StatefulWidget {
 }
 
 class _CourseDetailScreenState extends State<CourseDetailScreen> {
-  int _selectedIndex = 0; // 0 for About, 1 for Lessons
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                 borderRadius:
                     BorderRadius.vertical(bottom: Radius.circular(30)),
                 child: Image.asset(
-                  'assets/images/rectangle.png', // Replace with actual image
+                  'assets/images/rect.png', // Replace with actual image
                   height: 300.h,
                   width: double.infinity,
                   fit: BoxFit.cover,
@@ -268,25 +268,39 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
         ],
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CourseContent()));
-          },
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.symmetric(vertical: 15),
-            backgroundColor: Colors.cyan,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.r
+        padding: const EdgeInsets.all(12.0),
+        child: Row(
+
+          children: [
+            Image.asset('assets/images/favIcon.png',height: 50.h,width: 50.w,),
+            SizedBox(width: 5.w,),
+            SizedBox(
+              width: 249.w,
+            //  height: 53.h,
+              child: ElevatedButton(
+
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => CourseContent()));
+                },
+                style: ElevatedButton.styleFrom(
+
+                  padding: EdgeInsets.symmetric(vertical: 13.h,horizontal: 8.w
+                  ),
+                  backgroundColor: Colors.cyan,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.r
+                    ),
+                  ),
+                ),
+                child: CustomText(
+              text:     'Start Now',
+                    fontsize: 18.sp, textColor: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          child: CustomText(
-        text:     'Start Now',
-              fontsize: 18.sp, textColor: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+          ],
         ),
       ),
     );

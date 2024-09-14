@@ -7,6 +7,7 @@ import 'package:bio_medica/view/profile/privacy_policy.dart';
 import 'package:bio_medica/view/profile/subscription_screen.dart';
 import 'package:bio_medica/view/profile/technical_support_chat_screen.dart';
 import 'package:bio_medica/widget/custom_text.dart';
+import 'package:bio_medica/widget/wishlist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -83,7 +84,7 @@ class AppDrawer extends StatelessWidget {
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w600,
                       onTap: () {
-                        Navigator.pop(context);
+                        Get.to(() => Wishlist());
                         print('wish tapped');
                         // You can navigate to another screen or execute any function
                       },

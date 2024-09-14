@@ -19,22 +19,22 @@ class AppImages {
   static const wishlist = 'assets/images/wishlist.png';
   static const drawer = 'assets/images/drawer.png';
   static const coursesIcon = 'assets/images/coursesIcon.png';
-  static const devicesIcon = 'assets/images/devicesIcon.png';
+  static const devicesIcon = 'assets/images/device.png';
   static const homeIcon = 'assets/images/homeIcon.png';
   static const search = 'assets/images/search.png';
   static const profileIcon = 'assets/images/profileIcon.png';
   static const tickIcon = 'assets/images/tickIcon.png';
-  static const DeviceLibrary = 'assets/images/DeviceLibrary.png';
-  static const BioMechanics = 'assets/images/Bio-Mechanics.png';
-  static const Therapeutic = 'assets/images/Group 1597882855.png';
-  static const ClinicalEngineering = 'assets/images/ClinicalEngineering.png';
-  static const HumanAnatomy = 'assets/images/HumanAnatomy.png';
-  static const HumanPhyscology = 'assets/images/HumanPhyco.png';
-  static const MedicalImaging = 'assets/images/Medicalimaging.png';
-  static const AdvancedDesign = 'assets/images/AdvancedDesign.png';
-  static const BioMaterials = 'assets/images/BioMaterials.png';
-  static const ProstheicDevice = 'assets/images/ProstheticDevice.png';
-  static const laptop = 'assets/images/laptop.png';
+  static const DeviceLibrary = 'assets/images/device.png';
+  static const BioMechanics = 'assets/images/bioMec.png';
+  static const Therapeutic = 'assets/images/theraptic.png';
+  static const ClinicalEngineering = 'assets/images/clinical.png';
+  static const HumanAnatomy = 'assets/images/human.png';
+  static const HumanPhyscology = 'assets/images/heart.png';
+  static const MedicalImaging = 'assets/images/medical.png';
+  static const AdvancedDesign = 'assets/images/advanced.png';
+  static const BioMaterials = 'assets/images/bioM.png';
+  static const ProstheicDevice = 'assets/images/pros.png';
+  static const laptop = 'assets/images/laptop4.png';
   static const backArrow = 'assets/images/backArrow.png';
 
 }
