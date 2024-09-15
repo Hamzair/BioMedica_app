@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
@@ -152,9 +154,10 @@ class HomeScreen extends StatelessWidget {
           children: [
             // Grid View for home options
             Container(
-              height: 400.h,
+              height: 330.h,
+             margin: EdgeInsets.only(bottom: 20.h),
               child: GridView.builder(
-
+physics:NeverScrollableScrollPhysics() ,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4, // 4 columns
                   crossAxisSpacing: 10,
@@ -215,7 +218,7 @@ class HomeScreen extends StatelessWidget {
               padding: EdgeInsets.all(10),
 
               width: 348.w,
-              margin: EdgeInsets.only(bottom: 150),
+              margin: EdgeInsets.only(bottom: 100),
               decoration: BoxDecoration(
                 color: container,
                 borderRadius: BorderRadius.circular(13.r),
@@ -258,10 +261,11 @@ class HomeScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           GestureDetector(
-                            onTap:(){ Get.to(()=>ArticleDetail());},
+                            onTap: () {
+                              Get.to(() => ArticleDetail());
+                            },
                             child: Container(
-                              padding: EdgeInsets.all( 16),
-
+                              padding: EdgeInsets.all(16),
                               width: 249.w,
                               decoration: BoxDecoration(
                                 color: container,
@@ -271,30 +275,57 @@ class HomeScreen extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(height: 10.h,),
+                                  SizedBox(height: 10.h),
                                   CustomText(
                                     text: 'Breakthrough in Wearable Cardiac Monitors',
                                     textColor: Colors.white,
                                     fontWeight: FontWeight.w600,
                                     fontsize: 14.sp,
                                   ),
-                                  SizedBox(height: 10.h,),
+                                  SizedBox(height: 10.h),
                                   Image.asset(
                                     width: 215.w,
                                     fit: BoxFit.cover,
-                                      alignment: Alignment.topLeft, AppImages.laptop),
-                                  SizedBox(height: 5.h,),
-                                  CustomText(
-                                    text:
-                                        'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
-                                    textColor: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                    fontsize: 11.sp,
+                                    alignment: Alignment.topLeft,
+                                    AppImages.laptop,
+                                  ),
+                                  SizedBox(height: 5.h),
+
+                                  // Applying blur background only for description text
+                                  Stack(
+                                    children: [
+                                      // The blurred background
+                                      Positioned.fill(
+                                        child: BackdropFilter(
+                                          filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(10),
+                                                color: Colors.white.withOpacity(0.3), // White with some transparency
+                                            ),
+
+                                          ),
+                                        ),
+                                      ),
+                                      // The text on top of the blur
+                                      Container(
+                                        padding: EdgeInsets.all(8.0),
+
+                                        child: CustomText(
+                                          text:
+                                          'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                          fontsize: 11.sp,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
                             ),
                           ),
+
                           SizedBox(width: 10.w
                             ,),
                           GestureDetector(
@@ -326,12 +357,15 @@ class HomeScreen extends StatelessWidget {
                                       fit: BoxFit.cover,
                                       alignment: Alignment.topLeft, AppImages.laptop),
                                   SizedBox(height: 5.h,),
-                                  CustomText(
-                                    text:
-                                    'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
-                                    textColor: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                    fontsize: 11.sp,
+                                  Container(
+                                    color: Colors.red,
+                                    child: CustomText(
+                                      text:
+                                      'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
+                                      textColor: Colors.white,
+                                      fontWeight: FontWeight.w400,
+                                      fontsize: 11.sp,
+                                    ),
                                   ),
                                 ],
                               ),

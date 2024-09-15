@@ -308,7 +308,7 @@ class _QuizPageState extends State<QuizPage> {
           ),
           // Button for "Continue" or "Finish"
           Padding(
-            padding:EdgeInsets.fromLTRB(16, 10, 16, 110),
+            padding:EdgeInsets.fromLTRB(16, 10, 16, 16),
             child: SizedBox(
               width: double.infinity,
               height: 55.h,

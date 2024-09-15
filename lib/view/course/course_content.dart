@@ -1,5 +1,6 @@
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/course/chapters.dart';
+import 'package:bio_medica/view/course/quiz.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -332,7 +333,11 @@ class _CourseContentState extends State<CourseContent> {
                                         SizedBox(height: 10.h,),
                                       Text('03:23',style: TextStyle(color: Colors.white,fontSize: 11.sp),),
                                         SizedBox(height: 10.h,),
-                                      CustomText(text: 'Start Quiz',textColor: buttonColor,fontWeight: FontWeight.w600,fontsize: 11.sp,),
+                                      GestureDetector(
+                                          onTap: (){
+                                            Get.to(()=> QuizPage());
+                                          },
+                                          child: CustomText(text: 'Start Quiz',textColor: buttonColor,fontWeight: FontWeight.w600,fontsize: 11.sp,)),
                                       SizedBox(height: 15.h
                                         ,)
                                       
@@ -395,7 +400,7 @@ class _CourseContentState extends State<CourseContent> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Row(
-
+mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/images/favIcon.png',height: 50.h,width: 50.w,),
             SizedBox(width: 5.w,),

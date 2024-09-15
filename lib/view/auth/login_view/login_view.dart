@@ -9,6 +9,7 @@ import 'package:bio_medica/widget/custom_text.dart';
 import 'package:bio_medica/widget/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -101,35 +102,37 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ),
               SizedBox(height: 6.25.h),
-              Padding(
-                padding: EdgeInsets.only(left: 15.w, right: 25.w),
+              SizedBox(
+                width: Get.width * 0.9,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Checkbox(
-                        fillColor: WidgetStatePropertyAll(Colors.white),
-                        checkColor: primaryColor,
-                        activeColor: Colors.white,
-                        side: BorderSide(
-                          color: secondaryColor,
-                          width: 1.w,
-                        ),
-                        value: rememberPass,
-                        onChanged: (bool? value) {
-                          setState(
-                                () {
-                              rememberPass = value!;
-                            },
-                          );
-                        }),
-                    CustomText(
-                        text: 'Remember information',
-                        fontsize: 14.sp,
-                        textColor: secondaryColor,
-                        fontWeight: FontWeight.w400),
-                    SizedBox(
-                      width: 25.w,
+                    Row(
+                      children: [
+                        Checkbox(
+                            fillColor: WidgetStatePropertyAll(Colors.white),
+                            checkColor: primaryColor,
+                            activeColor: Colors.white,
+                            side: BorderSide(
+                              color: secondaryColor,
+                              width: 1.w,
+                            ),
+                            value: rememberPass,
+                            onChanged: (bool? value) {
+                              setState(
+                                    () {
+                                  rememberPass = value!;
+                                },
+                              );
+                            }),
+                        CustomText(
+                            text: 'Remember information',
+                            fontsize: 14.sp,
+                            textColor: secondaryColor,
+                            fontWeight: FontWeight.w400),
+                      ],
                     ),
+
                     GestureDetector(
                       onTap: () {
                         CustomRoute.navigateTo(context, ForgetPasswordScreen());

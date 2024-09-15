@@ -66,16 +66,14 @@ class ProgressScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 10.0),
-        
+
               // Bar Chart
               Container(
-
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: container,
-                  border: Border.all(color: Darkcontainer,width: 1)
-                ),
+                    borderRadius: BorderRadius.circular(12),
+                    color: container,
+                    border: Border.all(color: Darkcontainer, width: 1)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -90,10 +88,13 @@ class ProgressScreen extends StatelessWidget {
                           fontsize: 18.sp,
                         ),
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                           decoration: BoxDecoration(
-                            color: buttonColor, // Use a slightly transparent blue
-                            borderRadius: BorderRadius.circular(12), // Add rounded corners
+                            color:
+                                buttonColor, // Use a slightly transparent blue
+                            borderRadius: BorderRadius.circular(
+                                12), // Add rounded corners
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -116,7 +117,9 @@ class ProgressScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10.h,),
+                    SizedBox(
+                      height: 10.h,
+                    ),
                     Container(
                       height: 200.h,
                       child: BarChart(
@@ -125,72 +128,75 @@ class ProgressScreen extends StatelessWidget {
                           maxY: 10,
                           barTouchData: BarTouchData(enabled: false),
                           titlesData: FlTitlesData(
-                            show: true,
-                            bottomTitles: AxisTitles(
-                              sideTitles: SideTitles(
-                                showTitles: true,
-                                getTitlesWidget: (double value, TitleMeta meta) {
-                                  const style = TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.white,
-                                  );
-                                  switch (value.toInt()) {
-                                    case 0:
-                                      return CustomText(
-                                        text: 'Jan',
-                                        textColor: Colors.white,
-                                        fontWeight: FontWeight.w400,
-                                      );
-                                    case 1:
-                                      return CustomText(
-                                        text: 'Feb',
-                                        textColor: Colors.white,
-                                        fontWeight: FontWeight.w400,
-                                      );
-                                    case 2:
-                                      return CustomText(
-                                        text: 'March',
-                                        textColor: Colors.white,
-                                        fontWeight: FontWeight.w400,
-                                      );
-                                    case 3:
-                                      return CustomText(
-                                        text: 'April',
-                                        textColor: Colors.white,
-                                        fontWeight: FontWeight.w400,
-                                      );
-                                    case 4:
-                                      return Text('May', style: style);
-                                    case 5:
-                                      return Text('Jun', style: style);
-                                    case 6:
-                                      return Text('Jul', style: style);
-                                    default:
-                                      return Text('', style: style);
-                                  }
-                                },
+                              show: true,
+                              bottomTitles: AxisTitles(
+                                sideTitles: SideTitles(
+                                  showTitles: true,
+                                  getTitlesWidget:
+                                      (double value, TitleMeta meta) {
+                                    const style = TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.white,
+                                    );
+                                    switch (value.toInt()) {
+                                      case 0:
+                                        return CustomText(
+                                          text: 'Jan',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                        );
+                                      case 1:
+                                        return CustomText(
+                                          text: 'Feb',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                        );
+                                      case 2:
+                                        return CustomText(
+                                          text: 'March',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                        );
+                                      case 3:
+                                        return CustomText(
+                                          text: 'April',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                        );
+                                      case 4:
+                                        return Text('May', style: style);
+                                      case 5:
+                                        return Text('Jun', style: style);
+                                      case 6:
+                                        return Text('Jul', style: style);
+                                      default:
+                                        return Text('', style: style);
+                                    }
+                                  },
+                                ),
                               ),
-                            ),
-                            leftTitles: AxisTitles(
-                              sideTitles: SideTitles(
-                                reservedSize: 40,
-                                showTitles: true,
-                                getTitlesWidget: (double value, TitleMeta meta) {
-                                  // const style = TextStyle(
-                                  //   fontSize: 12,
-                                  //   color: Colors.white,
-                                  // );
-                                  return CustomText(
-                                    text: value.toInt().toString() + ' hr',
-                                    textColor: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                  );
-                                },
+                              leftTitles: AxisTitles(
+                                sideTitles: SideTitles(
+                                  reservedSize: 40,
+                                  showTitles: true,
+                                  getTitlesWidget:
+                                      (double value, TitleMeta meta) {
+                                    // const style = TextStyle(
+                                    //   fontSize: 12,
+                                    //   color: Colors.white,
+                                    // );
+                                    return CustomText(
+                                      text: value.toInt().toString() + ' hr',
+                                      textColor: Colors.white,
+                                      fontWeight: FontWeight.w400,
+                                    );
+                                  },
+                                ),
                               ),
-                            ),
-                            topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                            rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false))
-                          ),
+                              topTitles: AxisTitles(
+                                  sideTitles: SideTitles(showTitles: false)),
+                              rightTitles: AxisTitles(
+                                  sideTitles: SideTitles(showTitles: false))),
 
                           gridData: FlGridData(show: false),
                           borderData:
@@ -246,7 +252,7 @@ class ProgressScreen extends StatelessWidget {
                             ]),
                             BarChartGroupData(x: 4, barRods: [
                               BarChartRodData(
-                                toY:9,
+                                toY: 9,
                                 color: buttonColor,
                                 width: 6,
                               ),
@@ -284,7 +290,6 @@ class ProgressScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-        
                   ],
                 ),
               ),
@@ -297,7 +302,8 @@ class ProgressScreen extends StatelessWidget {
                 children: [
                   LegendItem(color: buttonColor, text: 'Course'),
                   SizedBox(width: 16),
-                  LegendItem(color: Color.fromRGBO(219, 92, 0, 1), text: 'Quiz'),
+                  LegendItem(
+                      color: Color.fromRGBO(219, 92, 0, 1), text: 'Quiz'),
                 ],
               ),
               SizedBox(height: 7.h),
@@ -315,10 +321,10 @@ class ProgressScreen extends StatelessWidget {
                 height: 115.h,
                 decoration: BoxDecoration(
                   color: tapColor,
+                  // Your tapColor can be defined or replaced here
                   borderRadius: BorderRadius.circular(10.r),
                   border: Border.all(
                     color: Color.fromRGBO(0, 28, 49, 1),
-                    width: 1.w, // Width of the border
                   ),
                 ),
                 child: Padding(
@@ -330,7 +336,7 @@ class ProgressScreen extends StatelessWidget {
                         height: 91.01.h,
                         child: Image(
                             image: AssetImage(
-                                'assets/images/my_courses_tab_image1.png')),
+                                'assets/images/my_courses_tab_image2.png')),
                       ),
                       SizedBox(width: 9.62.w),
                       Padding(
@@ -340,10 +346,10 @@ class ProgressScreen extends StatelessWidget {
                           children: [
                             SizedBox(
                               width: 146.w,
-                              height: 55.h,
+                              height: 56.h,
                               child: CustomText(
                                 text:
-                                    "UX Research in Digital Product Design: Master Class",
+                                "UX Research in Digital Product Design: Master Class",
                                 textColor: whiteColor,
                                 fontWeight: FontWeight.w600,
                                 fontsize: 11.sp,
@@ -353,10 +359,11 @@ class ProgressScreen extends StatelessWidget {
                             SizedBox(
                               width: 190.w,
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceBetween,
                                 children: [
                                   CustomText(
-                                    text: "22 of 33 chapters",
+                                    text: "10 of 31 chapters",
                                     textColor: buttonColor,
                                     fontWeight: FontWeight.w700,
                                     fontsize: 11.sp,
@@ -425,7 +432,8 @@ class ProgressScreen extends StatelessWidget {
                             SizedBox(
                               width: 190.w,
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   CustomText(
                                     text: "10 of 31 chapters",

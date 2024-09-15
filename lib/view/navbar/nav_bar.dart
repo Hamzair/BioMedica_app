@@ -44,7 +44,7 @@ class _AppNavBarState extends State<AppNavBar> {
      HomeScreen(),
      HomeScreen(),
     CoursesScreen(),
-     QuizPage(),
+   CoursesScreen(),
      ProfileScreen()
   ];
 

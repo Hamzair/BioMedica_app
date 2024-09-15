@@ -1,5 +1,6 @@
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
+import 'package:bio_medica/view/course/quiz.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +8,11 @@ import 'package:get/get.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
 
 class DeviceDetails extends StatefulWidget {
+  final String deviceName;
+  final String deviceImage;
+
+  const DeviceDetails({Key? key, required this.deviceName, required this.deviceImage}) : super(key: key);
+
   @override
   _DeviceDetailsState createState() => _DeviceDetailsState();
 }
@@ -25,6 +31,12 @@ class _DeviceDetailsState extends State<DeviceDetails> {
     'assets/images/stheth.png',
     'assets/images/def.png',
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedImage = widget.deviceImage; // Set initial image from passed argument
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +65,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                     Row(
                       children: [
                         GestureDetector(
-                            onTap: (){
+                            onTap: () {
                               Get.back();
                             },
                             child: Image.asset('assets/images/back_icon.png')),
@@ -61,45 +73,49 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                           width: 7.w,
                         ),
                         CustomText(
-                          text: "Pacemaker",
+                          text: widget.deviceName, // Use passed device name
                           textColor: primaryColor,
                           fontWeight: FontWeight.bold,
                           fontsize: 22.sp,
                         ),
-
                       ],
                     ),
-                    Container(
-                      height: 38.h,
-                      decoration: BoxDecoration(
-                          color: Darkcontainer, borderRadius: BorderRadius.circular(15)),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.quiz,
-                              color: Colors.yellow,
-                            ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            CustomText(
-                                text: 'Quiz me',
-                                textColor: Colors.white,
-                                fontWeight: FontWeight.w500),
-                          ],
+                    GestureDetector(
+                      onTap: (){
+                        Get.to(()=> QuizPage());
+                      },
+                      child: Container(
+                        height: 38.h,
+                        decoration: BoxDecoration(
+                            color: Darkcontainer, borderRadius: BorderRadius.circular(15)),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.quiz,
+                                color: Colors.yellow,
+                              ),
+                              SizedBox(
+                                width: 5.w,
+                              ),
+                              CustomText(
+                                  text: 'Quiz me',
+                                  textColor: Colors.white,
+                                  fontWeight: FontWeight.w500),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-
                   ],
                 ),
               ),
             ],
           ),
           backgroundColor: secondaryColor,
-        ),),
+        ),
+      ),
 
       body: SingleChildScrollView(
         child: Column(
@@ -110,7 +126,6 @@ class _DeviceDetailsState extends State<DeviceDetails> {
               child: Container(
                 width: 341.w,
                 decoration: BoxDecoration(
-
                     color: container, borderRadius: BorderRadius.circular(8.r)),
                 child: Column(
                   children: [
@@ -131,8 +146,13 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                         'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
                         disableZoom: true,
                       )
-                          : Image.asset(_selectedImage,
-                        fit: BoxFit.cover,), // Display the selected image
+                          : ClipRRect(
+                        borderRadius: BorderRadius.circular(8.r), // Apply border radius here
+                        child: Image.asset(
+                          _selectedImage,
+                          fit: BoxFit.cover,
+                        ),
+                      ), // Display the selected image
                     ),
 
                     // Image Row
@@ -147,7 +167,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
               ),
             ),
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 8.0.w),
+              padding: EdgeInsets.symmetric(horizontal: 8.0.w),
               child: Container(
                 height: 37.92.h,
                 decoration: BoxDecoration(
@@ -244,7 +264,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
 
   Widget buildOverviewContent() {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 8.0.w),
+      padding: EdgeInsets.symmetric(horizontal: 8.0.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -284,7 +304,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
 
   Widget buildOperationsContent() {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 8.0.w),
+      padding: EdgeInsets.symmetric(horizontal: 8.0.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -364,55 +384,55 @@ class _DeviceDetailsState extends State<DeviceDetails> {
 
   Widget buildFeaturesContent() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.w),
-      child:Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomText(
-            text: 'Features',
-            textColor: buttonColor,
-            fontWeight: FontWeight.w600,
-            fontsize: 16.sp,
-          ),
-          SizedBox(height: 8), // Add some space between the title and the list
-          RichText(
-            text: TextSpan(
-              style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
-              children: [
-                TextSpan(
-                  text: '• ',
-                  style: TextStyle(color: Colors.orange),
-                ),
-                TextSpan(
-                  text: 'High sound quality for accurate diagnosis.\n',
-                  style: TextStyle(color: Colors.white),
-                ),
-                TextSpan(
-                  text: '• ',
-                  style: TextStyle(color: Colors.orange),
-                ),
-                TextSpan(
-                  text: 'Lightweight and portable design.\n',
-                  style: TextStyle(color: Colors.white),
-                ),
-                TextSpan(
-                  text: '• ',
-                  style: TextStyle(color: Colors.orange),
-                ),
-                TextSpan(
-                  text: 'Durable construction for long-lasting use.',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
+        padding: EdgeInsets.symmetric(horizontal: 8.w),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomText(
+              text: 'Features',
+              textColor: buttonColor,
+              fontWeight: FontWeight.w600,
+              fontsize: 16.sp,
             ),
-          ),
-        ],
-      )
+            SizedBox(height: 8), // Add some space between the title and the list
+            RichText(
+              text: TextSpan(
+                style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
+                children: [
+                  TextSpan(
+                    text: '• ',
+                    style: TextStyle(color: Colors.orange),
+                  ),
+                  TextSpan(
+                    text: 'High sound quality for accurate diagnosis.\n',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  TextSpan(
+                    text: '• ',
+                    style: TextStyle(color: Colors.orange),
+                  ),
+                  TextSpan(
+                    text: 'Lightweight and portable design.\n',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  TextSpan(
+                    text: '• ',
+                    style: TextStyle(color: Colors.orange),
+                  ),
+                  TextSpan(
+                    text: 'Durable construction for long-lasting use.',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        )
 
     );
   }
 
-// Method to build an image item
+  // Method to build an image item
   Widget buildImageItem(String imagePath) {
     return GestureDetector(
       onTap: () {
@@ -421,12 +441,12 @@ class _DeviceDetailsState extends State<DeviceDetails> {
         });
       },
       child: Padding(
-        padding:EdgeInsets.symmetric(vertical: 14.0.h),
+        padding: EdgeInsets.symmetric(vertical: 14.0.h),
         child: Container(
           height: 50.h,
           width: 70.w,
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(8.r), // Set border radius here
             child: Image.asset(
               imagePath,
               fit: BoxFit.cover,

@@ -1,5 +1,6 @@
 import 'package:bio_medica/main.dart';
 import 'package:bio_medica/view/const/color.dart';
+import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/view/course/courses.dart';
 import 'package:bio_medica/view/course/quiz.dart';
 import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceLibrary.dart';
@@ -13,40 +14,50 @@ class LessonScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
-      appBar: AppBar(
-        backgroundColor: secondaryColor,
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Image.asset(
-            'assets/images/backArrow.png',
-          ),
-        ),
-        title: Align(
-          alignment: Alignment.topLeft,
-          child: CustomText(
-            text: 'Chapters',
-            textColor: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        centerTitle: true,
-        elevation: 3,
-        flexibleSpace: ClipRRect(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(30),
-            bottomRight: Radius.circular(30),
-          ),
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [secondaryColor, secondaryColor.withOpacity(0.8)],
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100.h),
+        child: AppBar(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(13.r),
+                  bottomRight: Radius.circular(13.r))),
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+          flexibleSpace: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 30.h,
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        GestureDetector(
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: Image.asset('assets/images/back_icon.png')),
+                        SizedBox(
+                          width: 7.w,
+                        ),
+                        CustomText(
+                          text: "Chapters",
+                          textColor: primaryColor,
+                          fontWeight: FontWeight.bold,
+                          fontsize: 22.sp,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
+          backgroundColor: secondaryColor,
         ),
       ),
       body: Padding(
@@ -193,7 +204,7 @@ class LessonScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-               Navigator.pop(context);
+                  Get.to(() => QuizPage());
                 },
                 child: Text(
                   'Continue',
