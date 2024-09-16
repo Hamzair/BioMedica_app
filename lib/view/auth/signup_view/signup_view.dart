@@ -42,9 +42,9 @@ class _SignupViewState extends State<SignupView> {
                   child: SafeArea(
                     child: Column(
                       children: [
-                        SizedBox(
-                          height: 30.h,
-                        ),
+                        // SizedBox(
+                        //   height: 30.h,
+                        // ),
                         SizedBox(
                             height: 139.h,
                             width: 130.w,
@@ -55,7 +55,7 @@ class _SignupViewState extends State<SignupView> {
                             textAlign: TextAlign.center,
                             text: 'Sign up ',
                             fontsize: 35.sp,
-                            textColor: Colors.white,
+                            textColor: Color.fromRGBO(0, 26, 46, 1),
                             fontWeight: FontWeight.w700),
                         SizedBox(
                           height: 11.h,
@@ -83,53 +83,62 @@ class _SignupViewState extends State<SignupView> {
               SizedBox(height: 18.h,),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25.w),
-                child: SignCustomTextFiled(
-                  hintText: 'Your name',
-                  prefixIcon: AppImages.personIcon,
-                  controller: emailController,
-                  readOnly: false,
-                  // hintTextSize: 11.sp,
-                  hintColor: Color(0xff134064),
+                child: SizedBox(
+                  height: 43.75.h,
+                  child: SignCustomTextFiled(
+                    hintText: 'Your name',
+                    prefixIcon: AppImages.personIcon,
+                    controller: emailController,
+                    readOnly: false,
+                    // hintTextSize: 11.sp,
+                    hintColor: Color(0xff134064),
+                  ),
                 ),
               ),
               SizedBox(height: 16.25.h,),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25.w),
-                child: SignCustomTextFiled(
-                  hintText: 'Your email',
-                  prefixIcon: AppImages.email,
-                  controller: emailController,
-                  readOnly: false,
-                  // hintTextSize: 11.sp,
-                  hintColor: Color(0xff134064),
+                child: SizedBox(
+                  height: 43.75.h,
+                  child: SignCustomTextFiled(
+                    hintText: 'Your email',
+                    prefixIcon: AppImages.email,
+                    controller: emailController,
+                    readOnly: false,
+                    // hintTextSize: 11.sp,
+                    hintColor: Color(0xff134064),
+                  ),
                 ),
               ),
               SizedBox(height: 16.25.h,),
 
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25.w),
-                child: SignCustomTextFiled(
-                  readOnly: false,
-                  controller: passwordController,
-                  hintText: ' Your password',
-                  hintColor: Color(0xff134064),
-                  // hintTextSize: 11.sp,
-                  onChange: (v) {
-                    return null;
-                  },
-                  prefixIcon: AppImages.password,
-                  // isBorder: true,
-                  isPassword: true,
-                  isObscure: isChecked,
-                  passwordFunction: () {
-                    setState(() {
-                      isChecked = !isChecked;
-                    });
-                    return null;
-                  },
+                child: SizedBox(
+                  height: 43.75.h,
+                  child: SignCustomTextFiled(
+                    readOnly: false,
+                    controller: passwordController,
+                    hintText: ' Your password',
+                    hintColor: Color(0xff134064),
+                    // hintTextSize: 11.sp,
+                    onChange: (v) {
+                      return null;
+                    },
+                    prefixIcon: AppImages.password,
+                    // isBorder: true,
+                    isPassword: true,
+                    isObscure: isChecked,
+                    passwordFunction: () {
+                      setState(() {
+                        isChecked = !isChecked;
+                      });
+                      return null;
+                    },
 
-                  beforePasswordIcon: Icons.visibility_off_outlined,
-                  afterPasswordIcon: Icons.visibility,
+                    beforePasswordIcon: Icons.visibility_off_outlined,
+                    afterPasswordIcon: Icons.visibility,
+                  ),
                 ),
               ),
               SizedBox(
@@ -142,9 +151,10 @@ class _SignupViewState extends State<SignupView> {
                 color: buttonColor,
                 onTap: () {},
                 title: 'Continue',
+                radius: 13.31.r,
               ),
               SizedBox(
-                height: 24.25.h,
+                height: 14.25.h,
               ),
               CustomText(
                   textAlign: TextAlign.center,

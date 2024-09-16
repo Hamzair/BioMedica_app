@@ -165,44 +165,50 @@ class _ForgetPasswordEmailPhoneViewState
                       height: 28.h,
                     ),
                     selectedTypeController.selectedType.value == 'email'
-                        ? EmailCustomTextFiled(
-                            readOnly: false,
-                            controller: emailController,
-                            hintText: 'Your email',
-                            hintColor: greyColor,
-                            hintTextSize: 15.sp,
-                            prefixIcon: AppImages.email,
-                            isBorder: true,
-                            borderRadius: 13.sp,
-                            fillColor: transparentColor,
-                          )
-                        : CustomPhoneNumberField(
-                            childWidget: const CountryCodePicker(
-                              hideSearch: false,
-                              enabled: true,
-                              showDropDownButton: false,
-                              onChanged: print,
-                              // countryFilter: ['IQ'],
-                              // initialSelection: 'IQ',
-                              // favorite: ['+964', ''],
-                              showCountryOnly: false,
-                              showOnlyCountryWhenClosed: false,
-                              alignLeft: false,
+                        ? SizedBox(
+                      height: 43.75.h,
+                          child: EmailCustomTextFiled(
+                              readOnly: false,
+                              controller: emailController,
+                              hintText: 'Your email',
+                              hintColor: greyColor,
+                              hintTextSize: 15.sp,
+                              prefixIcon: AppImages.email,
+                              isBorder: true,
+                              borderRadius: 13.sp,
+                              fillColor: transparentColor,
                             ),
-                            controller: phoneController,
-                            hintText: "",
-                            passwordFunction: () {
-                              phoneController.clear();
-                              return null;
-                            },
-                            keyboardType: TextInputType.number,
-                            hintColor: greyColor,
-                            hintTextSize: 15.sp,
-                            isBorder: true,
-                            borderRadius: 13.sp,
-                            fillColor: transparentColor,
-                            suffixIcon: Icons.cancel,
-                          ),
+                        )
+                        : SizedBox(
+                      height: 43.75.h,
+                          child: CustomPhoneNumberField(
+                              childWidget: const CountryCodePicker(
+                                hideSearch: false,
+                                enabled: true,
+                                showDropDownButton: false,
+                                onChanged: print,
+                                // countryFilter: ['IQ'],
+                                // initialSelection: 'IQ',
+                                // favorite: ['+964', ''],
+                                showCountryOnly: false,
+                                showOnlyCountryWhenClosed: false,
+                                alignLeft: false,
+                              ),
+                              controller: phoneController,
+                              hintText: "",
+                              passwordFunction: () {
+                                phoneController.clear();
+                                return null;
+                              },
+                              keyboardType: TextInputType.number,
+                              hintColor: greyColor,
+                              hintTextSize: 15.sp,
+                              isBorder: true,
+                              borderRadius: 13.sp,
+                              fillColor: transparentColor,
+                              suffixIcon: Icons.cancel,
+                            ),
+                        ),
                     SizedBox(
                       height: 24.h,
                     ),
@@ -210,7 +216,7 @@ class _ForgetPasswordEmailPhoneViewState
                         height: 51.h,
                         title: "Send",
                         color: primaryColor,
-                        textSize: 12.sp,
+                        textSize: 19.sp,
                         onTap: () {
                           CustomRoute.navigateTo(
                               context, const PhoneNumberAuthenticationView());
@@ -220,7 +226,7 @@ class _ForgetPasswordEmailPhoneViewState
               ),
               // const Spacer(),
               SizedBox(
-                height: 260.25.h,
+                height: 300.25.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

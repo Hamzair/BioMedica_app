@@ -50,7 +50,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
             children: [
               SizedBox(height: 10.h),
               const ForgetPasswordBackWidget(),
-              SizedBox(height: 25.h),
+              SizedBox(height: 37.82.h),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 25.w),
                 child: Column(
@@ -62,7 +62,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                       fontWeight: FontWeight.w700,
                       fontsize: 26.sp,
                     ),
-                    SizedBox(height: 30.h),
+                    SizedBox(height: 74.18.h),
                     CustomText(
                       text: "New Password",
                       textColor: primaryColor,
@@ -72,32 +72,35 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                     SizedBox(height: 10.h),
                     Form(
                       key: _formKey,
-                      child: EmailCustomTextFiled(
-                        readOnly: false,
-                        controller: _authController.newPasswordController.value,
-                        hintText: '*********',
-                        hintColor: Colors.grey,
-                        hintTextSize: 11.sp,
-                        onChange: (v) {
-                          _authController.update();
-                          _authController.refresh();
+                      child: SizedBox(
+                        height: 43.75.h,
+                        child: EmailCustomTextFiled(
+                          readOnly: false,
+                          controller: _authController.newPasswordController.value,
+                          hintText: '*********',
+                          hintColor: Colors.grey,
+                          hintTextSize: 11.sp,
+                          onChange: (v) {
+                            _authController.update();
+                            _authController.refresh();
 
-                          return null;
-                        },
-                        prefixIcon: AppImages.password,
-                        isBorder: true,
-                        isPassword: true,
-                        isObscure: isChecked,
-                        passwordFunction: () {
-                          setState(() {
-                            isChecked = !isChecked;
-                          });
-                          return null;
-                        },
-                        borderRadius: 13.sp,
-                        fillColor: transparentColor,
-                        beforePasswordIcon: Icons.visibility_off_outlined,
-                        afterPasswordIcon: Icons.visibility,
+                            return null;
+                          },
+                          prefixIcon: AppImages.password,
+                          isBorder: true,
+                          isPassword: true,
+                          isObscure: isChecked,
+                          passwordFunction: () {
+                            setState(() {
+                              isChecked = !isChecked;
+                            });
+                            return null;
+                          },
+                          borderRadius: 13.sp,
+                          fillColor: transparentColor,
+                          beforePasswordIcon: Icons.visibility_off_outlined,
+                          afterPasswordIcon: Icons.visibility,
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -255,32 +258,36 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                       fontsize: 17.sp,
                     ),
                     SizedBox(height: 10.h),
-                    EmailCustomTextFiled(
-                      readOnly: false,
-                      controller: _authController.confirmPasswordController.value,
-                      hintText: '*********',
-                      hintColor: Colors.grey,
-                      hintTextSize: 11.sp,
+                    SizedBox(
+                      height: 43.75,
+                      child: EmailCustomTextFiled(
+                        readOnly: false,
+                        controller: _authController.confirmPasswordController.value,
+                        hintText: '*********',
+                        hintColor: Colors.grey,
+                        hintTextSize: 11.sp,
 
-                      prefixIcon: AppImages.password,
-                      isBorder: true,
-                      isPassword: true,
-                      isObscure: isChecked1,
-                      passwordFunction: () {
-                        setState(() {
-                          isChecked1 = !isChecked1;
-                        });
-                        return null;
-                      },
-                      borderRadius: 13.sp,
-                      fillColor: transparentColor,
-                      beforePasswordIcon: Icons.visibility_off_outlined,
-                      afterPasswordIcon: Icons.visibility,
+                        prefixIcon: AppImages.password,
+                        isBorder: true,
+                        isPassword: true,
+                        isObscure: isChecked1,
+                        passwordFunction: () {
+                          setState(() {
+                            isChecked1 = !isChecked1;
+                          });
+                          return null;
+                        },
+                        borderRadius: 13.sp,
+                        fillColor: transparentColor,
+                        beforePasswordIcon: Icons.visibility_off_outlined,
+                        afterPasswordIcon: Icons.visibility,
+                      ),
                     ),
-                    SizedBox(height: 42.37.h),
+                    SizedBox(height: 42.25.h),
                     CustomButton(
                       height: 51.h,
                       title: "Reset Password",
+                      textSize: 19.sp,
                       onTap: () {
                         // Handle reset password action here
                         if (_authController.newPasswordController.value.text ==
