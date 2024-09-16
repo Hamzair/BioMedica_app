@@ -28,18 +28,10 @@ class OnBoardingOne extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'The best Medical Device Library in the world',
+                    text: 'The Only Medical Device Library in the World',
                     style: GoogleFonts.jost(
                       fontSize: 28.sp,
                       color: primaryColor,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  TextSpan(
-                    text: '.', // The full stop in orange color
-                    style: TextStyle(
-                      fontSize: 28.sp,
-                      color: buttonColor2, // Set the color to orange
                       fontWeight: FontWeight.w700,
                     ),
                   ),

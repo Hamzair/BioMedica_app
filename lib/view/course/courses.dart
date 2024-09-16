@@ -138,9 +138,15 @@ class CourseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        // Pass the data to the next screen
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => CourseDetailScreen()),
+          MaterialPageRoute(
+            builder: (context) => CourseDetailScreen(
+              title: name, // Pass course name
+              image: image, // Pass course image
+            ),
+          ),
         );
       },
       child: Padding(
@@ -196,3 +202,4 @@ class CourseCard extends StatelessWidget {
     );
   }
 }
+

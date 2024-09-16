@@ -1,11 +1,15 @@
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/course/chapters.dart';
+import 'package:bio_medica/view/course/quiz.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CourseContent extends StatefulWidget {
+  final String title;
+  final String image;
+  CourseContent({required this.title, required this.image});
   @override
   _CourseContentState createState() => _CourseContentState();
 }
@@ -26,7 +30,7 @@ class _CourseContentState extends State<CourseContent> {
                 borderRadius:
                     BorderRadius.vertical(bottom: Radius.circular(30)),
                 child: Image.asset(
-                  'assets/images/rect.png', // Replace with actual image
+                 widget.image, // Replace with actual image
                   height: 300.h,
                   width: double.infinity,
                   fit: BoxFit.cover,
@@ -58,7 +62,7 @@ class _CourseContentState extends State<CourseContent> {
                   SizedBox(height: 8.h),
                   CustomText(
                     text:
-                        'Master Digital Product Design: UX Research & UI Design',
+                       widget.title,
                     textColor: Colors.white,
                     fontWeight: FontWeight.w600,
                     fontsize: 22.sp,
@@ -199,9 +203,10 @@ class _CourseContentState extends State<CourseContent> {
 
                     CustomText(
                       text:
-                          'Transformative journey through our comprehensive course, ',
+                          'No Overview ',
                       fontWeight: FontWeight.w500,
                       textColor: Colors.white,
+                      textAlign: TextAlign.center,
                     ),
 
                   if (_selectedIndex == 1)
@@ -332,26 +337,19 @@ class _CourseContentState extends State<CourseContent> {
                                         SizedBox(height: 10.h,),
                                       Text('03:23',style: TextStyle(color: Colors.white,fontSize: 11.sp),),
                                         SizedBox(height: 10.h,),
-                                      CustomText(text: 'Start Quiz',textColor: buttonColor,fontWeight: FontWeight.w600,fontsize: 11.sp,),
+                                      GestureDetector(
+                                          onTap: (){
+                                            Get.to(()=> QuizPage());
+                                          },
+                                          child: CustomText(text: 'Start Quiz',textColor: buttonColor,fontWeight: FontWeight.w600,fontsize: 11.sp,)),
                                       SizedBox(height: 15.h
                                         ,)
                                       
-                                    ],)
+                                    ],),
 
                                    
-                                    // SizedBox(height: 10.h,),
-                                    // Row(
-                                    //
-                                    //   children: [
-                                    //     Image.asset('assets/images/sbook.png',height: 17.h,),
-                                    //     SizedBox(width: 10.h,),
-                                    //     CustomText(text: 'Quiz', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
-                                    //     Align(
-                                    //         alignment: Alignment.centerRight,
-                                    //         child: CustomText(text: 'Start Quiz', textColor: buttonColor, fontWeight: FontWeight.w600)),
-                                    //
-                                    //   ],
-                                    // )
+
+
                                   ],
                                 ),
                               )
@@ -373,17 +371,19 @@ class _CourseContentState extends State<CourseContent> {
                   if (_selectedIndex == 2)
                     Center(
                       child: CustomText(
-                          text: 'Quiz',
+                          text: ' No Quiz',
                           textColor: whiteColor,
-                          fontsize: 22.sp,
+
+                          textAlign: TextAlign.center,
                           fontWeight: FontWeight.w500),
                     ),
                   if (_selectedIndex == 3)
                     Center(
                       child: CustomText(
-                          text: 'Resources',
+                          text: 'No Resources',
                           textColor: whiteColor,
-                          fontsize: 22.sp,
+                          textAlign: TextAlign.center,
+
                           fontWeight: FontWeight.w500),
                     )
                 ],
@@ -395,7 +395,7 @@ class _CourseContentState extends State<CourseContent> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Row(
-
+mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/images/favIcon.png',height: 50.h,width: 50.w,),
             SizedBox(width: 5.w,),

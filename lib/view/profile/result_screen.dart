@@ -1,4 +1,7 @@
+import 'package:bio_medica/view/ProgressTracking/progress.dart';
 import 'package:bio_medica/view/const/color.dart';
+import 'package:bio_medica/view/course/courses.dart';
+import 'package:bio_medica/view/course/quiz.dart';
 import 'package:bio_medica/view/profile/technical_support_chat_screen.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
@@ -181,7 +184,8 @@ class ResultScreen extends StatelessWidget {
                   height: 52.92.h,
                   width: 309.w,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {                      Get.to(()=>QuizPage());
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: buttonColor,
                       shape: RoundedRectangleBorder(
@@ -203,7 +207,9 @@ class ResultScreen extends StatelessWidget {
                   height: 52.92.h,
                   width: 309.w,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(()=>ProgressScreen());
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: primaryColor,
                       shape: RoundedRectangleBorder(
