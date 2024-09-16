@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'package:flutter/material.dart';
 import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
@@ -178,7 +178,9 @@ class Freehomescreen extends StatelessWidget {
                     onTap: () {
                       if (item['locked'] == true) {
                         // Show some message if item is locked
-                        Get.snackbar('Locked', 'Buy Premium to unlock this feature.',backgroundColor: primaryColor,colorText: Colors.white);
+                        Get.snackbar('Locked', 'Buy Premium to unlock this feature.',
+                            // backgroundColor: primaryColor,
+                            colorText: Colors.white);
                       } else {
                         Navigator.push(
                           context,

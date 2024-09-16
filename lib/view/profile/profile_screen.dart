@@ -394,7 +394,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   /// Course Container1
                   Container(
                     width: 310.w,
-                    height: 115.h,
+                    height: 117.h,
                     decoration: BoxDecoration(
                       color: tapColor,
                       // Your tapColor can be defined or replaced here
@@ -423,7 +423,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                           SizedBox(width: 9.62.w),
                           Padding(
-                            padding:  EdgeInsets.symmetric(vertical: 8.h),
+                            padding:  EdgeInsets.symmetric(vertical: 12.h),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -472,11 +472,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   SizedBox(height: 7.h),
-
                   /// Course Container2
                   Container(
                     width: 310.w,
-                    height: 115.h,
+                    height: 117.h,
                     decoration: BoxDecoration(
                       color: tapColor,
                       // Your tapColor can be defined or replaced here
@@ -504,7 +503,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           SizedBox(width: 9.62.w),
                           Padding(
-                            padding: EdgeInsets.symmetric(vertical: 8.h),
+                            padding: EdgeInsets.symmetric(vertical: 12.h),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -519,7 +518,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     fontsize: 11.sp,
                                   ),
                                 ),
-                                SizedBox(height: 5.h),
+                                SizedBox(height: 3.h),
                                 SizedBox(
                                   width: 180.w,
                                   child: Row(
@@ -533,7 +532,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         fontsize: 11.sp,
                                       ),
                                       LoadingPercentageCircle(
-                                        percentage: 15,
+                                        percentage: 45,
                                         // Example percentage
                                         size: 25,
                                         // Example size

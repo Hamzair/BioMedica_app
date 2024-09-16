@@ -316,37 +316,45 @@ class ProgressScreen extends StatelessWidget {
                   fontsize: 20.sp,
                 ),
               ),
+              /// Active Course Container1
               Container(
                 width: 310.w,
-                height: 115.h,
+                height: 117.h,
                 decoration: BoxDecoration(
                   color: tapColor,
                   // Your tapColor can be defined or replaced here
                   borderRadius: BorderRadius.circular(10.r),
                   border: Border.all(
                     color: Color.fromRGBO(0, 28, 49, 1),
+                    // Dark blue color for the border
+                    width: 1.w, // Width of the border
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4.w),
+                  padding: EdgeInsets.symmetric(horizontal: 11.39.w),
                   child: Row(
                     children: [
-                      SizedBox(
+                      Container(
                         width: 91.01.w,
                         height: 91.01.h,
-                        child: Image(
-                            image: AssetImage(
-                                'assets/images/my_courses_tab_image2.png')),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(5.69.r), // Apply the same radius here
+                          child: Image(
+                            image: AssetImage('assets/images/profilescren_image.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
+
                       SizedBox(width: 9.62.w),
                       Padding(
-                        padding: EdgeInsets.symmetric(vertical: 8.h),
+                        padding:  EdgeInsets.symmetric(vertical: 12.h),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
                               width: 146.w,
-                              height: 56.h,
+                              height: 55.h,
                               child: CustomText(
                                 text:
                                 "UX Research in Digital Product Design: Master Class",
@@ -357,13 +365,13 @@ class ProgressScreen extends StatelessWidget {
                             ),
                             SizedBox(height: 5.h),
                             SizedBox(
-                              width: 190.w,
+                              width: 180.w,
                               child: Row(
                                 mainAxisAlignment:
                                 MainAxisAlignment.spaceBetween,
                                 children: [
                                   CustomText(
-                                    text: "10 of 31 chapters",
+                                    text: "22 of 33 chapters",
                                     textColor: buttonColor,
                                     fontWeight: FontWeight.w700,
                                     fontsize: 11.sp,
@@ -388,32 +396,39 @@ class ProgressScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 10.h),
+              SizedBox(height: 7.h),
+              /// Active Course Container2
               Container(
                 width: 310.w,
-                height: 115.h,
+                height: 117.h,
                 decoration: BoxDecoration(
                   color: tapColor,
                   // Your tapColor can be defined or replaced here
                   borderRadius: BorderRadius.circular(10.r),
                   border: Border.all(
                     color: Color.fromRGBO(0, 28, 49, 1),
+                    // Dark blue color for the border
+                    width: 1.w, // Width of the border
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4.w),
+                  padding: EdgeInsets.symmetric(horizontal: 11.39.w),
                   child: Row(
                     children: [
                       SizedBox(
                         width: 91.01.w,
                         height: 91.01.h,
-                        child: Image(
-                            image: AssetImage(
-                                'assets/images/my_courses_tab_image2.png')),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(5.69.r), // Apply the same radius here
+                          child: Image(
+                            image: AssetImage('assets/images/my_courses_tab_image2.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
                       SizedBox(width: 9.62.w),
                       Padding(
-                        padding: EdgeInsets.symmetric(vertical: 8.h),
+                        padding: EdgeInsets.symmetric(vertical: 12.h),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -422,18 +437,18 @@ class ProgressScreen extends StatelessWidget {
                               height: 56.h,
                               child: CustomText(
                                 text:
-                                    "UX Research in Digital Product Design: Master Class",
+                                "UX Research in Digital Product Design: Master Class",
                                 textColor: whiteColor,
                                 fontWeight: FontWeight.w600,
                                 fontsize: 11.sp,
                               ),
                             ),
-                            SizedBox(height: 5.h),
+                            SizedBox(height:3.h),
                             SizedBox(
-                              width: 190.w,
+                              width: 180.w,
                               child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: [
                                   CustomText(
                                     text: "10 of 31 chapters",
@@ -442,7 +457,7 @@ class ProgressScreen extends StatelessWidget {
                                     fontsize: 11.sp,
                                   ),
                                   LoadingPercentageCircle(
-                                    percentage: 15,
+                                    percentage: 45,
                                     // Example percentage
                                     size: 25,
                                     // Example size
