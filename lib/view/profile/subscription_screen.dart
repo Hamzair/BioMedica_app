@@ -1,4 +1,6 @@
 import 'package:bio_medica/view/const/color.dart';
+import 'package:bio_medica/view/home_Screen/freeHomeScreen.dart';
+import 'package:bio_medica/view/navbar/nav_bar.dart';
 import 'package:bio_medica/view/profile/privacy_policy.dart';
 import 'package:bio_medica/view/profile/technical_support_chat_screen.dart';
 import 'package:bio_medica/view/profile/result_screen.dart';
@@ -93,158 +95,164 @@ class SubscriptionScreen extends StatelessWidget {
             Row(
               children: [
                 /// Free Trial Container
-                Container(
-                  width: 134.w, // Set the width of the container
-                  height: 139.h, // Set the height of the container
-                  decoration: BoxDecoration(
-                    color: Colors.white, // Background color of the container
-                    border: Border.all(
-                      color: Color.fromRGBO(1, 203, 196, 0.53), // Border color
-                      width: 3, // Border width
+                GestureDetector(
+                  onTap:(){ Get.to(()=>Freehomescreen() );},
+                  child: Container(
+                    width: 134.w, // Set the width of the container
+                    height: 139.h, // Set the height of the container
+                    decoration: BoxDecoration(
+                      color: Colors.white, // Background color of the container
+                      border: Border.all(
+                        color: Color.fromRGBO(1, 203, 196, 0.53), // Border color
+                        width: 3, // Border width
+                      ),
+                      borderRadius: BorderRadius.circular(7.51.r), // Border radius
                     ),
-                    borderRadius: BorderRadius.circular(7.51.r), // Border radius
-                  ),
-                  child: Column(
-                    children: [
-                      SizedBox(height: 8.h),
-                      /// Text Free Trial
-                      CustomText(
-                        text: 'Free Trial',
-                        textColor: Color.fromRGBO(44, 54, 88, 1),
-                        fontWeight: FontWeight.w700,
-                        fontsize: 16.sp,
-                      ),
-                      SizedBox(height: 3.h),
-                      /// Text 1 Week
-                      CustomText(
-                        text: '1 Week',
-                        textColor: Color.fromRGBO(44, 54, 88, 1),
-                        fontWeight: FontWeight.w600,
-                        fontsize: 12.sp,
-                      ),
-                      SizedBox(height: 6.h),
-                      /// Text Access the $ free
-                      SizedBox(
-                        height: 32.h,
-                        width: 112.w,
-                        child: CustomText(
-                          text: 'Access the 4 free courses',
-                          textColor: Color.fromRGBO(44, 54, 88, 1),
-                          fontWeight: FontWeight.w500,
-                          fontsize: 10.sp,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      SizedBox(height: 10.h),
-                      /// Elevated Button Free
-                      SizedBox(
-                          height: 20.h,
-                          width: 106.w,
-                          child: ElevatedButton(onPressed: (){},
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: greenColor,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25.03.r), // Set the border radius
-                                ),
-                            ),
-                              child: CustomText(
-                                  text: 'Free',
-                                  textColor: whiteColor,
-                                  fontWeight: FontWeight.w700,
-                                fontsize: 7.51.sp,
-
-                              ),
-                          ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(width: 21.w),
-                /// Premium Container
-                Container(
-                  width: 134.w, // Set the width of the container
-                  height: 139.h, // Set the height of the container
-                  decoration: BoxDecoration(
-                    color: Color.fromRGBO(12, 192, 223, 1), // Background color of the container
-                    border: Border.all(
-                      color: Color.fromRGBO(151, 142, 240, 0.26), // Border color
-                      width: 3, // Border width
-                    ),
-                    borderRadius: BorderRadius.circular(7.51.r), // Border radius
-                  ),
-                  child:Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
                     child: Column(
                       children: [
-                        SizedBox(height: 2.h),
-                        /// Text Premium
-                        Row(mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CustomText(
-                              text: 'Premium',
-                              textColor: whiteColor,
-                              fontWeight: FontWeight.w700,
-                              fontsize: 20.sp,
-                              textAlign: TextAlign.center,
-                            ),
-                            SizedBox(
-                              height:15.02.h,
-                                width:15.02.w,
-                                child: Image.asset('assets/images/crown.png')),
-                          ],
+                        SizedBox(height: 8.h),
+                        /// Text Free Trial
+                        CustomText(
+                          text: 'Free Trial',
+                          textColor: Color.fromRGBO(44, 54, 88, 1),
+                          fontWeight: FontWeight.w700,
+                          fontsize: 16.sp,
                         ),
-                        SizedBox(height: 2.h),
-                        /// Text $ 14.99/Month
-                        Row(
-                          children: [
-                            CustomText(
-                              text: '\$ 14.99',
-                              textColor: Color.fromRGBO(0, 28, 49, 1),
-                              fontWeight: FontWeight.w600,
-                              fontsize: 16.sp,
-                            ),
-                            CustomText(
-                              text: '/Month',
-                              textColor: whiteColor,
-                              fontWeight: FontWeight.w500,
-                              fontsize: 10.sp,
-                            ),
-                          ],
+                        SizedBox(height: 3.h),
+                        /// Text 1 Week
+                        CustomText(
+                          text: '1 Week',
+                          textColor: Color.fromRGBO(44, 54, 88, 1),
+                          fontWeight: FontWeight.w600,
+                          fontsize: 12.sp,
                         ),
-                        /// Text Access to unlimited premium features
+                        SizedBox(height: 6.h),
+                        /// Text Access the $ free
                         SizedBox(
-                          height: 34.h,
+                          height: 32.h,
                           width: 112.w,
                           child: CustomText(
-                            text: 'Access to unlimited premium features.',
-                            textColor: whiteColor,
+                            text: 'Access the 4 free courses',
+                            textColor: Color.fromRGBO(44, 54, 88, 1),
                             fontWeight: FontWeight.w500,
                             fontsize: 10.sp,
                             textAlign: TextAlign.center,
                           ),
                         ),
-                        SizedBox(height: 8.h),
-                        /// Elevated Button Upgrade
+                        SizedBox(height: 10.h),
+                        /// Elevated Button Free
                         SizedBox(
-                          height: 20.h,
-                          width: 106.w,
-                          child: ElevatedButton(onPressed: (){},
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: buttonColor2,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25.03.r), // Set the border radius
+                            height: 20.h,
+                            width: 106.w,
+                            child: ElevatedButton(onPressed: (){},
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: greenColor,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(25.03.r), // Set the border radius
+                                  ),
                               ),
-                            ),
-                            child: CustomText(
-                              text: 'UPGRADE',
-                              textColor: whiteColor,
-                              fontWeight: FontWeight.w700,
-                              fontsize: 7.51.sp,
+                                child: CustomText(
+                                    text: 'Free',
+                                    textColor: whiteColor,
+                                    fontWeight: FontWeight.w700,
+                                  fontsize: 7.51.sp,
 
+                                ),
                             ),
-                          ),
                         ),
                       ],
+                    ),
+                  ),
+                ),
+                SizedBox(width: 21.w),
+                /// Premium Container
+                GestureDetector(
+                  onTap:(){ Get.to(()=>AppNavBar() );},
+                  child: Container(
+                    width: 134.w, // Set the width of the container
+                    height: 139.h, // Set the height of the container
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(12, 192, 223, 1), // Background color of the container
+                      border: Border.all(
+                        color: Color.fromRGBO(151, 142, 240, 0.26), // Border color
+                        width: 3, // Border width
+                      ),
+                      borderRadius: BorderRadius.circular(7.51.r), // Border radius
+                    ),
+                    child:Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      child: Column(
+                        children: [
+                          SizedBox(height: 2.h),
+                          /// Text Premium
+                          Row(mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CustomText(
+                                text: 'Premium',
+                                textColor: whiteColor,
+                                fontWeight: FontWeight.w700,
+                                fontsize: 20.sp,
+                                textAlign: TextAlign.center,
+                              ),
+                              SizedBox(
+                                height:15.02.h,
+                                  width:15.02.w,
+                                  child: Image.asset('assets/images/crown.png')),
+                            ],
+                          ),
+                          SizedBox(height: 2.h),
+                          /// Text $ 14.99/Month
+                          Row(
+                            children: [
+                              CustomText(
+                                text: '\$ 14.99',
+                                textColor: Color.fromRGBO(0, 28, 49, 1),
+                                fontWeight: FontWeight.w600,
+                                fontsize: 16.sp,
+                              ),
+                              CustomText(
+                                text: '/Month',
+                                textColor: whiteColor,
+                                fontWeight: FontWeight.w500,
+                                fontsize: 10.sp,
+                              ),
+                            ],
+                          ),
+                          /// Text Access to unlimited premium features
+                          SizedBox(
+                            height: 34.h,
+                            width: 112.w,
+                            child: CustomText(
+                              text: 'Access to unlimited premium features.',
+                              textColor: whiteColor,
+                              fontWeight: FontWeight.w500,
+                              fontsize: 10.sp,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          SizedBox(height: 8.h),
+                          /// Elevated Button Upgrade
+                          SizedBox(
+                            height: 20.h,
+                            width: 106.w,
+                            child: ElevatedButton(onPressed: (){},
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: buttonColor2,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(25.03.r), // Set the border radius
+                                ),
+                              ),
+                              child: CustomText(
+                                text: 'UPGRADE',
+                                textColor: whiteColor,
+                                fontWeight: FontWeight.w700,
+                                fontsize: 7.51.sp,
+
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

@@ -1,7 +1,9 @@
 import 'package:bio_medica/view/ProgressTracking/progress.dart';
 import 'package:bio_medica/view/course/courses.dart';
 import 'package:bio_medica/view/course/quiz.dart';
+import 'package:bio_medica/view/home_Screen/freeHomeScreen.dart';
 import 'package:bio_medica/view/home_Screen/home_screen.dart';
+import 'package:bio_medica/view/navbar/nav_bar.dart';
 import 'package:bio_medica/view/tech_support.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

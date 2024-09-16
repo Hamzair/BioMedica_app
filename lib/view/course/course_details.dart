@@ -33,7 +33,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                 BorderRadius.vertical(bottom: Radius.circular(30)),
                 child: Image.asset(
                   widget.image,
-                  height: 300.h,
+                  height: 264.h,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
@@ -211,10 +211,10 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                         CustomText(
                           text: 'Course Chapters',
                           textColor: buttonColor2,
-                          fontWeight: FontWeight.w500,
-                          fontsize: 22.sp,
+                          fontWeight: FontWeight.w700,
+                          fontsize: 16.sp,
                         ),
-                        SizedBox(height: 20.h),
+                        SizedBox(height: 23.h),
                         SizedBox(
                           width: double.infinity,
                           child: Column(
@@ -255,6 +255,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                     title: 'Design \nShortage',
                                 //    imagePath: 'assets/images/tulip.png',
                                   ),
+
                                   // Add more lesson cards as needed in this row
                                 ],
                               ),
@@ -327,9 +328,11 @@ class _LessonCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
+
             width: 92.w,
             height: 82.h,
             decoration: BoxDecoration(
+
               color: Color(0xFF001A2E).withOpacity(0.4),
               borderRadius: BorderRadius.circular(10.r),
               border: Border.all(color: Darkcontainer,width: 1.2)
@@ -339,7 +342,6 @@ class _LessonCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
 
-                  SizedBox(height: 8.h),
                   CustomText(
                     text: title,
                     fontsize: 12.sp,
@@ -351,7 +353,7 @@ class _LessonCard extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 10.h),
+
         ],
       ),
     );

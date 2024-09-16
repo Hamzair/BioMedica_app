@@ -31,7 +31,7 @@ class _CourseContentState extends State<CourseContent> {
                     BorderRadius.vertical(bottom: Radius.circular(30)),
                 child: Image.asset(
                  widget.image, // Replace with actual image
-                  height: 300.h,
+                  height: 264.h,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
