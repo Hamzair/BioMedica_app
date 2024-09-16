@@ -76,7 +76,7 @@ class HomeScreen extends StatelessWidget {
       // key: navBarController.scaffoldKey,
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100.h),
+        preferredSize: Size.fromHeight(80.h),
         child: AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -153,8 +153,8 @@ class HomeScreen extends StatelessWidget {
           children: [
             // Grid View for home options
             Container(
-              height: 330.h,
-              margin: EdgeInsets.only(bottom: 20.h),
+              height: 300.h,
+              margin: EdgeInsets.only(bottom: 10.h),
               child: GridView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -162,18 +162,30 @@ class HomeScreen extends StatelessWidget {
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
                   childAspectRatio: 0.9,
-                ),
+                ),    
                 padding: EdgeInsets.all(10.r),
-                itemCount: gridItems.length,
+                itemCount: gridItems.length + 2, // Increase by 2 for the two empty containers
                 itemBuilder: (context, index) {
-                  final item = gridItems[index];
+                  // Empty container at index 8
+                  if (index == 8) {
+                    return Container(); // Empty container at index 8
+                  }
+
+                  // Empty container at the last index
+                  if (index == gridItems.length + 1) {
+                    return Container(); // Empty container at the end
+                  }
+
+                  // Adjust the index to account for the empty container at index 8
+                  final adjustedIndex = index > 8 ? index - 1 : index;
+                  final item = gridItems[adjustedIndex];
+
                   return GestureDetector(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              item['page'] ?? const SizedBox.shrink(),
+                          builder: (context) => item['page'] ?? const SizedBox.shrink(),
                         ),
                       );
                     },
@@ -208,7 +220,8 @@ class HomeScreen extends StatelessWidget {
                   );
                 },
               ),
-            ),
+            )
+,
 
             Container(
               padding: EdgeInsets.fromLTRB(10, 10, 10, 10),

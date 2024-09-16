@@ -17,8 +17,8 @@ class Wishlist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer:  AppDrawer(),
-       key: navBarController.scaffoldKey,
+   //   drawer:  AppDrawer(),
+   //    key: navBarController.scaffoldKey,
       backgroundColor: primaryColor,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100.h),
@@ -50,8 +50,7 @@ class Wishlist extends StatelessWidget {
                               // Open the drawer using the scaffold key
                               navBarController.scaffoldKey.currentState?.openDrawer();
                             },
-                            child: Image(
-                                image: AssetImage('assets/images/drawer.png')),
+                            child: Image.asset('assets/images/back_icon.png')
                           ),
                         ),
                         SizedBox(
@@ -65,21 +64,7 @@ class Wishlist extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Row(
-                      children: [
-                        SizedBox(
-                            width: 38.w,
-                            height: 38.h,
-                            child: GestureDetector(
-                              onTap: (){
-                                Get.to(()=> EditProfileScreen());
-                              },
-                              child: Image(
-                                  image: AssetImage(
-                                      'assets/images/settings_image.png')),
-                            )),
-                      ],
-                    ),
+
                   ],
                 ),
               ),

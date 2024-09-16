@@ -404,8 +404,8 @@ class _CourseContentState extends State<CourseContent> {
               SizedBox(
                 width: 249.w,
                 //  height: 53.h,
-                child: ElevatedButton(
 
+                child: ElevatedButton(
                   onPressed: () {
                     Get.to(() => LessonScreen());
                   },

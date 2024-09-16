@@ -52,7 +52,6 @@ class CustomTextFiled extends StatelessWidget {
     this.isObscure,
     this.afterPasswordIcon,
     required this.readOnly,
-
   });
 
   final _focusNode = FocusNode();
@@ -72,48 +71,46 @@ class CustomTextFiled extends StatelessWidget {
         fontWeight: FontWeight.w400,
       ),
       readOnly: readOnly,
+      textAlign: TextAlign.start,  // Center the written value horizontally
+      textAlignVertical: TextAlignVertical.center,  // Center the written value vertically
       decoration: InputDecoration(
         suffixIcon: isPassword == true
             ? IconButton(
-                onPressed: passwordFunction,
-                icon: Icon(
-                  // size: 15,
-                  isObscure == true ? beforePasswordIcon : afterPasswordIcon,
-                  color: primaryColor,
-                ),
-              )
-            : Icon(
-                suffixIcon,
-
-              ),
+          onPressed: passwordFunction,
+          icon: Icon(
+            isObscure == true ? beforePasswordIcon : afterPasswordIcon,
+            color: primaryColor,
+          ),
+        )
+            : Icon(suffixIcon),
         prefixIcon: prefixIcon != null
             ? Image.asset(
-                prefixIcon!,
-                color: primaryColor,
-                  scale: 3,
-              // fit: BoxFit.fill,
-              )
+          prefixIcon!,
+          color: primaryColor,
+          scale: 2.9,
+        )
             : null,
         filled: isFilled ?? true,
         fillColor: fillColor ?? secondaryColor,
         hintText: hintText,
         hintStyle: TextStyle(
           fontFamily: fontFamily ?? 'jost',
-          fontSize: hintTextSize ?? 15.sp,
+          fontSize: hintTextSize ?? 13.sp,
           color: hintColor ?? Colors.black,
           fontWeight: fontWeight ?? FontWeight.w400,
         ),
+
         border: isBorder == true
             ? OutlineInputBorder(
-                borderRadius: BorderRadius.circular(13.r),
-                borderSide: const BorderSide(color: blackColor, width: 1),
-              )
+          borderRadius: BorderRadius.circular(13.r),
+          borderSide: const BorderSide(color: blackColor, width: 1),
+        )
             : InputBorder.none,
         errorBorder: isErrorBorder == true
             ? OutlineInputBorder(
-                borderSide: const BorderSide(color: Colors.red),
-                borderRadius: BorderRadius.circular(13.r),
-              )
+          borderSide: const BorderSide(color: Colors.red),
+          borderRadius: BorderRadius.circular(13.r),
+        )
             : InputBorder.none,
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: blackColor, width: 1),
@@ -127,6 +124,7 @@ class CustomTextFiled extends StatelessWidget {
     );
   }
 }
+
 
 class EmailCustomTextFiled extends StatelessWidget {
   String? hintText;

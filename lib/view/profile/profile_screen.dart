@@ -35,7 +35,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       // key: _scaffoldKey,
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100.h),
+        preferredSize: Size.fromHeight(80.h),
         child: AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -496,7 +496,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(5.69.r), // Apply the same radius here
                               child: Image(
-                                image: AssetImage('assets/images/my_courses_tab_image2.png'),
+                                image: AssetImage('assets/images/ux_design_image_2.png'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -631,45 +631,46 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                           ),
                           SizedBox(width: 6.w),
-                          Padding(
-                            padding:  EdgeInsets.symmetric(vertical: 12.h),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  width: 184.w,
-                                  height: 42.h,
-                                  child: CustomText(
-                                    text:
-                                    "UX Research in Digital Product Design: Master Class",
-                                    textColor: whiteColor,
-                                    fontWeight: FontWeight.w600,
-                                    fontsize: 11.sp,
-                                  ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 16.h),
+                              SizedBox(
+                                width: 184.w,
+                                height: 42.h,
+                                child: CustomText(
+                                  text:
+                                  "UX Research in Digital Product Design: Master Class",
+                                  textColor: whiteColor,
+                                  fontWeight: FontWeight.w600,
+                                  fontsize: 11.sp,
                                 ),
-                                SizedBox(height: 5.h),
-                                Container(
-                                  width: 182.w,
-                                  // height: 8.h,
-                                  child: Row(
-                                    children: [
-                                      CustomText(
-                                        text: "Goal Progress",
-                                        textColor: buttonColor,
-                                        fontWeight: FontWeight.w700,
-                                        fontsize: 12.sp,
-                                      ),
-                                      SizedBox(width: 19.w),
+                              ),
 
-                                      /// Quiz Loading progress
-                                      Column(
+                              Container(
+                                width: 187.w,
+                                height: 61.h,
+                                child: Row(
+                                  children: [
+                                    CustomText(
+                                      text: "Goal Progress",
+                                      textColor: buttonColor,
+                                      fontWeight: FontWeight.w700,
+                                      fontsize: 12.sp,
+                                    ),
+                                    SizedBox(width: 19.w),
+
+                                    /// Quiz Loading progress
+                                    Padding(
+                                      padding:  EdgeInsets.symmetric(vertical: 5.h),
+                                      child: Column(
                                         children: [
                                           LoadingPercentageCircle(
                                             percentage: 15,
                                             // Example percentage
-                                            size: 25,
+                                            size: 35,
                                             // Example size
-                                            strokeWidth: 4,
+                                            strokeWidth: 6,
                                             // Example stroke width
                                             backgroundColor: mainTextColor!,
                                             progressColor: buttonColor,
@@ -683,17 +684,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(width: 15.w),
+                                    ),
+                                    SizedBox(width: 8.w),
 
-                                      /// Chapters Loading progress
-                                      Column(
+
+                                    /// Chapters Loading progress
+                                    Padding(
+                                      padding:EdgeInsets.symmetric(vertical: 5.h),
+                                      child: Column(
                                         children: [
                                           LoadingPercentageCircle(
                                             percentage: 15,
                                             // Example percentage
-                                            size: 25,
+                                            size: 35,
                                             // Example size
-                                            strokeWidth: 4,
+                                            strokeWidth: 6,
                                             // Example stroke width
                                             backgroundColor:mainTextColor!,
                                             progressColor: buttonColor2,
@@ -707,11 +712,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           ),
                                         ],
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ],
                       ),

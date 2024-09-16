@@ -105,12 +105,14 @@ class CoursesScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20.h),
-          Expanded(
+          Container(
+            width: Get.width * 0.9,
+            height: Get.height /1.6,
             child: GridView.builder(
               itemCount: courseImages.length, // Adjust the count dynamically
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 10,
+                crossAxisSpacing: 16,
                 mainAxisSpacing: 10,
                 childAspectRatio: 0.8,
               ),
@@ -138,61 +140,52 @@ class CourseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Pass the data to the next screen
+        // Navigate to CourseDetailScreen on tap
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => CourseDetailScreen(
-              title: name, // Pass course name
-              image: image, // Pass course image
+              title: name,
+              image: image,
             ),
           ),
         );
       },
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
+      child: SizedBox(
+        width: 160.w,   // Static width
+        height: 100.h,  // Static height
         child: Container(
           decoration: BoxDecoration(
-            color: primaryColor.withOpacity(0.1),
+            color: tapColor,
             borderRadius: BorderRadius.circular(9.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black26,
-                offset: Offset(0, 4),
-              ),
-            ],
+            border: Border.all(
+              width: 1,
+              color: Darkcontainer,
+            ),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(8, 15, 10, 0),
+                padding: const EdgeInsets.all(6.57),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(5.r),
-                    topRight: Radius.circular(5.r),
-                  ),
+                  borderRadius: BorderRadius.circular(10),
                   child: Image.asset(
-                    image, // Use the passed image
-                    height: 120.h,
+                    image,
+                    height: 90.h,
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
+              SizedBox(height: 8.h),
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(height: 8.h),
-                    CustomText(
-                      text: name,
-                      fontsize: 11.sp,
-                      fontWeight: FontWeight.bold,
-                      textColor: Colors.white,
-                    ),
-                  ],
+                padding: EdgeInsets.symmetric(horizontal: 8.w),
+                child: CustomText(
+                  text: name,
+                  fontsize: 11.sp,
+                  fontWeight: FontWeight.bold,
+                  textColor: Colors.white,
                 ),
               ),
             ],
@@ -202,4 +195,5 @@ class CourseCard extends StatelessWidget {
     );
   }
 }
+
 

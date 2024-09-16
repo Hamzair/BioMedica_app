@@ -62,12 +62,13 @@ class _LoginViewState extends State<LoginView> {
                 padding: EdgeInsets.symmetric(horizontal: 25.w),
                 child: SizedBox(
                   height: 43.75.h,
+
                   child: CustomTextFiled(
                     hintText: 'Your email',
                     prefixIcon: AppImages.email,
                     controller: emailController,
                     readOnly: false,
-                    hintTextSize: 14.65.sp,fontWeight: FontWeight.w400,
+                    // hintTextSize: 14.65.sp,fontWeight: FontWeight.w400,
                     hintColor: Color(0xff134064),
                                  //   prefixIconSize: 20.sp, // Adjust the size as needed
                   ),

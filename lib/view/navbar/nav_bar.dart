@@ -2,6 +2,7 @@ import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_not
 import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
+import 'package:bio_medica/view/course/course_content.dart';
 import 'package:bio_medica/view/course/courses.dart';
 import 'package:bio_medica/view/course/quiz.dart';
 import 'package:bio_medica/view/home_Screen/home_screen.dart';
@@ -44,7 +45,7 @@ class _AppNavBarState extends State<AppNavBar> {
      HomeScreen(),
      HomeScreen(),
     CoursesScreen(),
-   CoursesScreen(),
+    CourseContent(title:'Ux Design' , image: 'assets/images/z3.png'),
      ProfileScreen()
   ];
 
