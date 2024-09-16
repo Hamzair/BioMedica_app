@@ -29,8 +29,8 @@ class _SplashScreenState extends State<SplashScreen> {
           Center(
             child: Image.asset(
               AppImages.biomedicalogo,
-              height: 250.h,
-              width: 250.w,
+              height: 302.h,
+              width: 302.w,
             ),
           )
         ],

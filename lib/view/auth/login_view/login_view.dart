@@ -47,7 +47,7 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ),
               SizedBox(
-                height: 57.65.h,
+                height: 37.64.h,
               ),
               CustomText(
                 text: 'Login',
@@ -56,18 +56,21 @@ class _LoginViewState extends State<LoginView> {
                 fontWeight: FontWeight.w700,
               ),
               SizedBox(
-                height: 10.h,
+                height: 6.36.h,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25.w),
-                child: CustomTextFiled(
-                  hintText: 'Your email',
-                  prefixIcon: AppImages.email,
-                  controller: emailController,
-                  readOnly: false,
-                  // hintTextSize: 11.sp,
-                  hintColor: Color(0xff134064),
-               //   prefixIconSize: 20.sp, // Adjust the size as needed
+                child: SizedBox(
+                  height: 43.75.h,
+                  child: CustomTextFiled(
+                    hintText: 'Your email',
+                    prefixIcon: AppImages.email,
+                    controller: emailController,
+                    readOnly: false,
+                    hintTextSize: 14.65.sp,fontWeight: FontWeight.w400,
+                    hintColor: Color(0xff134064),
+                                 //   prefixIconSize: 20.sp, // Adjust the size as needed
+                  ),
                 ),
               ),
               SizedBox(
@@ -76,32 +79,35 @@ class _LoginViewState extends State<LoginView> {
 
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25.w),
-                child: CustomTextFiled(
-                  readOnly: false,
-                  controller: passwordController,
-                  hintText: ' Your password',
-                  hintColor: Color(0xff134064),
-                  // hintTextSize: 11.sp,
-                  onChange: (v) {
-                    return null;
-                  },
-                  prefixIcon: AppImages.password,
-                //  prefixIconSize: 10.sp,
-                  // isBorder: true,
-                  isPassword: true,
-                  isObscure: isChecked,
-                  passwordFunction: () {
-                    setState(() {
-                      isChecked = !isChecked;
-                    });
-                    return null;
-                  },
+                child: SizedBox(
+                  height: 43.75,
+                  child: CustomTextFiled(
+                    readOnly: false,
+                    controller: passwordController,
+                    hintText: ' Your password',
+                    hintColor: Color(0xff134064),
+                    // hintTextSize: 11.sp,
+                    onChange: (v) {
+                      return null;
+                    },
+                    prefixIcon: AppImages.password,
+                  //  prefixIconSize: 10.sp,
+                    // isBorder: true,
+                    isPassword: true,
+                    isObscure: isChecked,
+                    passwordFunction: () {
+                      setState(() {
+                        isChecked = !isChecked;
+                      });
+                      return null;
+                    },
 
-                  beforePasswordIcon: Icons.visibility_off_outlined,
-                  afterPasswordIcon: Icons.visibility,
+                    beforePasswordIcon: Icons.visibility_off_outlined,
+                    afterPasswordIcon: Icons.visibility,
+                  ),
                 ),
               ),
-              SizedBox(height: 6.25.h),
+              SizedBox(height: 16.25.h),
               SizedBox(
                 width: Get.width * 0.9,
                 child: Row(
@@ -160,7 +166,7 @@ class _LoginViewState extends State<LoginView> {
                 title: 'Login',
               ),
               SizedBox(
-                height: 36.h,
+                height: 77.48.h,
               ),
               GestureDetector(
                 onTap: () {

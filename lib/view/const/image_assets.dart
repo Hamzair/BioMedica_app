@@ -1,5 +1,5 @@
 class AppImages {
-  static const biomedicalogo = 'assets/images/biomedica_logo.png';
+  static const biomedicalogo = 'assets/images/BioMedica_splash_screen_image.png';
   static const onboardingellipse = 'assets/images/onboarding_ellipse.png';
   static const ellipse2 = 'assets/images/ellipse2.png';
   static const onboarding1 = 'assets/images/onboarding1.png';

@@ -394,37 +394,40 @@ class _CourseContentState extends State<CourseContent> {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: Row(
-mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('assets/images/favIcon.png',height: 50.h,width: 50.w,),
-            SizedBox(width: 5.w,),
-            SizedBox(
-              width: 249.w,
-              //  height: 53.h,
-              child: ElevatedButton(
+        child: SizedBox(
+          height: 53.61.h,
+          child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('assets/images/favIcon.png',height: 50.h,width: 50.w,),
+              SizedBox(width: 5.w,),
+              SizedBox(
+                width: 249.w,
+                //  height: 53.h,
+                child: ElevatedButton(
 
-                onPressed: () {
-                  Get.to(() => LessonScreen());
-                },
-                style: ElevatedButton.styleFrom(
+                  onPressed: () {
+                    Get.to(() => LessonScreen());
+                  },
+                  style: ElevatedButton.styleFrom(
 
-                  padding: EdgeInsets.symmetric(vertical: 13.h,horizontal: 8.w
-                  ),
-                  backgroundColor: Colors.cyan,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.r
+                    padding: EdgeInsets.symmetric(vertical: 13.h,horizontal: 8.w
+                    ),
+                    backgroundColor: Colors.cyan,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.r
+                      ),
                     ),
                   ),
-                ),
-                child: CustomText(
-                  text:     'Start Now',
-                  fontsize: 18.sp, textColor: Colors.white,
-                  fontWeight: FontWeight.bold,
+                  child: CustomText(
+                    text:     'Start Now',
+                    fontsize: 18.sp, textColor: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
