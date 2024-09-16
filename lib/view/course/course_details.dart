@@ -4,6 +4,7 @@ import 'package:bio_medica/view/course/course_content.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class CourseDetailScreen extends StatefulWidget {
   final String title;
@@ -31,7 +32,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                 borderRadius:
                 BorderRadius.vertical(bottom: Radius.circular(30)),
                 child: Image.asset(
-                  widget.image, // Use the passed image
+                  widget.image,
                   height: 300.h,
                   width: double.infinity,
                   fit: BoxFit.cover,
@@ -208,7 +209,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomText(
-                          text: 'Course Lessons',
+                          text: 'Course Chapters',
                           textColor: buttonColor2,
                           fontWeight: FontWeight.w500,
                           fontsize: 22.sp,
@@ -220,19 +221,19 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                             children: [
                               Row(
                                 mainAxisAlignment: MainAxisAlignment
-                                    .spaceBetween, // Space evenly between cards
+                                    .spaceBetween,
                                 children: [
                                   _LessonCard(
                                     title: 'Instructor\nIntroduction',
-                                    imagePath: 'assets/images/person.png',
+                                  //  imagePath: 'assets/images/person.png',
                                   ),
                                   _LessonCard(
                                     title: 'Design\nShortage',
-                                    imagePath: 'assets/images/pen.png',
+                                 //   imagePath: 'assets/images/pen.png',
                                   ),
                                   _LessonCard(
                                     title: 'Make it \nPretty',
-                                    imagePath: 'assets/images/tulip.png',
+                                //    imagePath: 'assets/images/tulip.png',
                                   ),
 
                                 ],
@@ -244,15 +245,15 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                 children: [
                                   _LessonCard(
                                     title: 'Copy\nInspiration',
-                                    imagePath: 'assets/images/person.png',
+                                  //  imagePath: 'assets/images/person.png',
                                   ),
                                   _LessonCard(
                                     title: 'Make it \nPretty',
-                                    imagePath: 'assets/images/pen.png',
+                               //     imagePath: 'assets/images/pen.png',
                                   ),
                                   _LessonCard(
                                     title: 'Design \nShortage',
-                                    imagePath: 'assets/images/tulip.png',
+                                //    imagePath: 'assets/images/tulip.png',
                                   ),
                                   // Add more lesson cards as needed in this row
                                 ],
@@ -284,10 +285,10 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
               //  height: 53.h,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CourseContent()),
-                  );
+                Get.to(()=> CourseContent(
+                  title: widget.title,
+                  image: widget.image
+                ));
                 },
                 style: ElevatedButton.styleFrom(
                   padding:
@@ -314,37 +315,34 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
 
 class _LessonCard extends StatelessWidget {
   final String title;
-  final String imagePath;
+//  final String imagePath;
 
-  const _LessonCard({required this.title, required this.imagePath});
+  const _LessonCard({required this.title, });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      // Wrap the entire card in a Container
-      width: 92.w, // Set the width of the card
+
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             width: 92.w,
-        //    height: 82.h,
+            height: 82.h,
             decoration: BoxDecoration(
               color: Color(0xFF001A2E).withOpacity(0.4),
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.r),
+              border: Border.all(color: Darkcontainer,width: 1.2)
             ),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    imagePath, // Display the image
-                    height: 40.h,
-                    width: 40.w,
-                  ),
+
                   SizedBox(height: 8.h),
                   CustomText(
                     text: title,
+                    fontsize: 12.sp,
                     textColor: Colors.white,
                     fontWeight: FontWeight.bold,
                     textAlign: TextAlign.center, // Center the title text

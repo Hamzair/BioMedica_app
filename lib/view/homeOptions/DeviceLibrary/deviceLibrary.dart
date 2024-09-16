@@ -1,4 +1,5 @@
 import 'package:bio_medica/view/const/color.dart';
+import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/view/course/courses.dart';
 import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceDetails.dart';
 import 'package:bio_medica/widget/custom_button.dart';
@@ -44,8 +45,8 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const AppDrawer(),
-      key: _scaffoldKey,
+    //  drawer: const AppDrawer(),
+     // key: _scaffoldKey,
       backgroundColor: primaryColor,
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(192, 208, 221, 1),
@@ -54,18 +55,20 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
           child: GestureDetector(
             onTap: () {
               // Open the drawer using the scaffold key
-              _scaffoldKey.currentState?.openDrawer();
+           //   _scaffoldKey.currentState?.openDrawer();
+              Navigator.pop(context);
             },
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFF001A2E),
-                borderRadius: BorderRadius.circular(50),
-              ),
-              child: Icon(
-                Icons.menu,
-                color: buttonColor2,
-              ),
-            ),
+            child: Image.asset('assets/images/back_icon.png'),
+            // child: Container(
+            //   decoration: BoxDecoration(
+            //     color: Color(0xFF001A2E),
+            //     borderRadius: BorderRadius.circular(50),
+            //   ),
+            //   child: Icon(
+            //     Icons.menu,
+            //     color: buttonColor2,
+            //   ),
+            // ),
           ),
         ),
         title: CustomText(

@@ -73,7 +73,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                           width: 7.w,
                         ),
                         CustomText(
-                          text: widget.deviceName, // Use passed device name
+                          text: widget.deviceName,
                           textColor: primaryColor,
                           fontWeight: FontWeight.bold,
                           fontsize: 22.sp,
@@ -389,7 +389,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomText(
-              text: 'Features',
+              text: 'Common Issues and Fixes:',
               textColor: buttonColor,
               fontWeight: FontWeight.w600,
               fontsize: 16.sp,
@@ -405,7 +405,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                   ),
                   TextSpan(
                     text: 'High sound quality for accurate diagnosis.\n',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white,fontSize: 12.sp),
                   ),
                   TextSpan(
                     text: '• ',
