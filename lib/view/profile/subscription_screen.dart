@@ -32,7 +32,7 @@ class SubscriptionScreen extends StatelessWidget {
                   height: 30.h,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.symmetric(horizontal: 12.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -42,7 +42,12 @@ class SubscriptionScreen extends StatelessWidget {
                               onTap: (){
                                 Get.back();
                               },
-                              child: Image.asset('assets/images/back_icon.png')),
+                              child: SizedBox(
+                                height: 38.h,
+                                width: 38.h,
+                                child: Image.asset('assets/images/back_icon.png',fit: BoxFit.fill,),
+                              ),
+                          ),
                           SizedBox(
                             width: 12.w,
                           ),
@@ -173,13 +178,14 @@ class SubscriptionScreen extends StatelessWidget {
                       children: [
                         SizedBox(height: 2.h),
                         /// Text Premium
-                        Row(
+                        Row(mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             CustomText(
                               text: 'Premium',
                               textColor: whiteColor,
                               fontWeight: FontWeight.w700,
                               fontsize: 20.sp,
+                              textAlign: TextAlign.center,
                             ),
                             SizedBox(
                               height:15.02.h,
@@ -247,40 +253,51 @@ class SubscriptionScreen extends StatelessWidget {
                 SizedBox(height: 43.h),
             /// long Text Terms & Condition & Privacy policy
                 SizedBox(
-                  height: 66.h,
+                  height: 75.h,
                   width: 307.w,
                   child: RichText(
                     text: TextSpan(
                       text: 'By continuing the purchase, you acknowledge that you have read our ',
-                      style: TextStyle(color: Colors.white, fontSize: 14.sp, fontWeight: FontWeight.w600), // Default style for white text
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                        height: 1.5, // Line height
+                      ),
                       children: [
                         TextSpan(
                           text: 'Terms & Condition',
                           style: TextStyle(
                             color: greenColor, // Green color for Terms & Condition
                             fontWeight: FontWeight.w600, // Optional: bold text
+                            height: 1.5, // Line height
                           ),
                         ),
                         TextSpan(
                           text: ' and that you agree to our ',
-                          style: TextStyle(color: Colors.white), // White color for the rest of the text
+                          style: TextStyle(
+                            color: Colors.white, // White color for the rest of the text
+                            height: 1.5, // Line height
+                          ),
                         ),
                         TextSpan(
                           text: 'Privacy Policy.',
                           style: TextStyle(
                             color: greenColor, // Green color for Privacy Policy
                             fontWeight: FontWeight.w600, // Optional: bold text
+                            height: 1.5, // Line height
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                            Get.to(()=> PrivacyPolicy());
+                              Get.to(() => PrivacyPolicy());
                             },
                         ),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(height: 13.89.h),
+
+                SizedBox(height: 33.89.h),
 
                 /// Free Trial Users Container
                 Container(

@@ -50,12 +50,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: 30.h,
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.symmetric(horizontal: 12.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
+
                         SizedBox(
                           width: 38.w,
                           height: 38.h,
@@ -65,7 +66,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               navBarController.scaffoldKey.currentState?.openDrawer();
                             },
                             child: Image(
-                                image: AssetImage('assets/images/drawer.png')),
+                                image: AssetImage('assets/images/left_side_bar_navigation_Icon.png'),
+                              fit: BoxFit.fill,
+
+                            ),
                           ),
                         ),
                         SizedBox(
@@ -90,7 +94,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               },
                               child: Image(
                                   image: AssetImage(
-                                      'assets/images/settings_image.png')),
+                                      'assets/images/settings_image.png'),
+                              fit: BoxFit.fill,
+                              ),
                             )),
                       ],
                     ),
@@ -287,6 +293,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                   ),
+                  SizedBox(width: 3.w),
+                  /// Divider
+                  VerticalDivider(
+                    thickness: 2, // Width of the line
+                    color: buttonColor2, // Color of the line
+                    width: 2.w, // Space around the divider
+                    indent: 7, // Space above the divider
+                    endIndent: 7, // Space below the divider
+                  ),
+                  SizedBox(width: 3.w),
                   /// Goals Tab
                   Expanded(
                     child: GestureDetector(
@@ -319,13 +335,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                   ),
+                  SizedBox(width: 3.w),
                   /// Divider
                   VerticalDivider(
                     thickness: 2, // Width of the line
                     color: buttonColor2, // Color of the line
                     width: 2.w, // Space around the divider
-                    indent: 20, // Space above the divider
-                    endIndent: 20, // Space below the divider
+                    indent: 7, // Space above the divider
+                    endIndent: 7, // Space below the divider
                   ),
 
                   /// Resources Tab
@@ -389,16 +406,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 4.w),
+                      padding: EdgeInsets.symmetric(horizontal: 11.39.w),
                       child: Row(
                         children: [
-                          SizedBox(
+                          Container(
                             width: 91.01.w,
                             height: 91.01.h,
-                            child: Image(
-                                image: AssetImage(
-                                    'assets/images/z2.png')),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(5.69.r), // Apply the same radius here
+                              child: Image(
+                                image: AssetImage('assets/images/profilescren_image.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
+
                           SizedBox(width: 9.62.w),
                           Padding(
                             padding:  EdgeInsets.symmetric(vertical: 8.h),
@@ -418,7 +440,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 ),
                                 SizedBox(height: 5.h),
                                 SizedBox(
-                                  width: 190.w,
+                                  width: 180.w,
                                   child: Row(
                                     mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -466,15 +488,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 4.w),
+                      padding: EdgeInsets.symmetric(horizontal: 11.39.w),
                       child: Row(
                         children: [
                           SizedBox(
                             width: 91.01.w,
                             height: 91.01.h,
-                            child: Image(
-                                image: AssetImage(
-                                    'assets/images/my_courses_tab_image2.png')),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(5.69.r), // Apply the same radius here
+                              child: Image(
+                                image: AssetImage('assets/images/my_courses_tab_image2.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
                           SizedBox(width: 9.62.w),
                           Padding(
@@ -495,7 +521,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 ),
                                 SizedBox(height: 5.h),
                                 SizedBox(
-                                  width: 190.w,
+                                  width: 180.w,
                                   child: Row(
                                     mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -590,14 +616,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     child: Padding(
-                      padding:  EdgeInsets.symmetric(horizontal: 4.w),
+                      padding: EdgeInsets.symmetric(horizontal: 11.37.w),
                       child: Row(
                         children: [
                           SizedBox(
                             width: 91.01.w,
                             height: 91.01.h,
-                            child:Image.asset(AppImages.laptop)
-                               
+                            child:ClipRRect(
+                              borderRadius: BorderRadius.circular(5.69.r), // Apply the same radius here
+                              child: Image(
+                                image: AssetImage('assets/images/profilescren_image.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+
                           ),
                           SizedBox(width: 6.w),
                           Padding(
@@ -617,8 +649,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   ),
                                 ),
                                 SizedBox(height: 5.h),
-                                SizedBox(
-                                  width: 200.w,
+                                Container(
+                                  width: 182.w,
                                   // height: 8.h,
                                   child: Row(
                                     children: [
@@ -692,7 +724,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             if (_selectedIndex == 2)
               Column(
                 children: [
-                  /// UX Research ZIP Container
+                  /// UX Resources ZIP Container
                   Container(
                     width: 311.w,
                     height: 73.23.h,

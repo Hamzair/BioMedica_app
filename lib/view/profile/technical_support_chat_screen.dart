@@ -30,7 +30,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                 ),
                 /// Back Icon & Title Text
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.symmetric(horizontal: 12.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -40,7 +40,12 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                               onTap: (){
                                 Get.back();
                               },
-                              child: Image.asset('assets/images/back_icon.png')),
+                              child: SizedBox(
+                                height: 38.h,
+                                width: 38.h,
+                                child: Image.asset('assets/images/back_icon.png',fit: BoxFit.fill,),
+                              ),
+                          ),
                           SizedBox(
                             width: 12.w,
                           ),
@@ -93,7 +98,9 @@ class TechnicalSupportChatScreen extends StatelessWidget {
             backgroundColor: secondaryColor,
           ),
         ),
-        body:Column(
+        body:
+        /// Chat Field
+        Column(
           children: [
             Expanded(
               child: ListView(
@@ -107,7 +114,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                   _buildUserMessage("That's good to know."),
                   // User Message
                   _buildUserMessage(
-                      "Thank you so much for your help! "),
+                      "Thank you so much for your help! I appreciate it."),
                   // Support Message
                   _buildSupportMessage(
                     "You’re very welcome!\n\nIf you have any more questions in the future or need assistance with anything else, feel free to reach out.",
@@ -153,12 +160,15 @@ class TechnicalSupportChatScreen extends StatelessWidget {
       ],
     );
   }
-/// User Text Message Field Design
+  /// User Text Message Field Design
   Widget _buildUserMessage(String message) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Flexible(
+        ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: 220.w, // Limit the message bubble width to 220
+          ),
           child: Container(
             padding: EdgeInsets.all(12),
             margin: EdgeInsets.symmetric(vertical: 6.h),
@@ -172,7 +182,6 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                 color: Color.fromRGBO(0, 28, 49, 1),
                 fontSize: 13.27.sp,
                 fontWeight: FontWeight.w400,
-
               ),
             ),
           ),
@@ -180,7 +189,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
       ],
     );
   }
-/// Type Message TextField
+  /// Type Message TextField
   Widget _buildMessageInput() {
     return Container(
       height: 76.8.h,
@@ -216,8 +225,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(11.52.r)
                 ),
                 child: GestureDetector(
-                  onTap: (){
-                  },
+                  onTap: (){},
                     child: Icon(Icons.send, color: buttonColor2,size: 17.sp,)),
               ),
             ],

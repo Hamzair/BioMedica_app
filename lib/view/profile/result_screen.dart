@@ -29,7 +29,7 @@ class ResultScreen extends StatelessWidget {
                   height: 30.h,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.symmetric(horizontal: 12.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -39,7 +39,12 @@ class ResultScreen extends StatelessWidget {
                               onTap: (){
                                 Get.back();
                               },
-                              child: Image.asset('assets/images/back_icon.png')),
+                              child: SizedBox(
+                                height: 38.h,
+                                width: 38.h,
+                                child: Image.asset('assets/images/back_icon.png',fit: BoxFit.fill,),
+                              ),
+                          ),
                           SizedBox(
                             width: 12.w,
                           ),

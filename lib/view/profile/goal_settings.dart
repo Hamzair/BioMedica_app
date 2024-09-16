@@ -17,7 +17,8 @@ class GoalSettings extends StatefulWidget {
 class _GoalSettingsState extends State<GoalSettings> {
   // List of courses for the dropdown
   final List<String> _courses = ['Course 1', 'Course 2', 'Course 3'];
-  String? _selectedCourse;
+  // Set default selected value to "Course 1"
+  String? _selectedCourse = 'Course 1';
 
   // Counter variables for Quiz Points and Chapters
   int quizPoints = 20;
@@ -79,7 +80,7 @@ class _GoalSettingsState extends State<GoalSettings> {
               height: 30.h,
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.symmetric(horizontal: 12.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -89,7 +90,12 @@ class _GoalSettingsState extends State<GoalSettings> {
                           onTap: (){
                             Get.back();
                           },
-                          child: Image.asset('assets/images/back_icon.png')),
+                          child: SizedBox(
+                            height: 38.h,
+                            width: 38.h,
+                            child: Image.asset('assets/images/back_icon.png',fit: BoxFit.fill,),
+                          ),
+                      ),
                       SizedBox(
                         width: 7.w,
                       ),
@@ -111,7 +117,7 @@ class _GoalSettingsState extends State<GoalSettings> {
       ),),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: 25.w),
           child: Column(
             children: [
               SizedBox(height: 87.h),
@@ -167,6 +173,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                     ),
                   ),
                   icon: SizedBox.shrink(), // This removes the default dropdown arrow
+                  dropdownColor: secondaryColor, // Set the dropdown background color to light blue
                   items: _courses.map((String course) {
                     return DropdownMenuItem<String>(
                       value: course,
