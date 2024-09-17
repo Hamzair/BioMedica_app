@@ -30,7 +30,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
             children: [
               ClipRRect(
                 borderRadius:
-                BorderRadius.vertical(bottom: Radius.circular(30)),
+                    BorderRadius.vertical(bottom: Radius.circular(30)),
                 child: Image.asset(
                   widget.image,
                   height: 264.h,
@@ -73,7 +73,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                     decoration: BoxDecoration(
                       color: Color(0xFF001A2E).withOpacity(0.6),
                       borderRadius:
-                      BorderRadius.circular(10.r), // Rounded corners
+                          BorderRadius.circular(10.r), // Rounded corners
                     ),
                     child: Row(
                       children: [
@@ -143,14 +143,14 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
 
                   // Content based on selected index
                   if (_selectedIndex == 0)
-                  // About Section
+                    // About Section
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         // Course Description
                         CustomText(
                           text:
-                          'Transformative journey through our comprehensive course, '
+                              'Transformative journey through our comprehensive course, '
                               '‘Master Digital Product Design: UX Research & UI Design’. Created especially for budding UX/UI designers, '
                               'this immersive program invites you to explore the intricate art of crafting exceptional digital experiences....',
                           fontWeight: FontWeight.w500,
@@ -170,38 +170,51 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                             fontWeight: FontWeight.bold,
                             textColor: Colors.white),
                         SizedBox(height: 10.h),
+
+                        // Key Points List with aligned items
                         ListTile(
-                            leading:
-                            Icon(Icons.check_circle, color: Colors.cyan),
-                            title: CustomText(
-                              text: 'Critical Thinking',
-                              textColor: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            )),
+                          minVerticalPadding: 0,
+                          leading: Icon(Icons.check_circle, color: Colors.cyan),
+                          title: CustomText(
+                            text: 'Critical Thinking',
+                            textColor: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          contentPadding: EdgeInsets
+                              .zero, // Aligns icon and text to the start
+                          minLeadingWidth:
+                              0, // Prevents extra space around leading icon
+                        ),
                         ListTile(
-                            leading:
-                            Icon(Icons.check_circle, color: Colors.cyan),
-                            title: CustomText(
-                              text: 'User Experience Research',
-                              textColor: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            )),
+                          leading: Icon(Icons.check_circle, color: Colors.cyan),
+                          title: CustomText(
+                            text: 'User Experience Research',
+                            textColor: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          contentPadding: EdgeInsets.zero,
+                          minLeadingWidth: 0,
+                        ),
                         ListTile(
-                            leading:
-                            Icon(Icons.check_circle, color: Colors.cyan),
-                            title: CustomText(
-                              text: 'User Interface Design',
-                              textColor: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            )),
+                          leading: Icon(Icons.check_circle, color: Colors.cyan),
+                          title: CustomText(
+                            text: 'User Interface Design',
+                            textColor: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          contentPadding: EdgeInsets.zero,
+                          minLeadingWidth: 0,
+                        ),
                         ListTile(
-                            leading:
-                            Icon(Icons.check_circle, color: Colors.cyan),
-                            title: CustomText(
-                              text: 'Usability Testing',
-                              textColor: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            )),
+                          leading: Icon(Icons.check_circle, color: Colors.cyan),
+                          title: CustomText(
+                            text: 'Usability Testing',
+                            textColor: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          contentPadding: EdgeInsets.zero,
+                          minLeadingWidth: 0,
+                        ),
                       ],
                     )
                   else
@@ -220,40 +233,39 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                           child: Column(
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment
-                                    .spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   _LessonCard(
                                     title: 'Instructor\nIntroduction',
-                                  //  imagePath: 'assets/images/person.png',
+                                    //  imagePath: 'assets/images/person.png',
                                   ),
                                   _LessonCard(
                                     title: 'Design\nShortage',
-                                 //   imagePath: 'assets/images/pen.png',
+                                    //   imagePath: 'assets/images/pen.png',
                                   ),
                                   _LessonCard(
                                     title: 'Make it \nPretty',
-                                //    imagePath: 'assets/images/tulip.png',
+                                    //    imagePath: 'assets/images/tulip.png',
                                   ),
-
                                 ],
                               ),
                               SizedBox(height: 20.h),
                               Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   _LessonCard(
                                     title: 'Copy\nInspiration',
-                                  //  imagePath: 'assets/images/person.png',
+                                    //  imagePath: 'assets/images/person.png',
                                   ),
                                   _LessonCard(
                                     title: 'Make it \nPretty',
-                               //     imagePath: 'assets/images/pen.png',
+                                    //     imagePath: 'assets/images/pen.png',
                                   ),
                                   _LessonCard(
                                     title: 'Design \nShortage',
-                                //    imagePath: 'assets/images/tulip.png',
+                                    //    imagePath: 'assets/images/tulip.png',
                                   ),
 
                                   // Add more lesson cards as needed in this row
@@ -268,47 +280,66 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
               ),
             ),
           ),
-        ],
-      ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/images/favIcon.png',
-              height: 50.h,
-              width: 50.w,
-            ),
-            SizedBox(width: 5.w),
-            SizedBox(
-              width: 249.w,
-              //  height: 53.h,
-              child: ElevatedButton(
-                onPressed: () {
-                Get.to(()=> CourseContent(
-                  title: widget.title,
-                  image: widget.image
-                ));
-                },
-                style: ElevatedButton.styleFrom(
-                  padding:
-                  EdgeInsets.symmetric(vertical: 13.h, horizontal: 8.w),
-                  backgroundColor: Colors.cyan,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.r),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Container(
+              color: Colors.transparent,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(12),
+                    height: 50.h,
+                    width: 50.w,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: buttonColor,
+                        width: 1,
+                      ),
+                      color: Colors.transparent, // Ensure the container background is transparent
+                    ),
+                    child: Center( // Center the image within the container
+                      child: Image.asset(
+                        'assets/images/fav icon.png',
+                        height: 24.h,
+                        width: 24.w,
+                        fit: BoxFit.cover, // Ensure the image scales correctly
+                      ),
+                    ),
                   ),
-                ),
-                child: CustomText(
-                  text: 'Start Now',
-                  fontsize: 18.sp,
-                  textColor: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
+
+                  SizedBox(width: 5.w),
+                  Container(
+                  color: Colors.transparent,
+                    width: 249.w,
+                    //  height: 53.h,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Get.to(() => CourseContent(
+                            title: widget.title, image: widget.image));
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 13.h, horizontal: 8.w),
+                        backgroundColor: Colors.cyan,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.r),
+                        ),
+                      ),
+                      child: CustomText(
+                        text: 'Start Now',
+                        fontsize: 18.sp,
+                        textColor: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -318,30 +349,27 @@ class _LessonCard extends StatelessWidget {
   final String title;
 //  final String imagePath;
 
-  const _LessonCard({required this.title, });
+  const _LessonCard({
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-
             width: 92.w,
             height: 82.h,
             decoration: BoxDecoration(
-
-              color: Color(0xFF001A2E).withOpacity(0.4),
-              borderRadius: BorderRadius.circular(10.r),
-              border: Border.all(color: Darkcontainer,width: 1.2)
-            ),
+                color: Color(0xFF001A2E).withOpacity(0.4),
+                borderRadius: BorderRadius.circular(10.r),
+                border: Border.all(color: Darkcontainer, width: 1.2)),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-
                   CustomText(
                     text: title,
                     fontsize: 12.sp,
@@ -353,7 +381,6 @@ class _LessonCard extends StatelessWidget {
               ),
             ),
           ),
-
         ],
       ),
     );

@@ -29,7 +29,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
     'assets/images/pace.png',
     'assets/images/def.png',
     'assets/images/stheth.png',
-    'assets/images/def.png',
+    'assets/images/sthetoscope.png',
   ];
 
   @override
@@ -192,13 +192,16 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                     ],
                   ),
                 ),
+
               ),
+
             ),
             SizedBox(
               height: 19.h,
             ),
             // Visibility widgets for tab contents
             buildTabContent(),
+            SizedBox(height: 50.h,)
           ],
         ),
       ),
@@ -330,17 +333,55 @@ class _DeviceDetailsState extends State<DeviceDetails> {
             fontWeight: FontWeight.w600,
             fontsize: 16.sp,
           ),
-          CustomText(
-            text:
-            'The chest piece, placed on the patient’s chest or back, transmits body sounds to the diaphragm. These sounds travel through the tubing to the earpieces, allowing the physician to detect abnormalities in heart or lung functions.',
-            textColor: Colors.white,
-            fontWeight: FontWeight.w400,
-            fontsize: 12.sp,
+          SizedBox(
+            height: 8.h,
+          ),
+          // Bullet points for operation steps
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              bulletPoint('Place the chest piece on the patient’s chest or back.'),
+              bulletPoint('The diaphragm picks up internal body sounds.'),
+              bulletPoint('Sounds travel through the tubing to the earpieces.'),
+              bulletPoint('Physician listens for abnormalities in heart or lung functions.'),
+            ],
           ),
         ],
       ),
     );
   }
+
+// Function to create a bullet point with text
+  Widget bulletPoint(String text) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: 8.h),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,  // Aligns the bullet and text vertically
+        children: [
+          // Bullet container
+          Container(
+            height: 8.h,
+            width: 8.h,
+            decoration: BoxDecoration(
+              color: buttonColor2,
+              borderRadius: BorderRadius.circular(30),  // Circular bullet
+            ),
+          ),
+          SizedBox(width: 10.w),  // Space between bullet and text
+          // Text content
+          Expanded(
+            child: CustomText(
+              text: text,
+              textColor: Colors.white,
+              fontsize: 12.sp,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
 
   Widget buildImportanceContent() {
     return Padding(
@@ -365,18 +406,25 @@ class _DeviceDetailsState extends State<DeviceDetails> {
             height: 17.h,
           ),
           CustomText(
-            text: 'Importance',
+            text: 'Common Use Cases',
             textColor: buttonColor,
             fontWeight: FontWeight.w600,
             fontsize: 16.sp,
           ),
-          CustomText(
-            text:
-            'The stethoscope is essential for diagnosing and monitoring various health conditions. It helps in detecting irregular heart rhythms, lung obstructions, and other critical conditions.',
-            textColor: Colors.white,
-            fontWeight: FontWeight.w400,
-            fontsize: 12.sp,
+          SizedBox(
+            height: 8.h,
           ),
+          // Bullet points for operation steps
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              bulletPoint('Heart Sound Monitoring: Detecting murmurs, irregular heartbeats, and abnormal rhythms.'),
+              bulletPoint('Lung Sound Analysis: Listening for wheezing, crackling, or diminished breath sounds, which may indicate respiratory issues.'),
+              bulletPoint('Sounds travel through the tubing to the earpieces.'),
+              bulletPoint('Physician listens for abnormalities in heart or lung functions.'),
+            ],
+          ),
+
         ],
       ),
     );
@@ -395,36 +443,14 @@ class _DeviceDetailsState extends State<DeviceDetails> {
               fontsize: 16.sp,
             ),
             SizedBox(height: 8), // Add some space between the title and the list
-            RichText(
-              text: TextSpan(
-                style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
-                children: [
-                  TextSpan(
-                    text: '• ',
-                    style: TextStyle(color: Colors.orange),
-                  ),
-                  TextSpan(
-                    text: 'High sound quality for accurate diagnosis.\n',
-                    style: TextStyle(color: Colors.white,fontSize: 12.sp),
-                  ),
-                  TextSpan(
-                    text: '• ',
-                    style: TextStyle(color: Colors.orange),
-                  ),
-                  TextSpan(
-                    text: 'Lightweight and portable design.\n',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  TextSpan(
-                    text: '• ',
-                    style: TextStyle(color: Colors.orange),
-                  ),
-                  TextSpan(
-                    text: 'Durable construction for long-lasting use.',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ],
-              ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                bulletPoint('Heart Sound Monitoring: Detecting murmurs, irregular heartbeats, and abnormal rhythms.'),
+                bulletPoint('Lung Sound Analysis: Listening for wheezing, crackling, or diminished breath sounds, which may indicate respiratory issues.'),
+                bulletPoint('Sounds travel through the tubing to the earpieces.'),
+                bulletPoint('Physician listens for abnormalities in heart or lung functions.'),
+              ],
             ),
           ],
         )
@@ -432,12 +458,12 @@ class _DeviceDetailsState extends State<DeviceDetails> {
     );
   }
 
-  // Method to build an image item
+
   Widget buildImageItem(String imagePath) {
     return GestureDetector(
       onTap: () {
         setState(() {
-          _selectedImage = imagePath;
+          _selectedImage = imagePath; // Set the selected image path
         });
       },
       child: Padding(
@@ -445,6 +471,13 @@ class _DeviceDetailsState extends State<DeviceDetails> {
         child: Container(
           height: 50.h,
           width: 70.w,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8.r),
+            border: Border.all(
+              color: _selectedImage == imagePath ? buttonColor2 : Colors.transparent, // Red border for the selected image
+              width: 2.w,
+            ),
+          ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8.r), // Set border radius here
             child: Image.asset(
@@ -456,4 +489,5 @@ class _DeviceDetailsState extends State<DeviceDetails> {
       ),
     );
   }
+
 }

@@ -2,18 +2,18 @@ import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/view/profile/edit_profile_screen.dart';
-import 'package:bio_medica/view/profile/subscription_screen.dart';
+import 'package:bio_medica/drawer%20items/subscription_screen.dart';
 import 'package:bio_medica/widget/custom_button.dart';
 import 'package:bio_medica/widget/custom_search.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:bio_medica/widget/custom_textfield.dart';
-import 'package:bio_medica/widget/drawer.dart';
+import 'package:bio_medica/drawer%20items/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../loading_percentage_circle/loading_percentage_circle.dart';
+import '../../widget/loading_percentage_circle.dart';
 import 'goal_settings.dart';
 
 class ProfileScreen extends StatefulWidget {

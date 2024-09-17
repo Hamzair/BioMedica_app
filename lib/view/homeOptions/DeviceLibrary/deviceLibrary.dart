@@ -5,7 +5,7 @@ import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceDetails.dart';
 import 'package:bio_medica/widget/custom_button.dart';
 import 'package:bio_medica/widget/custom_search.dart';
 import 'package:bio_medica/widget/custom_text.dart';
-import 'package:bio_medica/widget/drawer.dart';
+import 'package:bio_medica/drawer%20items/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -203,7 +203,15 @@ class Neurology extends StatelessWidget {
         children: [
           // Item 1
           Card(
-            color: container,
+            color: tapColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.r), // Border radius
+              side: BorderSide(
+                color: Darkcontainer, // Black border color
+                width: 1, // Border width
+              ),
+            ),
+
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
@@ -280,7 +288,14 @@ class Neurology extends StatelessWidget {
           ),
           // Item 2
           Card(
-            color: container,
+            color: tapColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.r), // Border radius
+              side: BorderSide(
+                color: Darkcontainer, // Black border color
+                width: 1, // Border width
+              ),
+            ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
@@ -354,7 +369,14 @@ class Neurology extends StatelessWidget {
           ),
           // Item 3
           Card(
-            color: container,
+            color: tapColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.r), // Border radius
+              side: BorderSide(
+                color: Darkcontainer, // Black border color
+                width: 1, // Border width
+              ),
+            ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(

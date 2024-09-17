@@ -1,12 +1,12 @@
 import 'package:bio_medica/main.dart';
-import 'package:bio_medica/view/loading_percentage_circle/loading_percentage_circle.dart';
+import 'package:bio_medica/widget/loading_percentage_circle.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../const/color.dart';
+import '../view/const/color.dart';
 
 class ProgressScreen extends StatelessWidget {
   @override
@@ -322,11 +322,10 @@ class ProgressScreen extends StatelessWidget {
                 height: 117.h,
                 decoration: BoxDecoration(
                   color: tapColor,
-                  // Your tapColor can be defined or replaced here
                   borderRadius: BorderRadius.circular(10.r),
                   border: Border.all(
                     color: Color.fromRGBO(0, 28, 49, 1),
-                    // Dark blue color for the border
+
                     width: 1.w, // Width of the border
                   ),
                 ),

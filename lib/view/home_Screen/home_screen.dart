@@ -7,14 +7,19 @@ import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceLibrary.dart';
 import 'package:bio_medica/view/home_Screen/article_detail.dart';
 import 'package:bio_medica/widget/custom_search.dart';
 import 'package:bio_medica/widget/custom_text.dart';
-import 'package:bio_medica/widget/drawer.dart';
+import 'package:bio_medica/drawer%20items/drawer.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../controller/subscription_controller.dart';
+
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
   final NavBarController navBarController = Get.put(NavBarController());
+  final SubscriptionService subscriptionService =
+      Get.find<SubscriptionService>();
   final List<Map<String, dynamic>> gridItems = [
     {
       'image': AppImages.DeviceLibrary,
@@ -39,32 +44,38 @@ class HomeScreen extends StatelessWidget {
     {
       'image': AppImages.HumanPhyscology,
       'title': 'Human\nPhysiology ',
-      'page': DeviceLibrary()
+      'page': DeviceLibrary(),
+      'locked': true
     },
     {
       'image': AppImages.BioMechanics,
       'title': 'Bio-\nmechanics',
-      'page': DeviceLibrary()
+      'page': DeviceLibrary(),
+      'locked': true
     },
     {
       'image': AppImages.MedicalImaging,
       'title': 'Medical \nImaging',
-      'page': DeviceLibrary()
+      'page': DeviceLibrary(),
+      'locked': true
     },
     {
       'image': AppImages.AdvancedDesign,
       'title': 'Advanced\nDevice',
-      'page': DeviceLibrary()
+      'page': DeviceLibrary(),
+      'locked': true
     },
     {
       'image': AppImages.BioMaterials,
       'title': 'Biomaterials',
-      'page': DeviceLibrary()
+      'page': DeviceLibrary(),
+      'locked': true
     },
     {
       'image': AppImages.ProstheicDevice,
       'title': 'Prosthetic\nDevices',
-      'page': DeviceLibrary()
+      'page': DeviceLibrary(),
+      'locked': true
     },
   ];
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -158,19 +169,18 @@ class HomeScreen extends StatelessWidget {
               child: GridView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4, // 4 columns
+                  crossAxisCount: 4,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
                   childAspectRatio: 0.9,
-                ),    
+                ),
                 padding: EdgeInsets.all(10.r),
-                itemCount: gridItems.length + 2, // Increase by 2 for the two empty containers
+                itemCount: gridItems.length + 2, // Adjusted item count
                 itemBuilder: (context, index) {
-                  // Empty container at index 8
+                  //   Empty container at index 8
                   if (index == 8) {
                     return Container(); // Empty container at index 8
                   }
-
                   // Empty container at the last index
                   if (index == gridItems.length + 1) {
                     return Container(); // Empty container at the end
@@ -180,48 +190,81 @@ class HomeScreen extends StatelessWidget {
                   final adjustedIndex = index > 8 ? index - 1 : index;
                   final item = gridItems[adjustedIndex];
 
+                  // Check if the item is locked
+                  final isLocked = item['locked'] == true &&
+                      !subscriptionService.isPremium.value;
+
                   return GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => item['page'] ?? const SizedBox.shrink(),
-                        ),
-                      );
+                      if (isLocked) {
+                        Get.snackbar(
+                          'Locked',
+                          'Buy Premium to unlock this feature.',
+                          backgroundColor: primaryColor,
+                          colorText: Colors.white,
+                        );
+                      } else {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                item['page'] ?? const SizedBox.shrink(),
+                          ),
+                        );
+                      }
                     },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.black,
-                          width: 1.w,
+                    child: Stack(
+                      children: [
+                        Container(
+                          width: 80.w,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black, width: 1.w),
+                            color: container,
+                            borderRadius: BorderRadius.circular(5.r),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                item['image'],
+                                height: 42.h,
+                                width: 43.w,
+                              ),
+                              SizedBox(height: 5.h),
+                              CustomText(
+                                text: item['title'],
+                                textAlign: TextAlign.center,
+                                textColor: Colors.white,
+                                fontsize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ],
+                          ),
                         ),
-                        color: container,
-                        borderRadius: BorderRadius.circular(5.r),
+                        if (isLocked)
+                          Positioned.fill(
+                            child: Container(
+                              color: Colors.black.withOpacity(0.5),
+                              child: Stack(
+                                children: [
+                                Positioned(
+                        top: 5,
+                        right: 5, // Position it to the top right corner
+                        child: Image.asset(
+                          'assets/images/lock.png',
+                          height: 15.h, // Adjust the height of the lock icon as per your design
+                        ),
                       ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            item['image'],
-                            height: 42.h,
-                            width: 43.w,
+                                ],
+                              )
+                            ),
                           ),
-                          SizedBox(height: 5.h),
-                          CustomText(
-                            text: item['title'],
-                            textAlign: TextAlign.center,
-                            textColor: Colors.white,
-                            fontsize: 12.sp,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ],
-                      ),
+                      ],
                     ),
                   );
                 },
               ),
-            )
-,
+            ),
 
             Container(
               padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -269,19 +312,21 @@ class HomeScreen extends StatelessWidget {
                             onTap: () {
                               Get.to(() => ArticleDetail());
                             },
-                            child: Stack(
-                              children:[
-
-                                Container(
-                          //  Image.asset('assets/images/Rectangle 22968.png',fit:BoxFit.cover)
+                            child: Stack(children: [
+                              Container(
+                                //  Image.asset('assets/images/Rectangle 22968.png',fit:BoxFit.cover)
                                 padding: EdgeInsets.all(16),
                                 width: 249.w,
                                 decoration: BoxDecoration(
                                   color: container,
-                                  image: DecorationImage(image: AssetImage('assets/images/Rectangle 22968.png',),fit: BoxFit.cover),
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                        'assets/images/Rectangle 22968.png',
+                                      ),
+                                      fit: BoxFit.cover),
                                   borderRadius: BorderRadius.circular(5.r),
-                                  border:
-                                      Border.all(color: Colors.black, width: 0.5),
+                                  border: Border.all(
+                                      color: Colors.black, width: 0.5),
                                 ),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -306,30 +351,37 @@ class HomeScreen extends StatelessWidget {
                                     // Applying blur background only for description text
                                     Stack(
                                       children: [
-                                        // The blurred background
-                                        // Positioned.fill(
-                                        //   child: BackdropFilter(
-                                        //     filter: ImageFilter.blur(
-                                        //         sigmaX: 0, sigmaY: 0),
-                                        //     child: Container(
-                                        //       decoration: BoxDecoration(
-                                        //         borderRadius:
-                                        //             BorderRadius.circular(10),
-                                        //         color: Colors.white.withOpacity(
-                                        //             0.3), // White with some transparency
-                                        //       ),
-                                        //     ),
-                                        //   ),
-                                        // ),
-                                        // The text on top of the blur
                                         Container(
                                           padding: EdgeInsets.all(8.0),
-                                          child: CustomText(
-                                            text:
-                                                'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
-                                            textColor: Colors.white,
-                                            fontWeight: FontWeight.w400,
-                                            fontsize: 11.sp,
+                                          child: RichText(
+                                            text: TextSpan(
+                                              children: [
+                                                TextSpan(
+                                                  text:
+                                                      'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 11.sp,
+                                                  ),
+                                                ),
+                                                TextSpan(
+                                                  text: 'Read more',
+                                                  style: TextStyle(
+                                                    color: Colors
+                                                        .blue, // Change to your desired color
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 11.sp,
+                                                  ),
+                                                  recognizer:
+                                                      TapGestureRecognizer()
+                                                        ..onTap = () {
+                                                          Get.to(() =>
+                                                              ArticleDetail());
+                                                        },
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ],
@@ -337,7 +389,7 @@ class HomeScreen extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                          ]  ),
+                            ]),
                           ),
                           SizedBox(
                             width: 10.w,
@@ -346,77 +398,85 @@ class HomeScreen extends StatelessWidget {
                             onTap: () {
                               Get.to(() => ArticleDetail());
                             },
-                            child: Stack(
-                                children:[
-
-                                  Container(
-                                    //  Image.asset('assets/images/Rectangle 22968.png',fit:BoxFit.cover)
-                                    padding: EdgeInsets.all(16),
-                                    width: 249.w,
-                                    decoration: BoxDecoration(
-                                      color: container,
-                                      image: DecorationImage(image: AssetImage('assets/images/Rectangle 22968.png',),fit: BoxFit.cover),
-                                      borderRadius: BorderRadius.circular(5.r),
-                                      border:
-                                      Border.all(color: Colors.black, width: 0.5),
-                                    ),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        SizedBox(height: 10.h),
-                                        CustomText(
-                                          text:
+                            child: Stack(children: [
+                              Container(
+                                //  Image.asset('assets/images/Rectangle 22968.png',fit:BoxFit.cover)
+                                padding: EdgeInsets.all(16),
+                                width: 249.w,
+                                decoration: BoxDecoration(
+                                  color: container,
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                        'assets/images/Rectangle 22968.png',
+                                      ),
+                                      fit: BoxFit.cover),
+                                  borderRadius: BorderRadius.circular(5.r),
+                                  border: Border.all(
+                                      color: Colors.black, width: 0.5),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(height: 10.h),
+                                    CustomText(
+                                      text:
                                           'Breakthrough in Wearable Cardiac Monitors',
-                                          textColor: Colors.white,
-                                          fontWeight: FontWeight.w600,
-                                          fontsize: 14.sp,
-                                        ),
-                                        SizedBox(height: 10.h),
-                                        Image.asset(
-                                          width: 215.w,
-                                          fit: BoxFit.cover,
-                                          alignment: Alignment.topLeft,
-                                          AppImages.laptop,
-                                        ),
-                                        SizedBox(height: 5.h),
+                                      textColor: Colors.white,
+                                      fontWeight: FontWeight.w600,
+                                      fontsize: 14.sp,
+                                    ),
+                                    SizedBox(height: 10.h),
+                                    Image.asset(
+                                      width: 215.w,
+                                      fit: BoxFit.cover,
+                                      alignment: Alignment.topLeft,
+                                      AppImages.laptop,
+                                    ),
+                                    SizedBox(height: 5.h),
 
-                                        // Applying blur background only for description text
-                                        Stack(
-                                          children: [
-                                            // The blurred background
-                                            // Positioned.fill(
-                                            //   child: BackdropFilter(
-                                            //     filter: ImageFilter.blur(
-                                            //         sigmaX: 0, sigmaY: 0),
-                                            //     child: Container(
-                                            //       decoration: BoxDecoration(
-                                            //         borderRadius:
-                                            //             BorderRadius.circular(10),
-                                            //         color: Colors.white.withOpacity(
-                                            //             0.3), // White with some transparency
-                                            //       ),
-                                            //     ),
-                                            //   ),
-                                            // ),
-                                            // The text on top of the blur
-                                            Container(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: CustomText(
-                                                text:
-                                                'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
-                                                textColor: Colors.white,
-                                                fontWeight: FontWeight.w400,
-                                                fontsize: 11.sp,
-                                              ),
+                                    // Applying blur background only for description text
+                                    Stack(
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: RichText(
+                                            text: TextSpan(
+                                              children: [
+                                                TextSpan(
+                                                  text:
+                                                      'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 11.sp,
+                                                  ),
+                                                ),
+                                                TextSpan(
+                                                  text: 'Read more',
+                                                  style: TextStyle(
+                                                    color: Colors
+                                                        .blue, // Change to your desired color
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 11.sp,
+                                                  ),
+                                                  recognizer:
+                                                      TapGestureRecognizer()
+                                                        ..onTap = () {
+                                                          Get.to(() =>
+                                                              ArticleDetail());
+                                                        },
+                                                ),
+                                              ],
                                             ),
-                                          ],
+                                          ),
                                         ),
                                       ],
                                     ),
-                                  ),
-                                ]  ),
+                                  ],
+                                ),
+                              ),
+                            ]),
                           ),
-
                         ],
                       ),
                     ),

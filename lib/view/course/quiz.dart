@@ -1,7 +1,7 @@
 import 'package:bio_medica/main.dart';
 import 'package:bio_medica/view/const/color.dart';
-import 'package:bio_medica/view/profile/result_screen.dart';
-import 'package:bio_medica/view/profile/subscription_screen.dart';
+import 'package:bio_medica/view/course/result_screen.dart';
+import 'package:bio_medica/drawer%20items/subscription_screen.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,5 +1,5 @@
 import 'package:bio_medica/view/const/color.dart';
-import 'package:bio_medica/view/profile/privacy_policy.dart';
+import 'package:bio_medica/drawer%20items/privacy_policy.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

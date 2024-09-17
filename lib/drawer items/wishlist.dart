@@ -50,7 +50,9 @@ class Wishlist extends StatelessWidget {
                               // Open the drawer using the scaffold key
                               navBarController.scaffoldKey.currentState?.openDrawer();
                             },
-                            child: Image.asset('assets/images/back_icon.png')
+                            child: GestureDetector(
+                                onTap: (){Navigator.pop(context);},
+                                child: Image.asset('assets/images/back_icon.png'))
                           ),
                         ),
                         SizedBox(

@@ -1,3 +1,4 @@
+import 'package:bio_medica/drawer%20items/subscription_screen.dart';
 import 'package:bio_medica/view/auth/forgot_password/forgot_main.dart';
 import 'package:bio_medica/view/auth/signup_view/signup_view.dart';
 import 'package:bio_medica/view/const/color.dart';
@@ -162,7 +163,7 @@ class _LoginViewState extends State<LoginView> {
                 width: 311.w,
                 color: buttonColor,
                 onTap: () {
-                  CustomRoute.navigateTo(context, AppNavBar());
+                  CustomRoute.navigateTo(context, SubscriptionScreen());
                 },
                 title: 'Login',
               ),
