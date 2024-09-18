@@ -17,7 +17,7 @@ class ResultScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: primaryColor,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(80.h),
+          preferredSize: Size.fromHeight(60.h),
           child:AppBar(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
@@ -29,10 +29,10 @@ class ResultScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 30.h,
+                  height: 45.h,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12.w),
+                  padding: EdgeInsets.symmetric(horizontal: 13.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -75,7 +75,7 @@ class ResultScreen extends StatelessWidget {
               children: [
                 SizedBox(height: 42.h),
               Container(
-              height: 410.11.h,
+              // height: 410.11.h,
               width: 309.w,
               decoration: BoxDecoration(
                 color: tapColor,
@@ -169,12 +169,23 @@ class ResultScreen extends StatelessWidget {
                       fontsize: 15.sp,
                     ),
                     /// 120 points Text
-                    CustomText(
-                      text: '120 points',
-                      textColor: buttonColor2,
-                      fontWeight: FontWeight.w800,
-                      fontsize: 13.23.sp,
+                    Row(mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomText(
+                          text: '120 ',
+                          textColor: buttonColor2,
+                          fontWeight: FontWeight.w800,
+                          fontsize: 20.23.sp,
+                        ),
+                        CustomText(
+                          text: 'points',
+                          textColor: buttonColor2,
+                          fontWeight: FontWeight.w800,
+                          fontsize: 13.23.sp,
+                        ),
+                      ],
                     ),
+                    SizedBox(height: 9.32.h),
                   ],
                 ),
               ),

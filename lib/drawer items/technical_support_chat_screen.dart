@@ -195,39 +195,46 @@ class TechnicalSupportChatScreen extends StatelessWidget {
       width: 360.w,
       color: Color(0xff001A2E),
       child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Type message...',
-                    hintStyle: TextStyle(color: Colors.white54),
-                    filled: true,
-                    fillColor: tapColor,
-                    contentPadding: EdgeInsets.symmetric(horizontal: 16.w),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(11.52.r),
-                      borderSide: BorderSide.none,
+          padding: EdgeInsets.symmetric(horizontal: 15.w),
+          child: SizedBox(
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Type message...',
+                      hintStyle: TextStyle(color: Colors.white54),
+                      filled: true,
+                      fillColor: tapColor,
+                      contentPadding: EdgeInsets.symmetric(horizontal: 15.w),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(11.52.r),
+                        borderSide: BorderSide.none,
+                      ),
                     ),
+                    style: TextStyle(color: Colors.white),
                   ),
-                  style: TextStyle(color: Colors.white),
                 ),
-              ),
-              SizedBox(width: 8.w),
-              Container(
-                height: 38.4.h,
-                width: 38.4.w,
-                padding: EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: tapColor, // Send button color
-                  borderRadius: BorderRadius.circular(11.52.r)
+                SizedBox(width: 11.52.w),
+                Container(
+                  height: 38.4.h,
+                  width: 38.4.w,
+                  padding: EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: tapColor, // Send button color
+                    borderRadius: BorderRadius.circular(11.52.r)
+                  ),
+                  child: GestureDetector(
+                    onTap: (){},
+                      child: SizedBox(
+                          height: 23.04.h,
+                          width: 23.04.w,
+                          child: Image.asset('assets/images/send_image_icon.png',fit: BoxFit.cover,),
+                      ),
+                  ),
                 ),
-                child: GestureDetector(
-                  onTap: (){},
-                    child: Icon(Icons.send, color: buttonColor2,size: 17.sp,)),
-              ),
-            ],
+              ],
+            ),
           ),
 
       ),

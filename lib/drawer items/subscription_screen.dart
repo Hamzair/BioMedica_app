@@ -35,7 +35,7 @@ class SubscriptionScreen extends StatelessWidget {
               children: [
                 SizedBox(height: 45.h),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12.w),
+                  padding: EdgeInsets.symmetric(horizontal: 13.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -339,7 +339,7 @@ class SubscriptionScreen extends StatelessWidget {
                             fontWeight: FontWeight.w700,
                             fontsize: 13.23.sp,
                           ),
-                          SizedBox(height: 6.61),
+                          SizedBox(height: 6.61.h),
                           CustomText(
                             text:
                                 "As a Free user, you can only preview 4 courses.To get full access to the entirety of the app's courses and features, become a Premium member now!",

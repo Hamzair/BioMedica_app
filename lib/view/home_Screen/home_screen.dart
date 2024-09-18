@@ -210,7 +210,7 @@ class HomeScreen extends StatelessWidget {
                           Get.snackbar(
                             'Locked',
                             'Buy Premium to unlock this feature.',
-                            backgroundColor: primaryColor,
+                            // backgroundColor: primaryColor,
                             colorText: Colors.white,
                           );
                         } else {

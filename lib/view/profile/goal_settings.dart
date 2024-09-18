@@ -192,11 +192,13 @@ class _GoalSettingsState extends State<GoalSettings> {
               ),
               SizedBox(height: 36.h),
               /// Text Enter Goals
-              CustomText(
-                text: 'Enter Goals',
-                textColor: buttonColor,
-                fontWeight: FontWeight.w700,
-                fontsize: 21.sp,
+              Align(alignment: Alignment.topLeft,
+                child: CustomText(
+                  text: 'Enter Goals',
+                  textColor: buttonColor,
+                  fontWeight: FontWeight.w700,
+                  fontsize: 21.sp,
+                ),
               ),
               SizedBox(height: 14.h),
               /// Container with Quiz Points and Increment/Decrement Buttons

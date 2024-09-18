@@ -580,18 +580,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               width: 1.w, // Width of the border
                             ),
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Image(
-                                  image: AssetImage(
-                                      'assets/images/set_goals_icon.png')),
-                              CustomText(
-                                  text: 'Set Goals',
-                                  textColor: buttonColor,
-                                  fontsize: 11.sp,
-                                  fontWeight: FontWeight.w600),
-                            ],
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal:6.w),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Image(
+                                    image: AssetImage(
+                                        'assets/images/set_goals_icon.png')),
+                                CustomText(
+                                    text: 'Set Goals',
+                                    textColor: buttonColor,
+                                    fontsize: 11.sp,
+                                    fontWeight: FontWeight.w600),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -614,7 +617,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 11.37.w,),
+                      padding: EdgeInsets.only(left: 11.37.w,),
                       child: Row(
                         children: [
                           SizedBox(
@@ -633,10 +636,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(height: 16.h),
+                              SizedBox(height: 14.h),
                               SizedBox(
                                 width: 184.w,
-                                height: 42.h,
+                                // height: 42.h,
                                 child: CustomText(
                                   text:
                                   "UX Research in Digital Product Design: Master Class",
@@ -646,35 +649,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 ),
                               ),
 
-                              Container(
-                                width: 187.w,
-                                height: 61.h,
-                                child: Row(
-                                  children: [
-                                    CustomText(
-                                      text: "Goal Progress",
-                                      textColor: buttonColor,
-                                      fontWeight: FontWeight.w700,
-                                      fontsize: 12.sp,
-                                    ),
-                                    SizedBox(width: 19.w),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10,),
+                                child: Container(
+                                  width: 192.w,
+                                  child: Row(
+                                    children: [
+                                      CustomText(
+                                        text: "Goal Progress",
+                                        textColor: buttonColor,
+                                        fontWeight: FontWeight.w700,
+                                        fontsize: 12.sp,
+                                      ),
+                                      SizedBox(width: 19.w),
 
-                                    /// Quiz Loading progress
-                                    Padding(
-                                      padding:  EdgeInsets.symmetric(vertical: 5.h),
-                                      child: Column(
+                                      /// Quiz Loading progress
+                                      Column(
                                         children: [
                                           LoadingPercentageCircle(
                                             percentage: 15,
                                             // Example percentage
-                                            size: 35,
+                                            size: 40,
                                             // Example size
                                             strokeWidth: 6,
                                             // Example stroke width
                                             backgroundColor: mainTextColor!,
                                             progressColor: buttonColor,
                                           ),
-                                          SizedBox(height: 0.5.h),
+                                          SizedBox(height: 2.5.h),
                                           CustomText(
                                             text: "Quiz",
                                             textColor: buttonColor,
@@ -683,36 +685,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           ),
                                         ],
                                       ),
-                                    ),
-                                    SizedBox(width: 8.w),
+                                      SizedBox(width: 8.w),
 
 
-                                    /// Chapters Loading progress
-                                    Padding(
-                                      padding:EdgeInsets.symmetric(vertical: 5.h),
-                                      child: Column(
-                                        children: [
-                                          LoadingPercentageCircle(
-                                            percentage: 15,
-                                            // Example percentage
-                                            size: 35,
-                                            // Example size
-                                            strokeWidth: 6,
-                                            // Example stroke width
-                                            backgroundColor:mainTextColor!,
-                                            progressColor: buttonColor2,
-                                          ),
-                                          SizedBox(height: 0.5.h),
-                                          CustomText(
-                                            text: "Chapters",
-                                            textColor: buttonColor2,
-                                            fontWeight: FontWeight.w700,
-                                            fontsize: 9.sp,
-                                          ),
-                                        ],
+                                      /// Chapters Loading progress
+                                      Padding(
+                                        padding:EdgeInsets.symmetric(vertical: 5.h),
+                                        child: Column(
+                                          children: [
+                                            LoadingPercentageCircle(
+                                              percentage: 15,
+                                              // Example percentage
+                                              size: 40,
+                                              // Example size
+                                              strokeWidth: 6,
+                                              // Example stroke width
+                                              backgroundColor:mainTextColor!,
+                                              progressColor: buttonColor2,
+                                            ),
+                                            SizedBox(height: 2.5.h),
+                                            CustomText(
+                                              text: "Chapters",
+                                              textColor: buttonColor2,
+                                              fontWeight: FontWeight.w700,
+                                              fontsize: 9.sp,
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],
@@ -824,14 +826,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     CustomText(
-                                      text: "UX Research.zip",
+                                      text: "Courser_LandingPage.fig",
                                       textColor: whiteColor,
                                       fontWeight: FontWeight.w700,
                                       fontsize: 13.31.sp,
                                     ),
                                     SizedBox(height: 3.8.h),
                                     CustomText(
-                                      text: "Size: 10 MB",
+                                      text: "Size: 5.2 MB",
                                       textColor: Color.fromRGBO(216, 221, 231, 1),
                                       fontWeight: FontWeight.w600,
                                       fontsize: 10.41.sp,
@@ -888,14 +890,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     CustomText(
-                                      text: "UX Research.zip",
+                                      text: "Courser_Dashboard.fig",
                                       textColor: whiteColor,
                                       fontWeight: FontWeight.w700,
                                       fontsize: 13.31.sp,
                                     ),
                                     SizedBox(height: 3.8.h),
                                     CustomText(
-                                      text: "Size: 10 MB",
+                                      text: "Size: 5.2 MB",
                                       textColor: Color.fromRGBO(216, 221, 231, 1),
                                       fontWeight: FontWeight.w600,
                                       fontsize: 10.41.sp,

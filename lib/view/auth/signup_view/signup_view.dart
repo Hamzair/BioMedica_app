@@ -7,6 +7,7 @@ import 'package:bio_medica/widget/custom_button.dart';
 import 'package:bio_medica/widget/custom_route.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:bio_medica/widget/custom_textfield.dart';
+import 'package:bio_medica/widget/custom_textfield1.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -85,26 +86,35 @@ class _SignupViewState extends State<SignupView> {
                   )),
               SizedBox(height: 18.h,),
 
-              CustomTextField1(
-                hintText: 'Username',
-                prefixIcon: Icons.person,
-                hintTextSize: 14.65.sp,
-                obscuringCharacter: null,
+              Container(
+                width: 311.w,
+                child: CustomTextField1(
+                  hintText: 'Username',
+                  prefixIcon: Icons.person,
+                  hintTextSize: 14.65.sp,
+                  obscuringCharacter: null,
+                ),
               ),
               SizedBox(height: 16.25.h),
-              CustomTextField1(
-                hintText: 'Email',
-                hintTextSize: 14.65.sp,
-                prefixIcon: Icons.email,
+              Container(
+                width: 311.w,
+                child: CustomTextField1(
+                  hintText: 'Email',
+                  hintTextSize: 14.65.sp,
+                  prefixIcon: Icons.email,
+                ),
               ),
               SizedBox(height: 14.25.h),
-              CustomTextField1(
-                hintText: 'Password',
-                prefixIcon: Icons.lock,
-                obscureText: true,
-                obscuringCharacter: '*',
-                suffixIcon: Icons.visibility,
-                hintTextSize: 14.65.sp,
+              Container(
+                width: 311.w,
+                child: CustomTextField1(
+                  hintText: 'Password',
+                  prefixIcon: Icons.lock,
+                  obscureText: true,
+                  obscuringCharacter: '*',
+                  suffixIcon: Icons.visibility,
+                  hintTextSize: 14.65.sp,
+                ),
               ),
               SizedBox(
                 height: 24.25.h,
