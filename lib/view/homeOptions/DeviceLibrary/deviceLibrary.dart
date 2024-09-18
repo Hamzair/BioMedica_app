@@ -11,6 +11,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:bio_medica/controller/nav_bar_controller.dart';
 
+import '../../../drawer items/saveitems/saveForLater.dart';
+import '../../../drawer items/saveitems/save_controller.dart';
+
 class DeviceLibrary extends StatefulWidget {
   final FocusNode? focusNode;
   const DeviceLibrary({Key? key, this.focusNode}) : super(key: key);
@@ -237,7 +240,9 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
 }
 
 class Neurology extends StatelessWidget {
-  const Neurology({super.key});
+  final SavedItemsController savedItemsController = Get.put(SavedItemsController());
+
+   Neurology({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -259,31 +264,30 @@ class Neurology extends StatelessWidget {
             ),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
-              child: InkWell(
-                onTap: () {
-                  Get.to(
-                    () => DeviceDetails(
-                      deviceName: 'Defibrillator',
-                      deviceImage: 'assets/images/def.png',
-                    ),
-                  );
-                },
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(8.r),
-                      child: Stack(
-                        // Use a Stack to overlay the icon
-                        children: [
-                          Image.asset(
-                            'assets/images/def.png',
-                            fit: BoxFit.cover,
-                            height: 100.h,
-                            width: double.infinity,
-                          ),
-                          Align(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8.r),
+                    child: Stack(
+                      // Use a Stack to overlay the icon
+                      children: [
+                        Image.asset(
+                          'assets/images/def.png',
+                          fit: BoxFit.cover,
+                          height: 100.h,
+                          width: double.infinity,
+                        ),
+                        InkWell(
+                          onTap: (){savedItemsController.saveItem(SavedItem(
+                            deviceName: 'Defibrillator',
+                            deviceImage: 'assets/images/def.png',
+                          ));
+                          Get.snackbar('Saved', 'Defibrillator added to Save for Later',
+                              snackPosition: SnackPosition.TOP);
+                            },
+                          child: Align(
                             // Position the icon in the top right corner of the image
                             alignment: Alignment.topRight,
                             child: Container(
@@ -296,63 +300,63 @@ class Neurology extends StatelessWidget {
                                   ),
                                   color: Color.fromRGBO(18, 26, 0, 0.25)),
                               child: Icon(
-                                // Your bookmark icon
+
                                 Icons
-                                    .bookmark_border, // Replace with your desired icon
-                                color: Colors.white, // Set the icon color
+                                    .bookmark_border,
+                                color: Colors.white,
                                 size: 17.sp, // Set the icon size
                               ),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 10.h),
-                    CustomText(
-                      text: 'Defibrillator',
-                      fontsize: 14.sp,
-                      textColor: Colors.white,
-                      fontWeight: FontWeight.w600,
-                    ),
-                    SizedBox(height: 5.h),
-                    CustomText(
-                      text:
-                          'life-saving device that delivers electric shocks to the heart....',
-                      textAlign: TextAlign.start,
-                      fontWeight: FontWeight.w500,
-                      fontsize: 10.sp,
-                      textColor: Colors.white,
-                    ),
-                    Spacer(),
-                    SizedBox(
-                      width: 154.w,
-                      height: 34.h,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(
-                            () => DeviceDetails(
-                              deviceName: 'Defibrillator',
-                              deviceImage: 'assets/images/def.png',
-                            ),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 5.h),
-                          backgroundColor: Colors.cyan,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  SizedBox(height: 10.h),
+                  CustomText(
+                    text: 'Defibrillator',
+                    fontsize: 14.sp,
+                    textColor: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  SizedBox(height: 5.h),
+                  CustomText(
+                    text:
+                        'life-saving device that delivers electric shocks to the heart....',
+                    textAlign: TextAlign.start,
+                    fontWeight: FontWeight.w500,
+                    fontsize: 10.sp,
+                    textColor: Colors.white,
+                  ),
+                  Spacer(),
+                  SizedBox(
+                    width: 154.w,
+                    height: 34.h,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Get.to(
+                          () => DeviceDetails(
+                            deviceName: 'Defibrillator',
+                            deviceImage: 'assets/images/def.png',
                           ),
-                        ),
-                        child: CustomText(
-                          text: 'Explore',
-                          fontsize: 15.sp,
-                          textColor: Colors.white,
-                          fontWeight: FontWeight.w600,
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(vertical: 5.h),
+                        backgroundColor: Colors.cyan,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.r),
                         ),
                       ),
+                      child: CustomText(
+                        text: 'Explore',
+                        fontsize: 15.sp,
+                        textColor: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -368,32 +372,30 @@ class Neurology extends StatelessWidget {
             ),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
-              child: InkWell(
-                onTap: () {
-                  // Pass the image and name to the next page
-                  Get.to(
-                    () => DeviceDetails(
-                      deviceName: 'Pacemaker',
-                      deviceImage: 'assets/images/pace.png',
-                    ),
-                  );
-                },
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(8.r),
-                      child: Stack(
-                        // Use a Stack to overlay the icon
-                        children: [
-                          Image.asset(
-                            'assets/images/pace.png',
-                            fit: BoxFit.cover,
-                            height: 100.h,
-                            width: double.infinity,
-                          ),
-                          Align(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8.r),
+                    child: Stack(
+                      // Use a Stack to overlay the icon
+                      children: [
+                        Image.asset(
+                          'assets/images/pace.png',
+                          fit: BoxFit.cover,
+                          height: 100.h,
+                          width: double.infinity,
+                        ),
+                        InkWell(
+                          onTap: (){savedItemsController.saveItem(SavedItem(
+                            deviceName: 'Pacemaker',
+                            deviceImage: 'assets/images/pace.png',
+                          ));
+                          Get.snackbar('Saved', 'Pacemaker added to Save for Later',
+                              snackPosition: SnackPosition.TOP);
+                          },
+                          child: Align(
                             // Position the icon in the top right corner of the image
                             alignment: Alignment.topRight,
                             child: Container(
@@ -414,54 +416,54 @@ class Neurology extends StatelessWidget {
                               ),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 10.h),
-                    CustomText(
-                      text: 'Pacemaker',
-                      fontsize: 14.sp,
-                      textColor: Colors.white,
-                      fontWeight: FontWeight.w600,
-                    ),
-                    SizedBox(height: 5.h),
-                    CustomText(
-                      text: 'Regulates heartbeats in patients with arrhythmia',
-                      textAlign: TextAlign.start,
-                      fontWeight: FontWeight.w500,
-                      fontsize: 10.sp,
-                      textColor: Colors.white,
-                    ),
-                    Spacer(),
-                    SizedBox(
-                      width: double.infinity,
-                      height: 34.h,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(
-                            () => DeviceDetails(
-                              deviceName: 'Pacemaker',
-                              deviceImage: 'assets/images/pace.png',
-                            ),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 5.h),
-                          backgroundColor: Colors.cyan,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  SizedBox(height: 10.h),
+                  CustomText(
+                    text: 'Pacemaker',
+                    fontsize: 14.sp,
+                    textColor: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  SizedBox(height: 5.h),
+                  CustomText(
+                    text: 'Regulates heartbeats in patients with arrhythmia',
+                    textAlign: TextAlign.start,
+                    fontWeight: FontWeight.w500,
+                    fontsize: 10.sp,
+                    textColor: Colors.white,
+                  ),
+                  Spacer(),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 34.h,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Get.to(
+                          () => DeviceDetails(
+                            deviceName: 'Pacemaker',
+                            deviceImage: 'assets/images/pace.png',
                           ),
-                        ),
-                        child: CustomText(
-                          text: 'Explore',
-                          fontsize: 15.sp,
-                          textColor: Colors.white,
-                          fontWeight: FontWeight.w600,
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(vertical: 5.h),
+                        backgroundColor: Colors.cyan,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.r),
                         ),
                       ),
+                      child: CustomText(
+                        text: 'Explore',
+                        fontsize: 15.sp,
+                        textColor: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -477,32 +479,30 @@ class Neurology extends StatelessWidget {
             ),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 4.h),
-              child: InkWell(
-                onTap: () {
-                  // Pass the image and name to the next page
-                  Get.to(
-                    () => DeviceDetails(
-                      deviceName: 'Stethoscope',
-                      deviceImage: 'assets/images/stheth.png',
-                    ),
-                  );
-                },
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(8.r),
-                      child: Stack(
-                        // Use a Stack to overlay the icon
-                        children: [
-                          Image.asset(
-                            'assets/images/stheth.png',
-                            fit: BoxFit.cover,
-                            height: 100.h,
-                            width: double.infinity,
-                          ),
-                          Align(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8.r),
+                    child: Stack(
+                      // Use a Stack to overlay the icon
+                      children: [
+                        Image.asset(
+                          'assets/images/stheth.png',
+                          fit: BoxFit.cover,
+                          height: 100.h,
+                          width: double.infinity,
+                        ),
+                        InkWell(
+                          onTap: (){savedItemsController.saveItem(SavedItem(
+                            deviceName: 'Stethoscope',
+                            deviceImage: 'assets/images/stheth.png',
+                          ));
+                          Get.snackbar('Saved', 'Stethoscope added to Save for Later',
+                              snackPosition: SnackPosition.TOP);
+                          },
+                          child: Align(
                             // Position the icon in the top right corner of the image
                             alignment: Alignment.topRight,
                             child: Container(
@@ -523,55 +523,55 @@ class Neurology extends StatelessWidget {
                               ),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 10.h),
-                    CustomText(
-                      text: 'Stethoscope',
-                      fontsize: 14.sp,
-                      textColor: Colors.white,
-                      fontWeight: FontWeight.w600,
-                    ),
-                    SizedBox(height: 5.h),
-                    CustomText(
-                      text:
-                          'used to listen to heartbeats, lung sounds, and other body sounds.',
-                      textAlign: TextAlign.start,
-                      fontWeight: FontWeight.w500,
-                      fontsize: 10.sp,
-                      textColor: Colors.white,
-                    ),
-                    Spacer(),
-                    SizedBox(
-                      width: double.infinity,
-                      height: 34.h,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(
-                            () => DeviceDetails(
-                              deviceName: 'Stethoscope',
-                              deviceImage: 'assets/images/stheth.png',
-                            ),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 5.h),
-                          backgroundColor: Colors.cyan,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  SizedBox(height: 10.h),
+                  CustomText(
+                    text: 'Stethoscope',
+                    fontsize: 14.sp,
+                    textColor: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  SizedBox(height: 5.h),
+                  CustomText(
+                    text:
+                        'used to listen to heartbeats, lung sounds, and other body sounds.',
+                    textAlign: TextAlign.start,
+                    fontWeight: FontWeight.w500,
+                    fontsize: 10.sp,
+                    textColor: Colors.white,
+                  ),
+                  Spacer(),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 34.h,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Get.to(
+                          () => DeviceDetails(
+                            deviceName: 'Stethoscope',
+                            deviceImage: 'assets/images/stheth.png',
                           ),
-                        ),
-                        child: CustomText(
-                          text: 'Explore',
-                          fontsize: 15.sp,
-                          textColor: Colors.white,
-                          fontWeight: FontWeight.w600,
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(vertical: 5.h),
+                        backgroundColor: Colors.cyan,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.r),
                         ),
                       ),
+                      child: CustomText(
+                        text: 'Explore',
+                        fontsize: 15.sp,
+                        textColor: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),

@@ -7,7 +7,7 @@ import 'package:bio_medica/drawer%20items/privacy_policy.dart';
 import 'package:bio_medica/drawer%20items/subscription_screen.dart';
 import 'package:bio_medica/drawer%20items/technical_support_chat_screen.dart';
 import 'package:bio_medica/widget/custom_text.dart';
-import 'package:bio_medica/drawer%20items/wishlist.dart';
+import 'package:bio_medica/drawer%20items/saveitems/saveForLater.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -79,14 +79,15 @@ class AppDrawer extends StatelessWidget {
                   },
                 ),
                 CustomHomeItem(
-                  text: 'Wishlist',
+                  text: 'Save for Later',
                   imagePath: AppImages.wishlist,
                   buttonColor: buttonColor,
                   textColor: whiteColor,
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                   onTap: () {
-                    Get.to(() => Wishlist());
+                    Get.to(() => Saveforlater());
+
                     print('wish tapped');
                     // You can navigate to another screen or execute any function
                   },

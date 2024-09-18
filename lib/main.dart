@@ -10,11 +10,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'controller/subscription_controller.dart';
+import 'drawer items/saveitems/save_controller.dart';
 import 'view/splash_screen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
   Get.put(SubscriptionService());
+  Get.put(SavedItemsController());
   Get.put(NavBarController());
 }
 
