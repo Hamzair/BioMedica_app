@@ -35,7 +35,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       // key: _scaffoldKey,
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80.h),
+        preferredSize: Size.fromHeight(60.h),
         child: AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -47,7 +47,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: 30.h,
+                height: 45.h,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 12.w),
@@ -142,7 +142,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Container(
               height: 65.65.h,
               width: 311.w,
-              padding: EdgeInsets.symmetric(vertical: 11.41.h,horizontal: 7.61.w),
+              padding: EdgeInsets.symmetric(vertical: 14.41.h,horizontal: 7.61.w),
               decoration: BoxDecoration(
                 color: tapColor,
                 // Your tapColor can be defined or replaced here
@@ -180,9 +180,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ) ,),
                     /// Divider
                     Container(
-                      width: 2.w,
+                      width: 1.w,
                       height: 30.83.h,
-                      color:buttonColor2,
+                      color:Color.fromRGBO(219, 92, 0, 1),
                     ),
                     /// 12 Courses
                     Container(
@@ -204,11 +204,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ],
                       ) ,
                     ),
-
                     Container(
-                      width: 2.w,
+                      width: 1.w,
                       height: 30.83.h,
-                      color:buttonColor2,
+                      color:Color.fromRGBO(219, 92, 0, 1),
                     ),
                     /// 140 Chapters
                     Container(
@@ -265,7 +264,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         });
                       },
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 4.w),
+                        padding: EdgeInsets.symmetric(horizontal: 3.w),
                         child: Container(
                           width: 100.81.w,
                           height: 30.34.h,
@@ -273,7 +272,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             color: _selectedIndex == 0
                                 ? Colors.cyan
                                 : Colors.transparent,
-                            borderRadius: BorderRadius.circular(10.r),
+                            borderRadius: BorderRadius.circular(7.58.r),
                           ),
                           child: Center(
                             child: CustomText(
@@ -296,8 +295,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   SizedBox(width: 3.w),
                   /// Divider
                   VerticalDivider(
-                    thickness: 2, // Width of the line
-                    color: buttonColor2, // Color of the line
+                    thickness: 1, // Width of the line
+                    color: Color.fromRGBO(219, 92, 0, 1), // Color of the line
                     width: 2.w, // Space around the divider
                     indent: 7, // Space above the divider
                     endIndent: 7, // Space below the divider
@@ -318,7 +317,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           color: _selectedIndex == 1
                               ? Colors.cyan
                               : Colors.transparent,
-                          borderRadius: BorderRadius.circular(10.r),
+                          borderRadius: BorderRadius.circular(7.58.r),
                         ),
                         child: Center(
                           child: CustomText(
@@ -338,8 +337,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   SizedBox(width: 3.w),
                   /// Divider
                   VerticalDivider(
-                    thickness: 2, // Width of the line
-                    color: buttonColor2, // Color of the line
+                    thickness: 1, // Width of the line
+                    color: Color.fromRGBO(219, 92, 0, 1), // Color of the line
                     width: 2.w, // Space around the divider
                     indent: 7, // Space above the divider
                     endIndent: 7, // Space below the divider
@@ -354,7 +353,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         });
                       },
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        padding: const EdgeInsets.symmetric(horizontal: 3),
                         child: Container(
                           width: 100.81.w,
                           height: 30.34.h,
@@ -362,7 +361,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             color: _selectedIndex == 2
                                 ? Colors.cyan
                                 : Colors.transparent,
-                            borderRadius: BorderRadius.circular(10.r),
+                            borderRadius: BorderRadius.circular(7.58.r),
                           ),
                           child: Center(
                             child: CustomText(
@@ -438,8 +437,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     fontsize: 11.sp,
                                   ),
                                 ),
-                                SizedBox(height: 5.h),
-                                SizedBox(
+
+                                Container(
                                   width: 180.w,
                                   child: Row(
                                     mainAxisAlignment:
@@ -454,9 +453,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       LoadingPercentageCircle(
                                         percentage: 15,
                                         // Example percentage
-                                        size: 25,
+                                        size: 35,
                                         // Example size
-                                        strokeWidth: 4,
+                                        strokeWidth: 6,
                                         // Example stroke width
                                         backgroundColor: mainTextColor!,
                                         progressColor: buttonColor,
@@ -518,7 +517,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     fontsize: 11.sp,
                                   ),
                                 ),
-                                SizedBox(height: 3.h),
+
                                 SizedBox(
                                   width: 180.w,
                                   child: Row(
@@ -534,9 +533,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       LoadingPercentageCircle(
                                         percentage: 45,
                                         // Example percentage
-                                        size: 25,
+                                        size: 35,
                                         // Example size
-                                        strokeWidth: 4,
+                                        strokeWidth: 6,
                                         // Example stroke width
                                         backgroundColor: mainTextColor!,
                                         progressColor: buttonColor,
@@ -615,12 +614,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 11.37.w),
+                      padding: EdgeInsets.symmetric(horizontal: 11.37.w,),
                       child: Row(
                         children: [
                           SizedBox(
                             width: 91.01.w,
-                            height: 91.01.h,
+                            height: 100.01.h,
                             child:ClipRRect(
                               borderRadius: BorderRadius.circular(5.69.r), // Apply the same radius here
                               child: Image(
@@ -743,7 +742,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal:18.39.w ),
+                      padding: EdgeInsets.symmetric(horizontal:13.63.w ),
                       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
@@ -752,20 +751,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               SizedBox(
                                 width: 38.04.w,
                                 height: 38.04.h,
-                                child: Stack(children: [
-                                  Image(
-                                      image: AssetImage(
-                                          'assets/images/ux_research_file.png')),
-                                  Positioned(
-                                      bottom: 12,
-                                      right: 20,
-                                      child: Image(image: AssetImage('assets/images/ZIP.png'))),
-                                ]
-                                ),
+                                child: Image.asset('assets/images/ux_research_file.png.png')
                               ),
+                              SizedBox(width: 11.41.w),
                               /// Zip File Text
                               Padding(
-                                padding: const EdgeInsets.symmetric(vertical:11.21 ),
+                                padding:EdgeInsets.symmetric(vertical:15.21.h ),
                                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     CustomText(
@@ -774,9 +765,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       fontWeight: FontWeight.w700,
                                       fontsize: 13.31.sp,
                                     ),
+                                    SizedBox(height: 3.8.h),
                                     CustomText(
                                       text: "Size: 10 MB",
-                                      textColor: whiteColor,
+                                      textColor: Color.fromRGBO(216, 221, 231, 1),
                                       fontWeight: FontWeight.w600,
                                       fontsize: 10.41.sp,
                                     ),
@@ -787,7 +779,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           GestureDetector(
                               onTap: (){},
-                              child: Image(image: AssetImage('assets/images/download_icon.png'))),
+                              child: SizedBox(
+                                  height: 16.47.h,
+                                  width: 15.68.w,
+                                  child: Image.asset('assets/images/download_icon.png',fit: BoxFit.contain,),
+                              ),
+                          ),
 
                         ],
                       ),
@@ -809,40 +806,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal:18.39.w ),
+                      padding: EdgeInsets.symmetric(horizontal:13.63.w ),
                       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             children: [
-                              /// Courses landing Images
+                              /// Zip File Images
                               SizedBox(
-                                width: 38.04.w,
-                                height: 38.04.h,
-                                child: Stack(children: [
-                                  Image(
-                                      image: AssetImage(
-                                          'assets/images/ux_research_file.png')),
-                                  Positioned(
-                                      bottom: 8,
-                                      right: 20,
-                                      child: Image(image: AssetImage('assets/images/file_image.png'))),
-                                ]
-                                ),
+                                  width: 38.04.w,
+                                  height: 38.04.h,
+                                  child: Image.asset('assets/images/ux_research_file.png')
                               ),
-                              /// Courser landing Text
+                              SizedBox(width: 11.41.w),
+                              /// Zip File Text
                               Padding(
-                                padding:  EdgeInsets.symmetric(vertical:11.21.h ),
+                                padding:EdgeInsets.symmetric(vertical:15.21.h ),
                                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     CustomText(
-                                      text: "Courser_LandingPage.fig",
+                                      text: "UX Research.zip",
                                       textColor: whiteColor,
                                       fontWeight: FontWeight.w700,
                                       fontsize: 13.31.sp,
                                     ),
+                                    SizedBox(height: 3.8.h),
                                     CustomText(
-                                      text: "Size: 5.2 MB",
-                                      textColor: whiteColor,
+                                      text: "Size: 10 MB",
+                                      textColor: Color.fromRGBO(216, 221, 231, 1),
                                       fontWeight: FontWeight.w600,
                                       fontsize: 10.41.sp,
                                     ),
@@ -852,8 +842,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ],
                           ),
                           GestureDetector(
-                              onTap: (){},
-                              child: Image(image: AssetImage('assets/images/download_icon.png'))),
+                            onTap: (){},
+                            child: SizedBox(
+                              height: 16.47.h,
+                              width: 15.68.w,
+                              child: Image.asset('assets/images/download_icon.png',fit: BoxFit.contain,),
+                            ),
+                          ),
 
                         ],
                       ),
@@ -875,42 +870,35 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal:18.39.w ),
+                      padding: EdgeInsets.symmetric(horizontal:13.63.w ),
                       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             children: [
-                              /// Courser_Dashboard.fig File Images
+                              /// Zip File Images
                               SizedBox(
-                                width: 38.04.w,
-                                height: 38.04.h,
-                                child: Stack(children: [
-                                  Image(
-                                      image: AssetImage(
-                                          'assets/images/ux_research_file.png')),
-                                  Positioned(
-                                      bottom: 8,
-                                      right: 20,
-                                      child: Image(image: AssetImage('assets/images/file_image.png'))),
-                                ]
-                                ),
+                                  width: 38.04.w,
+                                  height: 38.04.h,
+                                  child: Image.asset('assets/images/ux_research_file.png')
                               ),
-                              /// Courser_Dashboard.fig Text
+                              SizedBox(width: 11.41.w),
+                              /// Zip File Text
                               Padding(
-                                padding:  EdgeInsets.symmetric(vertical:11.21.h ),
+                                padding:EdgeInsets.symmetric(vertical:15.21.h ),
                                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     CustomText(
-                                      text: "Courser_Dashboard.fig",
+                                      text: "UX Research.zip",
                                       textColor: whiteColor,
                                       fontWeight: FontWeight.w700,
                                       fontsize: 13.31.sp,
                                     ),
+                                    SizedBox(height: 3.8.h),
                                     CustomText(
-                                      text: "Size: 5.2 MB",
-                                      textColor: whiteColor,
+                                      text: "Size: 10 MB",
+                                      textColor: Color.fromRGBO(216, 221, 231, 1),
                                       fontWeight: FontWeight.w600,
-                                      fontsize: 11.41.sp,
+                                      fontsize: 10.41.sp,
                                     ),
                                   ],
                                 ),
@@ -918,8 +906,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ],
                           ),
                           GestureDetector(
-                              onTap: (){},
-                              child: Image(image: AssetImage('assets/images/download_icon.png'))),
+                            onTap: (){},
+                            child: SizedBox(
+                              height: 16.47.h,
+                              width: 15.68.w,
+                              child: Image.asset('assets/images/download_icon.png',fit: BoxFit.contain,),
+                            ),
+                          ),
 
                         ],
                       ),

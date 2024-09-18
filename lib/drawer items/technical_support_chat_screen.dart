@@ -14,7 +14,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: primaryColor,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(100.h),
+          preferredSize: Size.fromHeight(80.h),
           child:AppBar(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
@@ -26,11 +26,11 @@ class TechnicalSupportChatScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 30.h,
+                  height: 45.h,
                 ),
                 /// Back Icon & Title Text
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12.w),
+                  padding: EdgeInsets.symmetric(horizontal: 13.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -62,36 +62,35 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                   ),
                 ),
                 /// Our Team is online Text
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 59.w,
-                    ),
-                    CustomText(
-                      text: "Our Team is online",
-                      textColor: Color.fromRGBO(0, 26, 46, 1),
-                      fontWeight: FontWeight.w600,
-                      fontsize: 12.86.sp,
-                    ),
-                    SizedBox(width: 4.w),
-                    Icon(Icons.circle, color: Color.fromRGBO(37, 208, 118, 1), size: 8),
-                  ],
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal:63.w ),
+                  child: Row(
+                    children: [
+                      CustomText(
+                        text: "Our Team is online",
+                        textColor: Color.fromRGBO(0, 26, 46, 1),
+                        fontWeight: FontWeight.w600,
+                        fontsize: 12.86.sp,
+                      ),
+                      SizedBox(width: 4.w),
+                      Icon(Icons.circle, color: Color.fromRGBO(37, 208, 118, 1), size: 8),
+                    ],
+                  ),
                 ),
                 /// You are now connected to operator Text
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 59.w,
-                    ),
-                    CustomText(
-                      text: "You are now connected to operator",
-                      textColor: Color.fromRGBO(0, 26, 46, 1),
-                      fontWeight: FontWeight.w400,
-                      fontsize: 11.06.sp,
-                    ),
-                    SizedBox(width: 4),
-                    Icon(Icons.circle, color: Color.fromRGBO(37, 208, 118, 1), size: 8.sp),
-                  ],
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal:63.w),
+                  child: Row(
+                    children: [
+                      CustomText(
+                        text: "You are now connected to operator",
+                        textColor: Color.fromRGBO(0, 26, 46, 1),
+                        fontWeight: FontWeight.w400,
+                        fontsize: 11.06.sp,
+                      ),
+
+                    ],
+                  ),
                 ),
               ],
             ),

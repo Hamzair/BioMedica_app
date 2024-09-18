@@ -46,7 +46,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 CustomText(
                   text: "Forgot password?",
                   fontsize: 24.sp,
-                  textColor: primaryColor,
+                  textColor: Color.fromRGBO(19, 64, 100, 1),
                   fontWeight: FontWeight.w600,
                 ),
                 SizedBox(
@@ -229,6 +229,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   text: "Don't have an account?",
                   textColor: primaryColor,
                   fontWeight: FontWeight.w500,
+                  fontsize: 15,
                 ),
                 SizedBox(
                   width: 5.w,
@@ -236,7 +237,8 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 CustomText(
                   text: "Sign Up",
                   textColor: buttonColor2,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
+                  fontsize: 15,
                 ),
               ],
             ),

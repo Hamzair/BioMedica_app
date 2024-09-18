@@ -90,6 +90,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                           isBorder: true,
                           isPassword: true,
                           isObscure: isChecked,
+                          obscuringCharacter: '*',
                           passwordFunction: () {
                             setState(() {
                               isChecked = !isChecked;
@@ -270,6 +271,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                         prefixIcon: AppImages.password,
                         isBorder: true,
                         isPassword: true,
+                        obscuringCharacter: '*',
                         isObscure: isChecked1,
                         passwordFunction: () {
                           setState(() {

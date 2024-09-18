@@ -4,6 +4,7 @@ import 'package:bio_medica/view/auth/signup_view/signup_view.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/view/navbar/nav_bar.dart';
+import 'package:bio_medica/view/profile/edit_profile_screen.dart';
 import 'package:bio_medica/widget/custom_button.dart';
 import 'package:bio_medica/widget/custom_route.dart';
 import 'package:bio_medica/widget/custom_text.dart';
@@ -23,7 +24,7 @@ class _LoginViewState extends State<LoginView> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   bool isChecked = false;
-  bool rememberPass = false;
+  bool _rememberMe = false;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class _LoginViewState extends State<LoginView> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: 70.h,
+                height: 47.9.h,
               ),
               Center(
                 child: SizedBox(
@@ -48,115 +49,79 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ),
               SizedBox(
-                height: 37.64.h,
+                height: 57.64.h,
               ),
               CustomText(
                 text: 'Login',
                 fontsize: 35.sp,
-                textColor: const Color(0xff001A2E),
+                textColor: const Color.fromRGBO(0, 26, 46, 1),
                 fontWeight: FontWeight.w700,
               ),
               SizedBox(
                 height: 6.36.h,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.w),
-                child: SizedBox(
-                  height: 43.75.h,
-
-                  child: CustomTextFiled(
-                    hintText: 'Your email',
-                    prefixIcon: AppImages.email,
-                    controller: emailController,
-                    readOnly: false,
-                    // hintTextSize: 14.65.sp,fontWeight: FontWeight.w400,
-                    hintColor: Color(0xff134064),
-                                 //   prefixIconSize: 20.sp, // Adjust the size as needed
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 26.25.h,
-              ),
-
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.w),
-                child: SizedBox(
-                  height: 43.75,
-                  child: CustomTextFiled(
-                    readOnly: false,
-                    controller: passwordController,
-                    hintText: ' Your password',
-                    hintColor: Color(0xff134064),
-                    // hintTextSize: 11.sp,
-                    onChange: (v) {
-                      return null;
-                    },
-                    prefixIcon: AppImages.password,
-                  //  prefixIconSize: 10.sp,
-                    // isBorder: true,
-                    isPassword: true,
-                    isObscure: isChecked,
-                    passwordFunction: () {
-                      setState(() {
-                        isChecked = !isChecked;
-                      });
-                      return null;
-                    },
-
-                    beforePasswordIcon: Icons.visibility_off_outlined,
-                    afterPasswordIcon: Icons.visibility,
-                  ),
-                ),
-              ),
+          /// Your Email Textfield
+          CustomTextField1(
+            hintText: 'Your email',
+            hintTextSize: 14.65.sp,
+            prefixIcon: Icons.email,
+          ),
+          SizedBox(height: 26.25.h),
+              /// Your Password Textfield
+          CustomTextField1(
+            hintText: 'Your password',
+            prefixIcon: Icons.lock,
+            obscureText: true,
+            obscuringCharacter: '*',
+            suffixIcon: Icons.visibility,
+            hintTextSize: 14.65.sp,
+          ),
               SizedBox(height: 16.25.h),
-              SizedBox(
-                width: Get.width * 0.9,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Checkbox(
-                            fillColor: WidgetStatePropertyAll(Colors.white),
-                            checkColor: primaryColor,
-                            activeColor: Colors.white,
-                            side: BorderSide(
-                              color: secondaryColor,
-                              width: 1.w,
-                            ),
-                            value: rememberPass,
-                            onChanged: (bool? value) {
-                              setState(
-                                    () {
-                                  rememberPass = value!;
-                                },
-                              );
-                            }),
-                        CustomText(
-                            text: 'Remember information',
-                            fontsize: 14.sp,
-                            textColor: secondaryColor,
-                            fontWeight: FontWeight.w400),
-                      ],
+          /// CheckBox and Remember information Text
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Transform.scale(
+                      scale: 1.2, // Adjust the scale if needed
+                      child: Checkbox(
+                        value: _rememberMe,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            _rememberMe = value ?? false;
+                          });
+                        },
+                      ),
                     ),
-
-                    GestureDetector(
-                      onTap: () {
-                        CustomRoute.navigateTo(context, ForgetPasswordScreen());
-                      },
-                      child: CustomText(
-                          text: 'Forgot password?',
-                          fontsize: 14.sp,
-                          textColor: buttonColor2,
-                          fontWeight: FontWeight.w400),
-                    )
+                    CustomText(
+                        text: "Remember information",
+                        textColor: Color.fromRGBO(192, 208, 221, 1),
+                        fontWeight: FontWeight.w400,
+                    fontsize: 14.sp,
+                    ),
                   ],
                 ),
-              ),
+                TextButton(
+                  onPressed: () {
+                    Get.to(() => ForgetPasswordScreen());
+                  },
+                  child: CustomText(
+                    text: "Forgot password?",
+                    textColor: Color.fromRGBO(219, 92, 0, 1),
+                    fontWeight: FontWeight.w600,
+                    fontsize: 13.sp,
+                  ),
+                ),
+              ],
+            ),
+          ),
               SizedBox(
                 height: 26.h,
               ),
+              /// Login Button
               CustomButton(
                 textSize: 19.sp,
                 height: 51.h,

@@ -20,7 +20,7 @@ class SubscriptionScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: primaryColor,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(80.h),
+          preferredSize: Size.fromHeight(60.h),
           child: AppBar(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -33,7 +33,7 @@ class SubscriptionScreen extends StatelessWidget {
             flexibleSpace: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 30.h),
+                SizedBox(height: 45.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12.w),
                   child: Row(
@@ -92,6 +92,7 @@ class SubscriptionScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 22.h),
+                /// Free Trial Container
                 Row(
                   children: [
                     GestureDetector(
@@ -162,6 +163,7 @@ class SubscriptionScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: 21.w),
+                    /// Premium Container
                     GestureDetector(
                       onTap: () {
                         Get.find<SubscriptionService>().unlockPremium();
@@ -255,8 +257,8 @@ class SubscriptionScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 43.h),
+                /// Text Span
                 SizedBox(
-                  height: 75.h,
                   width: 307.w,
                   child: RichText(
                     text: TextSpan(
@@ -264,31 +266,39 @@ class SubscriptionScreen extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 14.sp,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                         height: 1.5,
+                        fontFamily: 'jost',
                       ),
                       children: [
                         TextSpan(
                           text: 'Terms & Condition',
                           style: TextStyle(
                             color: greenColor,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                             height: 1.5,
+                            fontFamily: 'jost',
                           ),
                         ),
                         TextSpan(
                           text: ' and that you agree to our ',
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 14.sp,
                             height: 1.5,
+                            fontFamily: 'jost',
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                         TextSpan(
                           text: 'Privacy Policy.',
                           style: TextStyle(
                             color: greenColor,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                             height: 1.5,
+                            fontFamily: 'jost',
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
@@ -301,7 +311,7 @@ class SubscriptionScreen extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 33.89.h),
+                SizedBox(height: 13.89.h),
 
                 /// Free Trial Users Container
                 Container(

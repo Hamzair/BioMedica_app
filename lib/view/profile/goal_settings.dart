@@ -65,7 +65,7 @@ class _GoalSettingsState extends State<GoalSettings> {
     return Scaffold(
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80.h),
+        preferredSize: Size.fromHeight(60.h),
     child: AppBar(
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -77,10 +77,10 @@ class _GoalSettingsState extends State<GoalSettings> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: 30.h,
+              height: 45.h,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12.w),
+              padding: EdgeInsets.symmetric(horizontal: 13.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -212,7 +212,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(vertical:6.h,horizontal: 13.w),
+                  padding: EdgeInsets.symmetric(vertical:12.h,horizontal: 13.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -327,7 +327,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical:6,horizontal: 13),
+                  padding: const EdgeInsets.symmetric(vertical:12,horizontal: 13),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

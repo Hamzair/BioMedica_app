@@ -1,12 +1,16 @@
+import 'package:bio_medica/drawer%20items/privacy_policy.dart';
 import 'package:bio_medica/view/auth/login_view/login_view.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
+import 'package:bio_medica/view/profile/edit_profile_screen.dart';
 import 'package:bio_medica/widget/custom_button.dart';
 import 'package:bio_medica/widget/custom_route.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:bio_medica/widget/custom_textfield.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class SignupView extends StatefulWidget {
   const SignupView({super.key});
@@ -16,8 +20,6 @@ class SignupView extends StatefulWidget {
 }
 
 class _SignupViewState extends State<SignupView> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
   bool isChecked = false;
 
   @override
@@ -66,7 +68,8 @@ class _SignupViewState extends State<SignupView> {
                                 'Explore new content, manage your profile, and connect with others—all from here',
                             fontsize: 14.sp,
                             textColor: Colors.white,
-                            fontWeight: FontWeight.w600),
+                            fontWeight: FontWeight.w600,
+                        ),
                         SizedBox(
                           height: 15.h,
                         ),
@@ -81,69 +84,32 @@ class _SignupViewState extends State<SignupView> {
                     ),
                   )),
               SizedBox(height: 18.h,),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.w),
-                child: SizedBox(
-                  height: 43.75.h,
-                  child: SignCustomTextFiled(
-                    hintText: 'Your name',
-                    prefixIcon: AppImages.personIcon,
-                    controller: emailController,
-                    readOnly: false,
-                    // hintTextSize: 11.sp,
-                    hintColor: Color(0xff134064),
-                  ),
-                ),
-              ),
-              SizedBox(height: 16.25.h,),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.w),
-                child: SizedBox(
-                  height: 43.75.h,
-                  child: SignCustomTextFiled(
-                    hintText: 'Your email',
-                    prefixIcon: AppImages.email,
-                    controller: emailController,
-                    readOnly: false,
-                    // hintTextSize: 11.sp,
-                    hintColor: Color(0xff134064),
-                  ),
-                ),
-              ),
-              SizedBox(height: 16.25.h,),
 
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.w),
-                child: SizedBox(
-                  height: 43.75.h,
-                  child: SignCustomTextFiled(
-                    readOnly: false,
-                    controller: passwordController,
-                    hintText: ' Your password',
-                    hintColor: Color(0xff134064),
-                    // hintTextSize: 11.sp,
-                    onChange: (v) {
-                      return null;
-                    },
-                    prefixIcon: AppImages.password,
-                    // isBorder: true,
-                    isPassword: true,
-                    isObscure: isChecked,
-                    passwordFunction: () {
-                      setState(() {
-                        isChecked = !isChecked;
-                      });
-                      return null;
-                    },
-
-                    beforePasswordIcon: Icons.visibility_off_outlined,
-                    afterPasswordIcon: Icons.visibility,
-                  ),
-                ),
+              CustomTextField1(
+                hintText: 'Username',
+                prefixIcon: Icons.person,
+                hintTextSize: 14.65.sp,
+                obscuringCharacter: null,
+              ),
+              SizedBox(height: 16.25.h),
+              CustomTextField1(
+                hintText: 'Email',
+                hintTextSize: 14.65.sp,
+                prefixIcon: Icons.email,
+              ),
+              SizedBox(height: 14.25.h),
+              CustomTextField1(
+                hintText: 'Password',
+                prefixIcon: Icons.lock,
+                obscureText: true,
+                obscuringCharacter: '*',
+                suffixIcon: Icons.visibility,
+                hintTextSize: 14.65.sp,
               ),
               SizedBox(
                 height: 24.25.h,
               ),
+              /// Continue Button
               CustomButton(
                 textSize: 19.sp,
                 height: 51.h,
@@ -156,15 +122,66 @@ class _SignupViewState extends State<SignupView> {
               SizedBox(
                 height: 14.25.h,
               ),
-              CustomText(
-                  textAlign: TextAlign.center,
-                  text: 'By signing up you agree to our Terms of Services\nand Privacy Policy.',
-                  fontsize: 14.sp,
-                  textColor: Color(0xff111827),
-                  fontWeight: FontWeight.w400),
+              /// Text Span
+              Center(
+                child: SizedBox(
+                  width: 307.w, // Adjust this width as needed
+                  child: RichText(
+                    textAlign: TextAlign.center, // Align text in the center
+                    text: TextSpan(
+                      text: 'By signing up you agree to our ',
+                      style: TextStyle(
+                        color: Color.fromRGBO(17, 24, 39, 1),
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w500,
+                        height: 1.5.h,
+                        fontFamily: 'jost',
+                      ),
+                      children: [
+                        TextSpan(
+                          text: 'Terms of Services',
+                          style: TextStyle(
+                            color: Color.fromRGBO(19, 64, 100, 1),
+                            fontWeight: FontWeight.w600,
+                            height: 1.5.h,
+                            fontFamily: 'jost',
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                               // Adjust the page as needed
+                            },
+                        ),
+                        TextSpan(
+                          text: ' and ',
+                          style: TextStyle(
+                            color: Color.fromRGBO(17, 24, 39, 1),
+                            height: 1.5.h,
+                            fontFamily: 'jost',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        TextSpan(
+                          text: 'Privacy Policy.',
+                          style: TextStyle(
+                            color: Color.fromRGBO(19, 64, 100, 1),
+                            fontWeight: FontWeight.w600,
+                            height: 1.5.h,
+                            fontFamily: 'jost',
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Get.to(() => PrivacyPolicy());
+                            },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
               SizedBox(
                 height: 35.h,
               ),
+              /// Already have an Account
               GestureDetector(
                 onTap: () {
                    CustomRoute.navigateTo(context, LoginView());
@@ -177,12 +194,12 @@ class _SignupViewState extends State<SignupView> {
                         text: 'Already have an account? ',
                         fontsize: 15.sp,
                         textColor: Color(0xff111827),
-                        fontWeight: FontWeight.w400),CustomText(
+                        fontWeight: FontWeight.w300),CustomText(
                         textAlign: TextAlign.center,
                         text: 'Sign in',
                         fontsize: 15.sp,
                         textColor: buttonColor2,
-                        fontWeight: FontWeight.w400),
+                        fontWeight: FontWeight.w500),
                   ],
                 ),
               ),

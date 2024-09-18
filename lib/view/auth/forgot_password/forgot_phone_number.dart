@@ -75,11 +75,11 @@ class _ForgetPasswordEmailPhoneViewState
                               setState(() {});
                             },
                             child: Obx(() => Container(
-                                  margin: const EdgeInsets.only(left: 7),
+                                  margin: const EdgeInsets.only(left: 4.5),
                                   height: 30.43.h,
                                   width: 151.w,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(6.sp),
+                                      borderRadius: BorderRadius.circular(5.71.sp),
                                       color: selectedTypeController
                                                   .selectedType.value ==
                                               'email'
@@ -105,7 +105,7 @@ class _ForgetPasswordEmailPhoneViewState
                               setState(() {});
                             },
                             child: Obx(() => Container(
-                                  margin: const EdgeInsets.only(left: 7),
+                                  margin: const EdgeInsets.only(left: 13),
                                   height: 30.43.h,
                                   width: 150.w,
                                   decoration: BoxDecoration(
@@ -133,7 +133,7 @@ class _ForgetPasswordEmailPhoneViewState
                       ),
                     ),
                     SizedBox(
-                      height: 32.h,
+                      height: 32.96.h,
                     ),
                     Obx(
                       () => CustomText(

@@ -63,11 +63,11 @@ class CustomTextFiled extends StatelessWidget {
       validator: validator,
       onChanged: onChange,
       keyboardType: keyboardType,
-      obscureText: isObscure ?? false,
+      obscureText: isObscure ?? true,
       focusNode: _focusNode,
       style: TextStyle(
         color: primaryColor,
-        fontSize: 16.sp,
+        fontSize: 14.65.sp,
         fontWeight: FontWeight.w400,
       ),
       readOnly: readOnly,
@@ -87,7 +87,7 @@ class CustomTextFiled extends StatelessWidget {
             ? Image.asset(
           prefixIcon!,
           color: primaryColor,
-          scale: 2.9,
+          scale: 2.8,
         )
             : null,
         filled: isFilled ?? true,
@@ -95,30 +95,30 @@ class CustomTextFiled extends StatelessWidget {
         hintText: hintText,
         hintStyle: TextStyle(
           fontFamily: fontFamily ?? 'jost',
-          fontSize: hintTextSize ?? 13.sp,
+          fontSize: hintTextSize ?? 14.65.sp,
           color: hintColor ?? Colors.black,
           fontWeight: fontWeight ?? FontWeight.w400,
         ),
 
         border: isBorder == true
             ? OutlineInputBorder(
-          borderRadius: BorderRadius.circular(13.r),
+          borderRadius: BorderRadius.circular(13.31.r),
           borderSide: const BorderSide(color: blackColor, width: 1),
         )
             : InputBorder.none,
         errorBorder: isErrorBorder == true
             ? OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.red),
-          borderRadius: BorderRadius.circular(13.r),
+          borderRadius: BorderRadius.circular(13.31.r),
         )
             : InputBorder.none,
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: blackColor, width: 1),
-          borderRadius: BorderRadius.circular(13.r),
+          borderRadius: BorderRadius.circular(13.31.r),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: blackColor, width: 1),
-          borderRadius: BorderRadius.circular(13.r),
+          borderRadius: BorderRadius.circular(13.31.r),
         ),
       ),
     );
@@ -149,6 +149,7 @@ class EmailCustomTextFiled extends StatelessWidget {
   IconData? afterPasswordIcon;
   bool? isObscure;
   final bool readOnly;
+  final String? obscuringCharacter;
 
   EmailCustomTextFiled({
     super.key,
@@ -174,6 +175,7 @@ class EmailCustomTextFiled extends StatelessWidget {
     this.isObscure,
     this.afterPasswordIcon,
     required this.readOnly,
+    this.obscuringCharacter,
   });
 
   final _focusNode = FocusNode();
@@ -189,7 +191,7 @@ class EmailCustomTextFiled extends StatelessWidget {
       focusNode: _focusNode,
       style: TextStyle(
         color: primaryColor,
-        fontSize: 16.sp,
+        fontSize: 14.65.sp,
         fontWeight: FontWeight.w400,
       ),
       readOnly: readOnly,
@@ -226,23 +228,23 @@ class EmailCustomTextFiled extends StatelessWidget {
         ),
         border: isBorder == true
             ? OutlineInputBorder(
-          borderRadius: BorderRadius.circular(13.r),
+          borderRadius: BorderRadius.circular(13.31.r),
           borderSide: const BorderSide(color: buttonColor, width: 1),
         )
             : InputBorder.none,
         errorBorder: isErrorBorder == true
             ? OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.red),
-          borderRadius: BorderRadius.circular(13.r),
+          borderRadius: BorderRadius.circular(13.31.r),
         )
             : InputBorder.none,
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: buttonColor, width: 1),
-          borderRadius: BorderRadius.circular(13.r),
+          borderRadius: BorderRadius.circular(13.31.r),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: buttonColor, width: 1),
-          borderRadius: BorderRadius.circular(13.r),
+          borderRadius: BorderRadius.circular(13.31.r),
         ),
       ),
     );
@@ -312,7 +314,7 @@ class SignCustomTextFiled extends StatelessWidget {
       focusNode: _focusNode,
       style: TextStyle(
         color: primaryColor,
-        fontSize: 11.sp,
+        fontSize: 14.65.sp,
         fontWeight: FontWeight.w400,
       ),
       readOnly: readOnly,
@@ -343,7 +345,7 @@ class SignCustomTextFiled extends StatelessWidget {
         hintText: hintText,
         hintStyle: TextStyle(
           fontFamily: fontFamily ?? 'jost',
-          fontSize: hintTextSize ?? 10.sp,
+          fontSize: hintTextSize ?? 14.65.sp,
           color: hintColor ?? Colors.black,
           fontWeight: fontWeight ?? FontWeight.w400,
         ),

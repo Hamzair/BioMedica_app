@@ -3,6 +3,7 @@ import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -40,7 +41,7 @@ class OnBoardingOne extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 20.81.h,
+            height: 19.81.h,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 5.w),
@@ -59,6 +60,7 @@ class OnBoardingOne extends StatelessWidget {
           Expanded(
             child: Container(
               width: double.infinity,
+
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(AppImages.onboardingellipse),
@@ -79,7 +81,7 @@ class OnBoardingOne extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 50.h,
+                    height: 60.h,
                   ),
                 ],
               ),

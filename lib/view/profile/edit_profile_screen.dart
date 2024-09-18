@@ -1,10 +1,6 @@
 import 'package:bio_medica/view/const/color.dart';
-import 'package:bio_medica/view/const/image_assets.dart';
-import 'package:bio_medica/view/profile/profile_screen.dart';
 import 'package:bio_medica/widget/custom_button.dart';
-import 'package:bio_medica/widget/custom_search.dart';
 import 'package:bio_medica/widget/custom_text.dart';
-import 'package:bio_medica/widget/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -18,7 +14,7 @@ class EditProfileScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: primaryColor,
         appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80.h),
+        preferredSize: Size.fromHeight(60.h),
     child:AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -30,10 +26,10 @@ class EditProfileScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: 30.h,
+                height: 45.h,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12.w),
+                padding: EdgeInsets.symmetric(horizontal: 13.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -106,22 +102,24 @@ class EditProfileScreen extends StatelessWidget {
               ),
               SizedBox(height:56.h),
           
-              CustomTextField(
-                hintText: 'Username',
+              CustomTextField1(
+                hintText: 'Merril Kervin',
                 prefixIcon: Icons.person,
                 hintTextSize: 14.65.sp,
+                obscuringCharacter: null,
               ),
               SizedBox(height: 16.25.h),
-              CustomTextField(
-                hintText: 'Email',
+              CustomTextField1(
+                hintText: 'test@gmail.com',
                 hintTextSize: 14.65.sp,
                 prefixIcon: Icons.email,
               ),
               SizedBox(height: 14.25.h),
-              CustomTextField(
-                hintText: 'Password',
+              CustomTextField1(
+                hintText: '************',
                 prefixIcon: Icons.lock,
                 obscureText: true,
+                obscuringCharacter: '*',
                 suffixIcon: Icons.visibility,
                 hintTextSize: 14.65.sp,
               ),
@@ -143,29 +141,38 @@ class EditProfileScreen extends StatelessWidget {
 }
 
 /// Text field State
-class CustomTextField extends StatefulWidget {
+class CustomTextField1 extends StatefulWidget {
   final String hintText;
   final IconData prefixIcon;
   final IconData? suffixIcon;
   final bool obscureText;
+  final String? obscuringCharacter; // Nullable to handle non-password fields
   final double hintTextSize;
 
-  CustomTextField({
+  CustomTextField1({
     required this.hintText,
     required this.prefixIcon,
     this.suffixIcon,
     this.obscureText = false,
-    this.hintTextSize = 14, // Default hint text size
+    this.obscuringCharacter, // Nullable
+    this.hintTextSize = 14,
   });
 
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
 }
-/// text Field Design
-class _CustomTextFieldState extends State<CustomTextField> {
-  bool _obscureText;
 
-  _CustomTextFieldState() : _obscureText = false;
+
+class _CustomTextFieldState extends State<CustomTextField1> {
+  late bool _obscureText;
+  late String? _obscuringCharacter;
+
+  @override
+  void initState() {
+    super.initState();
+    _obscureText = widget.obscureText;
+    _obscuringCharacter = widget.obscuringCharacter;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -173,19 +180,25 @@ class _CustomTextFieldState extends State<CustomTextField> {
       width: 311.w,
       height: 43.75.h,
       child: TextField(
-        obscureText: widget.obscureText ? _obscureText : false,
-        style: TextStyle(color: mainTextColor,),
+        obscureText: _obscureText,
+        obscuringCharacter: _obscuringCharacter ?? '*', // Default to '*' if not specified
+        style: TextStyle(color: Color.fromRGBO(19, 64, 100, 1)),
         decoration: InputDecoration(
           filled: true,
-          fillColor: secondaryColor,
+          fillColor: Color.fromRGBO(180, 196, 209, 1),
           hintText: widget.hintText,
-          hintStyle: TextStyle(color: mainTextColor,fontWeight: FontWeight.bold),
+          hintStyle: TextStyle(
+            color: Color.fromRGBO(19, 64, 100, 1),
+            fontWeight: FontWeight.w500,
+            fontSize: widget.hintTextSize,
+            fontFamily:'jost',
+          ),
           prefixIcon: Icon(widget.prefixIcon, color: mainTextColor),
           suffixIcon: widget.suffixIcon != null
               ? IconButton(
             icon: Icon(
               _obscureText ? Icons.visibility : Icons.visibility_off,
-              color: mainTextColor,
+              color: Color.fromRGBO(19, 64, 100, 1),
             ),
             onPressed: () {
               setState(() {
@@ -204,3 +217,4 @@ class _CustomTextFieldState extends State<CustomTextField> {
     );
   }
 }
+

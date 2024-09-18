@@ -13,7 +13,7 @@ class PrivacyPolicy extends StatelessWidget {
     return Scaffold(
         backgroundColor: primaryColor,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(80.h),
+          preferredSize: Size.fromHeight(60.h),
           child: AppBar(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
@@ -25,10 +25,10 @@ class PrivacyPolicy extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 30.h,
+                  height: 45.h,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12.w),
+                  padding: EdgeInsets.symmetric(horizontal: 13.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
