@@ -19,7 +19,7 @@ class DeviceLibrary extends StatefulWidget {
 class _DeviceLibraryState extends State<DeviceLibrary> {
   // List of tabs
   List<String> tabs = ['Cardiology', 'Neurology', 'Orthopedics', 'Radiology'];
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  // final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int selectedIndex = 0;
   final NavBarController navBarController = Get.put(NavBarController());
 
@@ -144,7 +144,7 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
                       });
                     },
                     child: Padding(
-                      padding: const EdgeInsets.only(right: 10),
+                      padding:  EdgeInsets.only(right: 10.w),
                       child: buildTab(tabs[index], selectedIndex == index),
                     ),
                   );
@@ -168,22 +168,30 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
   // Function to build each tab
   Widget buildTab(String title, bool isSelected) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+
+      height: 28.h,
+      width: 77.w,
+
+   //   padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
       decoration: BoxDecoration(
-        color: container, // Tab background color
+
+        color: isSelected ? primaryColor :container, // Tab background color
         borderRadius: BorderRadius.circular(5.r), // Rounded corners
         border: Border.all(
           color: isSelected
               ? buttonColor2
-              : Colors.transparent, // Border for selected tab
+              : Darkcontainer, // Border for selected tab
           width: 1,
         ),
       ),
-      child: Text(
-        title,
-        style: TextStyle(
-          color: Colors.white, // White text color
-          fontWeight: FontWeight.bold,
+      child: Center(
+        child: CustomText(
+        text:   title,
+         textColor:
+             Colors.white, // White text color
+            fontWeight: FontWeight.bold,
+          fontsize: 10.sp,
+
         ),
       ),
     );
@@ -198,8 +206,9 @@ class Neurology extends StatelessWidget {
     return Scaffold(
       backgroundColor: primaryColor,
       body: GridView.count(
+
         crossAxisCount: 2,
-        childAspectRatio: 0.7,
+        childAspectRatio: 0.74,
         children: [
           // Item 1
           Card(
@@ -213,7 +222,7 @@ class Neurology extends StatelessWidget {
             ),
 
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.symmetric(horizontal: 6.w,vertical: 6.h),
               child: InkWell(
                 onTap: () {
                   // Pass the image and name to the next page
@@ -240,7 +249,7 @@ class Neurology extends StatelessWidget {
                     SizedBox(height: 10.h),
                     CustomText(
                       text: 'Defibrillator',
-                      fontsize: 16.sp,
+                      fontsize: 14.sp,
                       textColor: Colors.white,
                       fontWeight: FontWeight.w600,
                     ),
@@ -297,7 +306,7 @@ class Neurology extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.symmetric(horizontal: 6.w,vertical: 6.h),
               child: InkWell(
                 onTap: () {
                   // Pass the image and name to the next page
@@ -324,7 +333,7 @@ class Neurology extends StatelessWidget {
                     SizedBox(height: 10.h),
                     CustomText(
                       text: 'Pacemaker',
-                      fontsize: 16.sp,
+                      fontsize: 14.sp,
                       textColor: Colors.white,
                       fontWeight: FontWeight.w600,
                     ),
@@ -378,7 +387,7 @@ class Neurology extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.symmetric(horizontal: 6.w,vertical: 6.h),
               child: InkWell(
                 onTap: () {
                   // Pass the image and name to the next page
@@ -405,13 +414,13 @@ class Neurology extends StatelessWidget {
                     SizedBox(height: 10.h),
                     CustomText(
                       text: 'Stethoscope',
-                      fontsize: 16.sp,
+                      fontsize: 14.sp,
                       textColor: Colors.white,
                       fontWeight: FontWeight.w600,
                     ),
                     SizedBox(height: 5.h),
                     CustomText(
-                      text: 'used to listen to heartbeats, lung sounds,',
+                      text: 'used to listen to heartbeats, lung sounds, and other body sounds.',
                       textAlign: TextAlign.start,
                       fontWeight: FontWeight.w500,
                       fontsize: 10.sp,

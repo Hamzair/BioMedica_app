@@ -7,5 +7,7 @@ class SubscriptionService extends GetxController {
   // Method to unlock premium features
   void unlockPremium() {
     isPremium.value = true;
+    update();
+    refresh();
   }
 }

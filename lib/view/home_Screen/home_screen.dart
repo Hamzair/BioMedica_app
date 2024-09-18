@@ -14,12 +14,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../controller/subscription_controller.dart';
+import '../navbar/nav_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
+
   final NavBarController navBarController = Get.put(NavBarController());
   final SubscriptionService subscriptionService =
-      Get.find<SubscriptionService>();
+  Get.find<SubscriptionService>();
   final List<Map<String, dynamic>> gridItems = [
     {
       'image': AppImages.DeviceLibrary,
@@ -78,7 +80,8 @@ class HomeScreen extends StatelessWidget {
       'locked': true
     },
   ];
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+//  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -137,15 +140,19 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     width: 12.w,
                   ),
-                  Container(
-                    width: 35.w,
-                    height: 38.h,
-                    decoration: BoxDecoration(
-                        color: Darkcontainer,
-                        borderRadius: BorderRadius.circular(13.r)),
-                    child: Icon(
-                      Icons.notifications,
-                      color: Color(0xffBDD0EA),
+                  GestureDetector(onTap: () {
+                    //   Get.offAll(()=>AppNavBar());
+                  },
+                    child: Container(
+                      width: 35.w,
+                      height: 38.h,
+                      decoration: BoxDecoration(
+                          color: Darkcontainer,
+                          borderRadius: BorderRadius.circular(13.r)),
+                      child: Icon(
+                        Icons.notifications,
+                        color: Color(0xffBDD0EA),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -163,111 +170,118 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // Grid View for home options
-            Container(
-              height: 300.h,
-              margin: EdgeInsets.only(bottom: 10.h),
-              child: GridView.builder(
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  childAspectRatio: 0.9,
-                ),
-                padding: EdgeInsets.all(10.r),
-                itemCount: gridItems.length + 2, // Adjusted item count
-                itemBuilder: (context, index) {
-                  //   Empty container at index 8
-                  if (index == 8) {
-                    return Container(); // Empty container at index 8
-                  }
-                  // Empty container at the last index
-                  if (index == gridItems.length + 1) {
-                    return Container(); // Empty container at the end
-                  }
+            GetBuilder<SubscriptionService>(builder: (subscriptionService) {
+              return Container(
+                height: 300.h,
+                margin: EdgeInsets.only(bottom: 10.h),
+                child: GridView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 4,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    childAspectRatio: 0.9,
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h
+                  ),
+                  itemCount: gridItems.length + 2,
+                  // Adjusted item count
+                  itemBuilder: (context, index) {
+                    //   Empty container at index 8
+                    if (index == 8) {
+                      return Container(); // Empty container at index 8
+                    }
+                    // Empty container at the last index
+                    if (index == gridItems.length + 1) {
+                      return Container(); // Empty container at the end
+                    }
 
-                  // Adjust the index to account for the empty container at index 8
-                  final adjustedIndex = index > 8 ? index - 1 : index;
-                  final item = gridItems[adjustedIndex];
+                    // Adjust the index to account for the empty container at index 8
+                    final adjustedIndex = index > 8 ? index - 1 : index;
+                    final item = gridItems[adjustedIndex];
 
-                  // Check if the item is locked
-                  final isLocked = item['locked'] == true &&
-                      !subscriptionService.isPremium.value;
+                    // Check if the item is locked
+                    final isLocked = item['locked'] == true &&
+                        !subscriptionService.isPremium.value;
 
-                  return GestureDetector(
-                    onTap: () {
-                      if (isLocked) {
-                        Get.snackbar(
-                          'Locked',
-                          'Buy Premium to unlock this feature.',
-                          backgroundColor: primaryColor,
-                          colorText: Colors.white,
-                        );
-                      } else {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                item['page'] ?? const SizedBox.shrink(),
-                          ),
-                        );
-                      }
-                    },
-                    child: Stack(
-                      children: [
-                        Container(
-                          width: 80.w,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black, width: 1.w),
-                            color: container,
-                            borderRadius: BorderRadius.circular(5.r),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                item['image'],
-                                height: 42.h,
-                                width: 43.w,
-                              ),
-                              SizedBox(height: 5.h),
-                              CustomText(
-                                text: item['title'],
-                                textAlign: TextAlign.center,
-                                textColor: Colors.white,
-                                fontsize: 12.sp,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ],
-                          ),
-                        ),
-                        if (isLocked)
-                          Positioned.fill(
-                            child: Container(
-                              color: Colors.black.withOpacity(0.5),
-                              child: Stack(
-                                children: [
-                                Positioned(
-                        top: 5,
-                        right: 5, // Position it to the top right corner
-                        child: Image.asset(
-                          'assets/images/lock.png',
-                          height: 15.h, // Adjust the height of the lock icon as per your design
-                        ),
-                      ),
-                                ],
-                              )
+                    return GestureDetector(
+                      onTap: () {
+                        if (isLocked) {
+                          Get.snackbar(
+                            'Locked',
+                            'Buy Premium to unlock this feature.',
+                            backgroundColor: primaryColor,
+                            colorText: Colors.white,
+                          );
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                              item['page'] ?? const SizedBox.shrink(),
+                            ),
+                          );
+                        }
+                      },
+                      child: Stack(
+                        children: [
+                          Container(
+                            width: 80.w,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Colors.black, width: 1.w),
+                              color: container,
+                              borderRadius: BorderRadius.circular(5.r),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  item['image'],
+                                  height: 42.h,
+                                  //    width: 43.w,
+                                ),
+                                // SizedBox(height: 5.h),
+                                CustomText(
+                                  text: item['title'],
+                                  textAlign: TextAlign.center,
+                                  textColor: Colors.white,
+                                  fontsize: 12.sp,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ],
                             ),
                           ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ),
+                          if (isLocked)
+                            Positioned.fill(
+                              child: Container(
+                                  color: Colors.black.withOpacity(0.5),
+                                  child: Stack(
+                                    children: [
+                                      Positioned(
+                                        top: 5,
+                                        right: 5,
+                                        // Position it to the top right corner
+                                        child: Image.asset(
+                                          'assets/images/lock.png',
+                                          height: 15
+                                              .h, // Adjust the height of the lock icon as per your design
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                              ),
+                            ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              );
+            }),
 
             Container(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+              padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
               width: 348.w,
               margin: EdgeInsets.only(bottom: 100),
               decoration: BoxDecoration(
@@ -334,7 +348,7 @@ class HomeScreen extends StatelessWidget {
                                     SizedBox(height: 10.h),
                                     CustomText(
                                       text:
-                                          'Breakthrough in Wearable Cardiac Monitors',
+                                      'Breakthrough in Wearable Cardiac Monitors',
                                       textColor: Colors.white,
                                       fontWeight: FontWeight.w600,
                                       fontsize: 14.sp,
@@ -358,7 +372,7 @@ class HomeScreen extends StatelessWidget {
                                               children: [
                                                 TextSpan(
                                                   text:
-                                                      'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
+                                                  'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
                                                   style: TextStyle(
                                                     color: Colors.white,
                                                     fontWeight: FontWeight.w400,
@@ -369,16 +383,17 @@ class HomeScreen extends StatelessWidget {
                                                   text: 'Read more',
                                                   style: TextStyle(
                                                     color: Colors
-                                                        .blue, // Change to your desired color
+                                                        .blue,
+                                                    // Change to your desired color
                                                     fontWeight: FontWeight.bold,
                                                     fontSize: 11.sp,
                                                   ),
                                                   recognizer:
-                                                      TapGestureRecognizer()
-                                                        ..onTap = () {
-                                                          Get.to(() =>
-                                                              ArticleDetail());
-                                                        },
+                                                  TapGestureRecognizer()
+                                                    ..onTap = () {
+                                                      Get.to(() =>
+                                                          ArticleDetail());
+                                                    },
                                                 ),
                                               ],
                                             ),
@@ -420,7 +435,7 @@ class HomeScreen extends StatelessWidget {
                                     SizedBox(height: 10.h),
                                     CustomText(
                                       text:
-                                          'Breakthrough in Wearable Cardiac Monitors',
+                                      'Breakthrough in Wearable Cardiac Monitors',
                                       textColor: Colors.white,
                                       fontWeight: FontWeight.w600,
                                       fontsize: 14.sp,
@@ -444,7 +459,7 @@ class HomeScreen extends StatelessWidget {
                                               children: [
                                                 TextSpan(
                                                   text:
-                                                      'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
+                                                  'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
                                                   style: TextStyle(
                                                     color: Colors.white,
                                                     fontWeight: FontWeight.w400,
@@ -455,16 +470,17 @@ class HomeScreen extends StatelessWidget {
                                                   text: 'Read more',
                                                   style: TextStyle(
                                                     color: Colors
-                                                        .blue, // Change to your desired color
+                                                        .blue,
+                                                    // Change to your desired color
                                                     fontWeight: FontWeight.bold,
                                                     fontSize: 11.sp,
                                                   ),
                                                   recognizer:
-                                                      TapGestureRecognizer()
-                                                        ..onTap = () {
-                                                          Get.to(() =>
-                                                              ArticleDetail());
-                                                        },
+                                                  TapGestureRecognizer()
+                                                    ..onTap = () {
+                                                      Get.to(() =>
+                                                          ArticleDetail());
+                                                    },
                                                 ),
                                               ],
                                             ),

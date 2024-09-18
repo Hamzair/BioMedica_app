@@ -5,6 +5,7 @@ import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/view/course/course_content.dart';
 import 'package:bio_medica/view/course/courses.dart';
 import 'package:bio_medica/view/course/quiz.dart';
+import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceLibrary.dart';
 import 'package:bio_medica/view/home_Screen/home_screen.dart';
 import 'package:bio_medica/view/profile/profile_screen.dart';
 import 'package:bio_medica/drawer%20items/subscription_screen.dart';
@@ -43,13 +44,13 @@ class _AppNavBarState extends State<AppNavBar> {
 
   List<Widget> bottomBarPages = [
      HomeScreen(),
-     HomeScreen(),
+     DeviceLibrary(),
     CoursesScreen(),
     CourseContent(title:'Ux Design' , image: 'assets/images/z3.png'),
      ProfileScreen()
   ];
 
-  final NavBarController navBarController = Get.put(NavBarController());
+  final NavBarController navBarController = Get.find();
 
   void _navigateToPage(int pageIndex) {
     _pageController.jumpToPage(pageIndex);
@@ -64,7 +65,7 @@ class _AppNavBarState extends State<AppNavBar> {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      key: navBarController.scaffoldKey,
+ key: navBarController.scaffoldKey,
       drawer: AppDrawer(),
 
       body: PageView(

@@ -43,7 +43,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
     return Scaffold(
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100.h),
+        preferredSize: Size.fromHeight(80.h),
         child: AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -122,17 +122,16 @@ class _DeviceDetailsState extends State<DeviceDetails> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding:  EdgeInsets.symmetric(horizontal: 8.w,vertical: 18.h),
               child: Container(
                 width: 341.w,
                 decoration: BoxDecoration(
                     color: container, borderRadius: BorderRadius.circular(8.r)),
                 child: Column(
                   children: [
-                    // Main Image
                     Container(
                       height: 303.h,
-                      padding: EdgeInsets.all(8),
+                      padding: EdgeInsets.symmetric(horizontal: 11.w,vertical: 9.h),
                       child: _selectedImage.isEmpty
                           ? ModelViewer(
                         backgroundColor:
@@ -157,7 +156,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
 
                     // Image Row
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: images.map((imagePath) {
                         return buildImageItem(imagePath);
                       }).toList(),
@@ -174,7 +173,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                   color: tapColor,
                   borderRadius: BorderRadius.circular(11.38.r),
                   border: Border.all(
-                    color: Color.fromRGBO(0, 28, 49, 1),
+                    color: Darkcontainer,
                     width: 1.w,
                   ),
                 ),
@@ -182,12 +181,15 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
+
+
                       buildTabItem(0, 'Overview'),
-                      buildDivider(),
+                      if (_selectedIndex != 0) buildDivider(),
+
                       buildTabItem(1, 'Operations'),
-                      buildDivider(),
+                      if (_selectedIndex != 1) buildDivider(), // Only show divider if not on Operations
                       buildTabItem(2, 'Importance'),
-                      buildDivider(),
+                      if (_selectedIndex != 2) buildDivider(), // Only show divider if not on Importance
                       buildTabItem(3, 'Features'),
                     ],
                   ),
@@ -217,13 +219,20 @@ class _DeviceDetailsState extends State<DeviceDetails> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 4),
+        padding:  EdgeInsets.symmetric(horizontal: 4.w
+        ),
         child: Container(
           width: 100.81.w,
           height: 30.34.h,
           decoration: BoxDecoration(
+
             color: _selectedIndex == index ? Colors.cyan : Colors.transparent,
             borderRadius: BorderRadius.circular(10.r),
+            border: Border.all(
+              color: _selectedIndex == index ? buttonColor2 : Colors.transparent, // Red border for the selected image
+              width: 1.w,
+            ),
+
           ),
           child: Center(
             child: CustomText(
@@ -241,7 +250,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
     );
   }
 
-  // Method to build divider container between tabs
+
   Widget buildDivider() {
     return Container(
       width: 1.w,
@@ -339,11 +348,12 @@ class _DeviceDetailsState extends State<DeviceDetails> {
           // Bullet points for operation steps
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               bulletPoint('Place the chest piece on the patient’s chest or back.'),
-              bulletPoint('The diaphragm picks up internal body sounds.'),
-              bulletPoint('Sounds travel through the tubing to the earpieces.'),
-              bulletPoint('Physician listens for abnormalities in heart or lung functions.'),
+              bulletPoint('Adjust the earpieces to fit snugly in your ears.'),
+              bulletPoint('Listen for heartbeats, breathing sounds, or bowel movements, adjusting the pressure of the stethoscope for better clarity.'),
+
             ],
           ),
         ],
@@ -351,12 +361,13 @@ class _DeviceDetailsState extends State<DeviceDetails> {
     );
   }
 
-// Function to create a bullet point with text
+
   Widget bulletPoint(String text) {
     return Padding(
       padding: EdgeInsets.only(bottom: 8.h),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,  // Aligns the bullet and text vertically
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,// Aligns the bullet and text vertically
         children: [
           // Bullet container
           Container(
@@ -458,7 +469,6 @@ class _DeviceDetailsState extends State<DeviceDetails> {
     );
   }
 
-
   Widget buildImageItem(String imagePath) {
     return GestureDetector(
       onTap: () {
@@ -467,10 +477,10 @@ class _DeviceDetailsState extends State<DeviceDetails> {
         });
       },
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 14.0.h),
+        padding: EdgeInsets.symmetric(vertical: 14.0.h,horizontal: 4.w),
         child: Container(
           height: 50.h,
-          width: 70.w,
+          width: 75.w,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.r),
             border: Border.all(

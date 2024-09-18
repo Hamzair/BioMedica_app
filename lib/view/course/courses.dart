@@ -10,7 +10,7 @@ import 'course_details.dart';
 
 class CoursesScreen extends StatelessWidget {
   final NavBarController navBarController = Get.put(NavBarController());
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  // final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   // Add a list of course images and names
   final List<String> courseImages = [
@@ -42,7 +42,7 @@ class CoursesScreen extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 color: Color(0xFF001A2E),
-                borderRadius: BorderRadius.circular(50),
+                borderRadius: BorderRadius.circular(50.r),
               ),
               child: Icon(
                 Icons.menu,
@@ -79,7 +79,7 @@ class CoursesScreen extends StatelessWidget {
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(10.r),
                         ),
                         backgroundColor: Color(0xFF001A2E),
                       ),

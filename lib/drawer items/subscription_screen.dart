@@ -167,7 +167,8 @@ class SubscriptionScreen extends StatelessWidget {
                     GestureDetector(
                       onTap: () {
                         Get.find<SubscriptionService>().unlockPremium();
-                        CustomRoute.navigateTo(context, AppNavBar());
+                        Navigator.pop(context);
+
                       },
                       child: Container(
                         width: 134.w,

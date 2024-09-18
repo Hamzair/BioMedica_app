@@ -85,6 +85,8 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                               });
                             },
                             child: Container(
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 3.5.w, vertical: 3.5.h),
                               padding: EdgeInsets.symmetric(
                                   horizontal: 30.w, vertical: 10.h),
                               decoration: BoxDecoration(
@@ -114,6 +116,8 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                               });
                             },
                             child: Container(
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 3.5.w, vertical: 3.5.h),
                               padding: EdgeInsets.symmetric(
                                   horizontal: 30.w, vertical: 10.h),
                               decoration: BoxDecoration(
@@ -169,10 +173,11 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                             fontsize: 18.sp,
                             fontWeight: FontWeight.bold,
                             textColor: Colors.white),
-                        SizedBox(height: 10.h),
+                        SizedBox(height: 15.17.h),
 
                         // Key Points List with aligned items
                         ListTile(
+                          minTileHeight: 0,
                           minVerticalPadding: 0,
                           leading: Icon(Icons.check_circle, color: Colors.cyan),
                           title: CustomText(
@@ -186,6 +191,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                               0, // Prevents extra space around leading icon
                         ),
                         ListTile(
+                          minTileHeight: 0,
                           leading: Icon(Icons.check_circle, color: Colors.cyan),
                           title: CustomText(
                             text: 'User Experience Research',
@@ -196,6 +202,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                           minLeadingWidth: 0,
                         ),
                         ListTile(
+                          minTileHeight: 0,
                           leading: Icon(Icons.check_circle, color: Colors.cyan),
                           title: CustomText(
                             text: 'User Interface Design',
@@ -206,6 +213,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                           minLeadingWidth: 0,
                         ),
                         ListTile(
+                          minTileHeight: 0,
                           leading: Icon(Icons.check_circle, color: Colors.cyan),
                           title: CustomText(
                             text: 'Usability Testing',
@@ -297,9 +305,11 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                         color: buttonColor,
                         width: 1,
                       ),
-                      color: Colors.transparent, // Ensure the container background is transparent
+                      color: Colors
+                          .transparent, // Ensure the container background is transparent
                     ),
-                    child: Center( // Center the image within the container
+                    child: Center(
+                      // Center the image within the container
                       child: Image.asset(
                         'assets/images/fav icon.png',
                         height: 24.h,
@@ -308,10 +318,9 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                       ),
                     ),
                   ),
-
                   SizedBox(width: 5.w),
                   Container(
-                  color: Colors.transparent,
+                    // color: Colors.transparent,
                     width: 249.w,
                     //  height: 53.h,
                     child: ElevatedButton(
@@ -320,8 +329,8 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                             title: widget.title, image: widget.image));
                       },
                       style: ElevatedButton.styleFrom(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 13.h, horizontal: 8.w),
+                        padding: EdgeInsets.symmetric(
+                            vertical: 13.h, horizontal: 8.w),
                         backgroundColor: Colors.cyan,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.r),
