@@ -15,7 +15,7 @@ class LessonScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100.h),
+        preferredSize: Size.fromHeight(60.h),
         child: AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -27,7 +27,7 @@ class LessonScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: 30.h,
+                height: 45.h,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -40,7 +40,10 @@ class LessonScreen extends StatelessWidget {
                             onTap: () {
                               Get.back();
                             },
-                            child: Image.asset('assets/images/back_icon.png')),
+                            child: Image.asset(
+                              'assets/images/back_icon.png',
+                              height: 31.h,
+                            )),
                         SizedBox(
                           width: 7.w,
                         ),
@@ -222,3 +225,4 @@ class LessonScreen extends StatelessWidget {
     );
   }
 }
+

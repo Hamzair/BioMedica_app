@@ -43,7 +43,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
     return Scaffold(
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80.h),
+        preferredSize: Size.fromHeight(60.h),
         child: AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -55,7 +55,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: 30.h,
+                height: 45.h,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -68,7 +68,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                             onTap: () {
                               Get.back();
                             },
-                            child: Image.asset('assets/images/back_icon.png')),
+                            child: Image.asset('assets/images/back_icon.png',height: 38.sp,)),
                         SizedBox(
                           width: 7.w,
                         ),

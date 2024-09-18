@@ -19,12 +19,7 @@ class CustomSearch extends StatelessWidget {
       child: SizedBox(
         width: 237.w,
         height: 42.h,
-        // padding: EdgeInsets.symmetric(horizontal: 4.w),
-        // decoration: BoxDecoration(
-        //   color: Colors.white,
-        //   borderRadius: BorderRadius.circular(12.r),
-        //   border: Border.all(color: containerBorder, width: 1),
-        // ),
+
         child: TextField(
           style: TextStyle(color: Colors.white),
           focusNode: focusNode,

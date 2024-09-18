@@ -42,11 +42,7 @@ class ResultScreen extends StatelessWidget {
                               onTap: (){
                                 Get.back();
                               },
-                              child: SizedBox(
-                                height: 38.h,
-                                width: 38.h,
-                                child: Image.asset('assets/images/back_icon.png',fit: BoxFit.fill,),
-                              ),
+                              child: Image.asset('assets/images/back_icon.png',height: 31.h,),
                           ),
                           SizedBox(
                             width: 12.w,

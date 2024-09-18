@@ -48,7 +48,7 @@ class _QuizPageState extends State<QuizPage> {
     return Scaffold(
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100.h),
+        preferredSize: Size.fromHeight(60.h),
         child: AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -60,7 +60,7 @@ class _QuizPageState extends State<QuizPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: 30.h,
+                height: 45.h,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -73,7 +73,7 @@ class _QuizPageState extends State<QuizPage> {
                             onTap: () {
                               Get.back();
                             },
-                            child: Image.asset('assets/images/back_icon.png')),
+                            child: Image.asset('assets/images/back_icon.png',height: 31.h,width: 31.w,)),
                         SizedBox(
                           width: 7.w,
                         ),
@@ -100,7 +100,7 @@ class _QuizPageState extends State<QuizPage> {
             height: 29.h,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+            padding: EdgeInsets.symmetric(horizontal: 25.0.w),
             child: LinearProgressIndicator(
               minHeight: 7.h,
               value: (_currentPage + 1) / (questions.length + 1), // Adjusted for extra page
@@ -181,15 +181,16 @@ class _QuizPageState extends State<QuizPage> {
                 } else {
                   // Regular quiz question card
                   return Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.symmetric(horizontal:25.w
+                    ),
                     child: Card(
-                      color: Color.fromRGBO(0, 28, 49, 1.0).withOpacity(0.4),
+                      color: tapColor,
                       elevation: 0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.r),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(16.0),
+                        padding:  EdgeInsets.symmetric(horizontal: 23.w,vertical: 14.h),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -227,17 +228,20 @@ class _QuizPageState extends State<QuizPage> {
                                         });
                                       },
                                       child: Container(
+                                        height: 52.h,
                                         margin: EdgeInsets.only(bottom: 11.h),
                                         padding: EdgeInsets.symmetric(
-                                            vertical: 16.h, horizontal: 16.w),
+
+                                            horizontal: 16.w),
                                         decoration: BoxDecoration(
+
                                           color: isSelected
                                               ? (isCorrect
                                               ? Color.fromRGBO(90, 231, 51, 1.0)
                                               : Color.fromRGBO(255, 56, 56, 1))
-                                              : Color.fromRGBO(0, 28, 49, 1.0)
-                                              .withOpacity(0.1),
+                                              : tapColor,
                                           borderRadius: BorderRadius.circular(8.r),
+                                          border: Border.all(color: Darkcontainer,width: 1),
                                           boxShadow: [
                                             BoxShadow(
                                               color: Colors.black.withOpacity(0.2),
@@ -249,9 +253,9 @@ class _QuizPageState extends State<QuizPage> {
                                         child: Row(
                                           children: [
                                             Container(
-                                              width: 30.w,
-                                              height: 30.h,
+
                                               decoration: BoxDecoration(
+
                                                 shape: BoxShape.circle,
                                                 color: isSelected
                                                     ? (isCorrect
@@ -259,12 +263,13 @@ class _QuizPageState extends State<QuizPage> {
                                                     : Colors.white)
                                                     : Colors.transparent,
                                                 border: Border.all(
+
                                                   color: isSelected
                                                       ? (isCorrect
                                                       ? Colors.green
                                                       : Colors.red)
-                                                      : Colors.grey,
-                                                  width: 2,
+                                                      : buttonColor2,
+                                                  width: 1,
                                                 ),
                                               ),
                                               child: Center(
@@ -308,10 +313,10 @@ class _QuizPageState extends State<QuizPage> {
           ),
           // Button for "Continue" or "Finish"
           Padding(
-            padding:EdgeInsets.fromLTRB(16, 10, 16, 16),
+            padding:EdgeInsets.fromLTRB(25.w, 10.h, 25.w, 16.h),
             child: SizedBox(
               width: double.infinity,
-              height: 55.h,
+              height: 53.h,
               child: ElevatedButton(
                 onPressed: () {
                   if (_currentPage < 3) {
@@ -333,7 +338,7 @@ class _QuizPageState extends State<QuizPage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.cyan,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.r),
+                    borderRadius: BorderRadius.circular(36.r),
                   ),
                 ),
                 child: Text(

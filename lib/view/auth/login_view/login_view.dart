@@ -9,7 +9,6 @@ import 'package:bio_medica/widget/custom_button.dart';
 import 'package:bio_medica/widget/custom_route.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:bio_medica/widget/custom_textfield.dart';
-import 'package:bio_medica/widget/custom_textfield1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -36,63 +35,52 @@ class _LoginViewState extends State<LoginView> {
       child: Scaffold(
         backgroundColor: primaryColor,
         body: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 47.9.h,
-                ),
-                Center(
-                  child: SizedBox(
-                    height: 261.h,
-                    width: 261.w,
-                    child: Image.asset(AppImages.biomedicalogo),
-                  ),
-                ),
-                SizedBox(
-                  height: 57.64.h,
-                ),
-                CustomText(
-                  text: 'Login',
-                  fontsize: 35.sp,
-                  textColor: const Color.fromRGBO(0, 26, 46, 1),
-                  fontWeight: FontWeight.w700,
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(
-                  height: 6.36.h,
-                ),
-            /// Your Email Textfield
-                Container(
-                  width: double.infinity,
-                  child: CustomTextField1(
-                    hintText: 'Your email',
-                    hintTextSize: 14.65.sp, // Adjust as needed for responsive text size
-                    prefixIcon: Icons.email,
-                    borderColor: Colors.black,
-                  ),
-
-                ),
-
-                SizedBox(height: 26.25.h),
-                /// Your Password Textfield
-            Container(
-              width: double.infinity,
-              child: CustomTextField1(
-                hintText: 'Your password',
-                prefixIcon: Icons.lock,
-                obscureText: true,
-                obscuringCharacter: '*',
-                suffixIcon: Icons.visibility,
-                hintTextSize: 14.65.sp,
-                borderColor: Colors.black,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 47.9.h,
               ),
-            ),
-                SizedBox(height: 16.25.h),
-            /// CheckBox and Remember information Text
-            Row(crossAxisAlignment: CrossAxisAlignment.start,
+              Center(
+                child: SizedBox(
+                  height: 261.h,
+                  width: 261.w,
+                  child: Image.asset(AppImages.biomedicalogo),
+                ),
+              ),
+              SizedBox(
+                height: 57.64.h,
+              ),
+              CustomText(
+                text: 'Login',
+                fontsize: 35.sp,
+                textColor: const Color.fromRGBO(0, 26, 46, 1),
+                fontWeight: FontWeight.w700,
+              ),
+              SizedBox(
+                height: 6.36.h,
+              ),
+          /// Your Email Textfield
+          CustomTextField1(
+            hintText: 'Your email',
+            hintTextSize: 14.65.sp,
+            prefixIcon: Icons.email,
+          ),
+          SizedBox(height: 26.25.h),
+              /// Your Password Textfield
+          CustomTextField1(
+            hintText: 'Your password',
+            prefixIcon: Icons.lock,
+            obscureText: true,
+            obscuringCharacter: '*',
+            suffixIcon: Icons.visibility,
+            hintTextSize: 14.65.sp,
+          ),
+              SizedBox(height: 16.25.h),
+          /// CheckBox and Remember information Text
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Row(
@@ -129,51 +117,48 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ],
             ),
-                SizedBox(
-                  height: 26.h,
+          ),
+              SizedBox(
+                height: 26.h,
+              ),
+              /// Login Button
+              CustomButton(
+                textSize: 19.sp,
+                height: 51.h,
+                width: 311.w,
+                color: buttonColor,
+                onTap: () {
+                  CustomRoute.navigateTo(context, AppNavBar());
+                },
+                title: 'Login',
+              ),
+              SizedBox(
+                height: 77.48.h,
+              ),
+              GestureDetector(
+                onTap: () {
+                  CustomRoute.navigateTo(context, SignupView());
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CustomText(
+                        text: 'Don’t have an account?',
+                        fontsize: 15.sp,
+                        textColor: secondaryColor,
+                        fontWeight: FontWeight.w400),
+                    CustomText(
+                        text: ' Sign Up',
+                        fontsize: 15.sp,
+                        textColor: buttonColor2,
+                        fontWeight: FontWeight.w400),
+                  ],
                 ),
-                /// Login Button
-                Container(
-                  width: double.infinity,
-                  child: CustomButton(
-                    textSize: 19.sp,
-                    height: 51.h,
-                    width: 311.w,
-                    color: buttonColor,
-                    onTap: () {
-                      CustomRoute.navigateTo(context, SubscriptionScreen());
-                    },
-                    title: 'Login',
-                  ),
-                ),
-                SizedBox(
-                  height: 77.48.h,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    CustomRoute.navigateTo(context, SignupView());
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CustomText(
-                          text: 'Don’t have an account?',
-                          fontsize: 15.sp,
-                          textColor: secondaryColor,
-                          fontWeight: FontWeight.w400),
-                      CustomText(
-                          text: ' Sign Up',
-                          fontsize: 15.sp,
-                          textColor: buttonColor2,
-                          fontWeight: FontWeight.w400),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 30.h,
-                ),
-              ],
-            ),
+              ),
+              SizedBox(
+                height: 30.h,
+              ),
+            ],
           ),
         ),
       ),
