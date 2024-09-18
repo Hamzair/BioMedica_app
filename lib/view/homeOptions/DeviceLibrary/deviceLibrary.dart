@@ -51,9 +51,10 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
       // key: _scaffoldKey,
       backgroundColor: primaryColor,
       appBar: AppBar(
+
         backgroundColor: Color.fromRGBO(192, 208, 221, 1),
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.all(8.0),
           child: GestureDetector(
             onTap: () {
               // Open the drawer using the scaffold key
