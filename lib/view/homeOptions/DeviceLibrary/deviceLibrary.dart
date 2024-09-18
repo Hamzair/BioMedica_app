@@ -12,6 +12,8 @@ import 'package:get/get.dart';
 import 'package:bio_medica/controller/nav_bar_controller.dart';
 
 class DeviceLibrary extends StatefulWidget {
+  final FocusNode? focusNode;
+  const DeviceLibrary({Key? key, this.focusNode}) : super(key: key);
   @override
   _DeviceLibraryState createState() => _DeviceLibraryState();
 }
@@ -19,7 +21,7 @@ class DeviceLibrary extends StatefulWidget {
 class _DeviceLibraryState extends State<DeviceLibrary> {
   // List of tabs
   List<String> tabs = ['Cardiology', 'Neurology', 'Orthopedics', 'Radiology'];
-  // final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int selectedIndex = 0;
   final NavBarController navBarController = Get.put(NavBarController());
 
@@ -45,8 +47,8 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    //  drawer: const AppDrawer(),
-     // key: _scaffoldKey,
+        drawer: const AppDrawer(),
+      // key: _scaffoldKey,
       backgroundColor: primaryColor,
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(192, 208, 221, 1),
@@ -55,20 +57,20 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
           child: GestureDetector(
             onTap: () {
               // Open the drawer using the scaffold key
-           //   _scaffoldKey.currentState?.openDrawer();
-              Navigator.pop(context);
+               //  _scaffoldKey.currentState?.openDrawer();
+              navBarController.scaffoldKey.currentState?.openDrawer();
+
             },
-            child: Image.asset('assets/images/back_icon.png'),
-            // child: Container(
-            //   decoration: BoxDecoration(
-            //     color: Color(0xFF001A2E),
-            //     borderRadius: BorderRadius.circular(50),
-            //   ),
-            //   child: Icon(
-            //     Icons.menu,
-            //     color: buttonColor2,
-            //   ),
-            // ),
+            child:Container(
+              decoration: BoxDecoration(
+                color: Color(0xFF001A2E),
+                borderRadius: BorderRadius.circular(50.r),
+              ),
+              child: Icon(
+                Icons.menu,
+                color: buttonColor2,
+              ),
+            ),
           ),
         ),
         title: CustomText(
@@ -82,25 +84,61 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
         children: [
           // Search bar and filter button
           ClipRRect(
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(13.r)),
             child: Container(
-              height: 70,
+              height: 62.h,
               color: secondaryColor,
               child: Row(
                 children: [
                   Expanded(
                       child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: CustomSearch(),
-                  )),
-                  SizedBox(width: 5),
+                          padding: EdgeInsets.symmetric(horizontal: 8.0.w),
+                          child: GestureDetector(
+                            onTap: () {
+                              // Unfocus the text field when tapping outside
+                              FocusScope.of(context).unfocus();
+                            },
+                            child: SizedBox(
+                              width: 237.w,
+                              height: 42.h,
+                              child: TextField(
+                                style: TextStyle(color: Colors.white),
+                                focusNode: FocusNode(),
+                                // textAlign: TextAlign.start,
+                                decoration: InputDecoration(
+                                  suffixIcon: Icon(
+                                    Icons.mic_rounded,
+                                    color: Colors.white,
+                                  ),
+                                  fillColor: Color.fromRGBO(0, 26, 46, 1),
+                                  filled: true,
+                                  contentPadding: EdgeInsets.symmetric(),
+                                  prefixIcon: Image.asset(
+                                    AppImages.search,
+                                  ),
+                                  hintText: 'Search for anything',
+                                  hintStyle: TextStyle(
+                                    color: whiteColor,
+                                    fontSize: 14.sp,
+                                  ),
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(13.r),
+                                      borderSide: BorderSide.none),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(13.r),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ))),
+                  SizedBox(width: 5.w),
                   SizedBox(
                     height: 38.h,
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(13.r),
                         ),
                         backgroundColor: Color(0xFF001A2E),
                       ),
@@ -109,12 +147,15 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
                           Icon(
                             Icons.tune,
                             color: Colors.white,
-                            size: 25,
+                            size: 13.sp,
                           ),
                           SizedBox(width: 10.w),
                           Text(
                             "Filter",
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w500),
                           )
                         ],
                       ),
@@ -127,11 +168,11 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 17.h),
 
           // Horizontal Tabs
           Padding(
-            padding: const EdgeInsets.only(left: 16.0, bottom: 8),
+            padding: EdgeInsets.only(left: 13.0.w, bottom: 8.h),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -144,7 +185,7 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
                       });
                     },
                     child: Padding(
-                      padding:  EdgeInsets.only(right: 10.w),
+                      padding: EdgeInsets.only(right: 10.w),
                       child: buildTab(tabs[index], selectedIndex == index),
                     ),
                   );
@@ -168,14 +209,12 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
   // Function to build each tab
   Widget buildTab(String title, bool isSelected) {
     return Container(
-
       height: 28.h,
       width: 77.w,
 
-   //   padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
+      //   padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
       decoration: BoxDecoration(
-
-        color: isSelected ? primaryColor :container, // Tab background color
+        color: isSelected ? primaryColor : container, // Tab background color
         borderRadius: BorderRadius.circular(5.r), // Rounded corners
         border: Border.all(
           color: isSelected
@@ -186,12 +225,10 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
       ),
       child: Center(
         child: CustomText(
-        text:   title,
-         textColor:
-             Colors.white, // White text color
-            fontWeight: FontWeight.bold,
+          text: title,
+          textColor: Colors.white, // White text color
+          fontWeight: FontWeight.bold,
           fontsize: 10.sp,
-
         ),
       ),
     );
@@ -206,7 +243,6 @@ class Neurology extends StatelessWidget {
     return Scaffold(
       backgroundColor: primaryColor,
       body: GridView.count(
-
         crossAxisCount: 2,
         childAspectRatio: 0.74,
         children: [
@@ -220,12 +256,10 @@ class Neurology extends StatelessWidget {
                 width: 1, // Border width
               ),
             ),
-
             child: Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 6.w,vertical: 6.h),
+              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
               child: InkWell(
                 onTap: () {
-                  // Pass the image and name to the next page
                   Get.to(
                     () => DeviceDetails(
                       deviceName: 'Defibrillator',
@@ -239,11 +273,37 @@ class Neurology extends StatelessWidget {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8.r),
-                      child: Image.asset(
-                        'assets/images/def.png',
-                        fit: BoxFit.cover,
-                        height: 100.h,
-                        width: double.infinity,
+                      child: Stack(
+                        // Use a Stack to overlay the icon
+                        children: [
+                          Image.asset(
+                            'assets/images/def.png',
+                            fit: BoxFit.cover,
+                            height: 100.h,
+                            width: double.infinity,
+                          ),
+                          Align(
+                            // Position the icon in the top right corner of the image
+                            alignment: Alignment.topRight,
+                            child: Container(
+                              height: 25.h,
+                              width: 25.w,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(6.r), // Bottom left corner radius
+                                    bottomRight: Radius.circular(6.r), // Bottom right corner radius
+                                  ),
+                                  color: Color.fromRGBO(18, 26, 0, 0.25)),
+                              child: Icon(
+                                // Your bookmark icon
+                                Icons
+                                    .bookmark_border, // Replace with your desired icon
+                                color: Colors.white, // Set the icon color
+                                size: 17.sp, // Set the icon size
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(height: 10.h),
@@ -269,7 +329,7 @@ class Neurology extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {
                           Get.to(
-                                () => DeviceDetails(
+                            () => DeviceDetails(
                               deviceName: 'Defibrillator',
                               deviceImage: 'assets/images/def.png',
                             ),
@@ -306,7 +366,7 @@ class Neurology extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 6.w,vertical: 6.h),
+              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
               child: InkWell(
                 onTap: () {
                   // Pass the image and name to the next page
@@ -323,11 +383,37 @@ class Neurology extends StatelessWidget {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8.r),
-                      child: Image.asset(
-                        'assets/images/pace.png',
-                        fit: BoxFit.cover,
-                        height: 100.h,
-                        width: double.infinity,
+                      child: Stack(
+                        // Use a Stack to overlay the icon
+                        children: [
+                          Image.asset(
+                            'assets/images/pace.png',
+                            fit: BoxFit.cover,
+                            height: 100.h,
+                            width: double.infinity,
+                          ),
+                          Align(
+                            // Position the icon in the top right corner of the image
+                            alignment: Alignment.topRight,
+                            child: Container(
+                              height: 25.h,
+                              width: 25.w,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(6.r), // Bottom left corner radius
+                                    bottomRight: Radius.circular(6.r), // Bottom right corner radius
+                                  ),
+                                  color: Color.fromRGBO(18, 26, 0, 0.25)),
+                              child: Icon(
+                                // Your bookmark icon
+                                Icons
+                                    .bookmark_border, // Replace with your desired icon
+                                color: Colors.white, // Set the icon color
+                                size: 17.sp, // Set the icon size
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(height: 10.h),
@@ -350,12 +436,14 @@ class Neurology extends StatelessWidget {
                       width: double.infinity,
                       height: 34.h,
                       child: ElevatedButton(
-                        onPressed: () { Get.to(
-                              () => DeviceDetails(
-                            deviceName: 'Pacemaker',
-                            deviceImage: 'assets/images/pace.png',
-                          ),
-                        );},
+                        onPressed: () {
+                          Get.to(
+                            () => DeviceDetails(
+                              deviceName: 'Pacemaker',
+                              deviceImage: 'assets/images/pace.png',
+                            ),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(vertical: 5.h),
                           backgroundColor: Colors.cyan,
@@ -387,7 +475,7 @@ class Neurology extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 6.w,vertical: 6.h),
+              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 4.h),
               child: InkWell(
                 onTap: () {
                   // Pass the image and name to the next page
@@ -404,11 +492,37 @@ class Neurology extends StatelessWidget {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8.r),
-                      child: Image.asset(
-                        'assets/images/stheth.png',
-                        fit: BoxFit.cover,
-                        height: 100,
-                        width: double.infinity,
+                      child: Stack(
+                        // Use a Stack to overlay the icon
+                        children: [
+                          Image.asset(
+                            'assets/images/stheth.png',
+                            fit: BoxFit.cover,
+                            height: 100.h,
+                            width: double.infinity,
+                          ),
+                          Align(
+                            // Position the icon in the top right corner of the image
+                            alignment: Alignment.topRight,
+                            child: Container(
+                              height: 25.h,
+                              width: 25.w,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(6.r), // Bottom left corner radius
+                                    bottomRight: Radius.circular(6.r), // Bottom right corner radius
+                                  ),
+                                  color: Color.fromRGBO(18, 26, 0, 0.25)),
+                              child: Icon(
+                                // Your bookmark icon
+                                Icons
+                                    .bookmark_border, // Replace with your desired icon
+                                color: Colors.white, // Set the icon color
+                                size: 17.sp, // Set the icon size
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(height: 10.h),
@@ -420,7 +534,8 @@ class Neurology extends StatelessWidget {
                     ),
                     SizedBox(height: 5.h),
                     CustomText(
-                      text: 'used to listen to heartbeats, lung sounds, and other body sounds.',
+                      text:
+                          'used to listen to heartbeats, lung sounds, and other body sounds.',
                       textAlign: TextAlign.start,
                       fontWeight: FontWeight.w500,
                       fontsize: 10.sp,

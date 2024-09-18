@@ -46,7 +46,7 @@ class _AppNavBarState extends State<AppNavBar> {
      HomeScreen(),
      DeviceLibrary(),
     CoursesScreen(),
-    CourseContent(title:'Ux Design' , image: 'assets/images/z3.png'),
+    HomeScreen(),
      ProfileScreen()
   ];
 

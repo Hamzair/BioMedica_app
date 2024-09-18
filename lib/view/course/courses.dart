@@ -6,6 +6,7 @@ import 'package:bio_medica/drawer%20items/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../const/image_assets.dart';
 import 'course_details.dart';
 
 class CoursesScreen extends StatelessWidget {
@@ -60,18 +61,53 @@ class CoursesScreen extends StatelessWidget {
       body: Column(
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(20.r)),
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(13.r)),
             child: Container(
-              height: 70.h,
+              height: 62.h,
               color: secondaryColor,
               child: Row(
                 children: [
                   Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.0.w),
-                      child: CustomSearch(),
-                    ),
-                  ),
+                      child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 8.0.w),
+                          child: GestureDetector(
+                            onTap: () {
+                              // Unfocus the text field when tapping outside
+                              FocusScope.of(context).unfocus();
+                            },
+                            child: SizedBox(
+                              width: 237.w,
+                              height: 42.h,
+                              child: TextField(
+                                style: TextStyle(color: Colors.white),
+                                focusNode: FocusNode(),
+                                // textAlign: TextAlign.start,
+                                decoration: InputDecoration(
+                                  suffixIcon: Icon(
+                                    Icons.mic_rounded,
+                                    color: Colors.white,
+                                  ),
+                                  fillColor: Color.fromRGBO(0, 26, 46, 1),
+                                  filled: true,
+                                  contentPadding: EdgeInsets.symmetric(),
+                                  prefixIcon: Image.asset(
+                                    AppImages.search,
+                                  ),
+                                  hintText: 'Search for anything',
+                                  hintStyle: TextStyle(
+                                    color: whiteColor,
+                                    fontSize: 14.sp,
+                                  ),
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(13.r),
+                                      borderSide: BorderSide.none),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(13.r),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ))),
                   SizedBox(width: 5.w),
                   SizedBox(
                     height: 38.h,
@@ -79,7 +115,7 @@ class CoursesScreen extends StatelessWidget {
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.r),
+                          borderRadius: BorderRadius.circular(13.r),
                         ),
                         backgroundColor: Color(0xFF001A2E),
                       ),
@@ -88,18 +124,23 @@ class CoursesScreen extends StatelessWidget {
                           Icon(
                             Icons.tune,
                             color: Colors.white,
-                            size: 25.sp,
+                            size: 13.sp,
                           ),
                           SizedBox(width: 10.w),
                           Text(
                             "Filter",
-                            style: TextStyle(color: Colors.white),
-                          ),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w500),
+                          )
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(width: 10.w),
+                  SizedBox(
+                    width: 10,
+                  )
                 ],
               ),
             ),

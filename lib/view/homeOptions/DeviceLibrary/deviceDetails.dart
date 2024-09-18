@@ -68,7 +68,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                             onTap: () {
                               Get.back();
                             },
-                            child: Image.asset('assets/images/back_icon.png')),
+                            child: Image.asset('assets/images/back_icon.png',height: 38.sp,)),
                         SizedBox(
                           width: 7.w,
                         ),

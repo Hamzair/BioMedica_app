@@ -40,7 +40,10 @@ class LessonScreen extends StatelessWidget {
                             onTap: () {
                               Get.back();
                             },
-                            child: Image.asset('assets/images/back_icon.png')),
+                            child: Image.asset(
+                              'assets/images/back_icon.png',
+                              height: 31.h,
+                            )),
                         SizedBox(
                           width: 7.w,
                         ),
@@ -222,3 +225,4 @@ class LessonScreen extends StatelessWidget {
     );
   }
 }
+

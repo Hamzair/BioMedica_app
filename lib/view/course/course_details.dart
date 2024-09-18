@@ -30,7 +30,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
             children: [
               ClipRRect(
                 borderRadius:
-                    BorderRadius.vertical(bottom: Radius.circular(30)),
+                    BorderRadius.vertical(bottom: Radius.circular(30.r)),
                 child: Image.asset(
                   widget.image,
                   height: 264.h,
@@ -45,12 +45,12 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                       onTap: () {
                         Navigator.pop(context);
                       },
-                      child: Image.asset('assets/images/backArrow.png')))
+                      child:  Image.asset('assets/images/back_icon.png',height: 31.h,width: 31.w,)),)
             ],
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: 25.0.w),
               child: ListView(
                 children: [
                   // Course Category and Title
@@ -67,9 +67,10 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                     fontWeight: FontWeight.w600,
                     fontsize: 17.sp,
                   ),
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 18.h),
 
                   Container(
+                    height: 38.h,
                     decoration: BoxDecoration(
                       color: Color(0xFF001A2E).withOpacity(0.6),
                       borderRadius:
@@ -87,8 +88,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                             child: Container(
                               margin: EdgeInsets.symmetric(
                                   horizontal: 3.5.w, vertical: 3.5.h),
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 30.w, vertical: 10.h),
+
                               decoration: BoxDecoration(
                                 color: _selectedIndex == 0
                                     ? Colors.cyan
@@ -118,8 +118,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                             child: Container(
                               margin: EdgeInsets.symmetric(
                                   horizontal: 3.5.w, vertical: 3.5.h),
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 30.w, vertical: 10.h),
+
                               decoration: BoxDecoration(
                                 color: _selectedIndex == 1
                                     ? Colors.cyan
@@ -160,12 +159,12 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                           fontWeight: FontWeight.w500,
                           textColor: Colors.white,
                         ),
-                        SizedBox(height: 10.h),
+                        SizedBox(height: 5.h),
                         Text(
                           'Read more',
                           style: TextStyle(color: buttonColor2),
                         ),
-                        SizedBox(height: 20.h),
+                        SizedBox(height: 15.h),
 
                         // Key Points
                         CustomText(
@@ -178,7 +177,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                         // Key Points List with aligned items
                         ListTile(
                           minTileHeight: 0,
-                          minVerticalPadding: 0,
+                          minVerticalPadding: 8,
                           leading: Icon(Icons.check_circle, color: Colors.cyan),
                           title: CustomText(
                             text: 'Critical Thinking',
@@ -192,6 +191,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                         ),
                         ListTile(
                           minTileHeight: 0,
+                          minVerticalPadding: 0,
                           leading: Icon(Icons.check_circle, color: Colors.cyan),
                           title: CustomText(
                             text: 'User Experience Research',
@@ -203,6 +203,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                         ),
                         ListTile(
                           minTileHeight: 0,
+                          minVerticalPadding: 8,
                           leading: Icon(Icons.check_circle, color: Colors.cyan),
                           title: CustomText(
                             text: 'User Interface Design',
@@ -214,6 +215,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                         ),
                         ListTile(
                           minTileHeight: 0,
+                          minVerticalPadding: 0,
                           leading: Icon(Icons.check_circle, color: Colors.cyan),
                           title: CustomText(
                             text: 'Usability Testing',
@@ -295,30 +297,8 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    padding: EdgeInsets.all(12),
-                    height: 50.h,
-                    width: 50.w,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(
-                        color: buttonColor,
-                        width: 1,
-                      ),
-                      color: Colors
-                          .transparent, // Ensure the container background is transparent
-                    ),
-                    child: Center(
-                      // Center the image within the container
-                      child: Image.asset(
-                        'assets/images/fav icon.png',
-                        height: 24.h,
-                        width: 24.w,
-                        fit: BoxFit.cover, // Ensure the image scales correctly
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 5.w),
+                  Image.asset('assets/images/favIcon.png',height: 50.h,width: 50.w,),
+                  SizedBox(width: 11.w),
                   Container(
                     // color: Colors.transparent,
                     width: 249.w,
