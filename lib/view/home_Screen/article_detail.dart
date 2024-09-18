@@ -30,7 +30,7 @@ class ArticleDetail extends StatelessWidget {
                           onTap: () {
                             Navigator.pop(context);
                           },
-                          child: Image.asset('assets/images/back_icon.png')))
+                          child: Image.asset('assets/images/back_icon.png',height: 31.h,)))
                 ]),
             SizedBox(height: 16.h),
             Padding(

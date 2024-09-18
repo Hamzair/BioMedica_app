@@ -90,77 +90,81 @@ class HomeScreen extends StatelessWidget {
       // key: navBarController.scaffoldKey,
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60.h),
+        preferredSize: Size.fromHeight(80.h),
         child: AppBar(
+
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(13.r),
                   bottomRight: Radius.circular(13.r))),
           centerTitle: true,
           automaticallyImplyLeading: false,
-          flexibleSpace: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: 45.h,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: 12.w,
-                  ),
-                  SizedBox(
-                    height: 38.h,
-                    width: 38.w,
-                    child: GestureDetector(
-                      onTap: () {
-                        // Open the drawer using the scaffold key
-                        navBarController.scaffoldKey.currentState?.openDrawer();
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Color(0xFF001A2E),
-                          borderRadius: BorderRadius.circular(50.r),
-                        ),
-                        child: Icon(
-                          Icons.menu,
-                          color: buttonColor2,
-                        ),
-                      ),
+          flexibleSpace: Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 45.h,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 12.w,
                     ),
-                  ),
-                  SizedBox(
-                    width: 11.w,
-                  ),
-                  Flexible(
-                    child: CustomSearch(),
-                  ),
-                  SizedBox(
-                    width: 12.w,
-                  ),
-                  GestureDetector(onTap: () {
-                    //   Get.offAll(()=>AppNavBar());
-                  },
-                    child: Container(
-                      width: 35.w,
+                    SizedBox(
                       height: 38.h,
-                      decoration: BoxDecoration(
-                          color: Darkcontainer,
-                          borderRadius: BorderRadius.circular(13.r)),
-                      child: Icon(
-                        Icons.notifications,
-                        color: Color(0xffBDD0EA),
+                      width: 38.w,
+                      child: GestureDetector(
+                        onTap: () {
+                          // Open the drawer using the scaffold key
+                          navBarController.scaffoldKey.currentState?.openDrawer();
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xFF001A2E),
+                            borderRadius: BorderRadius.circular(50.r),
+                          ),
+                          child: Icon(
+                            Icons.menu,
+                            color: buttonColor2,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 12.w,
-                  ),
-                ],
-              ),
-            ],
+                    SizedBox(
+                      width: 11.w,
+                    ),
+                    Flexible(
+                      child: CustomSearch(),
+                    ),
+                    SizedBox(
+                      width: 12.w,
+                    ),
+                    GestureDetector(onTap: () {
+                      //   Get.offAll(()=>AppNavBar());
+                    },
+                      child: Container(
+                        width: 35.w,
+                        height: 38.h,
+                        decoration: BoxDecoration(
+                            color: Darkcontainer,
+                            borderRadius: BorderRadius.circular(13.r)),
+                        child: Icon(
+                          Icons.notifications,
+                          color: Color(0xffBDD0EA),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 12.w,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
           backgroundColor: secondaryColor,
         ),
@@ -172,7 +176,7 @@ class HomeScreen extends StatelessWidget {
             // Grid View for home options
             GetBuilder<SubscriptionService>(builder: (subscriptionService) {
               return Container(
-                height: 300.h,
+                height: 330.h,
                 margin: EdgeInsets.only(bottom: 10.h),
                 child: GridView.builder(
                   physics: NeverScrollableScrollPhysics(),
