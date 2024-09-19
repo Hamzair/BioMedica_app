@@ -85,6 +85,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       // drawer:  AppDrawer(),
       // key: navBarController.scaffoldKey,
@@ -175,9 +176,27 @@ class HomeScreen extends StatelessWidget {
           children: [
             // Grid View for home options
             GetBuilder<SubscriptionService>(builder: (subscriptionService) {
+
+              double getAppBarHeight(BuildContext context) {
+                double screenHeight = MediaQuery.of(context).size.height;
+                print(screenHeight);
+
+                // Define height based on screen size
+                if (screenHeight < 600) { // Considered small screen
+                  return screenHeight / 4; // Example height for small screens
+                }
+                else if(screenHeight ==667) {
+                  return screenHeight / 2.15; // Default height for larger screens
+                }
+
+                else {
+                  return screenHeight / 2.6; // Default height for larger screens
+                }
+              }
+
               return Container(
-                height: 303.h,
-                margin: EdgeInsets.only(bottom: 10.h,top: 13.h),
+              height: getAppBarHeight(context),
+
                 child: GridView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

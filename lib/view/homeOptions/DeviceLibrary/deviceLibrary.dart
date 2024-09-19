@@ -251,7 +251,7 @@ class Neurology extends StatelessWidget {
       backgroundColor: primaryColor,
       body: GridView.count(
         crossAxisCount: 2,
-        childAspectRatio: 0.74,
+        childAspectRatio: 1.h,
         children: [
           // Item 1
           Card(
