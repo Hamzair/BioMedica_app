@@ -260,7 +260,7 @@ class SubscriptionScreen extends StatelessWidget {
                 SizedBox(height: 43.h),
                 /// Text Span
                 SizedBox(
-                  width: 307.w,
+                  width: double.infinity.w,
                   child: RichText(
                     text: TextSpan(
                       text: 'By continuing the purchase, you acknowledge that you have read our ',
@@ -317,7 +317,7 @@ class SubscriptionScreen extends StatelessWidget {
                 /// Free Trial Users Container
                 Container(
                   height: 150.45.h,
-                  width: 302.68.w,
+                  width: double.infinity.w,
                   decoration: BoxDecoration(
                     color: tapColor,
                     borderRadius: BorderRadius.circular(13.31.r),

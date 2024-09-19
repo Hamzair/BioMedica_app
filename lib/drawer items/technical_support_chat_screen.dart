@@ -191,28 +191,33 @@ class TechnicalSupportChatScreen extends StatelessWidget {
   /// Type Message TextField
   Widget _buildMessageInput() {
     return Container(
-      height: 76.8.h,
-      width: 360.w,
+      height: 79.8.h,
+      width: double.infinity.w,
       color: Color(0xff001A2E),
       child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.w),
+          padding: EdgeInsets.symmetric(horizontal: 23.4.w),
           child: SizedBox(
             child: Row(
               children: [
                 Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Type message...',
-                      hintStyle: TextStyle(color: Colors.white54),
-                      filled: true,
-                      fillColor: tapColor,
-                      contentPadding: EdgeInsets.symmetric(horizontal: 15.w),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(11.52.r),
-                        borderSide: BorderSide.none,
+                  child: Container(
+                    height: 56.63.h, // Height for the container
+                    width: double.infinity, // Set to your desired width
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Type message...',
+                        hintStyle: TextStyle(color: Colors.white54),
+                        filled: true,
+                        fillColor: primaryColor,
+                        contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 18.h), // Adjust vertical padding
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(11.52.r),
+                          borderSide: BorderSide.none,
+                        ),
+                        isDense: true, // Set isDense to true
                       ),
+                      style: TextStyle(color: Colors.white),
                     ),
-                    style: TextStyle(color: Colors.white),
                   ),
                 ),
                 SizedBox(width: 11.52.w),
@@ -221,16 +226,18 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                   width: 38.4.w,
                   padding: EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: tapColor, // Send button color
+                    color: primaryColor, // Send button color
                     borderRadius: BorderRadius.circular(11.52.r)
                   ),
-                  child: GestureDetector(
-                    onTap: (){},
-                      child: SizedBox(
-                          height: 23.04.h,
-                          width: 23.04.w,
-                          child: Image.asset('assets/images/send_image_icon.png',fit: BoxFit.cover,),
-                      ),
+                  child: Center(
+                    child: GestureDetector(
+                      onTap: (){},
+                        child: SizedBox(
+                            height: 23.04.h,
+                            width: 23.04.w,
+                            child: Image.asset('assets/images/send_image_icon.png',fit: BoxFit.cover,),
+                        ),
+                    ),
                   ),
                 ),
               ],

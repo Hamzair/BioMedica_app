@@ -12,6 +12,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
+
 
 class SignupView extends StatefulWidget {
   const SignupView({super.key});
@@ -22,13 +25,69 @@ class SignupView extends StatefulWidget {
 
 class _SignupViewState extends State<SignupView> {
   bool isChecked = false;
+  File? _image; // Variable to store the selected image
+
+  Future<void> _pickImage() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? pickedFile = await picker.pickImage(
+      source: ImageSource.gallery,
+    );
+
+    if (pickedFile != null) {
+      setState(() {
+        _image = File(pickedFile.path);
+      });
+    }
+  }
+
+  Future<void> _takePhoto() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? pickedFile = await picker.pickImage(
+      source: ImageSource.camera,
+    );
+
+    if (pickedFile != null) {
+      setState(() {
+        _image = File(pickedFile.path);
+      });
+    }
+  }
+
+  void _showImageSourceDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Choose an option"),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  _pickImage();
+                },
+                child: Text("Gallery"),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  _takePhoto();
+                },
+                child: Text("Camera"),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
-
       },
       child: Scaffold(
         backgroundColor: secondaryColor,
@@ -36,60 +95,68 @@ class _SignupViewState extends State<SignupView> {
           child: Column(
             children: [
               Container(
-                  // height: 500,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      // color: Colors.red,
-                      image: DecorationImage(
-                          image: AssetImage(AppImages.ellipse2), fit: BoxFit.fill)),
-                  child: SafeArea(
-                    child: Column(
-                      children: [
-                        // SizedBox(
-                        //   height: 30.h,
-                        // ),
-                        SizedBox(
-                            height: 139.h,
-                            width: 130.w,
-                            child: Image.asset(
-                              AppImages.biomedicalogo,
-                            )),
-                        Align(alignment: Alignment.center,
-                          child: CustomText(
-                              textAlign: TextAlign.center,
-                              text: 'Sign up ',
-                              fontsize: 35.sp,
-                              textColor: Color.fromRGBO(0, 26, 46, 1),
-                              fontWeight: FontWeight.w700,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(AppImages.ellipse2), fit: BoxFit.fill)),
+                child: SafeArea(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 139.h,
+                        width: 130.w,
+                        child: Image.asset(
+                          AppImages.biomedicalogo,
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.center,
+                        child: CustomText(
+                          textAlign: TextAlign.center,
+                          text: 'Sign up ',
+                          fontsize: 35.sp,
+                          textColor: Color.fromRGBO(0, 26, 46, 1),
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      SizedBox(height: 11.h),
+                      CustomText(
+                        textAlign: TextAlign.center,
+                        text: 'Explore new content, manage your profile, and connect with others—all from here',
+                        fontsize: 14.sp,
+                        textColor: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      SizedBox(height: 15.h),
 
+                      /// Image Upload
+                      GestureDetector(
+                        onTap: () => _showImageSourceDialog(context), // Open image picker on tap
+                        child: Container(
+                          height: 106.h,
+                          width: 106.w,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                          child: _image == null
+                              ? Image.asset('assets/images/upload_image_sign_up.png', fit: BoxFit.contain)
+                              : ClipRRect(
+                            borderRadius: BorderRadius.circular(8.r),
+                            child: Image.file(
+                              _image!,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
-                        SizedBox(
-                          height: 11.h,
-                        ),
-                        CustomText(
-                            textAlign: TextAlign.center,
-                            text:
-                                'Explore new content, manage your profile, and connect with others—all from here',
-                            fontsize: 14.sp,
-                            textColor: Colors.white,
-                            fontWeight: FontWeight.w600,
-                        ),
-                        SizedBox(
-                          height: 15.h,
-                        ),
-                        SizedBox(
-                            height: 106.h,
-                            width: 106.w,
-                            child: Image.asset(AppImages.upload)),
-                        SizedBox(
-                          height: 15.h,
-                        ),
-                      ],
-                    ),
-                  )),
-              SizedBox(height: 18.h,),
+                      ),
 
+                      SizedBox(height: 15.h),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 18.h),
+              // Remaining code...
               Container(
                 width: 311.w,
                 child: CustomTextField1(
@@ -120,9 +187,7 @@ class _SignupViewState extends State<SignupView> {
                   hintTextSize: 14.65.sp,
                 ),
               ),
-              SizedBox(
-                height: 24.25.h,
-              ),
+              SizedBox(height: 24.25.h),
               /// Continue Button
               CustomButton(
                 textSize: 19.sp,
@@ -133,9 +198,7 @@ class _SignupViewState extends State<SignupView> {
                 title: 'Continue',
                 radius: 13.31.r,
               ),
-              SizedBox(
-                height: 14.25.h,
-              ),
+              SizedBox(height: 14.25.h),
               /// Text Span
               Center(
                 child: SizedBox(
@@ -162,7 +225,7 @@ class _SignupViewState extends State<SignupView> {
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                               // Adjust the page as needed
+                              // Navigate to Terms of Service
                             },
                         ),
                         TextSpan(
@@ -192,34 +255,33 @@ class _SignupViewState extends State<SignupView> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 35.h,
-              ),
+              SizedBox(height: 35.h),
               /// Already have an Account
               GestureDetector(
                 onTap: () {
-                   CustomRoute.navigateTo(context, LoginView());
+                  CustomRoute.navigateTo(context, LoginView());
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CustomText(
-                        textAlign: TextAlign.center,
-                        text: 'Already have an account? ',
-                        fontsize: 15.sp,
-                        textColor: Color(0xff111827),
-                        fontWeight: FontWeight.w300),CustomText(
-                        textAlign: TextAlign.center,
-                        text: 'Sign in',
-                        fontsize: 15.sp,
-                        textColor: buttonColor2,
-                        fontWeight: FontWeight.w500),
+                      textAlign: TextAlign.center,
+                      text: 'Already have an account? ',
+                      fontsize: 15.sp,
+                      textColor: Color(0xff111827),
+                      fontWeight: FontWeight.w300,
+                    ),
+                    CustomText(
+                      textAlign: TextAlign.center,
+                      text: 'Sign in',
+                      fontsize: 15.sp,
+                      textColor: buttonColor2,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ],
                 ),
               ),
-              SizedBox(
-                height: 22.h,
-              ),
+              SizedBox(height: 22.h),
             ],
           ),
         ),

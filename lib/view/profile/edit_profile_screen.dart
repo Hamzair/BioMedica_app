@@ -29,6 +29,47 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     }
   }
 
+  Future<void> _takePhoto() async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? image = await _picker.pickImage(source: ImageSource.camera);
+
+    if (image != null) {
+      setState(() {
+        _imagePath = image.path; // Update the image path
+      });
+    }
+  }
+
+  void _showImageSourceDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Choose an option"),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  _pickImage(); // Pick image from gallery
+                },
+                child: Text("Gallery"),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  _takePhoto(); // Take photo with camera
+                },
+                child: Text("Camera"),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +126,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal:25.w),
+          padding: EdgeInsets.symmetric(horizontal: 25.w),
           child: Column(
             children: [
               SizedBox(height: 44.h),
@@ -109,7 +150,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         right: 0,
                         bottom: 0,
                         child: GestureDetector(
-                          onTap: _pickImage, // Call the image picker function
+                          onTap: () => _showImageSourceDialog(context), // Open image source dialog
                           child: CircleAvatar(
                             backgroundColor: buttonColor2,
                             child: SizedBox(
@@ -166,7 +207,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 child: CustomButton(
                   title: 'Save changes',
                   textSize: 19.sp,
-                  onTap: () {},
+                  onTap: () {}, // Add your save functionality here
                   color: buttonColor,
                 ),
               ),
