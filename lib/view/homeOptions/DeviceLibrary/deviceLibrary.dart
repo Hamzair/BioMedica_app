@@ -54,7 +54,6 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
       // key: _scaffoldKey,
       backgroundColor: primaryColor,
       appBar: AppBar(
-
         backgroundColor: Color.fromRGBO(192, 208, 221, 1),
         leading: Padding(
           padding:  EdgeInsets.all(8.0),
@@ -63,8 +62,7 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
             height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
             child: GestureDetector(
               onTap: () {
-                // Open the drawer using the scaffold key
-                 //  _scaffoldKey.currentState?.openDrawer();
+
                 navBarController.scaffoldKey.currentState?.openDrawer();
 
               },
@@ -103,7 +101,6 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
                           padding: EdgeInsets.symmetric(horizontal: 8.0.w),
                           child: GestureDetector(
                             onTap: () {
-                              // Unfocus the text field when tapping outside
                               FocusScope.of(context).unfocus();
                             },
                             child: SizedBox(

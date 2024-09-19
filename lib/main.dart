@@ -1,22 +1,16 @@
 import 'package:bio_medica/controller/nav_bar_controller.dart';
-import 'package:bio_medica/drawer%20items/progress.dart';
-import 'package:bio_medica/view/course/chapters.dart';
-import 'package:bio_medica/view/course/courses.dart';
-import 'package:bio_medica/view/course/quiz.dart';
-import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceLibrary.dart';
-
-import 'package:bio_medica/view/home_Screen/home_screen.dart';
 import 'package:bio_medica/view/navbar/nav_bar.dart';
-import 'package:bio_medica/view/tech_support.dart';
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'controller/subscription_controller.dart';
 import 'drawer items/saveitems/save_controller.dart';
-import 'view/splash_screen/splash_screen.dart';
+
 
 void main() {
-  runApp(const MyApp());
+  runApp(DevicePreview( enabled: kReleaseMode, builder: (context)=> MyApp()));
   Get.put(SubscriptionService());
   Get.put(SavedItemsController());
   Get.put(NavBarController());
