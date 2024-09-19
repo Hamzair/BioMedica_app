@@ -90,77 +90,81 @@ class HomeScreen extends StatelessWidget {
       // key: navBarController.scaffoldKey,
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60.h),
+        preferredSize: Size.fromHeight(80.h),
         child: AppBar(
+
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(13.r),
                   bottomRight: Radius.circular(13.r))),
           centerTitle: true,
           automaticallyImplyLeading: false,
-          flexibleSpace: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: 45.h,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: 12.w,
-                  ),
-                  SizedBox(
-                    height: 38.h,
-                    width: 38.w,
-                    child: GestureDetector(
-                      onTap: () {
-                        // Open the drawer using the scaffold key
-                        navBarController.scaffoldKey.currentState?.openDrawer();
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Color(0xFF001A2E),
-                          borderRadius: BorderRadius.circular(50.r),
-                        ),
-                        child: Icon(
-                          Icons.menu,
-                          color: buttonColor2,
-                        ),
-                      ),
+          flexibleSpace: Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 30.h,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 12.w,
                     ),
-                  ),
-                  SizedBox(
-                    width: 11.w,
-                  ),
-                  Flexible(
-                    child: CustomSearch(),
-                  ),
-                  SizedBox(
-                    width: 12.w,
-                  ),
-                  GestureDetector(onTap: () {
-                    //   Get.offAll(()=>AppNavBar());
-                  },
-                    child: Container(
-                      width: 35.w,
+                    SizedBox(
                       height: 38.h,
-                      decoration: BoxDecoration(
-                          color: Darkcontainer,
-                          borderRadius: BorderRadius.circular(13.r)),
-                      child: Icon(
-                        Icons.notifications,
-                        color: Color(0xffBDD0EA),
+                      width: 38.w,
+                      child: GestureDetector(
+                        onTap: () {
+                          // Open the drawer using the scaffold key
+                          navBarController.scaffoldKey.currentState?.openDrawer();
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xFF001A2E),
+                            borderRadius: BorderRadius.circular(50.r),
+                          ),
+                          child: Icon(
+                            Icons.menu,
+                            color: buttonColor2,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 12.w,
-                  ),
-                ],
-              ),
-            ],
+                    SizedBox(
+                      width: 11.w,
+                    ),
+                    Flexible(
+                      child: CustomSearch(),
+                    ),
+                    SizedBox(
+                      width: 12.w,
+                    ),
+                    GestureDetector(onTap: () {
+                      //   Get.offAll(()=>AppNavBar());
+                    },
+                      child: Container(
+                        width: 35.w,
+                        height: 38.h,
+                        decoration: BoxDecoration(
+                            color: Darkcontainer,
+                            borderRadius: BorderRadius.circular(13.r)),
+                        child: Icon(
+                          Icons.notifications,
+                          color: Color(0xffBDD0EA),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 12.w,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
           backgroundColor: secondaryColor,
         ),
@@ -172,8 +176,8 @@ class HomeScreen extends StatelessWidget {
             // Grid View for home options
             GetBuilder<SubscriptionService>(builder: (subscriptionService) {
               return Container(
-                height: 300.h,
-                margin: EdgeInsets.only(bottom: 10.h),
+                height: 303.h,
+                margin: EdgeInsets.only(bottom: 10.h,top: 13.h),
                 child: GridView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -210,7 +214,7 @@ class HomeScreen extends StatelessWidget {
                           Get.snackbar(
                             'Locked',
                             'Buy Premium to unlock this feature.',
-                            // backgroundColor: primaryColor,
+                             backgroundColor: primaryColor,
                             colorText: Colors.white,
                           );
                         } else {
@@ -281,16 +285,18 @@ class HomeScreen extends StatelessWidget {
             }),
 
             Container(
+
               padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
-              width: 348.w,
-              margin: EdgeInsets.only(bottom: 100),
+           //   width: 348.w,
+              margin: EdgeInsets.only(bottom: 100.h,left:5.w,right: 5.w
+              ),
               decoration: BoxDecoration(
                 color: container,
                 borderRadius: BorderRadius.circular(13.r),
-                border: Border.all(color: Colors.black, width: 1),
+                border: Border.all(color: Darkcontainer, width: 1),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding:  EdgeInsets.only(left: 18.0.w,top: 16.h,right:18.w ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -329,7 +335,7 @@ class HomeScreen extends StatelessWidget {
                             child: Stack(children: [
                               Container(
                                 //  Image.asset('assets/images/Rectangle 22968.png',fit:BoxFit.cover)
-                                padding: EdgeInsets.all(16),
+                                padding: EdgeInsets.only(left:  12.w,top: 10.h),
                                 width: 249.w,
                                 decoration: BoxDecoration(
                                   color: container,
@@ -345,7 +351,7 @@ class HomeScreen extends StatelessWidget {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    SizedBox(height: 10.h),
+                                 //   SizedBox(height: 10.h),
                                     CustomText(
                                       text:
                                       'Breakthrough in Wearable Cardiac Monitors',
@@ -353,7 +359,7 @@ class HomeScreen extends StatelessWidget {
                                       fontWeight: FontWeight.w600,
                                       fontsize: 14.sp,
                                     ),
-                                    SizedBox(height: 10.h),
+                                    SizedBox(height: 8.h),
                                     Image.asset(
                                       width: 215.w,
                                       fit: BoxFit.cover,
@@ -416,7 +422,7 @@ class HomeScreen extends StatelessWidget {
                             child: Stack(children: [
                               Container(
                                 //  Image.asset('assets/images/Rectangle 22968.png',fit:BoxFit.cover)
-                                padding: EdgeInsets.all(16),
+                                padding: EdgeInsets.only(left:  12.w,top: 10.h),
                                 width: 249.w,
                                 decoration: BoxDecoration(
                                   color: container,
@@ -432,7 +438,7 @@ class HomeScreen extends StatelessWidget {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    SizedBox(height: 10.h),
+                                    //   SizedBox(height: 10.h),
                                     CustomText(
                                       text:
                                       'Breakthrough in Wearable Cardiac Monitors',
@@ -440,7 +446,7 @@ class HomeScreen extends StatelessWidget {
                                       fontWeight: FontWeight.w600,
                                       fontsize: 14.sp,
                                     ),
-                                    SizedBox(height: 10.h),
+                                    SizedBox(height: 8.h),
                                     Image.asset(
                                       width: 215.w,
                                       fit: BoxFit.cover,
@@ -493,6 +499,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ]),
                           ),
+
                         ],
                       ),
                     ),

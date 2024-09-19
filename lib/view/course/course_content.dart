@@ -15,7 +15,7 @@ class CourseContent extends StatefulWidget {
 }
 
 class _CourseContentState extends State<CourseContent> {
-  int _selectedIndex = 0; // 0 for About, 1 for Lessons
+  int _selectedIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -46,11 +46,13 @@ class _CourseContentState extends State<CourseContent> {
                       child: Image.asset('assets/images/back_icon.png',height: 31.h,width: 31.w,)),)
             ],
           ),
+          SizedBox(height: 20.h,),
 
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding:  EdgeInsets.symmetric(horizontal: 20.0.w),
               child: ListView(
+                padding: EdgeInsets.zero,
                 children: [
                   // Course Category and Title
                   CustomText(
@@ -212,7 +214,7 @@ class _CourseContentState extends State<CourseContent> {
                             text:
                             'Transformative journey through our comprehensive course, '
                                 '‘Master Digital Product Design: UX Research & UI Design’. Created especially for budding UX/UI designers, '
-                                'this immersive program invites you to explore the intricate art of crafting exceptional digital experiences....',
+                                'this immersive program ',
                             fontWeight: FontWeight.w500,
                             textColor: Colors.white,
                           ),
@@ -332,43 +334,55 @@ class _CourseContentState extends State<CourseContent> {
                                     Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Row(
+                                        GestureDetector(
+                                          onTap:(){ Get.to(()=> Chapters());},
+                                          child: Row(
+                                            children: [
+                                              Image.asset('assets/images/sbook.png',height: 17.h,),
+                                              SizedBox(width: 10.h,),
+                                              CustomText(text: 'Overview', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+
+
+                                            ],
+                                          ),
+                                        ),
+                                        SizedBox(height: 10.h,),
+
+                                      GestureDetector(
+                                        onTap:(){ Get.to(()=> Chapters());},
+                                        child: Row(
                                           children: [
                                             Image.asset('assets/images/sbook.png',height: 17.h,),
                                             SizedBox(width: 10.h,),
-                                            CustomText(text: 'Overview', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+                                            CustomText(text: 'Hypertension', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(height: 10.h,),
+                                      GestureDetector(
+                                        onTap:(){ Get.to(()=> Chapters());},
+                                        child: Row(
+                                          children: [
+                                            Image.asset('assets/images/sbook.png',height: 17.h,),
+                                            SizedBox(width: 10.h,),
+                                            CustomText(text: 'Wrong Rules', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
 
 
                                           ],
                                         ),
-                                        SizedBox(height: 10.h,),
-
-                                      Row(
-                                        children: [
-                                          Image.asset('assets/images/sbook.png',height: 17.h,),
-                                          SizedBox(width: 10.h,),
-                                          CustomText(text: 'Hypertension', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
-                                        ],
                                       ),
                                       SizedBox(height: 10.h,),
-                                      Row(
-                                        children: [
-                                          Image.asset('assets/images/sbook.png',height: 17.h,),
-                                          SizedBox(width: 10.h,),
-                                          CustomText(text: 'Wrong Rules', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+                                      GestureDetector(
+                                        onTap:(){ Get.to(()=> Chapters());},
+                                        child: Row(
+                                          children: [
+                                            Image.asset('assets/images/sbook.png',height: 17.h,),
+                                            SizedBox(width: 10.h,),
+                                            CustomText(text: 'Summary', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
 
 
-                                        ],
-                                      ),
-                                      SizedBox(height: 10.h,),
-                                      Row(
-                                        children: [
-                                          Image.asset('assets/images/sbook.png',height: 17.h,),
-                                          SizedBox(width: 10.h,),
-                                          CustomText(text: 'Summary', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
-
-
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                       SizedBox(height: 10.h,),
                                       Row(
@@ -464,44 +478,7 @@ class _CourseContentState extends State<CourseContent> {
           ),
         ],
       ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: SizedBox(
-          height: 53.61.h,
-          child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset('assets/images/favIcon.png',height: 50.h,width: 50.w,),
-              SizedBox(width: 11.w,),
-              SizedBox(
-                width: 249.w,
-                //  height: 53.h,
 
-                child: ElevatedButton(
-                  onPressed: () {
-                    Get.to(() => LessonScreen());
-                  },
-                  style: ElevatedButton.styleFrom(
-
-                    padding: EdgeInsets.symmetric(vertical: 13.h,horizontal: 8.w
-                    ),
-                    backgroundColor: Colors.cyan,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.r
-                      ),
-                    ),
-                  ),
-                  child: CustomText(
-                    text:     'Start Now',
-                    fontsize: 18.sp, textColor: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }

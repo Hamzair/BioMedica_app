@@ -14,7 +14,7 @@ class ProgressScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60.h),
+        preferredSize: Size.fromHeight(85.h),
         child: AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -26,7 +26,7 @@ class ProgressScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: 45.h,
+                height: 30.h,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -39,7 +39,7 @@ class ProgressScreen extends StatelessWidget {
                             onTap: () {
                               Get.back();
                             },
-                            child: Image.asset('assets/images/back_icon.png',height: 31.h,)),
+                            child: Image.asset('assets/images/back_icon.png',height: 25.h,)),
                         SizedBox(
                           width: 7.w,
                         ),
@@ -318,7 +318,7 @@ class ProgressScreen extends StatelessWidget {
               ),
               /// Active Course Container1
               Container(
-                width: 310.w,
+               // width: 310.w,
                 height: 117.h,
                 decoration: BoxDecoration(
                   color: tapColor,
@@ -398,7 +398,7 @@ class ProgressScreen extends StatelessWidget {
               SizedBox(height: 7.h),
               /// Active Course Container2
               Container(
-                width: 310.w,
+           //     width: 310.w,
                 height: 117.h,
                 decoration: BoxDecoration(
                   color: tapColor,

@@ -224,7 +224,8 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
           color: isSelected
               ? buttonColor2
               : Darkcontainer, // Border for selected tab
-          width: 1,
+          width: 0.5.w
+          ,
         ),
       ),
       child: Center(
@@ -259,11 +260,11 @@ class Neurology extends StatelessWidget {
               borderRadius: BorderRadius.circular(12.r), // Border radius
               side: BorderSide(
                 color: Darkcontainer, // Black border color
-                width: 1, // Border width
+                width: 1.w, // Border width
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
+              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 7.h),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -371,7 +372,7 @@ class Neurology extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
+              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 7.h),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -478,7 +479,7 @@ class Neurology extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 4.h),
+              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 7.h),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -537,7 +538,7 @@ class Neurology extends StatelessWidget {
                   SizedBox(height: 5.h),
                   CustomText(
                     text:
-                        'used to listen to heartbeats, lung sounds, and other body sounds.',
+                        'used to listen to heartbeats, lung sounds.',
                     textAlign: TextAlign.start,
                     fontWeight: FontWeight.w500,
                     fontsize: 10.sp,

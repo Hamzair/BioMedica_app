@@ -30,11 +30,11 @@ class ArticleDetail extends StatelessWidget {
                           onTap: () {
                             Navigator.pop(context);
                           },
-                          child: Image.asset('assets/images/back_icon.png')))
+                          child: Image.asset('assets/images/back_icon.png',height: 31.h,)))
                 ]),
             SizedBox(height: 16.h),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding:  EdgeInsets.symmetric(horizontal: 16.0.w),
               child: CustomText(
                 text: 'Breakthrough in Wearable Cardiac Monitors',
                 fontsize: 22.sp,

@@ -22,7 +22,7 @@ class Saveforlater extends StatelessWidget {
     return Scaffold(
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60.h),
+        preferredSize: Size.fromHeight(80.h),
         child: AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -34,7 +34,7 @@ class Saveforlater extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: 45.h,
+                height: 30.h,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
