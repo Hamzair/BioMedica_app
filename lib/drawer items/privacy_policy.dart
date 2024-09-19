@@ -66,7 +66,7 @@ class PrivacyPolicy extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 27.w),
+            padding: EdgeInsets.symmetric(horizontal: 13.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -92,7 +92,7 @@ class PrivacyPolicy extends StatelessWidget {
                 SizedBox(height: 7.h),
                 Container(
                   // height: 538.h,
-                  width: 340.w,
+                  width: double.infinity,
                   decoration: BoxDecoration(
                     color: tapColor,
                     borderRadius: BorderRadius.circular(5.69.r),
