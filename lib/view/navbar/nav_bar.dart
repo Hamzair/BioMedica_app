@@ -112,7 +112,6 @@ class _AppNavBarState extends State<AppNavBar> {
                   activeItem: Image.asset(
                     alignment: Alignment.center,
                     AppImages.devicesIcon,
-                    color: whiteColor,
                   ),
                   itemLabel: 'Devices'.tr,
                 ),
@@ -121,7 +120,6 @@ class _AppNavBarState extends State<AppNavBar> {
                   activeItem: Image.asset(
                     alignment: Alignment.center,
                     AppImages.coursesIcon,
-                    color: whiteColor,
                   ),
                   itemLabel: 'Courses'.tr,
                 ),
@@ -129,7 +127,6 @@ class _AppNavBarState extends State<AppNavBar> {
                   inActiveItem: Image.asset(AppImages.devicesIcon),
                   activeItem: Image.asset(
                     AppImages.devicesIcon,
-                    color: whiteColor,
                   ),
                   itemLabel: 'Quiz'.tr,
                 ),
@@ -138,7 +135,6 @@ class _AppNavBarState extends State<AppNavBar> {
                   activeItem: Image.asset(
                     alignment: Alignment.center,
                     AppImages.profileIcon,
-                    color: whiteColor,
                   ),
                   itemLabel: 'Profile'.tr,
                 ),

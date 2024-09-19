@@ -166,16 +166,17 @@ class _ForgetPasswordEmailPhoneViewState
                       height: 28.h,
                     ),
                     selectedTypeController.selectedType.value == 'email'
-                        ?  CustomTextField1(
-
-                            hintText: 'Your email',
-
-                            hintTextSize: 15.sp,
-                            prefixIcon: Icons.email,
-                            borderColor: buttonColor,
-                            borderRadius: 13.sp,
-                            fillColor: transparentColor,
-                          )
+                        ?  Container(
+                      width: double.infinity,
+                          child: CustomTextField1(
+                                                hintText: 'Your email',
+                                                hintTextSize: 15.sp,
+                              prefixIcon: Icons.email,
+                              borderColor: buttonColor,
+                              borderRadius: 13.sp,
+                              fillColor: transparentColor,
+                            ),
+                        )
                         : SizedBox(
                       // height: 43.75.h,
                           child: CustomPhoneNumberField(

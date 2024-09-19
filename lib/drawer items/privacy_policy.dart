@@ -13,53 +13,49 @@ class PrivacyPolicy extends StatelessWidget {
     return Scaffold(
         backgroundColor: primaryColor,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(80.h),
+          preferredSize: Size.fromHeight(60.h),
           child: AppBar(
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(13.r),
-                    bottomRight: Radius.circular(13.r))),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(13.r),
+                bottomRight: Radius.circular(13.r),
+              ),
+            ),
             centerTitle: true,
             automaticallyImplyLeading: false,
-            flexibleSpace: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 45.h,
+            flexibleSpace: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 13.w,vertical: 5.h),
+              child: SafeArea(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+                          height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
+                          child: GestureDetector(
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: Image(
+                              image: AssetImage('assets/images/back_icon.png'),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 12.w),
+                        CustomText(
+                          text: "Privacy Policy",
+                          textColor: primaryColor,
+                          fontWeight: FontWeight.bold,
+                          fontsize: 22.sp,
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 13.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          GestureDetector(
-                              onTap: () {
-                                Get.back();
-                              },
-                              child:
-                              SizedBox(
-                                height: 38.h,
-                                width: 38.h,
-                                child: Image.asset('assets/images/back_icon.png',fit: BoxFit.fill,),
-                              ),
-                          ),
-                          SizedBox(
-                            width: 12.w,
-                          ),
-                          CustomText(
-                            text: "Privacy Policy",
-                            textColor: primaryColor,
-                            fontWeight: FontWeight.bold,
-                            fontsize: 22.sp,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+              ),
             ),
             backgroundColor: secondaryColor,
           ),

@@ -14,7 +14,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: primaryColor,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(110.h),
+          preferredSize: Size.fromHeight(85.h),
           child:AppBar(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
@@ -22,77 +22,80 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                     bottomRight: Radius.circular(13.r))),
             centerTitle: true,
             automaticallyImplyLeading: false,
-            flexibleSpace: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 30.h,
-                ),
-                /// Back Icon & Title Text
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 13.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          GestureDetector(
-                              onTap: (){
-                                Get.back();
-                              },
-                              child: SizedBox(
-                                height: 38.h,
-                                width: 38.h,
-                                child: Image.asset('assets/images/back_icon.png',fit: BoxFit.fill,),
+            flexibleSpace: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 13.w,vertical: 0.h),
+              child: SafeArea(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    /// Back Icon & Title Text
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+                              height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
+                              child: GestureDetector(
+                                  onTap: (){
+                                    Get.back();
+                                  },
+                                  child: SizedBox(
+                                    height: 38.h,
+                                    width: 38.h,
+                                    child: Image.asset('assets/images/back_icon.png',fit: BoxFit.fill,),
+                                  ),
                               ),
-                          ),
-                          SizedBox(
-                            width: 12.w,
-                          ),
+                            ),
+                            SizedBox(
+                              width: 12.w,
+                            ),
+                            CustomText(
+                              text: "Technical Support",
+                              textColor: Color.fromRGBO(0, 26, 46, 1),
+                              fontWeight: FontWeight.w600,
+                              fontsize: 22.sp,
+                            ),
+                          ],
+                        ),
+
+                      ],
+                    ),
+                    /// Our Team is online Text
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal:53.w ),
+                      child: Row(
+                        children: [
                           CustomText(
-                            text: "Technical Support",
+                            text: "Our Team is online",
                             textColor: Color.fromRGBO(0, 26, 46, 1),
                             fontWeight: FontWeight.w600,
-                            fontsize: 22.sp,
+                            fontsize: 12.86.sp,
                           ),
+                          SizedBox(width: 4.w),
+                          Icon(Icons.circle, color: Color.fromRGBO(37, 208, 118, 1), size: 8),
                         ],
                       ),
+                    ),
+                    /// You are now connected to operator Text
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal:53.w),
+                      child: Row(
+                        children: [
+                          CustomText(
+                            text: "You are now connected to operator",
+                            textColor: Color.fromRGBO(0, 26, 46, 1),
+                            fontWeight: FontWeight.w400,
+                            fontsize: 11.06.sp,
+                          ),
 
-                    ],
-                  ),
-                ),
-                /// Our Team is online Text
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal:63.w ),
-                  child: Row(
-                    children: [
-                      CustomText(
-                        text: "Our Team is online",
-                        textColor: Color.fromRGBO(0, 26, 46, 1),
-                        fontWeight: FontWeight.w600,
-                        fontsize: 12.86.sp,
+                        ],
                       ),
-                      SizedBox(width: 4.w),
-                      Icon(Icons.circle, color: Color.fromRGBO(37, 208, 118, 1), size: 8),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                /// You are now connected to operator Text
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal:63.w),
-                  child: Row(
-                    children: [
-                      CustomText(
-                        text: "You are now connected to operator",
-                        textColor: Color.fromRGBO(0, 26, 46, 1),
-                        fontWeight: FontWeight.w400,
-                        fontsize: 11.06.sp,
-                      ),
-
-                    ],
-                  ),
-                ),
-              ],
+              ),
             ),
             backgroundColor: secondaryColor,
           ),
