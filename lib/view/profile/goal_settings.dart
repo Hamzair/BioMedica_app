@@ -203,7 +203,7 @@ class _GoalSettingsState extends State<GoalSettings> {
               SizedBox(height: 14.h),
               /// Container with Quiz Points and Increment/Decrement Buttons
               Container(
-                height: 69.h,
+
                 width: 309.w,
                 decoration: BoxDecoration(
                   color: tapColor,
@@ -318,7 +318,7 @@ class _GoalSettingsState extends State<GoalSettings> {
               SizedBox(height: 9.h),
               /// Container with Chapters Text and Increment/Decrement Buttons
               Container(
-                height: 69.h,
+
                 width: 309.w,
                 decoration: BoxDecoration(
                   color: tapColor,

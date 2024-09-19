@@ -94,6 +94,7 @@ class SubscriptionScreen extends StatelessWidget {
                 SizedBox(height: 22.h),
                 /// Free Trial Container
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
                       onTap: () {

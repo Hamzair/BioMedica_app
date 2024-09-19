@@ -17,6 +17,7 @@ class OnBoardingOne extends StatelessWidget {
     return Scaffold(
       backgroundColor: secondaryColor,
       body: Column(
+        mainAxisSize: MainAxisSize.max,
         children: [
           SizedBox(
             height: 30.h,
@@ -60,10 +61,11 @@ class OnBoardingOne extends StatelessWidget {
           Expanded(
             child: Container(
               width: double.infinity,
-
               decoration: BoxDecoration(
+
                 image: DecorationImage(
-                  image: AssetImage(AppImages.onboardingellipse),
+                  image: AssetImage(AppImages.onboardingellipse,),
+
                   fit: BoxFit.fill,
                 ),
               ),

@@ -120,12 +120,16 @@ class _SignupViewState extends State<SignupView> {
                         ),
                       ),
                       SizedBox(height: 11.h),
-                      CustomText(
-                        textAlign: TextAlign.center,
-                        text: 'Explore new content, manage your profile, and connect with others—all from here',
-                        fontsize: 14.sp,
-                        textColor: Colors.white,
-                        fontWeight: FontWeight.w600,
+                      Container(
+                        width: 280.w,
+                       
+                        child: CustomText(
+                          textAlign: TextAlign.center,
+                          text: 'Explore new content, manage your profile, and connect with others—all from here',
+                          fontsize: 14.sp,
+                          textColor: Colors.white,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                       SizedBox(height: 15.h),
 
@@ -160,7 +164,7 @@ class _SignupViewState extends State<SignupView> {
               Container(
                 width: 311.w,
                 child: CustomTextField1(
-                  hintText: 'Username',
+                  hintText: 'Your name',
                   prefixIcon: Icons.person,
                   hintTextSize: 14.65.sp,
                   obscuringCharacter: null,
@@ -170,7 +174,7 @@ class _SignupViewState extends State<SignupView> {
               Container(
                 width: 311.w,
                 child: CustomTextField1(
-                  hintText: 'Email',
+                  hintText: 'Your Email',
                   hintTextSize: 14.65.sp,
                   prefixIcon: Icons.email,
                 ),
@@ -179,7 +183,7 @@ class _SignupViewState extends State<SignupView> {
               Container(
                 width: 311.w,
                 child: CustomTextField1(
-                  hintText: 'Password',
+                  hintText: 'Your Password',
                   prefixIcon: Icons.lock,
                   obscureText: true,
                   obscuringCharacter: '*',

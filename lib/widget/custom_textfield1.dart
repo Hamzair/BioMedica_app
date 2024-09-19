@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextField1 extends StatefulWidget {
   final String hintText;
@@ -43,6 +44,7 @@ class _CustomTextFieldState extends State<CustomTextField1> {
   @override
   Widget build(BuildContext context) {
     return Container(
+
       width: 311,
       height: 43.75,
       decoration: BoxDecoration(
@@ -56,7 +58,8 @@ class _CustomTextFieldState extends State<CustomTextField1> {
       child: TextField(
         obscureText: _obscureText,
         obscuringCharacter: _obscuringCharacter ?? '*',
-        style: TextStyle(color: Color.fromRGBO(19, 64, 100, 1)),
+
+        style: TextStyle(color: Color.fromRGBO(19, 64, 100, 1),fontSize: 14.sp),
         decoration: InputDecoration(
           filled: false, // No additional filling from InputDecoration
           hintText: widget.hintText,
@@ -84,7 +87,7 @@ class _CustomTextFieldState extends State<CustomTextField1> {
           )
               : null,
           border: InputBorder.none, // No border until specified
-          contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+          contentPadding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 12.w),
         ),
       ),
     );

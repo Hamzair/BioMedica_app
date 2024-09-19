@@ -34,45 +34,40 @@ class _ProfileScreenState extends State<ProfileScreen> {
       // drawer: const AppDrawer(),
       // key: _scaffoldKey,
       backgroundColor: primaryColor,
-      appBar: AppBar(
-        shape: RoundedRectangleBorder(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(60.h),
+        child: AppBar(
+          shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(13.r),
-                bottomRight: Radius.circular(13.r))),
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        flexibleSpace: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 45.h,
+              bottomLeft: Radius.circular(13.r),
+              bottomRight: Radius.circular(13.r),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12.w),
+          ),
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+          flexibleSpace: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 5.h),
+            child: SafeArea(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
-
                       SizedBox(
-                        width: 38.w,
-                        height: 38.h,
+                        width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+                        height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
                         child: GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             // Open the drawer using the scaffold key
                             navBarController.scaffoldKey.currentState?.openDrawer();
                           },
                           child: Image(
-                              image: AssetImage('assets/images/left_side_bar_navigation_Icon.png'),
+                            image: AssetImage('assets/images/left_side_bar_navigation_Icon.png'),
                             fit: BoxFit.fill,
-
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 12.w,
-                      ),
+                      SizedBox(width: 12.w),
                       CustomText(
                         text: "Profile",
                         textColor: primaryColor,
@@ -84,28 +79,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Row(
                     children: [
                       SizedBox(
-                          width: 38.w,
-                          height: 38.h,
-                          child: GestureDetector(
-                            onTap: (){
-                              Get.to(()=> EditProfileScreen());
-                            },
-                            child: Image(
-                                image: AssetImage(
-                                    'assets/images/settings_image.png'),
+                        width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+                        height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
+                        child: GestureDetector(
+                          onTap: () {
+                            Get.to(() => EditProfileScreen());
+                          },
+                          child: Image(
+                            image: AssetImage('assets/images/settings_image.png'),
                             fit: BoxFit.fill,
-                            ),
-                          )),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ],
               ),
             ),
-          ],
+          ),
+          backgroundColor: secondaryColor,
         ),
-        backgroundColor: secondaryColor,
-
       ),
+
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 26.w),

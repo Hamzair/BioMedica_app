@@ -46,7 +46,7 @@ class _LoginViewState extends State<LoginView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 47.9.h),
+                SizedBox(height: 29.71.h),
                 Center(
                   child: SizedBox(
                     height: 261.h,
@@ -100,8 +100,8 @@ class _LoginViewState extends State<LoginView> {
                         GestureDetector(
                           onTap: _toggleRememberMe,
                           child: Container(
-                            width: 16.w,
-                            height: 16.h,
+                            width: 18.w,
+                            height: 22.h,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(4.r),
                               color: _rememberMe ? Colors.blue : Colors.white,

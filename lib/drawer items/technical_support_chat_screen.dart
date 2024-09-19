@@ -224,7 +224,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                 Container(
                   height: 38.4.h,
                   width: 38.4.w,
-                  padding: EdgeInsets.all(12),
+
                   decoration: BoxDecoration(
                     color: primaryColor, // Send button color
                     borderRadius: BorderRadius.circular(11.52.r)
@@ -235,7 +235,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
                         child: SizedBox(
                             height: 23.04.h,
                             width: 23.04.w,
-                            child: Image.asset('assets/images/send_image_icon.png',fit: BoxFit.cover,),
+                            child: Image.asset('assets/images/send_image_icon.png',fit: BoxFit.contain,),
                         ),
                     ),
                   ),

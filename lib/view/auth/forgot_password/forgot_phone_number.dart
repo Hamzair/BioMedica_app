@@ -7,6 +7,7 @@ import 'package:bio_medica/widget/custom_phone_number.dart';
 import 'package:bio_medica/widget/custom_route.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:bio_medica/widget/custom_textfield.dart';
+import 'package:bio_medica/widget/custom_textfield1.dart';
 import 'package:bio_medica/widget/forgot_back_button.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
@@ -165,20 +166,16 @@ class _ForgetPasswordEmailPhoneViewState
                       height: 28.h,
                     ),
                     selectedTypeController.selectedType.value == 'email'
-                        ? SizedBox(
-                      height: 43.75.h,
-                          child: EmailCustomTextFiled(
-                              readOnly: false,
-                              controller: emailController,
-                              hintText: 'Your email',
-                              hintColor: greyColor,
-                              hintTextSize: 15.sp,
-                              prefixIcon: AppImages.email,
-                              isBorder: true,
-                              borderRadius: 13.sp,
-                              fillColor: transparentColor,
-                            ),
-                        )
+                        ?  CustomTextField1(
+
+                            hintText: 'Your email',
+
+                            hintTextSize: 15.sp,
+                            prefixIcon: Icons.email,
+                            borderColor: buttonColor,
+                            borderRadius: 13.sp,
+                            fillColor: transparentColor,
+                          )
                         : SizedBox(
                       // height: 43.75.h,
                           child: CustomPhoneNumberField(

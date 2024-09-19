@@ -100,7 +100,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                                       borderRadius: BorderRadius.circular(9)),
                                   child: Image.asset(AppImages.email,
                                       color: tappedContainerIndex == 1
-                                          ? primaryColor
+                                          ? buttonColor
                                           : const Color(0xff9CA3AF),
                                       scale: 2.2)),
                               SizedBox(
@@ -177,7 +177,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                                     // fit: BoxFit.fill,
                                     AppImages.phone,
                                     color: tappedContainerIndex == 2
-                                        ? primaryColor
+                                        ? buttonColor
                                         : const Color(0xff9CA3AF),
                                     scale: 2.6,
                                   )),
