@@ -54,12 +54,16 @@ class _SignupViewState extends State<SignupView> {
                             child: Image.asset(
                               AppImages.biomedicalogo,
                             )),
-                        CustomText(
-                            textAlign: TextAlign.center,
-                            text: 'Sign up ',
-                            fontsize: 35.sp,
-                            textColor: Color.fromRGBO(0, 26, 46, 1),
-                            fontWeight: FontWeight.w700),
+                        Align(alignment: Alignment.center,
+                          child: CustomText(
+                              textAlign: TextAlign.center,
+                              text: 'Sign up ',
+                              fontsize: 35.sp,
+                              textColor: Color.fromRGBO(0, 26, 46, 1),
+                              fontWeight: FontWeight.w700,
+
+                          ),
+                        ),
                         SizedBox(
                           height: 11.h,
                         ),

@@ -393,7 +393,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   /// Course Container1
                   Container(
                     width: 310.w,
-                    height: 117.h,
+                    // height: 117.h,
                     decoration: BoxDecoration(
                       color: tapColor,
                       // Your tapColor can be defined or replaced here
@@ -474,7 +474,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   /// Course Container2
                   Container(
                     width: 310.w,
-                    height: 117.h,
+                    // height: 117.h,
                     decoration: BoxDecoration(
                       color: tapColor,
                       // Your tapColor can be defined or replaced here
@@ -605,7 +605,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   /// Goal Progress Container
                   Container(
                     width: 310.w,
-                    height: 125.h,
+                    // height: 125.h,
                     decoration: BoxDecoration(
                       color: tapColor,
                       // Your tapColor can be defined or replaced here
@@ -732,7 +732,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   /// UX Resources ZIP Container
                   Container(
                     width: 311.w,
-                    height: 73.23.h,
+                    // height: 73.23.h,
                     decoration: BoxDecoration(
                       color: tapColor,
                       // Your tapColor can be defined or replaced here
@@ -793,10 +793,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   SizedBox(height: 15.22.h),
-                  /// Coursar  Container
+                  /// Courser  Container
                   Container(
                     width: 311.w,
-                    height: 73.23.h,
+                    // height: 73.23.h,
                     decoration: BoxDecoration(
                       color: tapColor,
                       // Your tapColor can be defined or replaced here
@@ -857,10 +857,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   SizedBox(height: 15.22.h),
-                  /// Resources Container
+                  /// Courser Dashboard Container
                   Container(
                     width: 311.w,
-                    height: 73.23.h,
+                    // height: 73.23.h,
                     decoration: BoxDecoration(
                       color: tapColor,
                       // Your tapColor can be defined or replaced here
