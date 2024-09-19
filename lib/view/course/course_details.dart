@@ -32,6 +32,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
               height: 50.h, width: 50.w),
           SizedBox(width: 11.w),
           Container(
+            height:53.h ,
 
 
             width: 249.w,
@@ -328,10 +329,12 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                   // Add more lesson cards as needed in this row
                                 ],
                               ),
+
                             ],
                           ),
                         ),
-                        SizedBox(height: 30.h,),
+
+                        SizedBox(height: 100.h),
 
                       ],
                     ),

@@ -1,5 +1,6 @@
 import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/drawer%20items/progress.dart';
+import 'package:bio_medica/view/course/chapters.dart';
 import 'package:bio_medica/view/course/courses.dart';
 import 'package:bio_medica/view/course/quiz.dart';
 import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceLibrary.dart';

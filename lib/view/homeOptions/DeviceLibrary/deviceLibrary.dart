@@ -25,7 +25,7 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
   // List of tabs
   List<String> tabs = ['Cardiology', 'Neurology', 'Orthopedics', 'Radiology'];
    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  int selectedIndex = 0;
+  int selectedIndex = 1;
   final NavBarController navBarController = Get.put(NavBarController());
 
   List<Widget> content = [
@@ -58,21 +58,25 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
         backgroundColor: Color.fromRGBO(192, 208, 221, 1),
         leading: Padding(
           padding:  EdgeInsets.all(8.0),
-          child: GestureDetector(
-            onTap: () {
-              // Open the drawer using the scaffold key
-               //  _scaffoldKey.currentState?.openDrawer();
-              navBarController.scaffoldKey.currentState?.openDrawer();
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+            height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
+            child: GestureDetector(
+              onTap: () {
+                // Open the drawer using the scaffold key
+                 //  _scaffoldKey.currentState?.openDrawer();
+                navBarController.scaffoldKey.currentState?.openDrawer();
 
-            },
-            child:Container(
-              decoration: BoxDecoration(
-                color: Color(0xFF001A2E),
-                borderRadius: BorderRadius.circular(50.r),
-              ),
-              child: Icon(
-                Icons.menu,
-                color: buttonColor2,
+              },
+              child:Container(
+                decoration: BoxDecoration(
+                  color: Color(0xFF001A2E),
+                  borderRadius: BorderRadius.circular(50.r),
+                ),
+                child: Icon(
+                  Icons.menu,
+                  color: buttonColor2,
+                ),
               ),
             ),
           ),
@@ -247,12 +251,47 @@ class Neurology extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: primaryColor,
-      body: GridView.count(
+    double getAppBarHeight(BuildContext context) {
+      double screenHeight = MediaQuery.of(context).size.height;
+
+      // Simplified condition for different screen sizes
+      if (screenHeight < 700) {
+        // Small screen
+        return screenHeight / 3; // Smaller height for small screens
+      } else if (screenHeight < 900) {
+        // Medium screen
+        return screenHeight / 2.6;
+      } else {
+        // Large screen
+        return screenHeight / 2;
+      }
+    }
+
+
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+    double aspectRatio;
+
+    if (screenHeight == 667) {
+
+      aspectRatio = screenWidth / (screenHeight / 1.7.h);
+    } else if (screenHeight == 932) {
+      // Medium screens
+      aspectRatio = screenWidth / (screenHeight / 1.3.h);
+    } else {
+      // Large screens
+      aspectRatio = screenWidth / (screenHeight / 1.6);
+    }
+
+
+    return Container(
+      height: getAppBarHeight(context),
+      color: primaryColor,
+      child: GridView.count(
         crossAxisCount: 2,
-        childAspectRatio: 1.h,
+        childAspectRatio: aspectRatio,
         children: [
+
           // Item 1
           Card(
             color: tapColor,

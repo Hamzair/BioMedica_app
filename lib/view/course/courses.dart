@@ -203,6 +203,7 @@ class CourseCard extends StatelessWidget {
               width: 1,
               color: Darkcontainer,
             ),
+
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

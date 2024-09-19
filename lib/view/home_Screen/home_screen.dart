@@ -91,7 +91,7 @@ class HomeScreen extends StatelessWidget {
       // key: navBarController.scaffoldKey,
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80.h),
+        preferredSize: Size.fromHeight(90.h),
         child: AppBar(
 
           shape: RoundedRectangleBorder(
@@ -101,7 +101,7 @@ class HomeScreen extends StatelessWidget {
           centerTitle: true,
           automaticallyImplyLeading: false,
           flexibleSpace: Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
+            padding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 0.h),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -116,8 +116,8 @@ class HomeScreen extends StatelessWidget {
                       width: 12.w,
                     ),
                     SizedBox(
-                      height: 38.h,
-                      width: 38.w,
+                      width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+                      height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
                       child: GestureDetector(
                         onTap: () {
                           // Open the drawer using the scaffold key
@@ -170,10 +170,12 @@ class HomeScreen extends StatelessWidget {
           backgroundColor: secondaryColor,
         ),
       ),
+
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(height:  13.h),
             // Grid View for home options
             GetBuilder<SubscriptionService>(builder: (subscriptionService) {
 

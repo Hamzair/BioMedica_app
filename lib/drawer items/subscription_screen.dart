@@ -98,7 +98,7 @@ class SubscriptionScreen extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        CustomRoute.navigateTo(context, AppNavBar());
+                       Navigator.pop(context);
                       },
                       child: Container(
                         width: 134.w,

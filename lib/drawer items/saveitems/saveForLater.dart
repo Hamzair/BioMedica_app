@@ -22,51 +22,50 @@ class Saveforlater extends StatelessWidget {
     return Scaffold(
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80.h),
+        preferredSize: Size.fromHeight(60.h),
         child: AppBar(
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(13.r),
-                  bottomRight: Radius.circular(13.r))),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(13.r),
+              bottomRight: Radius.circular(13.r),
+            ),
+          ),
           centerTitle: true,
           automaticallyImplyLeading: false,
-          flexibleSpace: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: 30.h,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        GestureDetector(
+          flexibleSpace: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 5.h),
+            child: SafeArea(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+                        height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
+                        child: GestureDetector(
                           onTap: () {
-                            Get.back();
+                            Navigator.pop(context);
                           },
-                          child: Image.asset(
-                            'assets/images/back_icon.png',
-                            height: 31.h,
+                          child: Image(
+                            image: AssetImage('assets/images/back_Icon.png'),
+                            fit: BoxFit.fill,
                           ),
                         ),
-                        SizedBox(
-                          width: 7.w,
-                        ),
-                        CustomText(
-                          text: "Saved Items",
-                          textColor: primaryColor,
-                          fontWeight: FontWeight.bold,
-                          fontsize: 22.sp,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                      SizedBox(width: 12.w),
+                      CustomText(
+                        text: "Saved Items",
+                        textColor: primaryColor,
+                        fontWeight: FontWeight.bold,
+                        fontsize: 22.sp,
+                      ),
+                    ],
+                  ),
+
+                ],
               ),
-            ],
+            ),
           ),
           backgroundColor: secondaryColor,
         ),
