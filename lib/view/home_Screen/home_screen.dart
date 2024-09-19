@@ -105,7 +105,7 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 45.h,
+                  height: 30.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -176,8 +176,8 @@ class HomeScreen extends StatelessWidget {
             // Grid View for home options
             GetBuilder<SubscriptionService>(builder: (subscriptionService) {
               return Container(
-                height: 330.h,
-                margin: EdgeInsets.only(bottom: 10.h),
+                height: 303.h,
+                margin: EdgeInsets.only(bottom: 10.h,top: 13.h),
                 child: GridView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -214,7 +214,7 @@ class HomeScreen extends StatelessWidget {
                           Get.snackbar(
                             'Locked',
                             'Buy Premium to unlock this feature.',
-                            // backgroundColor: primaryColor,
+                             backgroundColor: primaryColor,
                             colorText: Colors.white,
                           );
                         } else {
@@ -285,16 +285,18 @@ class HomeScreen extends StatelessWidget {
             }),
 
             Container(
+
               padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
-              width: 348.w,
-              margin: EdgeInsets.only(bottom: 100),
+           //   width: 348.w,
+              margin: EdgeInsets.only(bottom: 100.h,left:5.w,right: 5.w
+              ),
               decoration: BoxDecoration(
                 color: container,
                 borderRadius: BorderRadius.circular(13.r),
-                border: Border.all(color: Colors.black, width: 1),
+                border: Border.all(color: Darkcontainer, width: 1),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding:  EdgeInsets.only(left: 18.0.w,top: 16.h,right:18.w ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -333,7 +335,7 @@ class HomeScreen extends StatelessWidget {
                             child: Stack(children: [
                               Container(
                                 //  Image.asset('assets/images/Rectangle 22968.png',fit:BoxFit.cover)
-                                padding: EdgeInsets.all(16),
+                                padding: EdgeInsets.only(left:  12.w,top: 10.h),
                                 width: 249.w,
                                 decoration: BoxDecoration(
                                   color: container,
@@ -349,7 +351,7 @@ class HomeScreen extends StatelessWidget {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    SizedBox(height: 10.h),
+                                 //   SizedBox(height: 10.h),
                                     CustomText(
                                       text:
                                       'Breakthrough in Wearable Cardiac Monitors',
@@ -357,7 +359,7 @@ class HomeScreen extends StatelessWidget {
                                       fontWeight: FontWeight.w600,
                                       fontsize: 14.sp,
                                     ),
-                                    SizedBox(height: 10.h),
+                                    SizedBox(height: 8.h),
                                     Image.asset(
                                       width: 215.w,
                                       fit: BoxFit.cover,
@@ -420,7 +422,7 @@ class HomeScreen extends StatelessWidget {
                             child: Stack(children: [
                               Container(
                                 //  Image.asset('assets/images/Rectangle 22968.png',fit:BoxFit.cover)
-                                padding: EdgeInsets.all(16),
+                                padding: EdgeInsets.only(left:  12.w,top: 10.h),
                                 width: 249.w,
                                 decoration: BoxDecoration(
                                   color: container,
@@ -436,7 +438,7 @@ class HomeScreen extends StatelessWidget {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    SizedBox(height: 10.h),
+                                    //   SizedBox(height: 10.h),
                                     CustomText(
                                       text:
                                       'Breakthrough in Wearable Cardiac Monitors',
@@ -444,7 +446,7 @@ class HomeScreen extends StatelessWidget {
                                       fontWeight: FontWeight.w600,
                                       fontsize: 14.sp,
                                     ),
-                                    SizedBox(height: 10.h),
+                                    SizedBox(height: 8.h),
                                     Image.asset(
                                       width: 215.w,
                                       fit: BoxFit.cover,
@@ -497,6 +499,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ]),
                           ),
+
                         ],
                       ),
                     ),

@@ -14,7 +14,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: primaryColor,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(100.h),
+          preferredSize: Size.fromHeight(110.h),
           child:AppBar(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
@@ -26,7 +26,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 45.h,
+                  height: 30.h,
                 ),
                 /// Back Icon & Title Text
                 Padding(

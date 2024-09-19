@@ -20,7 +20,7 @@ class SubscriptionScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: primaryColor,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(60.h),
+          preferredSize: Size.fromHeight(80.h),
           child: AppBar(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -33,7 +33,7 @@ class SubscriptionScreen extends StatelessWidget {
             flexibleSpace: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 45.h),
+                SizedBox(height: 30.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 13.w),
                   child: Row(

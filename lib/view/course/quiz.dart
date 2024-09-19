@@ -60,7 +60,7 @@ class _QuizPageState extends State<QuizPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: 45.h,
+                height: 30.h,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),

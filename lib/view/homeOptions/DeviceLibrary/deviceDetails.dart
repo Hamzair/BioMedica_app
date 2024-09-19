@@ -43,7 +43,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
     return Scaffold(
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80.h),
+        preferredSize: Size.fromHeight(100.h),
         child: AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -55,7 +55,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: 45.h,
+                height: 40.h,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -124,34 +124,62 @@ class _DeviceDetailsState extends State<DeviceDetails> {
             Padding(
               padding:  EdgeInsets.symmetric(horizontal: 8.w,vertical: 18.h),
               child: Container(
+                height: 303.h,
                 width: 341.w,
                 decoration: BoxDecoration(
                     color: container, borderRadius: BorderRadius.circular(8.r)),
                 child: Column(
                   children: [
-                    Container(
-                      height: 303.h,
-                      padding: EdgeInsets.symmetric(horizontal: 11.w,vertical: 9.h),
-                      child: _selectedImage.isEmpty
-                          ? ModelViewer(
-                        backgroundColor:
-                        Color.fromARGB(0xFF, 0xEE, 0xEE, 0xEE),
-                        src:
-                        'https://modelviewer.dev/shared-assets/models/Astronaut.glb',
-                        alt: 'A 3D model of an astronaut',
-                        ar: true,
-                        autoRotate: true,
-                        iosSrc:
-                        'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
-                        disableZoom: true,
-                      )
-                          : ClipRRect(
-                        borderRadius: BorderRadius.circular(8.r), // Apply border radius here
-                        child: Image.asset(
-                          _selectedImage,
-                          fit: BoxFit.cover,
+                    Stack(
+                      children: [
+                        Container(
+                          height: 215.h,
+                          width: 318.w,
+                          padding: EdgeInsets.symmetric(horizontal: 0.w, vertical: 9.h),
+                          child: _selectedImage.isEmpty
+                              ? ModelViewer(
+                            backgroundColor:
+                            Color.fromARGB(0xFF, 0xEE, 0xEE, 0xEE),
+                            src:
+                            'https://modelviewer.dev/shared-assets/models/Astronaut.glb',
+                            alt: 'A 3D model of an astronaut',
+                            ar: true,
+                            autoRotate: true,
+                            iosSrc:
+                            'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
+                            disableZoom: true,
+                          )
+                              : ClipRRect(
+                            borderRadius: BorderRadius.circular(8.r), // Apply border radius here
+                            child: Image.asset(
+                              _selectedImage,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
-                      ), // Display the selected image
+                        // Add a position indicator to the top left corner of the image
+                        Positioned(
+                          top: 8.h,
+                          right: 0.w,
+                          child: Container(
+                            height: 30.h,
+                            width: 31.w,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(6.r), // Bottom left corner radius
+                                  bottomRight: Radius.circular(6.r), // Bottom right corner radius
+                                ),
+                                color: Color.fromRGBO(18, 26, 0, 0.25)),
+                            child: Icon(
+
+                              Icons
+                                  .bookmark_border,
+                              color: Colors.white,
+                              size: 17.sp, // Set the icon size
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
 
                     // Image Row
@@ -181,8 +209,6 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-
-
                       buildTabItem(0, 'Overview'),
                       if (_selectedIndex != 0) buildDivider(),
 
@@ -194,9 +220,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                     ],
                   ),
                 ),
-
               ),
-
             ),
             SizedBox(
               height: 19.h,
@@ -230,7 +254,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
             borderRadius: BorderRadius.circular(10.r),
             border: Border.all(
               color: _selectedIndex == index ? buttonColor2 : Colors.transparent, // Red border for the selected image
-              width: 1.w,
+              width: 0.5.w,
             ),
 
           ),
@@ -367,7 +391,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
       padding: EdgeInsets.only(bottom: 8.h),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,// Aligns the bullet and text vertically
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           // Bullet container
           Container(
@@ -375,7 +399,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
             width: 8.h,
             decoration: BoxDecoration(
               color: buttonColor2,
-              borderRadius: BorderRadius.circular(30),  // Circular bullet
+              borderRadius: BorderRadius.circular(30.r),  // Circular bullet
             ),
           ),
           SizedBox(width: 10.w),  // Space between bullet and text
@@ -392,7 +416,6 @@ class _DeviceDetailsState extends State<DeviceDetails> {
       ),
     );
   }
-
 
   Widget buildImportanceContent() {
     return Padding(
@@ -479,7 +502,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 14.0.h,horizontal: 4.w),
         child: Container(
-          height: 50.h,
+          height: 51.h,
           width: 75.w,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.r),

@@ -34,7 +34,7 @@ class ArticleDetail extends StatelessWidget {
                 ]),
             SizedBox(height: 16.h),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding:  EdgeInsets.symmetric(horizontal: 16.0.w),
               child: CustomText(
                 text: 'Breakthrough in Wearable Cardiac Monitors',
                 fontsize: 22.sp,

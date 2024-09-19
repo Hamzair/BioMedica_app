@@ -2,6 +2,7 @@ import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/drawer%20items/progress.dart';
 import 'package:bio_medica/view/course/courses.dart';
 import 'package:bio_medica/view/course/quiz.dart';
+import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceLibrary.dart';
 
 import 'package:bio_medica/view/home_Screen/home_screen.dart';
 import 'package:bio_medica/view/navbar/nav_bar.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
               title: 'Bio Medica',
               debugShowCheckedModeBanner: false,
-              home:SplashScreen(),
+              home:AppNavBar(),
               // initialBinding: UserBinding(),
               );
         });

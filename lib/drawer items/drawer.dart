@@ -145,7 +145,7 @@ class AppDrawer extends StatelessWidget {
                   },
                 ),
                 SizedBox(
-                  height: 138.h,
+                  height: 100.h,
                 ),
                 GestureDetector(
                   onTap: () {
