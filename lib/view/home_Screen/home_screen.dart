@@ -85,13 +85,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+print(MediaQuery.of(context).size.height);
     return Scaffold(
       // drawer:  AppDrawer(),
       // key: navBarController.scaffoldKey,
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(90.h),
+        preferredSize: Size.fromHeight(MediaQuery.of(context).size.height < 680 ? 90.h : 60.h),
         child: AppBar(
 
           shape: RoundedRectangleBorder(
@@ -126,7 +126,7 @@ class HomeScreen extends StatelessWidget {
                         child: Container(
                           decoration: BoxDecoration(
                             color: Color(0xFF001A2E),
-                            borderRadius: BorderRadius.circular(50.r),
+                          shape: BoxShape.circle
                           ),
                           child: Icon(
                             Icons.menu,

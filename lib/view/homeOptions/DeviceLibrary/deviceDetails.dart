@@ -390,16 +390,19 @@ class _DeviceDetailsState extends State<DeviceDetails> {
     return Padding(
       padding: EdgeInsets.only(bottom: 8.h),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           // Bullet container
-          Container(
-            height: 8.h,
-            width: 8.h,
-            decoration: BoxDecoration(
-              color: buttonColor2,
-              borderRadius: BorderRadius.circular(30.r),  // Circular bullet
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Container(
+              height: 8.h,
+              width: 8.h,
+              decoration: BoxDecoration(
+                color: buttonColor2,
+                borderRadius: BorderRadius.circular(30.r),  // Circular bullet
+              ),
             ),
           ),
           SizedBox(width: 10.w),  // Space between bullet and text
