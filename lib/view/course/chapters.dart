@@ -40,10 +40,10 @@ class Chapters extends StatelessWidget {
                           onTap: () {
 Navigator.pop(context);
                           },
-                          child: Image(
-                            image: AssetImage('assets/images/back_Icon.png'),
-                            fit: BoxFit.fill,
-                          ),
+
+                         child:   Image.asset('assets/images/back_icon.png'),
+
+
                         ),
                       ),
                       SizedBox(width: 12.w),

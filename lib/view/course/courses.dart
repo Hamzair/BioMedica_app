@@ -15,10 +15,10 @@ class CoursesScreen extends StatelessWidget {
 
   // Add a list of course images and names
   final List<String> courseImages = [
-    'assets/images/z3.png',
-    'assets/images/z2.png',
-    'assets/images/z1.png',
-    'assets/images/z6.png'
+    'assets/images/course01.png',
+    'assets/images/course1.png',
+    'assets/images/course2.png',
+    'assets/images/course3.png'
   ];
 
   final List<String> courseNames = [
@@ -28,36 +28,79 @@ class CoursesScreen extends StatelessWidget {
     'End-to-End Web Design: Figma to Webflow Master'
   ];
 
+  final List<String> courseLabels = [
+    'assets/images/label1.png',
+    'assets/images/label2.png',
+    'assets/images/label3.png',
+    'assets/images/label1.png',
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
       appBar: AppBar(
+
+        centerTitle: false,
         backgroundColor: Color.fromRGBO(192, 208, 221, 1),
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GestureDetector(
-            onTap: () {
-              navBarController.scaffoldKey.currentState?.openDrawer();
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFF001A2E),
-                borderRadius: BorderRadius.circular(50.r),
-              ),
-              child: Icon(
-                Icons.menu,
-                color: buttonColor2,
+
+          padding: EdgeInsets.all(8.0),
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+            height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
+            child: GestureDetector(
+              onTap: () {
+                navBarController.scaffoldKey.currentState?.openDrawer();
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Color(0xFF001A2E), shape: BoxShape.circle),
+                child: Icon(
+                  Icons.menu,
+                  color: buttonColor2,
+                ),
               ),
             ),
           ),
         ),
-        title: CustomText(
-          text: 'Courses',
-          textColor: Color(0xFF001A2E),
-          fontWeight: FontWeight.bold,
+        title: Align(
+          alignment: AlignmentDirectional.topStart,
+          child: CustomText(
+            text: 'Courses',
+            textColor: Color(0xFF001A2E),
+            fontWeight: FontWeight.bold,
+          ),
         ),
+        actions: [],
       ),
+      // appBar: AppBar(
+      //   backgroundColor: Color.fromRGBO(192, 208, 221, 1),
+      //   leading: Padding(
+      //     padding: const EdgeInsets.all(8.0),
+      //     child: GestureDetector(
+      //       onTap: () {
+      //         navBarController.scaffoldKey.currentState?.openDrawer();
+      //       },
+      //       child: Container(
+      //         decoration: BoxDecoration(
+      //           color: Color(0xFF001A2E),
+      //           borderRadius: BorderRadius.circular(50.r),
+      //         ),
+      //         child: Icon(
+      //           Icons.menu,
+      //           color: buttonColor2,
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      //   title: CustomText(
+      //     text: 'Courses',
+      //     textColor: Color(0xFF001A2E),
+      //     fontWeight: FontWeight.bold,
+      //   ),
+      // ),
       body: Column(
         children: [
           ClipRRect(
@@ -148,7 +191,7 @@ class CoursesScreen extends StatelessWidget {
           SizedBox(height: 20.h),
           Container(
             width: Get.width * 0.9,
-            height: Get.height /1.6,
+            height: Get.height / 1.6,
             child: GridView.builder(
               itemCount: courseImages.length, // Adjust the count dynamically
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -160,7 +203,8 @@ class CoursesScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 return CourseCard(
                   image: courseImages[index], // Pass image
-                  name: courseNames[index],   // Pass course name
+                  name: courseNames[index],
+                  label: courseLabels[index],// Pass course name
                 );
               },
             ),
@@ -170,12 +214,12 @@ class CoursesScreen extends StatelessWidget {
     );
   }
 }
-
 class CourseCard extends StatelessWidget {
   final String image;
   final String name;
+  final String? label;
 
-  CourseCard({required this.image, required this.name});
+  CourseCard({required this.image, required this.name, this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -188,13 +232,14 @@ class CourseCard extends StatelessWidget {
             builder: (context) => CourseDetailScreen(
               title: name,
               image: image,
+
             ),
           ),
         );
       },
       child: SizedBox(
-        width: 160.w,   // Static width
-        height: 100.h,  // Static height
+        width: 160.w, // Static width
+        height: 100.h, // Static height
         child: Container(
           decoration: BoxDecoration(
             color: tapColor,
@@ -203,32 +248,45 @@ class CourseCard extends StatelessWidget {
               width: 1,
               color: Darkcontainer,
             ),
-
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Stack(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(6.57),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
-                    image,
-                    height: 90.h,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(6.57),
+                    child: Stack(
+                      children: [
+                        // Your main image
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10.r),
+                          child: Image.asset(
+                            image,
+                            height: 90.h,
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        if (label != null)
+                        Positioned(
+                          top: -25.h, right: -20.w, // Adjust the right value for positioning
+                          child: Image.asset(label! , height: 80.h,),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ),
-              SizedBox(height: 8.h),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.w),
-                child: CustomText(
-                  text: name,
-                  fontsize: 11.sp,
-                  fontWeight: FontWeight.bold,
-                  textColor: Colors.white,
-                ),
+                  SizedBox(height: 8.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.w),
+                    child: CustomText(
+                      text: name,
+                      fontsize: 11.sp,
+                      fontWeight: FontWeight.bold,
+                      textColor: Colors.white,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
@@ -237,5 +295,3 @@ class CourseCard extends StatelessWidget {
     );
   }
 }
-
-

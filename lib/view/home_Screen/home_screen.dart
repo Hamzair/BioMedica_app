@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
 
   final NavBarController navBarController = Get.put(NavBarController());
   final SubscriptionService subscriptionService =
-  Get.find<SubscriptionService>();
+      Get.find<SubscriptionService>();
   final List<Map<String, dynamic>> gridItems = [
     {
       'image': AppImages.DeviceLibrary,
@@ -63,9 +63,10 @@ class HomeScreen extends StatelessWidget {
     },
     {
       'image': AppImages.AdvancedDesign,
-      'title': 'Advanced\nDevice',
+      'title': 'Advanced\nDevice Design',
       'page': DeviceLibrary(),
-      'locked': true
+      'locked': true,
+      'imageSize': 30.h
     },
     {
       'image': AppImages.BioMaterials,
@@ -85,7 +86,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       // drawer:  AppDrawer(),
       // key: navBarController.scaffoldKey,
@@ -93,15 +93,14 @@ class HomeScreen extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(90.h),
         child: AppBar(
-
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(13.r),
                   bottomRight: Radius.circular(13.r))),
-          centerTitle: true,
+          centerTitle: false,
           automaticallyImplyLeading: false,
           flexibleSpace: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 0.h),
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 0.h),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -112,23 +111,25 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    // SizedBox(
+                    //   width: 12.w,
+                    // ),
                     SizedBox(
-                      width: 12.w,
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
-                      height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
+                      width:
+                          MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+                      height:
+                          MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
                       child: GestureDetector(
                         onTap: () {
                           // Open the drawer using the scaffold key
-                          navBarController.scaffoldKey.currentState?.openDrawer();
+                          navBarController.scaffoldKey.currentState
+                              ?.openDrawer();
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Color(0xFF001A2E),
-                            borderRadius: BorderRadius.circular(50.r),
-                          ),
+                              color: Color(0xFF001A2E), shape: BoxShape.circle),
                           child: Icon(
+                            size: 25.sp,
                             Icons.menu,
                             color: buttonColor2,
                           ),
@@ -138,15 +139,20 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(
                       width: 11.w,
                     ),
-                    Flexible(
+                    Container(
+                      width: 237.w,
                       child: CustomSearch(),
                     ),
+                    // Flexible(
+                    //   child: CustomSearch(),
+                    // ),
                     SizedBox(
                       width: 12.w,
                     ),
-                    GestureDetector(onTap: () {
-                      //   Get.offAll(()=>AppNavBar());
-                    },
+                    GestureDetector(
+                      onTap: () {
+                        //   Get.offAll(()=>AppNavBar());
+                      },
                       child: Container(
                         width: 35.w,
                         height: 38.h,
@@ -159,9 +165,6 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 12.w,
-                    ),
                   ],
                 ),
               ],
@@ -172,363 +175,363 @@ class HomeScreen extends StatelessWidget {
       ),
 
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height:  13.h),
-            // Grid View for home options
-            GetBuilder<SubscriptionService>(builder: (subscriptionService) {
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 6.0.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 13.h),
+              // Grid View for home options
+              GetBuilder<SubscriptionService>(builder: (subscriptionService) {
+                double getAppBarHeight(BuildContext context) {
+                  double screenHeight = MediaQuery.of(context).size.height;
+                  print(screenHeight);
 
-              double getAppBarHeight(BuildContext context) {
-                double screenHeight = MediaQuery.of(context).size.height;
-                print(screenHeight);
-
-                // Define height based on screen size
-                if (screenHeight < 600) { // Considered small screen
-                  return screenHeight / 4; // Example height for small screens
+                  // Define height based on screen size
+                  if (screenHeight < 600) {
+                    // Considered small screen
+                    return screenHeight / 4; // Example height for small screens
+                  } else if (screenHeight == 667) {
+                    return screenHeight /
+                        2.15; // Default height for larger screens
+                  } else {
+                    return screenHeight /
+                        2.6; // Default height for larger screens
+                  }
                 }
-                else if(screenHeight ==667) {
-                  return screenHeight / 2.15; // Default height for larger screens
-                }
 
-                else {
-                  return screenHeight / 2.6; // Default height for larger screens
-                }
-              }
+                return Container(
+                  height: getAppBarHeight(context),
+                  child: GridView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      childAspectRatio: 0.9,
+                    ),
 
-              return Container(
-              height: getAppBarHeight(context),
+                    itemCount: gridItems.length + 2,
+                    // Adjusted item count
+                    itemBuilder: (context, index) {
+                      //   Empty container at index 8
+                      if (index == 8) {
+                        return Container(); // Empty container at index 8
+                      }
+                      // Empty container at the last index
+                      if (index == gridItems.length + 1) {
+                        return Container(); // Empty container at the end
+                      }
 
-                child: GridView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 0.9,
-                  ),
-                  padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h
-                  ),
-                  itemCount: gridItems.length + 2,
-                  // Adjusted item count
-                  itemBuilder: (context, index) {
-                    //   Empty container at index 8
-                    if (index == 8) {
-                      return Container(); // Empty container at index 8
-                    }
-                    // Empty container at the last index
-                    if (index == gridItems.length + 1) {
-                      return Container(); // Empty container at the end
-                    }
+                      // Adjust the index to account for the empty container at index 8
+                      final adjustedIndex = index > 8 ? index - 1 : index;
+                      final item = gridItems[adjustedIndex];
 
-                    // Adjust the index to account for the empty container at index 8
-                    final adjustedIndex = index > 8 ? index - 1 : index;
-                    final item = gridItems[adjustedIndex];
+                      // Check if the item is locked
+                      final isLocked = item['locked'] == true &&
+                          !subscriptionService.isPremium.value;
 
-                    // Check if the item is locked
-                    final isLocked = item['locked'] == true &&
-                        !subscriptionService.isPremium.value;
-
-                    return GestureDetector(
-                      onTap: () {
-                        if (isLocked) {
-                          Get.snackbar(
-                            'Locked',
-                            'Buy Premium to unlock this feature.',
-                             // backgroundColor: primaryColor,
-                            colorText: Colors.white,
-                          );
-                        } else {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                              item['page'] ?? const SizedBox.shrink(),
+                      return GestureDetector(
+                        onTap: () {
+                          if (isLocked) {
+                            Get.snackbar(
+                              'Locked',
+                              'Buy Premium to unlock this feature.',
+                              // backgroundColor: primaryColor,
+                              colorText: Colors.white,
+                            );
+                          } else {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    item['page'] ?? const SizedBox.shrink(),
+                              ),
+                            );
+                          }
+                        },
+                        child: Stack(
+                          children: [
+                            Container(
+                              width: 80.w,
+                              decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: Darkcontainer, width: 1.w),
+                                color: container,
+                                borderRadius: BorderRadius.circular(5.r),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    item['image'],
+                                    height: item['imageSize']?? 42.h,
+                                    //    width: 43.w,
+                                  ),
+                                  // SizedBox(height: 5.h),
+                                  CustomText(
+                                    text: item['title'],
+                                    textAlign: TextAlign.center,
+                                    textColor: Colors.white,
+                                    fontsize: 12.sp,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ],
+                              ),
                             ),
-                          );
-                        }
-                      },
-                      child: Stack(
+                            if (isLocked)
+                              Positioned.fill(
+                                child: Container(
+                                    color: Colors.black.withOpacity(0.5),
+                                    child: Stack(
+                                      children: [
+                                        Positioned(
+                                          top: 5,
+                                          right: 5,
+                                          // Position it to the top right corner
+                                          child: Image.asset(
+                                            'assets/images/lock.png',
+                                            height: 15
+                                                .h, // Adjust the height of the lock icon as per your design
+                                          ),
+                                        ),
+                                      ],
+                                    )),
+                              ),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                );
+              }),
+
+              Container(
+                decoration: BoxDecoration(
+                  color: container,
+                  borderRadius: BorderRadius.circular(13.r),
+                  border: Border.all(color: Darkcontainer, width: 1),
+                ),
+                child: Padding(
+                  padding:
+                      EdgeInsets.only(left: 18.0.w, top: 16.h, right: 18.w),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            width: 80.w,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: Colors.black, width: 1.w),
-                              color: container,
-                              borderRadius: BorderRadius.circular(5.r),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  item['image'],
-                                  height: 42.h,
-                                  //    width: 43.w,
-                                ),
-                                // SizedBox(height: 5.h),
-                                CustomText(
-                                  text: item['title'],
-                                  textAlign: TextAlign.center,
-                                  textColor: Colors.white,
-                                  fontsize: 12.sp,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ],
+                          CustomText(
+                            text: 'Trending News',
+                            textColor: buttonColor,
+                            fontWeight: FontWeight.w600,
+                            fontsize: 17.sp,
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: CustomText(
+                              text: 'See more',
+                              textColor: buttonColor2,
+                              fontWeight: FontWeight.w600,
+                              fontsize: 15.sp,
                             ),
                           ),
-                          if (isLocked)
-                            Positioned.fill(
-                              child: Container(
-                                  color: Colors.black.withOpacity(0.5),
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        top: 5,
-                                        right: 5,
-                                        // Position it to the top right corner
-                                        child: Image.asset(
-                                          'assets/images/lock.png',
-                                          height: 15
-                                              .h, // Adjust the height of the lock icon as per your design
+                        ],
+                      ),
+                      SizedBox(
+                        height: 14.h,
+                      ),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => ArticleDetail());
+                              },
+                              child: Stack(children: [
+                                Container(
+                                  //  Image.asset('assets/images/Rectangle 22968.png',fit:BoxFit.cover)
+                                  padding:
+                                      EdgeInsets.only(left: 12.w, top: 9.h),
+                                  width: 249.w,
+                                  decoration: BoxDecoration(
+                                    color: container,
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                          'assets/images/Rectangle 22968.png',
                                         ),
+                                        fit: BoxFit.cover),
+                                    borderRadius: BorderRadius.circular(5.r),
+                                    border: Border.all(
+                                        color: Colors.black, width: 0.5),
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      //   SizedBox(height: 10.h),
+                                      CustomText(
+                                        text:
+                                            'Breakthrough in Wearable Cardiac Monitors',
+                                        textColor: Colors.white,
+                                        fontWeight: FontWeight.w600,
+                                        fontsize: 14.sp,
+                                      ),
+                                      SizedBox(height: 8.h),
+                                      Image.asset(
+                                        width: 215.w,
+                                        fit: BoxFit.cover,
+                                        alignment: Alignment.topLeft,
+                                        AppImages.laptop,
+                                      ),
+                                      SizedBox(height: 5.h),
+
+                                      // Applying blur background only for description text
+                                      Stack(
+                                        children: [
+                                          Container(
+                                            padding: EdgeInsets.all(8.0),
+                                            child: RichText(
+                                              text: TextSpan(
+                                                children: [
+                                                  TextSpan(
+                                                    text:
+                                                        'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy,  ',
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      fontSize: 11.sp,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                    text: 'Read more',
+                                                    style: TextStyle(
+                                                      color: Colors.blue,
+                                                      // Change to your desired color
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 11.sp,
+                                                    ),
+                                                    recognizer:
+                                                        TapGestureRecognizer()
+                                                          ..onTap = () {
+                                                            Get.to(() =>
+                                                                ArticleDetail());
+                                                          },
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ],
-                                  )
-                              ),
+                                  ),
+                                ),
+                              ]),
                             ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              );
-            }),
-
-            Container(
-
-              padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
-           //   width: 348.w,
-              margin: EdgeInsets.only(bottom: 100.h,left:5.w,right: 5.w
-              ),
-              decoration: BoxDecoration(
-                color: container,
-                borderRadius: BorderRadius.circular(13.r),
-                border: Border.all(color: Darkcontainer, width: 1),
-              ),
-              child: Padding(
-                padding:  EdgeInsets.only(left: 18.0.w,top: 16.h,right:18.w ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CustomText(
-                          text: 'Trending News',
-                          textColor: buttonColor,
-                          fontWeight: FontWeight.w600,
-                          fontsize: 17.sp,
-                        ),
-                        GestureDetector(
-                          onTap: () {},
-                          child: CustomText(
-                            text: 'See more',
-                            textColor: buttonColor2,
-                            fontWeight: FontWeight.w600,
-                            fontsize: 15.sp,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 14.h,
-                    ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              Get.to(() => ArticleDetail());
-                            },
-                            child: Stack(children: [
-                              Container(
-                                //  Image.asset('assets/images/Rectangle 22968.png',fit:BoxFit.cover)
-                                padding: EdgeInsets.only(left:  12.w,top: 10.h),
-                                width: 249.w,
-                                decoration: BoxDecoration(
-                                  color: container,
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                        'assets/images/Rectangle 22968.png',
+                            SizedBox(
+                              width: 10.w,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => ArticleDetail());
+                              },
+                              child: Stack(children: [
+                                Container(
+                                  //  Image.asset('assets/images/Rectangle 22968.png',fit:BoxFit.cover)
+                                  padding:
+                                      EdgeInsets.only(left: 12.w, top: 9.h),
+                                  width: 249.w,
+                                  decoration: BoxDecoration(
+                                    color: container,
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                          'assets/images/Rectangle 22968.png',
+                                        ),
+                                        fit: BoxFit.cover),
+                                    borderRadius: BorderRadius.circular(5.r),
+                                    border: Border.all(
+                                        color: Colors.black, width: 0.5),
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      //   SizedBox(height: 10.h),
+                                      CustomText(
+                                        text:
+                                            'Breakthrough in Wearable Cardiac Monitors',
+                                        textColor: Colors.white,
+                                        fontWeight: FontWeight.w600,
+                                        fontsize: 14.sp,
                                       ),
-                                      fit: BoxFit.cover),
-                                  borderRadius: BorderRadius.circular(5.r),
-                                  border: Border.all(
-                                      color: Colors.black, width: 0.5),
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                 //   SizedBox(height: 10.h),
-                                    CustomText(
-                                      text:
-                                      'Breakthrough in Wearable Cardiac Monitors',
-                                      textColor: Colors.white,
-                                      fontWeight: FontWeight.w600,
-                                      fontsize: 14.sp,
-                                    ),
-                                    SizedBox(height: 8.h),
-                                    Image.asset(
-                                      width: 215.w,
-                                      fit: BoxFit.cover,
-                                      alignment: Alignment.topLeft,
-                                      AppImages.laptop,
-                                    ),
-                                    SizedBox(height: 5.h),
+                                      SizedBox(height: 8.h),
+                                      Image.asset(
+                                        width: 215.w,
+                                        fit: BoxFit.cover,
+                                        alignment: Alignment.topLeft,
+                                        AppImages.laptop,
+                                      ),
+                                      SizedBox(height: 5.h),
 
-                                    // Applying blur background only for description text
-                                    Stack(
-                                      children: [
-                                        Container(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: RichText(
-                                            text: TextSpan(
-                                              children: [
-                                                TextSpan(
-                                                  text:
-                                                  'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
-                                                  style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontWeight: FontWeight.w400,
-                                                    fontSize: 11.sp,
+                                      // Applying blur background only for description text
+                                      Stack(
+                                        children: [
+                                          Container(
+                                            padding: EdgeInsets.all(8.0),
+                                            child: RichText(
+                                              text: TextSpan(
+                                                children: [
+                                                  TextSpan(
+                                                    text:
+                                                        'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy ',
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      fontSize: 11.sp,
+                                                    ),
                                                   ),
-                                                ),
-                                                TextSpan(
-                                                  text: 'Read more',
-                                                  style: TextStyle(
-                                                    color: Colors
-                                                        .blue,
-                                                    // Change to your desired color
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 11.sp,
+                                                  TextSpan(
+                                                    text: 'Read more',
+                                                    style: TextStyle(
+                                                      color: Colors.blue,
+                                                      // Change to your desired color
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 11.sp,
+                                                    ),
+                                                    recognizer:
+                                                        TapGestureRecognizer()
+                                                          ..onTap = () {
+                                                            Get.to(() =>
+                                                                ArticleDetail());
+                                                          },
                                                   ),
-                                                  recognizer:
-                                                  TapGestureRecognizer()
-                                                    ..onTap = () {
-                                                      Get.to(() =>
-                                                          ArticleDetail());
-                                                    },
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ]),
-                          ),
-                          SizedBox(
-                            width: 10.w,
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Get.to(() => ArticleDetail());
-                            },
-                            child: Stack(children: [
-                              Container(
-                                //  Image.asset('assets/images/Rectangle 22968.png',fit:BoxFit.cover)
-                                padding: EdgeInsets.only(left:  12.w,top: 10.h),
-                                width: 249.w,
-                                decoration: BoxDecoration(
-                                  color: container,
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                        'assets/images/Rectangle 22968.png',
+                                        ],
                                       ),
-                                      fit: BoxFit.cover),
-                                  borderRadius: BorderRadius.circular(5.r),
-                                  border: Border.all(
-                                      color: Colors.black, width: 0.5),
+                                    ],
+                                  ),
                                 ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    //   SizedBox(height: 10.h),
-                                    CustomText(
-                                      text:
-                                      'Breakthrough in Wearable Cardiac Monitors',
-                                      textColor: Colors.white,
-                                      fontWeight: FontWeight.w600,
-                                      fontsize: 14.sp,
-                                    ),
-                                    SizedBox(height: 8.h),
-                                    Image.asset(
-                                      width: 215.w,
-                                      fit: BoxFit.cover,
-                                      alignment: Alignment.topLeft,
-                                      AppImages.laptop,
-                                    ),
-                                    SizedBox(height: 5.h),
-
-                                    // Applying blur background only for description text
-                                    Stack(
-                                      children: [
-                                        Container(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: RichText(
-                                            text: TextSpan(
-                                              children: [
-                                                TextSpan(
-                                                  text:
-                                                  'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data... ',
-                                                  style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontWeight: FontWeight.w400,
-                                                    fontSize: 11.sp,
-                                                  ),
-                                                ),
-                                                TextSpan(
-                                                  text: 'Read more',
-                                                  style: TextStyle(
-                                                    color: Colors
-                                                        .blue,
-                                                    // Change to your desired color
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 11.sp,
-                                                  ),
-                                                  recognizer:
-                                                  TapGestureRecognizer()
-                                                    ..onTap = () {
-                                                      Get.to(() =>
-                                                          ArticleDetail());
-                                                    },
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ]),
-                          ),
-
-                        ],
+                              ]),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -54,8 +54,11 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
       // key: _scaffoldKey,
       backgroundColor: primaryColor,
       appBar: AppBar(
+
+        centerTitle: false,
         backgroundColor: Color.fromRGBO(192, 208, 221, 1),
         leading: Padding(
+
           padding:  EdgeInsets.all(8.0),
           child: SizedBox(
             width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
@@ -67,9 +70,10 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
 
               },
               child:Container(
+
                 decoration: BoxDecoration(
                   color: Color(0xFF001A2E),
-                  borderRadius: BorderRadius.circular(50.r),
+                 shape: BoxShape.circle
                 ),
                 child: Icon(
                   Icons.menu,
@@ -79,10 +83,14 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
             ),
           ),
         ),
-        title: CustomText(
-          text: 'Device Library',
-          textColor: Color(0xFF001A2E),
-          fontWeight: FontWeight.bold,
+        title: Align(
+          alignment: AlignmentDirectional.topStart,
+          child: CustomText(
+
+            text: 'Device Library',
+            textColor: Color(0xFF001A2E),
+            fontWeight: FontWeight.bold,
+          ),
         ),
         actions: [],
       ),
