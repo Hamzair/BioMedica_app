@@ -50,91 +50,89 @@ class _MainOnBoardingViewState extends State<MainOnBoardingView> {
     double progress = (currentpage + 1) / 5;
     return Scaffold(
         backgroundColor: secondaryColor,
-        body: SafeArea(
-          child: Stack(
-            children: [
-              GestureDetector(
-                onHorizontalDragEnd: (details) {
-                  if (currentpage < 4) {
-                    // Assuming there are three pages (0, 1, 2)
-                    pageController.nextPage(
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.ease,
-                    );
-                  }
+        body: Stack(
+          children: [
+            GestureDetector(
+              onHorizontalDragEnd: (details) {
+                if (currentpage < 4) {
+                  // Assuming there are three pages (0, 1, 2)
+                  pageController.nextPage(
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.ease,
+                  );
+                }
+              },
+              child: PageView(
+                controller: pageController,
+                onPageChanged: (index) {
+                  setState(() {
+                    // onLastPage = (index == 2);
+                    currentpage = index;
+                  });
                 },
-                child: PageView(
-                  controller: pageController,
-                  onPageChanged: (index) {
-                    setState(() {
-                      // onLastPage = (index == 2);
-                      currentpage = index;
-                    });
-                  },
-                  children: const [
-                    OnBoardingOne(),
-                    OnBoardingTwo(),
-                    OnBoardingThree(),
-                    OnBoardingFour(),
-                    OnBoardingFive(),
-                  ],
-                ),
+                children: const [
+                  OnBoardingOne(),
+                  OnBoardingTwo(),
+                  OnBoardingThree(),
+                  OnBoardingFour(),
+                  OnBoardingFive(),
+                ],
               ),
-              Container(
-                  alignment: const Alignment(0, 0.92),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 25.w),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SmoothPageIndicator(
-                            effect: ExpandingDotsEffect(
-                              dotWidth: 9.w,
-                              dotHeight: 9.h,
-                              activeDotColor: buttonColor2,
-                              dotColor: secondaryColor,
-                            ),
-                            controller: pageController,
-                            count: 5),
-                        GestureDetector(
-                          onTap: () {
-                            _moveToNextPage();
-                          },
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Container(
-                                width: 52,
-                                height: 52,
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: buttonColor2, // Change color as needed
-                                ),
-                                child: const Icon(Icons.arrow_forward_ios,
-                                    color: primaryColor),
-                              ),
-                              SizedBox(
-                                width: 65,
-                                height: 65,
-                                child: CircularProgressIndicator(
-                                  value: progress,
-                                  strokeWidth: 1.5,
-                                  backgroundColor:
-                                      buttonColor2.withOpacity(0.3),
-                                  valueColor:
-                                      const AlwaysStoppedAnimation<Color>(
-                                          buttonColor2),
-                                ),
-                              ),
-                            ],
+            ),
+            Container(
+                alignment: const Alignment(0, 0.92),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 25.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SmoothPageIndicator(
+                          effect: ExpandingDotsEffect(
+                            dotWidth: 9.w,
+                            dotHeight: 9.h,
+                            activeDotColor: buttonColor2,
+                            dotColor: secondaryColor,
                           ),
+                          controller: pageController,
+                          count: 5),
+                      GestureDetector(
+                        onTap: () {
+                          _moveToNextPage();
+                        },
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Container(
+                              width: 52,
+                              height: 52,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: buttonColor2, // Change color as needed
+                              ),
+                              child: const Icon(Icons.arrow_forward_ios,
+                                  color: primaryColor),
+                            ),
+                            SizedBox(
+                              width: 65,
+                              height: 65,
+                              child: CircularProgressIndicator(
+                                value: progress,
+                                strokeWidth: 1.5,
+                                backgroundColor:
+                                    buttonColor2.withOpacity(0.3),
+                                valueColor:
+                                    const AlwaysStoppedAnimation<Color>(
+                                        buttonColor2),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  )),
-            ],
-          ),
+                      ),
+                    ],
+                  ),
+                )),
+          ],
         ));
   }
 }

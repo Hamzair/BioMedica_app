@@ -30,7 +30,7 @@ class AppDrawer extends StatelessWidget {
                   children: [
                 Container(
                   margin:
-                      EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [

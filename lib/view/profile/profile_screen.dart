@@ -53,7 +53,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   Row(
                     children: [
-                      SizedBox(
+                      Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle
+                        ),
                         width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
                         height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
                         child: GestureDetector(
@@ -78,7 +81,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   Row(
                     children: [
-                      SizedBox(
+                      Container(
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle
+                        ),
                         width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
                         height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
                         child: GestureDetector(

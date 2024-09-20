@@ -17,10 +17,10 @@ class OnBoardingOne extends StatelessWidget {
     return Scaffold(
       backgroundColor: secondaryColor,
       body: Column(
-        mainAxisSize: MainAxisSize.max,
+
         children: [
           SizedBox(
-            height: 30.h,
+            height: 80.h,
           ),
           /// Text The best Medical Device Library in the world.
           Padding(

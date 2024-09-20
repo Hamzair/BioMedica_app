@@ -47,20 +47,20 @@ class CoursesScreen extends StatelessWidget {
         leading: Padding(
 
           padding: EdgeInsets.all(8.0),
-          child: SizedBox(
+          child: Container(
+            decoration: BoxDecoration(
+                shape: BoxShape.circle
+            ),
             width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
             height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
             child: GestureDetector(
               onTap: () {
+                // Open the drawer using the scaffold key
                 navBarController.scaffoldKey.currentState?.openDrawer();
               },
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Color(0xFF001A2E), shape: BoxShape.circle),
-                child: Icon(
-                  Icons.menu,
-                  color: buttonColor2,
-                ),
+              child: Image(
+                image: AssetImage('assets/images/left_side_bar_navigation_Icon.png'),
+                fit: BoxFit.fill,
               ),
             ),
           ),
@@ -75,32 +75,6 @@ class CoursesScreen extends StatelessWidget {
         ),
         actions: [],
       ),
-      // appBar: AppBar(
-      //   backgroundColor: Color.fromRGBO(192, 208, 221, 1),
-      //   leading: Padding(
-      //     padding: const EdgeInsets.all(8.0),
-      //     child: GestureDetector(
-      //       onTap: () {
-      //         navBarController.scaffoldKey.currentState?.openDrawer();
-      //       },
-      //       child: Container(
-      //         decoration: BoxDecoration(
-      //           color: Color(0xFF001A2E),
-      //           borderRadius: BorderRadius.circular(50.r),
-      //         ),
-      //         child: Icon(
-      //           Icons.menu,
-      //           color: buttonColor2,
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      //   title: CustomText(
-      //     text: 'Courses',
-      //     textColor: Color(0xFF001A2E),
-      //     fontWeight: FontWeight.bold,
-      //   ),
-      // ),
       body: Column(
         children: [
           ClipRRect(

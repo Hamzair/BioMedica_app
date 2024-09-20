@@ -61,7 +61,7 @@ class ProgressScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(26.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -121,7 +121,7 @@ class ProgressScreen extends StatelessWidget {
                       height: 10.h,
                     ),
                     Container(
-                      height: 200.h,
+                      height: 160.h,
                       child: BarChart(
                         BarChartData(
                           alignment: BarChartAlignment.spaceAround,
@@ -144,31 +144,86 @@ class ProgressScreen extends StatelessWidget {
                                           text: 'Jan',
                                           textColor: Colors.white,
                                           fontWeight: FontWeight.w400,
+                                          fontsize: 9.2.sp,
                                         );
                                       case 1:
                                         return CustomText(
                                           text: 'Feb',
                                           textColor: Colors.white,
                                           fontWeight: FontWeight.w400,
+                                          fontsize: 9.2.sp,
                                         );
                                       case 2:
                                         return CustomText(
-                                          text: 'March',
+                                          text: 'Mar',
                                           textColor: Colors.white,
                                           fontWeight: FontWeight.w400,
+                                          fontsize: 9.2.sp,
                                         );
                                       case 3:
                                         return CustomText(
-                                          text: 'April',
+                                          text: 'Apr',
                                           textColor: Colors.white,
                                           fontWeight: FontWeight.w400,
+                                          fontsize: 9.2.sp,
                                         );
                                       case 4:
-                                        return Text('May', style: style);
+                                        return CustomText(
+                                          text: 'May',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                          fontsize: 9.2.sp,
+                                        );
                                       case 5:
-                                        return Text('Jun', style: style);
+                                        return CustomText(
+                                          text: 'Jun',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                          fontsize: 9.2.sp,
+                                        );
                                       case 6:
-                                        return Text('Jul', style: style);
+                                        return CustomText(
+                                          text: 'Jul',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                          fontsize: 9.2.sp,
+                                        );
+                                      case 7:
+                                        return CustomText(
+                                          text: 'Aug',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                          fontsize: 9.2.sp,
+                                        );
+                                      case 8:
+                                        return CustomText(
+                                          text: 'Sep',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                          fontsize: 9.2.sp,
+                                        );
+                                      case 9:
+                                        return CustomText(
+                                          text: 'Oct',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                          fontsize: 9.2.sp,
+                                        );
+                                      case 10:
+                                        return CustomText(
+                                          text: 'Nov',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                          fontsize: 9.2.sp,
+                                        );
+                                      case 11:
+                                        return CustomText(
+                                          text: 'Dec',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                          fontsize: 9.2.sp,
+                                        );
+
                                       default:
                                         return Text('', style: style);
                                     }
@@ -206,106 +261,169 @@ class ProgressScreen extends StatelessWidget {
                               BarChartRodData(
                                 toY: 7,
                                 color: buttonColor,
-                                width: 6,
+                                width: 5,
                               ),
                               BarChartRodData(
                                 toY: 5,
                                 color: Color.fromRGBO(219, 92, 0, 1),
-                                width: 6,
+                                width: 5,
                               ),
                             ]),
                             BarChartGroupData(x: 1, barRods: [
                               BarChartRodData(
                                 toY: 6,
                                 color: buttonColor,
-                                width: 6,
+                                width: 5,
                               ),
                               BarChartRodData(
                                 toY: 3,
                                 color: Color.fromRGBO(219, 92, 0, 1),
-                                width: 6,
+                                width: 5,
                               ),
                             ]),
                             BarChartGroupData(x: 2, barRods: [
                               BarChartRodData(
                                 toY: 6,
                                 color: buttonColor,
-                                width: 6,
+                                width: 5,
                               ),
                               BarChartRodData(
                                 toY: 7,
                                 color: Color.fromRGBO(219, 92, 0, 1),
-                                width: 6,
+                                width: 5,
                               ),
                             ]),
                             BarChartGroupData(x: 3, barRods: [
                               BarChartRodData(
                                 toY: 8,
                                 color: buttonColor,
-                                width: 6,
+                                width: 5,
                               ),
                               BarChartRodData(
                                 toY: 4,
                                 color: Color.fromRGBO(219, 92, 0, 1),
-                                width: 6,
+                                width: 5,
                               ),
                             ]),
                             BarChartGroupData(x: 4, barRods: [
                               BarChartRodData(
                                 toY: 9,
                                 color: buttonColor,
-                                width: 6,
+                                width: 5,
                               ),
                               BarChartRodData(
                                 toY: 6,
                                 color: Color.fromRGBO(219, 92, 0, 1),
-                                width: 6,
+                                width: 5,
                               ),
                             ]),
                             BarChartGroupData(x: 5, barRods: [
                               BarChartRodData(
                                 toY: 5,
                                 color: buttonColor,
-                                width: 6,
+                                width: 5,
                               ),
                               BarChartRodData(
                                 toY: 4,
                                 color: Color.fromRGBO(219, 92, 0, 1),
-                                width: 6,
+                                width: 5,
                               ),
                             ]),
                             BarChartGroupData(x: 6, barRods: [
                               BarChartRodData(
                                 toY: 6,
                                 color: buttonColor,
-                                width: 6,
+                                width: 5,
                               ),
                               BarChartRodData(
                                 toY: 4,
                                 color: Color.fromRGBO(219, 92, 0, 1),
-                                width: 6,
+                                width: 5,
                               ),
                             ]),
+                            BarChartGroupData(x: 7, barRods: [
+                              BarChartRodData(
+                                toY: 6,
+                                color: buttonColor,
+                                width: 5,
+                              ),
+                              BarChartRodData(
+                                toY: 4,
+                                color: Color.fromRGBO(219, 92, 0, 1),
+                                width: 5,
+                              ),
+                            ]),
+                            BarChartGroupData(x: 8, barRods: [
+                              BarChartRodData(
+                                toY: 1,
+                                color: buttonColor,
+                                width: 5,
+                              ),
+                              BarChartRodData(
+                                toY: 1,
+                                color: Color.fromRGBO(219, 92, 0, 1),
+                                width: 5,
+                              ),
+                            ]), BarChartGroupData(x: 9, barRods: [
+                              BarChartRodData(
+                                toY: 1,
+                                color: buttonColor,
+                                width: 5,
+                              ),
+                              BarChartRodData(
+                                toY: 1,
+                                color: Color.fromRGBO(219, 92, 0, 1),
+                                width: 5,
+                              ),
+                            ]),
+
+                            BarChartGroupData(x: 10, barRods: [
+                              BarChartRodData(
+                                toY: 1,
+                                color: buttonColor,
+                                width: 5,
+                              ),
+                              BarChartRodData(
+                                toY: 1,
+                                color: Color.fromRGBO(219, 92, 0, 1),
+                                width: 5,
+                              ),
+                            ]),
+
+                            BarChartGroupData(x: 11, barRods: [
+                              BarChartRodData(
+                                toY: 1,
+                                color: buttonColor,
+                                width: 5,
+                              ),
+                              BarChartRodData(
+                                toY: 1,
+                                color: Color.fromRGBO(219, 92, 0, 1),
+                                width: 5,
+                              ),
+                            ]),
+
                           ],
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    // Legends
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        LegendItem(color: buttonColor, text: 'Course'),
+                        SizedBox(width: 16),
+                        LegendItem(
+                            color: Color.fromRGBO(219, 92, 0, 1), text: 'Quiz'),
+                      ],
+                    ),
                   ],
                 ),
               ),
-              SizedBox(
-                height: 10,
-              ),
-              // Legends
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  LegendItem(color: buttonColor, text: 'Course'),
-                  SizedBox(width: 16),
-                  LegendItem(
-                      color: Color.fromRGBO(219, 92, 0, 1), text: 'Quiz'),
-                ],
-              ),
+
               SizedBox(height: 7.h),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -316,164 +434,199 @@ class ProgressScreen extends StatelessWidget {
                   fontsize: 20.sp,
                 ),
               ),
-              /// Active Course Container1
-              Container(
-               // width: 310.w,
-                height: 117.h,
-                decoration: BoxDecoration(
-                  color: tapColor,
-                  borderRadius: BorderRadius.circular(10.r),
-                  border: Border.all(
-                    color: Color.fromRGBO(0, 28, 49, 1),
 
-                    width: 1.w, // Width of the border
-                  ),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 11.39.w),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 91.01.w,
-                        height: 91.01.h,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(5.69.r), // Apply the same radius here
-                          child: Image(
-                            image: AssetImage('assets/images/profilescren_image.png'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+              /// Active Course Container2
+              Stack(
+                children: [
+
+                  Container(
+                    width: double.infinity.w,
+                    height: 117.h,
+                    decoration: BoxDecoration(
+                      color: tapColor,
+                      // Your tapColor can be defined or replaced here
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(
+                        color: Color.fromRGBO(0, 28, 49, 1),
+                        // Dark blue color for the border
+                        width: 1.w, // Width of the border
                       ),
-
-                      SizedBox(width: 9.62.w),
-                      Padding(
-                        padding:  EdgeInsets.symmetric(vertical: 12.h),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              width: 146.w,
-                              height: 55.h,
-                              child: CustomText(
-                                text:
-                                "UX Research in Digital Product Design: Master Class",
-                                textColor: whiteColor,
-                                fontWeight: FontWeight.w600,
-                                fontsize: 11.sp,
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 11.39.w),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 91.01.w,
+                            height: 91.01.h,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(5.69.r), // Apply the same radius here
+                              child: Image(
+                                image: AssetImage('assets/images/profilescren_image.png'),
+                                fit: BoxFit.cover,
                               ),
                             ),
-                            SizedBox(height: 5.h),
-                            SizedBox(
-                              width: 180.w,
-                              child: Row(
-                                mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
-                                children: [
-                                  CustomText(
-                                    text: "22 of 33 chapters",
-                                    textColor: buttonColor,
-                                    fontWeight: FontWeight.w700,
+                          ),
+                          SizedBox(width: 9.62.w),
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 10.h),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width: 146.w,
+                                  height: 56.h,
+                                  child: CustomText(
+                                    text:
+                                    "UX Research in Digital Product Design: Master Class",
+                                    textColor: whiteColor,
+                                    fontWeight: FontWeight.w600,
                                     fontsize: 11.sp,
                                   ),
-                                  LoadingPercentageCircle(
-                                    percentage: 15,
-                                    // Example percentage
-                                    size: 25,
-                                    // Example size
-                                    strokeWidth: 4,
-                                    // Example stroke width
-                                    backgroundColor: mainTextColor!,
-                                    progressColor: buttonColor,
+                                ),
+
+                                SizedBox(height: 18.62.w),
+                                SizedBox(
+                                  width: 180.w,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      CustomText(
+                                        text: "22/33 chapters",
+                                        textColor: buttonColor,
+                                        fontWeight: FontWeight.w700,
+                                        fontsize: 11.sp,
+                                      ),
+                                      CustomText(
+                                        text: "22/30 chapters",
+                                        textColor: Color.fromRGBO(219, 92, 0, 1),
+                                        fontWeight: FontWeight.w700,
+                                        fontsize: 11.sp,
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                  Positioned(
+                    right: 22.w,
+                    bottom: 0.h,
+                    top: 0.h,
+                    child: LoadingPercentageCircle(
+                      percentage: 15,
+                      // Example percentage
+                      size: 38,
+                      // Example size
+                      strokeWidth: 6,
+                      // Example stroke width
+                      backgroundColor: mainTextColor!,
+                      progressColor: buttonColor,
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 7.h),
-              /// Active Course Container2
-              Container(
-           //     width: 310.w,
-                height: 117.h,
-                decoration: BoxDecoration(
-                  color: tapColor,
-                  // Your tapColor can be defined or replaced here
-                  borderRadius: BorderRadius.circular(10.r),
-                  border: Border.all(
-                    color: Color.fromRGBO(0, 28, 49, 1),
-                    // Dark blue color for the border
-                    width: 1.w, // Width of the border
-                  ),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 11.39.w),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 91.01.w,
-                        height: 91.01.h,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(5.69.r), // Apply the same radius here
-                          child: Image(
-                            image: AssetImage('assets/images/my_courses_tab_image2.png'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+              /// Course Container2
+              Stack(
+                children: [
+
+                  Container(
+                    width: double.infinity.w,
+                    height: 117.h,
+                    decoration: BoxDecoration(
+                      color: tapColor,
+                      // Your tapColor can be defined or replaced here
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(
+                        color: Color.fromRGBO(0, 28, 49, 1),
+                        // Dark blue color for the border
+                        width: 1.w, // Width of the border
                       ),
-                      SizedBox(width: 9.62.w),
-                      Padding(
-                        padding: EdgeInsets.symmetric(vertical: 12.h),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              width: 146.w,
-                              height: 56.h,
-                              child: CustomText(
-                                text:
-                                "UX Research in Digital Product Design: Master Class",
-                                textColor: whiteColor,
-                                fontWeight: FontWeight.w600,
-                                fontsize: 11.sp,
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 11.39.w),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 91.01.w,
+                            height: 91.01.h,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(5.69.r), // Apply the same radius here
+                              child: Image(
+                                image: AssetImage('assets/images/ux_design_image_2.png'),
+                                fit: BoxFit.cover,
                               ),
                             ),
-                            SizedBox(height:3.h),
-                            SizedBox(
-                              width: 180.w,
-                              child: Row(
-                                mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
-                                children: [
-                                  CustomText(
-                                    text: "10 of 31 chapters",
-                                    textColor: buttonColor,
-                                    fontWeight: FontWeight.w700,
+                          ),
+                          SizedBox(width: 9.62.w),
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 10.h),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width: 146.w,
+                                  height: 56.h,
+                                  child: CustomText(
+                                    text:
+                                    "UX Research in Digital Product Design: Master Class",
+                                    textColor: whiteColor,
+                                    fontWeight: FontWeight.w600,
                                     fontsize: 11.sp,
                                   ),
-                                  LoadingPercentageCircle(
-                                    percentage: 45,
-                                    // Example percentage
-                                    size: 25,
-                                    // Example size
-                                    strokeWidth: 4,
-                                    // Example stroke width
-                                    backgroundColor: mainTextColor!,
-                                    progressColor: buttonColor,
+                                ),
+
+                                SizedBox(height: 18.62.w),
+                                SizedBox(
+                                  width: 180.w,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      CustomText(
+                                        text: "10/31 chapters",
+                                        textColor: buttonColor,
+                                        fontWeight: FontWeight.w700,
+                                        fontsize: 11.sp,
+                                      ),
+                                      CustomText(
+                                        text: "44/50 chapters",
+                                        textColor: Color.fromRGBO(219, 92, 0, 1),
+                                        fontWeight: FontWeight.w700,
+                                        fontsize: 11.sp,
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                  Positioned(
+                    right: 22.w,
+                    bottom: 0.h,
+                    top: 0.h,
+                    child: LoadingPercentageCircle(
+                      percentage: 45,
+                      // Example percentage
+                      size: 38,
+                      // Example size
+                      strokeWidth: 6,
+                      // Example stroke width
+                      backgroundColor: mainTextColor!,
+                      progressColor: buttonColor,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

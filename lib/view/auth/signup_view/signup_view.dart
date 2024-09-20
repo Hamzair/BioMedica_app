@@ -94,69 +94,69 @@ class _SignupViewState extends State<SignupView> {
         body: SingleChildScrollView(
           child: Column(
             children: [
+
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage(AppImages.ellipse2), fit: BoxFit.fill)),
-                child: SafeArea(
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 139.h,
-                        width: 130.w,
-                        child: Image.asset(
-                          AppImages.biomedicalogo,
-                        ),
+                child: Column(
+                  children: [
+                    SizedBox(height: 30.h,),
+                    SizedBox(
+                      height: 139.h,
+                      width: 130.w,
+                      child: Image.asset(
+                        AppImages.biomedicalogo,
                       ),
-                      Align(
-                        alignment: Alignment.center,
-                        child: CustomText(
-                          textAlign: TextAlign.center,
-                          text: 'Sign up ',
-                          fontsize: 35.sp,
-                          textColor: Color.fromRGBO(0, 26, 46, 1),
-                          fontWeight: FontWeight.w700,
-                        ),
+                    ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: CustomText(
+                        textAlign: TextAlign.center,
+                        text: 'Sign up ',
+                        fontsize: 35.sp,
+                        textColor: Color.fromRGBO(0, 26, 46, 1),
+                        fontWeight: FontWeight.w700,
                       ),
-                      SizedBox(height: 11.h),
-                      Container(
-                        width: 280.w,
-                       
-                        child: CustomText(
-                          textAlign: TextAlign.center,
-                          text: 'Explore new content, manage your profile, and connect with others—all from here',
-                          fontsize: 14.sp,
-                          textColor: Colors.white,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      SizedBox(height: 15.h),
+                    ),
+                    SizedBox(height: 11.h),
+                    Container(
+                      width: 280.w,
 
-                      /// Image Upload
-                      GestureDetector(
-                        onTap: () => _showImageSourceDialog(context), // Open image picker on tap
-                        child: Container(
-                          height: 106.h,
-                          width: 106.w,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.r),
-                          ),
-                          child: _image == null
-                              ? Image.asset('assets/images/upload_image_sign_up.png', fit: BoxFit.contain)
-                              : ClipRRect(
-                            borderRadius: BorderRadius.circular(8.r),
-                            child: Image.file(
-                              _image!,
-                              fit: BoxFit.cover,
-                            ),
+                      child: CustomText(
+                        textAlign: TextAlign.center,
+                        text: 'Explore new content, manage your profile, and connect with others—all from here',
+                        fontsize: 14.sp,
+                        textColor: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(height: 15.h),
+
+                    /// Image Upload
+                    GestureDetector(
+                      onTap: () => _showImageSourceDialog(context), // Open image picker on tap
+                      child: Container(
+                        height: 106.h,
+                        width: 106.w,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: _image == null
+                            ? Image.asset('assets/images/upload_image_sign_up.png', fit: BoxFit.contain)
+                            : ClipRRect(
+                          borderRadius: BorderRadius.circular(8.r),
+                          child: Image.file(
+                            _image!,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
+                    ),
 
-                      SizedBox(height: 15.h),
-                    ],
-                  ),
+                    SizedBox(height: 15.h),
+                  ],
                 ),
               ),
               SizedBox(height: 18.h),
@@ -259,7 +259,7 @@ class _SignupViewState extends State<SignupView> {
                   ),
                 ),
               ),
-              SizedBox(height: 35.h),
+              SizedBox(height: 45.h),
               /// Already have an Account
               GestureDetector(
                 onTap: () {

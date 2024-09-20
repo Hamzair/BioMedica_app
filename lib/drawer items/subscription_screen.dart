@@ -20,7 +20,7 @@ class SubscriptionScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: primaryColor,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(80.h),
+          preferredSize: Size.fromHeight(60.h),
           child: AppBar(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -30,43 +30,39 @@ class SubscriptionScreen extends StatelessWidget {
             ),
             centerTitle: true,
             automaticallyImplyLeading: false,
-            flexibleSpace: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(height: 30.h),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 13.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          GestureDetector(
+            flexibleSpace: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 13.w,vertical: 5.h),
+              child: SafeArea(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+                          height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
+                          child: GestureDetector(
                             onTap: () {
                               Get.back();
                             },
-                            child: SizedBox(
-                              height: 38.h,
-                              width: 38.h,
-                              child: Image.asset(
-                                'assets/images/back_icon.png',
-                                fit: BoxFit.fill,
-                              ),
+                            child: Image(
+                              image: AssetImage('assets/images/back_icon.png'),
+                              fit: BoxFit.fill,
                             ),
                           ),
-                          SizedBox(width: 12.w),
-                          CustomText(
-                            text: "Subscription",
-                            textColor: primaryColor,
-                            fontWeight: FontWeight.bold,
-                            fontsize: 22.sp,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
+                        SizedBox(width: 12.w),
+                        CustomText(
+                          text: "Subscription",
+                          textColor: primaryColor,
+                          fontWeight: FontWeight.bold,
+                          fontsize: 22.sp,
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
             backgroundColor: secondaryColor,
           ),
@@ -268,7 +264,7 @@ class SubscriptionScreen extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 14.sp,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.bold,
                         height: 1.5,
                         fontFamily: 'jost',
                       ),
@@ -278,7 +274,7 @@ class SubscriptionScreen extends StatelessWidget {
                           style: TextStyle(
                             color: greenColor,
                             fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.bold,
                             height: 1.5,
                             fontFamily: 'jost',
                           ),
@@ -290,7 +286,7 @@ class SubscriptionScreen extends StatelessWidget {
                             fontSize: 14.sp,
                             height: 1.5,
                             fontFamily: 'jost',
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                         TextSpan(
@@ -298,7 +294,7 @@ class SubscriptionScreen extends StatelessWidget {
                           style: TextStyle(
                             color: greenColor,
                             fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.bold,
                             height: 1.5,
                             fontFamily: 'jost',
                           ),
@@ -327,11 +323,22 @@ class SubscriptionScreen extends StatelessWidget {
                           8, 41, 66, 1), // Dark blue border color
                       width: 1.0.w, // Set the border width as needed
                     ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.25), // Shadow color with opacity
+                        offset: Offset(0, 4), // Horizontal offset is 0, vertical offset is 4 (downwards)
+                        blurRadius: 6.0, // The amount of blur applied
+                        spreadRadius: 0.0, // The amount of spread applied
+                      ),
+                    ],
+
                   ),
                   child: Center(
                     child: Container(
+
                       height: 115.61.h,
                       width: 263.w,
+
                       child: Column(
                         children: [
                           CustomText(
@@ -343,7 +350,7 @@ class SubscriptionScreen extends StatelessWidget {
                           SizedBox(height: 6.61.h),
                           CustomText(
                             text:
-                                "As a Free user, you can only preview 4 courses.To get full access to the entirety of the app's courses and features, become a Premium member now!",
+                                "As a Free user, you can only preview 4 courses. To get full access to the entirety of the app's courses and features, become a Premium  member now!",
                             textColor: whiteColor,
                             fontWeight: FontWeight.w600,
                             fontsize: 11.57.sp,

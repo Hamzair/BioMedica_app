@@ -86,12 +86,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       // drawer:  AppDrawer(),
       // key: navBarController.scaffoldKey,
       backgroundColor: primaryColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(90.h),
+        preferredSize: Size.fromHeight(size.height * 0.076),
         child: AppBar(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -100,12 +101,12 @@ class HomeScreen extends StatelessWidget {
           centerTitle: false,
           automaticallyImplyLeading: false,
           flexibleSpace: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 0.h),
+            padding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 5.h),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 30.h,
+                  height: 40.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -114,25 +115,20 @@ class HomeScreen extends StatelessWidget {
                     // SizedBox(
                     //   width: 12.w,
                     // ),
-                    SizedBox(
-                      width:
-                          MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
-                      height:
-                          MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
+                    Container(
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle
+                      ),
+                      width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+                      height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
                       child: GestureDetector(
                         onTap: () {
                           // Open the drawer using the scaffold key
-                          navBarController.scaffoldKey.currentState
-                              ?.openDrawer();
+                          navBarController.scaffoldKey.currentState?.openDrawer();
                         },
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: Color(0xFF001A2E), shape: BoxShape.circle),
-                          child: Icon(
-                            size: 25.sp,
-                            Icons.menu,
-                            color: buttonColor2,
-                          ),
+                        child: Image(
+                          image: AssetImage('assets/images/left_side_bar_navigation_Icon.png'),
+                          fit: BoxFit.fill,
                         ),
                       ),
                     ),
@@ -175,6 +171,7 @@ class HomeScreen extends StatelessWidget {
       ),
 
       body: SingleChildScrollView(
+
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 6.0.w),
           child: Column(
@@ -203,6 +200,7 @@ class HomeScreen extends StatelessWidget {
                 return Container(
                   height: getAppBarHeight(context),
                   child: GridView.builder(
+                    shrinkWrap: true,  // Add this line
                     physics: NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4,
@@ -313,10 +311,8 @@ class HomeScreen extends StatelessWidget {
                   border: Border.all(color: Darkcontainer, width: 1),
                 ),
                 child: Padding(
-                  padding:
-                      EdgeInsets.only(left: 18.0.w, top: 16.h, right: 18.w),
+                  padding: EdgeInsets.only(left: 18.0.w, top: 16.h, right: 18.w,bottom: 10.h),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
@@ -339,9 +335,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: 14.h,
-                      ),
+                      SizedBox(height: 14.h),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -350,178 +344,136 @@ class HomeScreen extends StatelessWidget {
                               onTap: () {
                                 Get.to(() => ArticleDetail());
                               },
-                              child: Stack(children: [
-                                Container(
-                                  //  Image.asset('assets/images/Rectangle 22968.png',fit:BoxFit.cover)
-                                  padding:
-                                      EdgeInsets.only(left: 12.w, top: 9.h),
-                                  width: 249.w,
-                                  decoration: BoxDecoration(
-                                    color: container,
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                          'assets/images/Rectangle 22968.png',
-                                        ),
-                                        fit: BoxFit.cover),
-                                    borderRadius: BorderRadius.circular(5.r),
-                                    border: Border.all(
-                                        color: Colors.black, width: 0.5),
-                                  ),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      //   SizedBox(height: 10.h),
-                                      CustomText(
-                                        text:
-                                            'Breakthrough in Wearable Cardiac Monitors',
-                                        textColor: Colors.white,
-                                        fontWeight: FontWeight.w600,
-                                        fontsize: 14.sp,
-                                      ),
-                                      SizedBox(height: 8.h),
-                                      Image.asset(
-                                        width: 215.w,
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(left: 12.w, top: 9.h,bottom: 10.h),
+                                    width: 249.w,
+                                    decoration: BoxDecoration(
+                                      color: container,
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/images/Rectangle 22968.png'),
                                         fit: BoxFit.cover,
-                                        alignment: Alignment.topLeft,
-                                        AppImages.laptop,
                                       ),
-                                      SizedBox(height: 5.h),
-
-                                      // Applying blur background only for description text
-                                      Stack(
-                                        children: [
-                                          Container(
-                                            padding: EdgeInsets.all(8.0),
-                                            child: RichText(
-                                              text: TextSpan(
-                                                children: [
-                                                  TextSpan(
-                                                    text:
-                                                        'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy,  ',
-                                                    style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      fontSize: 11.sp,
-                                                    ),
-                                                  ),
-                                                  TextSpan(
-                                                    text: 'Read more',
-                                                    style: TextStyle(
-                                                      color: Colors.blue,
-                                                      // Change to your desired color
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontSize: 11.sp,
-                                                    ),
-                                                    recognizer:
-                                                        TapGestureRecognizer()
-                                                          ..onTap = () {
-                                                            Get.to(() =>
-                                                                ArticleDetail());
-                                                          },
-                                                  ),
-                                                ],
+                                      borderRadius: BorderRadius.circular(8.r),
+                                      border: Border.all(color: Colors.black, width: 0.5),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        CustomText(
+                                          text: 'Breakthrough in Wearable Cardiac Monitors',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w600,
+                                          fontsize: 14.sp,
+                                        ),
+                                        SizedBox(height: 8.h),
+                                        Image.asset(
+                                          AppImages.laptop,
+                                          width: 215.w,
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.topLeft,
+                                        ),
+                                        SizedBox(height: 5.h),
+                                        RichText(
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text: 'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 11.sp,
+                                                ),
                                               ),
-                                            ),
+                                              TextSpan(
+                                                text: 'Read more',
+                                                style: TextStyle(
+                                                  color: Color.fromRGBO(12, 192, 223, 1),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11.sp,
+                                                ),
+                                                recognizer: TapGestureRecognizer()
+                                                  ..onTap = () {
+                                                    Get.to(() => ArticleDetail());
+                                                  },
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                    ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ]),
+                                ],
+                              ),
                             ),
-                            SizedBox(
-                              width: 10.w,
-                            ),
+                            SizedBox(width: 10.w),
                             GestureDetector(
                               onTap: () {
                                 Get.to(() => ArticleDetail());
                               },
-                              child: Stack(children: [
-                                Container(
-                                  //  Image.asset('assets/images/Rectangle 22968.png',fit:BoxFit.cover)
-                                  padding:
-                                      EdgeInsets.only(left: 12.w, top: 9.h),
-                                  width: 249.w,
-                                  decoration: BoxDecoration(
-                                    color: container,
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                          'assets/images/Rectangle 22968.png',
-                                        ),
-                                        fit: BoxFit.cover),
-                                    borderRadius: BorderRadius.circular(5.r),
-                                    border: Border.all(
-                                        color: Colors.black, width: 0.5),
-                                  ),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      //   SizedBox(height: 10.h),
-                                      CustomText(
-                                        text:
-                                            'Breakthrough in Wearable Cardiac Monitors',
-                                        textColor: Colors.white,
-                                        fontWeight: FontWeight.w600,
-                                        fontsize: 14.sp,
-                                      ),
-                                      SizedBox(height: 8.h),
-                                      Image.asset(
-                                        width: 215.w,
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(left: 12.w, top: 9.h,bottom: 10.h),
+                                    width: 249.w,
+                                    decoration: BoxDecoration(
+                                      color: container,
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/images/Rectangle 22968.png'),
                                         fit: BoxFit.cover,
-                                        alignment: Alignment.topLeft,
-                                        AppImages.laptop,
                                       ),
-                                      SizedBox(height: 5.h),
-
-                                      // Applying blur background only for description text
-                                      Stack(
-                                        children: [
-                                          Container(
-                                            padding: EdgeInsets.all(8.0),
-                                            child: RichText(
-                                              text: TextSpan(
-                                                children: [
-                                                  TextSpan(
-                                                    text:
-                                                        'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy ',
-                                                    style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      fontSize: 11.sp,
-                                                    ),
-                                                  ),
-                                                  TextSpan(
-                                                    text: 'Read more',
-                                                    style: TextStyle(
-                                                      color: Colors.blue,
-                                                      // Change to your desired color
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontSize: 11.sp,
-                                                    ),
-                                                    recognizer:
-                                                        TapGestureRecognizer()
-                                                          ..onTap = () {
-                                                            Get.to(() =>
-                                                                ArticleDetail());
-                                                          },
-                                                  ),
-                                                ],
+                                      borderRadius: BorderRadius.circular(8.r),
+                                      border: Border.all(color: Colors.black, width: 0.5),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        CustomText(
+                                          text: 'Breakthrough in Wearable Cardiac Monitors',
+                                          textColor: Colors.white,
+                                          fontWeight: FontWeight.w600,
+                                          fontsize: 14.sp,
+                                        ),
+                                        SizedBox(height: 8.h),
+                                        Image.asset(
+                                          AppImages.laptop,
+                                          width: 215.w,
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.topLeft,
+                                        ),
+                                        SizedBox(height: 5.h),
+                                        RichText(
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text: 'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 11.sp,
+                                                ),
                                               ),
-                                            ),
+                                              TextSpan(
+                                                text: 'Read more',
+                                                style: TextStyle(
+                                                  color: Color.fromRGBO(12, 192, 223, 1),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11.sp,
+                                                ),
+                                                recognizer: TapGestureRecognizer()
+                                                  ..onTap = () {
+                                                    Get.to(() => ArticleDetail());
+                                                  },
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                    ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ]),
+                                ],
+                              ),
                             ),
                           ],
                         ),
@@ -529,7 +481,8 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-              )
+              ),
+              SizedBox(height: 100.h),
             ],
           ),
         ),

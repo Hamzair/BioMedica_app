@@ -504,7 +504,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
         children: [
           // Bullet container
           Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.only(top: 7.0),
             child: Container(
               height: 8.h,
               width: 8.h,
