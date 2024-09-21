@@ -153,7 +153,7 @@ class _QuizPageState extends State<QuizPage> {
                                   text:
                                   'What is Failure Mode and Effects Analysis (FMEA), and how is it used in medical device risk management?',
                                   fontWeight: FontWeight.w600,
-                                  textColor: Colors.white,
+                                  textColor: whiteColor,
                                   fontsize: 12.sp,
                                 ),
                                 children: <Widget>[
@@ -163,13 +163,13 @@ class _QuizPageState extends State<QuizPage> {
                                       text:
                                       'FMEA is a structured approach used to identify potential failure modes in a device, assess the impact of those failures, and prioritize corrective actions. By systematically evaluating each component of the device, clinical engineers can identify weaknesses and implement changes to improve safety and performance before the device reaches the market.',
                                       fontWeight: FontWeight.w600,
-                                      textColor: Colors.white,
+                                      textColor: whiteColor,
                                       fontsize: 12.sp,
                                     ),
                                   ),
                                 ],
-                                collapsedIconColor: Colors.white,
-                                iconColor: Colors.white,
+                                collapsedIconColor: whiteColor,
+                                iconColor: whiteColor,
                                 tilePadding: EdgeInsets.symmetric(horizontal: 16.0.h),
                               ),
                             ),
@@ -206,7 +206,7 @@ class _QuizPageState extends State<QuizPage> {
                             CustomText(
                               text: questions[index]['question'],
                               fontsize: 16.sp,
-                              textColor: Colors.white,
+                              textColor: whiteColor,
                               fontWeight: FontWeight.w600,
                             ),
                             SizedBox(height: 34.h),
@@ -259,8 +259,8 @@ class _QuizPageState extends State<QuizPage> {
                                                 shape: BoxShape.circle,
                                                 color: isSelected
                                                     ? (isCorrect
-                                                    ? Colors.white
-                                                    : Colors.white)
+                                                    ? whiteColor
+                                                    : whiteColor)
                                                     : Colors.transparent,
                                                 border: Border.all(
 
@@ -291,7 +291,7 @@ class _QuizPageState extends State<QuizPage> {
                                                 text:
                                                 questions[index]['answers'][answerIndex],
                                                 fontsize: 16.sp,
-                                                textColor: Colors.white,
+                                                textColor: whiteColor,
                                                 fontWeight: FontWeight.w600,
                                               ),
                                             ),
@@ -345,7 +345,7 @@ class _QuizPageState extends State<QuizPage> {
                   _currentPage == 3 ? 'Finish' : 'Continue',
                   style: TextStyle(
                     fontSize: 18.sp,
-                    color: Colors.white,
+                    color: whiteColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

@@ -63,10 +63,9 @@ class HomeScreen extends StatelessWidget {
     },
     {
       'image': AppImages.AdvancedDesign,
-      'title': 'Advanced\nDevice Design',
+      'title': 'Device Design',
       'page': DeviceLibrary(),
       'locked': true,
-      'imageSize': 30.h
     },
     {
       'image': AppImages.BioMaterials,
@@ -101,7 +100,7 @@ class HomeScreen extends StatelessWidget {
           centerTitle: false,
           automaticallyImplyLeading: false,
           flexibleSpace: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 5.h),
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 5.h),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -116,18 +115,20 @@ class HomeScreen extends StatelessWidget {
                     //   width: 12.w,
                     // ),
                     Container(
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle
-                      ),
-                      width: MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
-                      height: MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
+                      decoration: BoxDecoration(shape: BoxShape.circle),
+                      width:
+                          MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+                      height:
+                          MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
                       child: GestureDetector(
                         onTap: () {
                           // Open the drawer using the scaffold key
-                          navBarController.scaffoldKey.currentState?.openDrawer();
+                          navBarController.scaffoldKey.currentState
+                              ?.openDrawer();
                         },
                         child: Image(
-                          image: AssetImage('assets/images/left_side_bar_navigation_Icon.png'),
+                          image: AssetImage(
+                              'assets/images/left_side_bar_navigation_Icon.png'),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -171,7 +172,6 @@ class HomeScreen extends StatelessWidget {
       ),
 
       body: SingleChildScrollView(
-
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 6.0.w),
           child: Column(
@@ -200,7 +200,7 @@ class HomeScreen extends StatelessWidget {
                 return Container(
                   height: getAppBarHeight(context),
                   child: GridView.builder(
-                    shrinkWrap: true,  // Add this line
+                    shrinkWrap: true, // Add this line
                     physics: NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4,
@@ -234,9 +234,9 @@ class HomeScreen extends StatelessWidget {
                           if (isLocked) {
                             Get.snackbar(
                               'Locked',
-                              'Buy Premium to unlock this feature.',
-                              // backgroundColor: primaryColor,
-                              colorText: Colors.white,
+                              'Only accessible for premium members!',
+                              backgroundColor: primaryColor,
+                              colorText: secondaryColor,
                             );
                           } else {
                             Navigator.push(
@@ -253,8 +253,8 @@ class HomeScreen extends StatelessWidget {
                             Container(
                               width: 80.w,
                               decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: Darkcontainer, width: 1.w),
+                                border: Border.all(
+                                    color: Darkcontainer, width: 1.w),
                                 color: container,
                                 borderRadius: BorderRadius.circular(5.r),
                               ),
@@ -263,14 +263,14 @@ class HomeScreen extends StatelessWidget {
                                 children: [
                                   Image.asset(
                                     item['image'],
-                                    height: item['imageSize']?? 42.h,
+                                    height: 42.h,
                                     //    width: 43.w,
                                   ),
                                   // SizedBox(height: 5.h),
                                   CustomText(
                                     text: item['title'],
                                     textAlign: TextAlign.center,
-                                    textColor: Colors.white,
+                                    textColor: secondaryColor,
                                     fontsize: 12.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -303,7 +303,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 );
               }),
-
+              // ! TRENDING NOW
               Container(
                 decoration: BoxDecoration(
                   color: container,
@@ -311,7 +311,8 @@ class HomeScreen extends StatelessWidget {
                   border: Border.all(color: Darkcontainer, width: 1),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.only(left: 18.0.w, top: 16.h, right: 18.w,bottom: 10.h),
+                  padding: EdgeInsets.only(
+                      left: 18.0.w, top: 16.h, right: 18.w, bottom: 10.h),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -342,28 +343,33 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                Get.to(() => ArticleDetail());
+                                Get.to(() => ArticleDetail(title: 'Breakthrough in Wearable Cardiac Monitors',image:   AppImages.laptop,));
                               },
                               child: Stack(
                                 children: [
                                   Container(
-                                    padding: EdgeInsets.only(left: 12.w, top: 9.h,bottom: 10.h),
+                                    padding: EdgeInsets.only(
+                                        left: 12.w, top: 9.h, bottom: 10.h),
                                     width: 249.w,
                                     decoration: BoxDecoration(
                                       color: container,
                                       image: DecorationImage(
-                                        image: AssetImage('assets/images/Rectangle 22968.png'),
+                                        image: AssetImage(
+                                            'assets/images/Rectangle 22968.png'),
                                         fit: BoxFit.cover,
                                       ),
                                       borderRadius: BorderRadius.circular(8.r),
-                                      border: Border.all(color: Colors.black, width: 0.5),
+                                      border: Border.all(
+                                          color: Colors.black, width: 0.5),
                                     ),
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         CustomText(
-                                          text: 'Breakthrough in Wearable Cardiac Monitors',
-                                          textColor: Colors.white,
+                                          text:
+                                              'Breakthrough in Wearable Cardiac Monitors',
+                                          textColor: secondaryColor,
                                           fontWeight: FontWeight.w600,
                                           fontsize: 14.sp,
                                         ),
@@ -379,9 +385,10 @@ class HomeScreen extends StatelessWidget {
                                           text: TextSpan(
                                             children: [
                                               TextSpan(
-                                                text: 'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
+                                                text:
+                                                    'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
                                                 style: TextStyle(
-                                                  color: Colors.white,
+                                                  color: secondaryColor,
                                                   fontWeight: FontWeight.w400,
                                                   fontSize: 11.sp,
                                                 ),
@@ -389,13 +396,423 @@ class HomeScreen extends StatelessWidget {
                                               TextSpan(
                                                 text: 'Read more',
                                                 style: TextStyle(
-                                                  color: Color.fromRGBO(12, 192, 223, 1),
+                                                  color: Color.fromRGBO(
+                                                      12, 192, 223, 1),
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 11.sp,
                                                 ),
-                                                recognizer: TapGestureRecognizer()
+                                                recognizer:
+                                                    TapGestureRecognizer()
+                                                      ..onTap = () {
+                                                        Get.to(() =>
+                                                            ArticleDetail(title: 'Cutting-Edge Medical Device Innovations',image: AppImages.laptop,));
+                                                      },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 10.w),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => ArticleDetail(title: 'Breakthrough in Wearable Cardiac Monitors',image:   AppImages.laptop,));
+                              },
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        left: 12.w, top: 9.h, bottom: 10.h),
+                                    width: 249.w,
+                                    decoration: BoxDecoration(
+                                      color: container,
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/Rectangle 22968.png'),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.r),
+                                      border: Border.all(
+                                          color: Colors.black, width: 0.5),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        CustomText(
+                                          text:
+                                          'Breakthrough in Wearable Cardiac Monitors',
+                                          textColor: secondaryColor,
+                                          fontWeight: FontWeight.w600,
+                                          fontsize: 14.sp,
+                                        ),
+                                        SizedBox(height: 8.h),
+                                        Image.asset(
+                                          AppImages.laptop,
+                                          width: 215.w,
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.topLeft,
+                                        ),
+                                        SizedBox(height: 5.h),
+                                        RichText(
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text:
+                                                'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
+                                                style: TextStyle(
+                                                  color: secondaryColor,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 11.sp,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: 'Read more',
+                                                style: TextStyle(
+                                                  color: Color.fromRGBO(
+                                                      12, 192, 223, 1),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11.sp,
+                                                ),
+                                                recognizer:
+                                                TapGestureRecognizer()
                                                   ..onTap = () {
-                                                    Get.to(() => ArticleDetail());
+                                                    Get.to(() =>
+                                                        ArticleDetail(title: 'Cutting-Edge Medical Device Innovations',image: AppImages.laptop,));
+                                                  },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 10.h),
+              // * Cutting-Edge Medical Device Innovations
+              Container(
+                decoration: BoxDecoration(
+                  color: container,
+                  borderRadius: BorderRadius.circular(13.r),
+                  border: Border.all(color: Darkcontainer, width: 1),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      left: 18.0.w, top: 16.h, right: 18.w, bottom: 10.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CustomText(
+                            text: 'Cutting-Edge Medical\nDevice Innovations',
+                            textColor: buttonColor,
+                            fontWeight: FontWeight.w600,
+                            fontsize: 17.sp,
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: CustomText(
+                              text: 'See more',
+                              textColor: buttonColor2,
+                              fontWeight: FontWeight.w600,
+                              fontsize: 15.sp,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 14.h),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => ArticleDetail(title: 'Cutting-Edge Medical\nDevice Innovations',image: 'assets/images/m2.jpg',));
+                              },
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        left: 12.w, top: 9.h, bottom: 10.h),
+                                    width: 249.w,
+                                    decoration: BoxDecoration(
+                                      color: container,
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/Rectangle 22968.png'),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.r),
+                                      border: Border.all(
+                                          color: Colors.black, width: 0.5),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        CustomText(
+                                          text:
+                                          'The latest advancements, designs, and technologies in medical devices across various fields.',
+                                          textColor: secondaryColor,
+                                          fontWeight: FontWeight.w600,
+                                          fontsize: 14.sp,
+                                        ),
+                                        SizedBox(height: 8.h),
+                                        Image.asset(
+                                         'assets/images/m2.jpg',
+                                          height: 133.h,
+                                          width: 215.w,
+
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.topLeft,
+                                        ),
+                                        SizedBox(height: 5.h),
+                                        RichText(
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text:
+                                                'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
+                                                style: TextStyle(
+                                                  color: secondaryColor,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 11.sp,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: 'Read more',
+                                                style: TextStyle(
+                                                  color: Color.fromRGBO(
+                                                      12, 192, 223, 1),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11.sp,
+                                                ),
+                                                recognizer:
+                                                TapGestureRecognizer()
+                                                  ..onTap = () {
+                                                    Get.to(() =>
+                                                        ArticleDetail(title: 'Cutting-Edge Medical Device Innovations',image:    'assets/images/m2.jpg',));
+                                                  },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+                            ),
+
+                            SizedBox(width: 10.w),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => ArticleDetail(title: 'Cutting-Edge Medical\nDevice Innovations',image: 'assets/images/m2.jpg',));
+                              },
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        left: 12.w, top: 9.h, bottom: 10.h),
+                                    width: 249.w,
+                                    decoration: BoxDecoration(
+                                      color: container,
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/Rectangle 22968.png'),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.r),
+                                      border: Border.all(
+                                          color: Colors.black, width: 0.5),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        CustomText(
+                                          text:
+                                          'The latest advancements, designs, and technologies in medical devices across various fields.',
+                                          textColor: secondaryColor,
+                                          fontWeight: FontWeight.w600,
+                                          fontsize: 14.sp,
+                                        ),
+                                        SizedBox(height: 8.h),
+                                        Image.asset(
+                                          'assets/images/m2.jpg',
+                                          height: 133.h,
+                                          width: 215.w,
+
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.topLeft,
+                                        ),
+                                        SizedBox(height: 5.h),
+                                        RichText(
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text:
+                                                'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
+                                                style: TextStyle(
+                                                  color: secondaryColor,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 11.sp,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: 'Read more',
+                                                style: TextStyle(
+                                                  color: Color.fromRGBO(
+                                                      12, 192, 223, 1),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11.sp,
+                                                ),
+                                                recognizer:
+                                                TapGestureRecognizer()
+                                                  ..onTap = () {
+                                                    Get.to(() =>
+                                                        ArticleDetail(title: 'Cutting-Edge Medical Device Innovations',image:    'assets/images/m2.jpg',));
+                                                  },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+                            ),
+
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 10.h),
+              // ! Revolutionary MED-Tech Breakthrough
+              Container(
+                decoration: BoxDecoration(
+                  color: container,
+                  borderRadius: BorderRadius.circular(13.r),
+                  border: Border.all(color: Darkcontainer, width: 1),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      left: 18.0.w, top: 16.h, right: 18.w, bottom: 10.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CustomText(
+                            text: 'Revolutionary MED-Tech\nBreakthrough',
+                            textColor: buttonColor,
+                            fontWeight: FontWeight.w600,
+                            fontsize: 17.sp,
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: CustomText(
+                              text: 'See more',
+                              textColor: buttonColor2,
+                              fontWeight: FontWeight.w600,
+                              fontsize: 15.sp,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 14.h),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => ArticleDetail(title: 'Revolutionary MED-Tech Breakthroughs', image: 'assets/images/m3.jpg',));
+                              },
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        left: 12.w, top: 9.h, bottom: 10.h),
+                                    width: 249.w,
+                                    decoration: BoxDecoration(
+                                      color: container,
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/Rectangle 22968.png'),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.r),
+                                      border: Border.all(
+                                          color: Colors.black, width: 0.5),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        CustomText(
+                                          text:
+                                          'Cutting-edge technologies that have the potential to reshape the medical and healthcare landscape.',
+                                          textColor: secondaryColor,
+                                          fontWeight: FontWeight.w600,
+                                          fontsize: 14.sp,
+                                        ),
+                                        SizedBox(height: 8.h),
+                                        Image.asset(
+                                          'assets/images/m3.jpg',
+                                          height: 133.h,
+                                          width: 215.w,
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.topLeft,
+                                        ),
+                                        SizedBox(height: 5.h),
+                                        RichText(
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text:
+                                                'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
+                                                style: TextStyle(
+                                                  color: secondaryColor,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 11.sp,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: 'Read more',
+                                                style: TextStyle(
+                                                  color: Color.fromRGBO(
+                                                      12, 192, 223, 1),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11.sp,
+                                                ),
+                                                recognizer:
+                                                TapGestureRecognizer()
+                                                  ..onTap = () {
+                                                    Get.to(() => ArticleDetail(title: 'Revolutionary MED-Tech Breakthroughs', image: '  assets/images/m3.jpg',));
+
                                                   },
                                               ),
                                             ],
@@ -410,34 +827,40 @@ class HomeScreen extends StatelessWidget {
                             SizedBox(width: 10.w),
                             GestureDetector(
                               onTap: () {
-                                Get.to(() => ArticleDetail());
+                                Get.to(() => ArticleDetail(title: 'Revolutionary MED-Tech Breakthroughs', image: 'assets/images/m3.jpg',));
                               },
                               child: Stack(
                                 children: [
                                   Container(
-                                    padding: EdgeInsets.only(left: 12.w, top: 9.h,bottom: 10.h),
+                                    padding: EdgeInsets.only(
+                                        left: 12.w, top: 9.h, bottom: 10.h),
                                     width: 249.w,
                                     decoration: BoxDecoration(
                                       color: container,
                                       image: DecorationImage(
-                                        image: AssetImage('assets/images/Rectangle 22968.png'),
+                                        image: AssetImage(
+                                            'assets/images/Rectangle 22968.png'),
                                         fit: BoxFit.cover,
                                       ),
                                       borderRadius: BorderRadius.circular(8.r),
-                                      border: Border.all(color: Colors.black, width: 0.5),
+                                      border: Border.all(
+                                          color: Colors.black, width: 0.5),
                                     ),
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
                                       children: [
                                         CustomText(
-                                          text: 'Breakthrough in Wearable Cardiac Monitors',
-                                          textColor: Colors.white,
+                                          text:
+                                          'Cutting-edge technologies that have the potential to reshape the medical and healthcare landscape.',
+                                          textColor: secondaryColor,
                                           fontWeight: FontWeight.w600,
                                           fontsize: 14.sp,
                                         ),
                                         SizedBox(height: 8.h),
                                         Image.asset(
-                                          AppImages.laptop,
+                                          'assets/images/m3.jpg',
+                                          height: 133.h,
                                           width: 215.w,
                                           fit: BoxFit.cover,
                                           alignment: Alignment.topLeft,
@@ -447,9 +870,10 @@ class HomeScreen extends StatelessWidget {
                                           text: TextSpan(
                                             children: [
                                               TextSpan(
-                                                text: 'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
+                                                text:
+                                                'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
                                                 style: TextStyle(
-                                                  color: Colors.white,
+                                                  color: secondaryColor,
                                                   fontWeight: FontWeight.w400,
                                                   fontSize: 11.sp,
                                                 ),
@@ -457,13 +881,619 @@ class HomeScreen extends StatelessWidget {
                                               TextSpan(
                                                 text: 'Read more',
                                                 style: TextStyle(
-                                                  color: Color.fromRGBO(12, 192, 223, 1),
+                                                  color: Color.fromRGBO(
+                                                      12, 192, 223, 1),
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 11.sp,
                                                 ),
-                                                recognizer: TapGestureRecognizer()
+                                                recognizer:
+                                                TapGestureRecognizer()
                                                   ..onTap = () {
-                                                    Get.to(() => ArticleDetail());
+                                                    Get.to(() => ArticleDetail(title: 'Revolutionary MED-Tech Breakthroughs', image: '  assets/images/m3.jpg',));
+
+                                                  },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 10.h),
+              // * Regulatory & Compliance Spotlight
+              Container(
+                decoration: BoxDecoration(
+                  color: container,
+                  borderRadius: BorderRadius.circular(13.r),
+                  border: Border.all(color: Darkcontainer, width: 1),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      left: 18.0.w, top: 16.h, right: 18.w, bottom: 10.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CustomText(
+                            text: 'Regulatory & Compliance\nSpotlight',
+                            textColor: buttonColor,
+                            fontWeight: FontWeight.w600,
+                            fontsize: 17.sp,
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: CustomText(
+                              text: 'See more',
+                              textColor: buttonColor2,
+                              fontWeight: FontWeight.w600,
+                              fontsize: 15.sp,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 14.h),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => ArticleDetail(title: 'Regulatory & Compliance\nSpotlight', image:   'assets/images/m4.jpg',));
+                              },
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        left: 12.w, top: 9.h, bottom: 10.h),
+                                    width: 249.w,
+                                    decoration: BoxDecoration(
+                                      color: container,
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/Rectangle 22968.png'),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.r),
+                                      border: Border.all(
+                                          color: Colors.black, width: 0.5),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        CustomText(
+                                          text:
+                                          'The latest regulatory changes, approvals, and compliance requirements',
+                                          textColor: secondaryColor,
+                                          fontWeight: FontWeight.w600,
+                                          fontsize: 14.sp,
+                                        ),
+                                        SizedBox(height: 8.h),
+                                        Image.asset(
+                                          'assets/images/m4.jpg',
+                                          height: 133.h,
+                                          width: 215.w,
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.topLeft,
+                                        ),
+                                        SizedBox(height: 5.h),
+                                        RichText(
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text:
+                                                'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
+                                                style: TextStyle(
+                                                  color: secondaryColor,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 11.sp,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: 'Read more',
+                                                style: TextStyle(
+                                                  color: Color.fromRGBO(
+                                                      12, 192, 223, 1),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11.sp,
+                                                ),
+                                                recognizer:
+                                                TapGestureRecognizer()
+                                                  ..onTap = () {
+                                                    Get.to(() => ArticleDetail(title: 'Regulatory & Compliance\nSpotlight', image:   'assets/images/m4.jpg',));
+
+                                                  },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 10.w),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => ArticleDetail(title: 'Regulatory & Compliance\nSpotlight', image:   'assets/images/m4.jpg',));
+                              },
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        left: 12.w, top: 9.h, bottom: 10.h),
+                                    width: 249.w,
+                                    decoration: BoxDecoration(
+                                      color: container,
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/Rectangle 22968.png'),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.r),
+                                      border: Border.all(
+                                          color: Colors.black, width: 0.5),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        CustomText(
+                                          text:
+                                          'The latest regulatory changes, approvals, and compliance requirements',
+                                          textColor: secondaryColor,
+                                          fontWeight: FontWeight.w600,
+                                          fontsize: 14.sp,
+                                        ),
+                                        SizedBox(height: 8.h),
+                                        Image.asset(
+                                          'assets/images/m4.jpg',
+                                          height: 133.h,
+                                          width: 215.w,
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.topLeft,
+                                        ),
+                                        SizedBox(height: 5.h),
+                                        RichText(
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text:
+                                                'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
+                                                style: TextStyle(
+                                                  color: secondaryColor,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 11.sp,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: 'Read more',
+                                                style: TextStyle(
+                                                  color: Color.fromRGBO(
+                                                      12, 192, 223, 1),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11.sp,
+                                                ),
+                                                recognizer:
+                                                TapGestureRecognizer()
+                                                  ..onTap = () {
+                                                    Get.to(() => ArticleDetail(title: 'Regulatory & Compliance\nSpotlight', image:   'assets/images/m4.jpg',));
+
+                                                  },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 10.h),
+              // ! Pioneering Clinical Research & Trials
+              Container(
+                decoration: BoxDecoration(
+                  color: container,
+                  borderRadius: BorderRadius.circular(13.r),
+                  border: Border.all(color: Darkcontainer, width: 1),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      left: 18.0.w, top: 16.h, right: 18.w, bottom: 10.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CustomText(
+                            text: 'Pioneering Clinical\nResearch & Trials',
+                            textColor: buttonColor,
+                            fontWeight: FontWeight.w600,
+                            fontsize: 17.sp,
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: CustomText(
+                              text: 'See more',
+                              textColor: buttonColor2,
+                              fontWeight: FontWeight.w600,
+                              fontsize: 15.sp,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 14.h),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => ArticleDetail(title: 'Pioneering Clinical\nResearch & Trials',image:'assets/images/m5.jpg' ,));
+                              },
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        left: 12.w, top: 9.h, bottom: 10.h),
+                                    width: 249.w,
+                                    decoration: BoxDecoration(
+                                      color: container,
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/Rectangle 22968.png'),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.r),
+                                      border: Border.all(
+                                          color: Colors.black, width: 0.5),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        CustomText(
+                                          text:
+                                          'The latest research findings, clinical  trials, and experimental innovations.',
+                                          textColor: secondaryColor,
+                                          fontWeight: FontWeight.w600,
+                                          fontsize: 14.sp,
+                                        ),
+                                        SizedBox(height: 8.h),
+                                        Image.asset(
+                                          'assets/images/m5.jpg',
+                                          height: 133.h,
+                                          width: 215.w,
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.topLeft,
+                                        ),
+                                        SizedBox(height: 5.h),
+                                        RichText(
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text:
+                                                'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
+                                                style: TextStyle(
+                                                  color: secondaryColor,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 11.sp,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: 'Read more',
+                                                style: TextStyle(
+                                                  color: Color.fromRGBO(
+                                                      12, 192, 223, 1),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11.sp,
+                                                ),
+                                                recognizer:
+                                                TapGestureRecognizer()
+                                                  ..onTap = () {
+                                                    Get.to(() => ArticleDetail(title: 'Pioneering Clinical\nResearch & Trials',image:'assets/images/m5.jpg' ,));
+
+                                                  },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 10.w),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => ArticleDetail(title: 'Pioneering Clinical\nResearch & Trials',image:'assets/images/m5.jpg' ,));
+                              },
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        left: 12.w, top: 9.h, bottom: 10.h),
+                                    width: 249.w,
+                                    decoration: BoxDecoration(
+                                      color: container,
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/Rectangle 22968.png'),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.r),
+                                      border: Border.all(
+                                          color: Colors.black, width: 0.5),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        CustomText(
+                                          text:
+                                          'The latest research findings, clinical  trials, and experimental innovations.',
+                                          textColor: secondaryColor,
+                                          fontWeight: FontWeight.w600,
+                                          fontsize: 14.sp,
+                                        ),
+                                        SizedBox(height: 8.h),
+                                        Image.asset(
+                                          'assets/images/m5.jpg',
+                                          height: 133.h,
+                                          width: 215.w,
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.topLeft,
+                                        ),
+                                        SizedBox(height: 5.h),
+                                        RichText(
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text:
+                                                'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
+                                                style: TextStyle(
+                                                  color: secondaryColor,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 11.sp,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: 'Read more',
+                                                style: TextStyle(
+                                                  color: Color.fromRGBO(
+                                                      12, 192, 223, 1),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11.sp,
+                                                ),
+                                                recognizer:
+                                                TapGestureRecognizer()
+                                                  ..onTap = () {
+                                                    Get.to(() => ArticleDetail(title: 'Pioneering Clinical\nResearch & Trials',image:'assets/images/m5.jpg' ,));
+
+                                                  },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              // * Next-Gen Digital Health & A
+              SizedBox(height: 10.h),
+              Container(
+                decoration: BoxDecoration(
+                  color: container,
+                  borderRadius: BorderRadius.circular(13.r),
+                  border: Border.all(color: Darkcontainer, width: 1),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      left: 18.0.w, top: 16.h, right: 18.w, bottom: 10.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CustomText(
+                            text: 'Next-Gen Digital\nHealth & AI',
+                            textColor: buttonColor,
+                            fontWeight: FontWeight.w600,
+                            fontsize: 17.sp,
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: CustomText(
+                              text: 'See more',
+                              textColor: buttonColor2,
+                              fontWeight: FontWeight.w600,
+                              fontsize: 15.sp,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 14.h),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => ArticleDetail(title: 'Next-Gen Digital\nHealth & AI', image:  'assets/images/m6.jpeg',));
+                              },
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        left: 12.w, top: 9.h, bottom: 10.h),
+                                    width: 249.w,
+                                    decoration: BoxDecoration(
+                                      color: container,
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/Rectangle 22968.png'),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.r),
+                                      border: Border.all(
+                                          color: Colors.black, width: 0.5),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        CustomText(
+                                          text:
+                                          'Developments in digital health,AI and telemedicine.',
+                                          textColor: secondaryColor,
+                                          fontWeight: FontWeight.w600,
+                                          fontsize: 14.sp,
+                                        ),
+                                        SizedBox(height: 8.h),
+                                        Image.asset(
+                                          'assets/images/m6.jpeg',
+                                          height: 133.h,
+                                          width: 215.w,
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.topLeft,
+                                        ),
+                                        SizedBox(height: 5.h),
+                                        RichText(
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text:
+                                                'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
+                                                style: TextStyle(
+                                                  color: secondaryColor,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 11.sp,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: 'Read more',
+                                                style: TextStyle(
+                                                  color: Color.fromRGBO(
+                                                      12, 192, 223, 1),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11.sp,
+                                                ),
+                                                recognizer:
+                                                TapGestureRecognizer()
+                                                  ..onTap = () {
+                                                    Get.to(() => ArticleDetail(title: 'Next-Gen Digital\nHealth & AI', image:  'assets/images/m6.jpeg',));
+
+                                                  },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 10.w),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(() => ArticleDetail(title: 'Next-Gen Digital\nHealth & AI', image:  'assets/images/m6.jpeg',));
+                              },
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        left: 12.w, top: 9.h, bottom: 10.h),
+                                    width: 249.w,
+                                    decoration: BoxDecoration(
+                                      color: container,
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/Rectangle 22968.png'),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.r),
+                                      border: Border.all(
+                                          color: Colors.black, width: 0.5),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        CustomText(
+                                          text:
+                                          'Developments in digital health,AI and telemedicine.',
+                                          textColor: secondaryColor,
+                                          fontWeight: FontWeight.w600,
+                                          fontsize: 14.sp,
+                                        ),
+                                        SizedBox(height: 8.h),
+                                        Image.asset(
+                                          'assets/images/m6.jpeg',
+                                          height: 133.h,
+                                          width: 215.w,
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.topLeft,
+                                        ),
+                                        SizedBox(height: 5.h),
+                                        RichText(
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text:
+                                                'Discover the latest advancements in wearable cardiac monitors, including new features for continuous heart monitoring, improved accuracy, and real-time data...',
+                                                style: TextStyle(
+                                                  color: secondaryColor,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 11.sp,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: 'Read more',
+                                                style: TextStyle(
+                                                  color: Color.fromRGBO(
+                                                      12, 192, 223, 1),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11.sp,
+                                                ),
+                                                recognizer:
+                                                TapGestureRecognizer()
+                                                  ..onTap = () {
+                                                    Get.to(() => ArticleDetail(title: 'Next-Gen Digital\nHealth & AI', image:  'assets/images/m6.jpeg',));
+
                                                   },
                                               ),
                                             ],

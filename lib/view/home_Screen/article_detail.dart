@@ -6,8 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class ArticleDetail extends StatelessWidget {
-  const ArticleDetail({super.key});
+  final String title;
+  final String image;
 
+  ArticleDetail({required this.title, required this.image});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +24,7 @@ class ArticleDetail extends StatelessWidget {
                 children: [
                   SizedBox(
                       width: double.infinity,
-                      child: Image.asset(AppImages.laptop)),
+                      child: Image.asset(image)),
                   Positioned(
                       top: 40,
                       left: 10,
@@ -36,7 +38,7 @@ class ArticleDetail extends StatelessWidget {
             Padding(
               padding:  EdgeInsets.symmetric(horizontal: 16.0.w),
               child: CustomText(
-                text: 'Breakthrough in Wearable Cardiac Monitors',
+                text: title,
                 fontsize: 22.sp,
                 fontWeight: FontWeight.w600,
                 textColor: buttonColor2,

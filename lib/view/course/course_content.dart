@@ -65,7 +65,7 @@ class _CourseContentState extends State<CourseContent> {
                   CustomText(
                     text:
                        widget.title,
-                    textColor: Colors.white,
+                    textColor: whiteColor,
                     fontWeight: FontWeight.w600,
                     fontsize: 22.sp,
                   ),
@@ -99,7 +99,7 @@ class _CourseContentState extends State<CourseContent> {
                                 child: CustomText(
                                   text: 'Overview',
                                   fontsize: 12.sp,
-                                  textColor: Colors.white,
+                                  textColor: whiteColor,
                                   fontWeight: _selectedIndex == 0
                                       ? FontWeight.bold
                                       : FontWeight.normal,
@@ -128,7 +128,7 @@ class _CourseContentState extends State<CourseContent> {
                                 child: CustomText(
                                   text: 'Chapters',
                                   fontsize: 13.sp,
-                                  textColor: Colors.white,
+                                  textColor: whiteColor,
                                   fontWeight: _selectedIndex == 1
                                       ? FontWeight.bold
                                       : FontWeight.normal,
@@ -157,7 +157,7 @@ class _CourseContentState extends State<CourseContent> {
                                 child: CustomText(
                                   text: 'Quiz',
                                   fontsize: 13.sp,
-                                  textColor: Colors.white,
+                                  textColor: whiteColor,
                                   fontWeight: _selectedIndex == 2
                                       ? FontWeight.bold
                                       : FontWeight.normal,
@@ -185,7 +185,7 @@ class _CourseContentState extends State<CourseContent> {
                                 child: CustomText(
                                   text: 'Resources',
                                   fontsize: 13.sp,
-                                  textColor: Colors.white,
+                                  textColor: whiteColor,
                                   fontWeight: _selectedIndex == 3
                                       ? FontWeight.bold
                                       : FontWeight.normal,
@@ -216,7 +216,7 @@ class _CourseContentState extends State<CourseContent> {
                                 '‘Master Digital Product Design: UX Research & UI Design’. Created especially for budding UX/UI designers, '
                                 'this immersive program ',
                             fontWeight: FontWeight.w500,
-                            textColor: Colors.white,
+                            textColor: whiteColor,
                           ),
                           SizedBox(height: 5.h),
 
@@ -226,7 +226,7 @@ class _CourseContentState extends State<CourseContent> {
                               text: 'Key points',
                               fontsize: 18.sp,
                               fontWeight: FontWeight.bold,
-                              textColor: Colors.white),
+                              textColor: whiteColor),
                           SizedBox(height: 15.17.h),
 
                           // Key Points List with aligned items
@@ -236,7 +236,7 @@ class _CourseContentState extends State<CourseContent> {
                             leading: Icon(Icons.check_circle, color: Colors.cyan),
                             title: CustomText(
                               text: 'Critical Thinking',
-                              textColor: Colors.white,
+                              textColor: whiteColor,
                               fontWeight: FontWeight.w500,
                             ),
                             contentPadding: EdgeInsets
@@ -250,7 +250,7 @@ class _CourseContentState extends State<CourseContent> {
                             leading: Icon(Icons.check_circle, color: Colors.cyan),
                             title: CustomText(
                               text: 'User Experience Research',
-                              textColor: Colors.white,
+                              textColor: whiteColor,
                               fontWeight: FontWeight.w500,
                             ),
                             contentPadding: EdgeInsets.zero,
@@ -262,7 +262,7 @@ class _CourseContentState extends State<CourseContent> {
                             leading: Icon(Icons.check_circle, color: Colors.cyan),
                             title: CustomText(
                               text: 'User Interface Design',
-                              textColor: Colors.white,
+                              textColor: whiteColor,
                               fontWeight: FontWeight.w500,
                             ),
                             contentPadding: EdgeInsets.zero,
@@ -274,7 +274,7 @@ class _CourseContentState extends State<CourseContent> {
                             leading: Icon(Icons.check_circle, color: Colors.cyan),
                             title: CustomText(
                               text: 'Usability Testing',
-                              textColor: Colors.white,
+                              textColor: whiteColor,
                               fontWeight: FontWeight.w500,
                             ),
                             contentPadding: EdgeInsets.zero,
@@ -340,7 +340,7 @@ class _CourseContentState extends State<CourseContent> {
                                             children: [
                                               Image.asset('assets/images/sbook.png',height: 17.h,),
                                               SizedBox(width: 10.h,),
-                                              CustomText(text: 'Overview', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+                                              CustomText(text: 'Overview', textColor:whiteColor, fontWeight: FontWeight.w600,fontsize: 11.sp,),
 
 
                                             ],
@@ -354,7 +354,7 @@ class _CourseContentState extends State<CourseContent> {
                                           children: [
                                             Image.asset('assets/images/sbook.png',height: 17.h,),
                                             SizedBox(width: 10.h,),
-                                            CustomText(text: 'Hypertension', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+                                            CustomText(text: 'Hypertension', textColor:whiteColor, fontWeight: FontWeight.w600,fontsize: 11.sp,),
                                           ],
                                         ),
                                       ),
@@ -365,7 +365,7 @@ class _CourseContentState extends State<CourseContent> {
                                           children: [
                                             Image.asset('assets/images/sbook.png',height: 17.h,),
                                             SizedBox(width: 10.h,),
-                                            CustomText(text: 'Wrong Rules', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+                                            CustomText(text: 'Wrong Rules', textColor:whiteColor, fontWeight: FontWeight.w600,fontsize: 11.sp,),
 
 
                                           ],
@@ -378,7 +378,7 @@ class _CourseContentState extends State<CourseContent> {
                                           children: [
                                             Image.asset('assets/images/sbook.png',height: 17.h,),
                                             SizedBox(width: 10.h,),
-                                            CustomText(text: 'Summary', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+                                            CustomText(text: 'Summary', textColor:whiteColor, fontWeight: FontWeight.w600,fontsize: 11.sp,),
 
 
                                           ],
@@ -389,7 +389,7 @@ class _CourseContentState extends State<CourseContent> {
                                         children: [
                                           Image.asset('assets/images/sbook.png',height: 17.h,),
                                           SizedBox(width: 10.h,),
-                                          CustomText(text: 'Quiz', textColor:Colors.white, fontWeight: FontWeight.w600,fontsize: 11.sp,),
+                                          CustomText(text: 'Quiz', textColor:whiteColor, fontWeight: FontWeight.w600,fontsize: 11.sp,),
 
 
                                         ],
@@ -403,7 +403,7 @@ class _CourseContentState extends State<CourseContent> {
                                       children: [
                                       Row(
                                         children: [
-                                          Text('03:23',style: TextStyle(color: Colors.white,fontSize: 11.sp),
+                                          Text('03:23',style: TextStyle(color: whiteColor,fontSize: 11.sp),
                                          ),
                                           SizedBox(width: 10.h,),
                                           Image.asset('assets/images/check.png',height: 13.h,)
@@ -412,16 +412,16 @@ class _CourseContentState extends State<CourseContent> {
                                         SizedBox(height: 10.h,),
                                         Row(
                                           children: [
-                                            Text('03:23',style: TextStyle(color: Colors.white,fontSize: 11.sp),
+                                            Text('03:23',style: TextStyle(color: whiteColor,fontSize: 11.sp),
                                             ),
                                             SizedBox(width: 10.h,),
                                             Image.asset('assets/images/check.png',height: 13.h,)
                                           ],
                                         ),
                                         SizedBox(height: 10.h,),
-                                      Text('03:23',style: TextStyle(color: Colors.white,fontSize: 11.sp),),
+                                      Text('03:23',style: TextStyle(color: whiteColor,fontSize: 11.sp),),
                                         SizedBox(height: 10.h,),
-                                      Text('03:23',style: TextStyle(color: Colors.white,fontSize: 11.sp),),
+                                      Text('03:23',style: TextStyle(color: whiteColor,fontSize: 11.sp),),
                                         SizedBox(height: 10.h,),
                                       GestureDetector(
                                           onTap: (){

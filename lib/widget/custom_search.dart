@@ -33,7 +33,7 @@ class CustomSearch extends StatelessWidget {
             ),
             hintText: 'Search for anything',
             hintStyle: TextStyle(
-              color: whiteColor,
+              color: secondaryColor,
               fontSize: 14.sp,
             ),
             border: OutlineInputBorder(

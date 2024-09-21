@@ -96,13 +96,13 @@ class CoursesScreen extends StatelessWidget {
                               width: 237.w,
                               height: 42.h,
                               child: TextField(
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(color: whiteColor),
                                 focusNode: FocusNode(),
                                 // textAlign: TextAlign.start,
                                 decoration: InputDecoration(
                                   suffixIcon: Icon(
                                     Icons.mic_rounded,
-                                    color: Colors.white,
+                                    color: whiteColor,
                                   ),
                                   fillColor: Color.fromRGBO(0, 26, 46, 1),
                                   filled: true,
@@ -140,14 +140,14 @@ class CoursesScreen extends StatelessWidget {
                         children: [
                           Icon(
                             Icons.tune,
-                            color: Colors.white,
+                            color: whiteColor,
                             size: 13.sp,
                           ),
                           SizedBox(width: 10.w),
                           Text(
                             "Filter",
                             style: TextStyle(
-                                color: Colors.white,
+                                color: whiteColor,
                                 fontSize: 11.sp,
                                 fontWeight: FontWeight.w500),
                           )
@@ -257,7 +257,7 @@ class CourseCard extends StatelessWidget {
                       text: name,
                       fontsize: 11.sp,
                       fontWeight: FontWeight.bold,
-                      textColor: Colors.white,
+                      textColor: whiteColor,
                     ),
                   ),
                 ],
