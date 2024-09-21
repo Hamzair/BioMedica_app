@@ -32,18 +32,18 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
     Center(
         child: Text(
       'No Cardiology Devices ',
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: whiteColor),
     )),
     Neurology(),
     Center(
         child: Text(
       'No Orthopedics Devices',
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: whiteColor),
     )),
     Center(
         child: Text(
       'No Radiology Devices',
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: whiteColor),
     )),
   ];
 
@@ -110,13 +110,13 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
                               width: 237.w,
                               height: 42.h,
                               child: TextField(
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(color: whiteColor),
                                 focusNode: FocusNode(),
                                 // textAlign: TextAlign.start,
                                 decoration: InputDecoration(
                                   suffixIcon: Icon(
                                     Icons.mic_rounded,
-                                    color: Colors.white,
+                                    color: whiteColor,
                                   ),
                                   fillColor: Color.fromRGBO(0, 26, 46, 1),
                                   filled: true,
@@ -154,14 +154,14 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
                         children: [
                           Icon(
                             Icons.tune,
-                            color: Colors.white,
+                            color: whiteColor,
                             size: 13.sp,
                           ),
                           SizedBox(width: 10.w),
                           Text(
                             "Filter",
                             style: TextStyle(
-                                color: Colors.white,
+                                color: whiteColor,
                                 fontSize: 11.sp,
                                 fontWeight: FontWeight.w500),
                           )
@@ -235,7 +235,7 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
       child: Center(
         child: CustomText(
           text: title,
-          textColor: Colors.white, // White text color
+          textColor: whiteColor, // White text color
           fontWeight: FontWeight.bold,
           fontsize: 10.sp,
         ),
@@ -343,7 +343,7 @@ class Neurology extends StatelessWidget {
 
                                 Icons
                                     .bookmark_border,
-                                color: Colors.white,
+                                color: whiteColor,
                                 size: 17.sp, // Set the icon size
                               ),
                             ),
@@ -356,7 +356,7 @@ class Neurology extends StatelessWidget {
                   CustomText(
                     text: 'Defibrillator',
                     fontsize: 14.sp,
-                    textColor: Colors.white,
+                    textColor: whiteColor,
                     fontWeight: FontWeight.w600,
                   ),
                   SizedBox(height: 5.h),
@@ -366,7 +366,7 @@ class Neurology extends StatelessWidget {
                     textAlign: TextAlign.start,
                     fontWeight: FontWeight.w500,
                     fontsize: 10.sp,
-                    textColor: Colors.white,
+                    textColor: whiteColor,
                   ),
                   Spacer(),
                   SizedBox(
@@ -391,7 +391,7 @@ class Neurology extends StatelessWidget {
                       child: CustomText(
                         text: 'Explore',
                         fontsize: 15.sp,
-                        textColor: Colors.white,
+                        textColor: whiteColor,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -451,7 +451,7 @@ class Neurology extends StatelessWidget {
                                 // Your bookmark icon
                                 Icons
                                     .bookmark_border, // Replace with your desired icon
-                                color: Colors.white, // Set the icon color
+                                color: whiteColor, // Set the icon color
                                 size: 17.sp, // Set the icon size
                               ),
                             ),
@@ -464,7 +464,7 @@ class Neurology extends StatelessWidget {
                   CustomText(
                     text: 'Pacemaker',
                     fontsize: 14.sp,
-                    textColor: Colors.white,
+                    textColor: whiteColor,
                     fontWeight: FontWeight.w600,
                   ),
                   SizedBox(height: 5.h),
@@ -473,7 +473,7 @@ class Neurology extends StatelessWidget {
                     textAlign: TextAlign.start,
                     fontWeight: FontWeight.w500,
                     fontsize: 10.sp,
-                    textColor: Colors.white,
+                    textColor: whiteColor,
                   ),
                   Spacer(),
                   SizedBox(
@@ -498,7 +498,7 @@ class Neurology extends StatelessWidget {
                       child: CustomText(
                         text: 'Explore',
                         fontsize: 15.sp,
-                        textColor: Colors.white,
+                        textColor: whiteColor,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -558,7 +558,7 @@ class Neurology extends StatelessWidget {
                                 // Your bookmark icon
                                 Icons
                                     .bookmark_border, // Replace with your desired icon
-                                color: Colors.white, // Set the icon color
+                                color: whiteColor, // Set the icon color
                                 size: 17.sp, // Set the icon size
                               ),
                             ),
@@ -571,7 +571,7 @@ class Neurology extends StatelessWidget {
                   CustomText(
                     text: 'Stethoscope',
                     fontsize: 14.sp,
-                    textColor: Colors.white,
+                    textColor: whiteColor,
                     fontWeight: FontWeight.w600,
                   ),
                   SizedBox(height: 5.h),
@@ -581,7 +581,7 @@ class Neurology extends StatelessWidget {
                     textAlign: TextAlign.start,
                     fontWeight: FontWeight.w500,
                     fontsize: 10.sp,
-                    textColor: Colors.white,
+                    textColor: whiteColor,
                   ),
                   Spacer(),
                   SizedBox(
@@ -606,7 +606,7 @@ class Neurology extends StatelessWidget {
                       child: CustomText(
                         text: 'Explore',
                         fontsize: 15.sp,
-                        textColor: Colors.white,
+                        textColor: whiteColor,
                         fontWeight: FontWeight.w600,
                       ),
                     ),

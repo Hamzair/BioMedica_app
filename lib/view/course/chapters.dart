@@ -94,7 +94,7 @@ Navigator.pop(context);
                       CustomText(
                         text:
                             'Definition: Hypertension is a chronic medical condition where the blood pressure in the arteries is persistently elevated.',
-                        textColor: Colors.white,
+                        textColor: whiteColor,
                         fontsize: 16,
                         fontWeight: FontWeight.w600,
                       ),
@@ -103,7 +103,7 @@ Navigator.pop(context);
                       Text(
                         'Types:',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: whiteColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                         ),
@@ -113,7 +113,7 @@ Navigator.pop(context);
                         '• Primary (Essential) Hypertension: No identifiable cause, accounts for 90-95% of cases.\n'
                         '• Secondary Hypertension: Caused by an underlying condition (e.g., kidney disease, endocrine disorders).',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: whiteColor,
                           fontSize: 16,
                         ),
                       ),
@@ -122,7 +122,7 @@ Navigator.pop(context);
                       Text(
                         'Risk Factors:',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: whiteColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                         ),
@@ -131,7 +131,7 @@ Navigator.pop(context);
                       Text(
                         'Age, obesity, sedentary lifestyle, high salt intake, smoking, and genetic predisposition.',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: whiteColor,
                           fontSize: 16,
                         ),
                       ),
@@ -140,7 +140,7 @@ Navigator.pop(context);
                       Text(
                         'Symptoms:',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: whiteColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                         ),
@@ -149,7 +149,7 @@ Navigator.pop(context);
                       Text(
                         'Often asymptomatic, but severe cases can cause headaches, dizziness, blurred vision, and chest pain.',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: whiteColor,
                           fontSize: 16,
                         ),
                       ),
@@ -158,7 +158,7 @@ Navigator.pop(context);
                       Text(
                         'Complications:',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: whiteColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                         ),
@@ -167,7 +167,7 @@ Navigator.pop(context);
                       Text(
                         'If untreated, can lead to heart disease, stroke, kidney failure, and vision loss.',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: whiteColor,
                           fontSize: 16,
                         ),
                       ),
@@ -176,7 +176,7 @@ Navigator.pop(context);
                       Text(
                         'Management:',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: whiteColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                         ),
@@ -185,7 +185,7 @@ Navigator.pop(context);
                       Text(
                         'Lifestyle changes (diet, exercise), medications if needed.',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: whiteColor,
                           fontSize: 16,
                         ),
                       ),
@@ -213,7 +213,7 @@ Navigator.pop(context);
                   'Continue',
                   style: TextStyle(
                     fontSize: 18,
-                    color: Colors.white,
+                    color: whiteColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

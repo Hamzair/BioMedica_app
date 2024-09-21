@@ -106,7 +106,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                                   ),
                                   CustomText(
                                       text: 'Quiz me',
-                                      textColor: Colors.white,
+                                      textColor: whiteColor,
                                       fontsize: 11.sp,
                                       fontWeight: FontWeight.w500),
                                 ],
@@ -177,7 +177,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
       //                         ),
       //                         CustomText(
       //                             text: 'Quiz me',
-      //                             textColor: Colors.white,
+      //                             textColor: whiteColor,
       //                             fontWeight: FontWeight.w500),
       //                       ],
       //                     ),
@@ -252,7 +252,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                                 color: Color.fromRGBO(18, 26, 0, 0.25)),
                             child: Icon(
                               Icons.bookmark_border,
-                              color: Colors.white,
+                              color: whiteColor,
                               size: 17.sp, // Set the icon size
                             ),
                           ),
@@ -373,7 +373,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
               text: title,
               fontsize: 14.sp,
               textColor: _selectedIndex == index
-                  ? Colors.white
+                  ? whiteColor
                   : Color.fromRGBO(182, 182, 182, 1),
               fontWeight:
                   _selectedIndex == index ? FontWeight.w700 : FontWeight.w700,
@@ -422,7 +422,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
           CustomText(
             text:
                 'The stethoscope is a diagnostic device used by medical professionals to listen to the internal sounds of the body, including heartbeats, lung sounds, and blood flow.',
-            textColor: Colors.white,
+            textColor: whiteColor,
             fontWeight: FontWeight.w400,
             fontsize: 12.sp,
           ),
@@ -438,7 +438,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
           CustomText(
             text:
                 'The chest piece, placed on the patient’s chest or back, transmits body sounds to the diaphragm. These sounds travel through the tubing to the earpieces, allowing the physician to detect abnormalities in heart or lung functions.',
-            textColor: Colors.white,
+            textColor: whiteColor,
             fontWeight: FontWeight.w400,
             fontsize: 12.sp,
           ),
@@ -462,7 +462,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
           CustomText(
             text:
                 'The stethoscope is a diagnostic device used by medical professionals to listen to the internal sounds of the body, including heartbeats, lung sounds, and blood flow.',
-            textColor: Colors.white,
+            textColor: whiteColor,
             fontWeight: FontWeight.w400,
             fontsize: 12.sp,
           ),
@@ -519,7 +519,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
           Expanded(
             child: CustomText(
               text: text,
-              textColor: Colors.white,
+              textColor: whiteColor,
               fontsize: 12.sp,
               fontWeight: FontWeight.w400,
             ),
@@ -544,7 +544,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
           CustomText(
             text:
                 'Stethoscopes are commonly used in cardiology, pulmonology, and general medicine to assess heart, lung, and vascular health.',
-            textColor: Colors.white,
+            textColor: whiteColor,
             fontWeight: FontWeight.w400,
             fontsize: 12.sp,
           ),

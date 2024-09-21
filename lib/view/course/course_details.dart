@@ -53,7 +53,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
               child: CustomText(
                 text: 'Start Now',
                 fontsize: 18.sp,
-                textColor: Colors.white,
+                textColor: whiteColor,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -109,7 +109,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                   SizedBox(height: 8.h),
                   CustomText(
                     text: widget.title, // Use the passed title
-                    textColor: Colors.white,
+                    textColor: whiteColor,
                     fontWeight: FontWeight.w600,
                     fontsize: 17.sp,
                   ),
@@ -144,7 +144,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                 child: CustomText(
                                   text: 'About',
                                   fontsize: 13.sp,
-                                  textColor: Colors.white,
+                                  textColor: whiteColor,
                                   fontWeight: _selectedIndex == 0
                                       ? FontWeight.bold
                                       : FontWeight.normal,
@@ -173,7 +173,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                 child: CustomText(
                                   text: 'Chapters',
                                   fontsize: 13.sp,
-                                  textColor: Colors.white,
+                                  textColor: whiteColor,
                                   fontWeight: _selectedIndex == 1
                                       ? FontWeight.bold
                                       : FontWeight.normal,
@@ -201,7 +201,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                 '‘Master Digital Product Design: UX Research & UI Design’. Created especially for budding UX/UI designers, '
                                 'this immersive program invites you to explore the intricate art of crafting exceptional digital experiences....',
                             fontWeight: FontWeight.w500,
-                            textColor: Colors.white,
+                            textColor: whiteColor,
                           ),
                           SizedBox(height: 5.h),
                           Text(
@@ -213,7 +213,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                               text: 'Key points',
                               fontsize: 18.sp,
                               fontWeight: FontWeight.bold,
-                              textColor: Colors.white),
+                              textColor: whiteColor),
                           SizedBox(height: 15.17.h),
                           ListTile(
                             minTileHeight: 0,
@@ -222,7 +222,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                 color: Colors.cyan),
                             title: CustomText(
                               text: 'Critical Thinking',
-                              textColor: Colors.white,
+                              textColor: whiteColor,
                               fontWeight: FontWeight.w500,
                             ),
                             contentPadding: EdgeInsets.zero,
@@ -235,7 +235,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                 color: Colors.cyan),
                             title: CustomText(
                               text: 'User Experience Research',
-                              textColor: Colors.white,
+                              textColor: whiteColor,
                               fontWeight: FontWeight.w500,
                             ),
                             contentPadding: EdgeInsets.zero,
@@ -248,7 +248,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                 color: Colors.cyan),
                             title: CustomText(
                               text: 'User Interface Design',
-                              textColor: Colors.white,
+                              textColor: whiteColor,
                               fontWeight: FontWeight.w500,
                             ),
                             contentPadding: EdgeInsets.zero,
@@ -261,7 +261,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                 color: Colors.cyan),
                             title: CustomText(
                               text: 'Usability Testing',
-                              textColor: Colors.white,
+                              textColor: whiteColor,
                               fontWeight: FontWeight.w500,
                             ),
                             contentPadding: EdgeInsets.zero,
@@ -377,7 +377,7 @@ class _LessonCard extends StatelessWidget {
                   CustomText(
                     text: title,
                     fontsize: 12.sp,
-                    textColor: Colors.white,
+                    textColor: whiteColor,
                     fontWeight: FontWeight.bold,
                     textAlign: TextAlign.center, // Center the title text
                   ),
