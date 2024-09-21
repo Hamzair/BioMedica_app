@@ -2,7 +2,6 @@ import 'package:bio_medica/drawer%20items/progress.dart';
 import 'package:bio_medica/view/auth/login_view/login_view.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
-import 'package:bio_medica/view/home_Screen/home_screen.dart';
 import 'package:bio_medica/drawer%20items/privacy_policy.dart';
 import 'package:bio_medica/drawer%20items/subscription_screen.dart';
 import 'package:bio_medica/drawer%20items/technical_support_chat_screen.dart';
@@ -11,9 +10,8 @@ import 'package:bio_medica/drawer%20items/saveitems/saveForLater.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import '../widget/custom_home_item.dart';
-import '../widget/custom_route.dart';
+
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});

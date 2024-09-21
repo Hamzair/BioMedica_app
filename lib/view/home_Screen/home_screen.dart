@@ -353,11 +353,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 249.w,
                                     decoration: BoxDecoration(
                                       color: container,
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/Rectangle 22968.png'),
-                                        fit: BoxFit.cover,
-                                      ),
+
                                       borderRadius: BorderRadius.circular(8.r),
                                       border: Border.all(
                                           color: Colors.black, width: 0.5),
@@ -430,11 +426,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 249.w,
                                     decoration: BoxDecoration(
                                       color: container,
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/Rectangle 22968.png'),
-                                        fit: BoxFit.cover,
-                                      ),
+
                                       borderRadius: BorderRadius.circular(8.r),
                                       border: Border.all(
                                           color: Colors.black, width: 0.5),
@@ -552,11 +544,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 249.w,
                                     decoration: BoxDecoration(
                                       color: container,
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/Rectangle 22968.png'),
-                                        fit: BoxFit.cover,
-                                      ),
+
                                       borderRadius: BorderRadius.circular(8.r),
                                       border: Border.all(
                                           color: Colors.black, width: 0.5),
@@ -573,14 +561,17 @@ class HomeScreen extends StatelessWidget {
                                           fontsize: 14.sp,
                                         ),
                                         SizedBox(height: 8.h),
-                                        Image.asset(
-                                         'assets/images/m2.jpg',
-                                          height: 133.h,
-                                          width: 215.w,
-
-                                          fit: BoxFit.cover,
-                                          alignment: Alignment.topLeft,
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(8.0.r), // Adjust the value to your preference
+                                          child: Image.asset(
+                                            'assets/images/m2.jpg',
+                                            height: 133.h,
+                                            width: 215.w,
+                                            fit: BoxFit.cover,
+                                            alignment: Alignment.topLeft,
+                                          ),
                                         ),
+
                                         SizedBox(height: 5.h),
                                         RichText(
                                           text: TextSpan(
@@ -633,11 +624,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 249.w,
                                     decoration: BoxDecoration(
                                       color: container,
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/Rectangle 22968.png'),
-                                        fit: BoxFit.cover,
-                                      ),
+
                                       borderRadius: BorderRadius.circular(8.r),
                                       border: Border.all(
                                           color: Colors.black, width: 0.5),
@@ -654,13 +641,21 @@ class HomeScreen extends StatelessWidget {
                                           fontsize: 14.sp,
                                         ),
                                         SizedBox(height: 8.h),
-                                        Image.asset(
-                                          'assets/images/m2.jpg',
-                                          height: 133.h,
-                                          width: 215.w,
-
-                                          fit: BoxFit.cover,
-                                          alignment: Alignment.topLeft,
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(12.r)
+                                          ),
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(8.r),
+                                            child: Image.asset(
+                                              'assets/images/m2.jpg',
+                                              height: 133.h,
+                                              width: 215.w,
+                                            
+                                              fit: BoxFit.cover,
+                                              alignment: Alignment.topLeft,
+                                            ),
+                                          ),
                                         ),
                                         SizedBox(height: 5.h),
                                         RichText(
@@ -759,11 +754,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 249.w,
                                     decoration: BoxDecoration(
                                       color: container,
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/Rectangle 22968.png'),
-                                        fit: BoxFit.cover,
-                                      ),
+
                                       borderRadius: BorderRadius.circular(8.r),
                                       border: Border.all(
                                           color: Colors.black, width: 0.5),
@@ -774,18 +765,21 @@ class HomeScreen extends StatelessWidget {
                                       children: [
                                         CustomText(
                                           text:
-                                          'Cutting-edge technologies that have the potential to reshape the medical and healthcare landscape.',
+                                          'Cutting-edge technologies that\nhave the potential to reshape the medical and healthcare landscape.',
                                           textColor: secondaryColor,
                                           fontWeight: FontWeight.w600,
                                           fontsize: 14.sp,
                                         ),
                                         SizedBox(height: 8.h),
-                                        Image.asset(
-                                          'assets/images/m3.jpg',
-                                          height: 133.h,
-                                          width: 215.w,
-                                          fit: BoxFit.cover,
-                                          alignment: Alignment.topLeft,
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(8.r),
+                                          child: Image.asset(
+                                            'assets/images/m3.jpg',
+                                            height: 133.h,
+                                            width: 215.w,
+                                            fit: BoxFit.cover,
+                                            alignment: Alignment.topLeft,
+                                          ),
                                         ),
                                         SizedBox(height: 5.h),
                                         RichText(
@@ -837,11 +831,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 249.w,
                                     decoration: BoxDecoration(
                                       color: container,
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/Rectangle 22968.png'),
-                                        fit: BoxFit.cover,
-                                      ),
+
                                       borderRadius: BorderRadius.circular(8.r),
                                       border: Border.all(
                                           color: Colors.black, width: 0.5),
@@ -852,18 +842,21 @@ class HomeScreen extends StatelessWidget {
                                       children: [
                                         CustomText(
                                           text:
-                                          'Cutting-edge technologies that have the potential to reshape the medical and healthcare landscape.',
+                                          'Cutting-edge technologies that\nhave the potential to reshape the medical and healthcare landscape.',
                                           textColor: secondaryColor,
                                           fontWeight: FontWeight.w600,
                                           fontsize: 14.sp,
                                         ),
                                         SizedBox(height: 8.h),
-                                        Image.asset(
-                                          'assets/images/m3.jpg',
-                                          height: 133.h,
-                                          width: 215.w,
-                                          fit: BoxFit.cover,
-                                          alignment: Alignment.topLeft,
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(8.r),
+                                          child: Image.asset(
+                                            'assets/images/m3.jpg',
+                                            height: 133.h,
+                                            width: 215.w,
+                                            fit: BoxFit.cover,
+                                            alignment: Alignment.topLeft,
+                                          ),
                                         ),
                                         SizedBox(height: 5.h),
                                         RichText(
@@ -960,11 +953,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 249.w,
                                     decoration: BoxDecoration(
                                       color: container,
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/Rectangle 22968.png'),
-                                        fit: BoxFit.cover,
-                                      ),
+
                                       borderRadius: BorderRadius.circular(8.r),
                                       border: Border.all(
                                           color: Colors.black, width: 0.5),
@@ -981,12 +970,15 @@ class HomeScreen extends StatelessWidget {
                                           fontsize: 14.sp,
                                         ),
                                         SizedBox(height: 8.h),
-                                        Image.asset(
-                                          'assets/images/m4.jpg',
-                                          height: 133.h,
-                                          width: 215.w,
-                                          fit: BoxFit.cover,
-                                          alignment: Alignment.topLeft,
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(8.r),
+                                          child: Image.asset(
+                                            'assets/images/m4.jpg',
+                                            height: 133.h,
+                                            width: 215.w,
+                                            fit: BoxFit.cover,
+                                            alignment: Alignment.topLeft,
+                                          ),
                                         ),
                                         SizedBox(height: 5.h),
                                         RichText(
@@ -1038,11 +1030,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 249.w,
                                     decoration: BoxDecoration(
                                       color: container,
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/Rectangle 22968.png'),
-                                        fit: BoxFit.cover,
-                                      ),
+
                                       borderRadius: BorderRadius.circular(8.r),
                                       border: Border.all(
                                           color: Colors.black, width: 0.5),
@@ -1059,12 +1047,15 @@ class HomeScreen extends StatelessWidget {
                                           fontsize: 14.sp,
                                         ),
                                         SizedBox(height: 8.h),
-                                        Image.asset(
-                                          'assets/images/m4.jpg',
-                                          height: 133.h,
-                                          width: 215.w,
-                                          fit: BoxFit.cover,
-                                          alignment: Alignment.topLeft,
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(8.r),
+                                          child: Image.asset(
+                                            'assets/images/m4.jpg',
+                                            height: 133.h,
+                                            width: 215.w,
+                                            fit: BoxFit.cover,
+                                            alignment: Alignment.topLeft,
+                                          ),
                                         ),
                                         SizedBox(height: 5.h),
                                         RichText(
@@ -1161,11 +1152,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 249.w,
                                     decoration: BoxDecoration(
                                       color: container,
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/Rectangle 22968.png'),
-                                        fit: BoxFit.cover,
-                                      ),
+
                                       borderRadius: BorderRadius.circular(8.r),
                                       border: Border.all(
                                           color: Colors.black, width: 0.5),
@@ -1176,18 +1163,21 @@ class HomeScreen extends StatelessWidget {
                                       children: [
                                         CustomText(
                                           text:
-                                          'The latest research findings, clinical  trials, and experimental innovations.',
+                                          'The latest research findings,\nclinical  trials, and experimental innovations.',
                                           textColor: secondaryColor,
                                           fontWeight: FontWeight.w600,
                                           fontsize: 14.sp,
                                         ),
                                         SizedBox(height: 8.h),
-                                        Image.asset(
-                                          'assets/images/m5.jpg',
-                                          height: 133.h,
-                                          width: 215.w,
-                                          fit: BoxFit.cover,
-                                          alignment: Alignment.topLeft,
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(8.r),
+                                          child: Image.asset(
+                                            'assets/images/m5.jpg',
+                                            height: 133.h,
+                                            width: 215.w,
+                                            fit: BoxFit.cover,
+                                            alignment: Alignment.topLeft,
+                                          ),
                                         ),
                                         SizedBox(height: 5.h),
                                         RichText(
@@ -1239,11 +1229,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 249.w,
                                     decoration: BoxDecoration(
                                       color: container,
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/Rectangle 22968.png'),
-                                        fit: BoxFit.cover,
-                                      ),
+
                                       borderRadius: BorderRadius.circular(8.r),
                                       border: Border.all(
                                           color: Colors.black, width: 0.5),
@@ -1254,18 +1240,21 @@ class HomeScreen extends StatelessWidget {
                                       children: [
                                         CustomText(
                                           text:
-                                          'The latest research findings, clinical  trials, and experimental innovations.',
+                                          'The latest research findings,\nclinical trials, and experimental innovations.',
                                           textColor: secondaryColor,
                                           fontWeight: FontWeight.w600,
                                           fontsize: 14.sp,
                                         ),
                                         SizedBox(height: 8.h),
-                                        Image.asset(
-                                          'assets/images/m5.jpg',
-                                          height: 133.h,
-                                          width: 215.w,
-                                          fit: BoxFit.cover,
-                                          alignment: Alignment.topLeft,
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(8.r),
+                                          child: Image.asset(
+                                            'assets/images/m5.jpg',
+                                            height: 133.h,
+                                            width: 215.w,
+                                            fit: BoxFit.cover,
+                                            alignment: Alignment.topLeft,
+                                          ),
                                         ),
                                         SizedBox(height: 5.h),
                                         RichText(
@@ -1352,7 +1341,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                Get.to(() => ArticleDetail(title: 'Next-Gen Digital\nHealth & AI', image:  'assets/images/m6.jpeg',));
+                                Get.to(() => ArticleDetail(title: 'Next-Gen Digital\nHealth & AI', image:  'assets/images/m2.jpg',));
                               },
                               child: Stack(
                                 children: [
@@ -1362,11 +1351,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 249.w,
                                     decoration: BoxDecoration(
                                       color: container,
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/Rectangle 22968.png'),
-                                        fit: BoxFit.cover,
-                                      ),
+
                                       borderRadius: BorderRadius.circular(8.r),
                                       border: Border.all(
                                           color: Colors.black, width: 0.5),
@@ -1383,12 +1368,15 @@ class HomeScreen extends StatelessWidget {
                                           fontsize: 14.sp,
                                         ),
                                         SizedBox(height: 8.h),
-                                        Image.asset(
-                                          'assets/images/m6.jpeg',
-                                          height: 133.h,
-                                          width: 215.w,
-                                          fit: BoxFit.cover,
-                                          alignment: Alignment.topLeft,
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(8.r),
+                                          child: Image.asset(
+                                            'assets/images/m2.jpg',
+                                            height: 133.h,
+                                            width: 215.w,
+                                            fit: BoxFit.cover,
+                                            alignment: Alignment.topLeft,
+                                          ),
                                         ),
                                         SizedBox(height: 5.h),
                                         RichText(
@@ -1414,7 +1402,7 @@ class HomeScreen extends StatelessWidget {
                                                 recognizer:
                                                 TapGestureRecognizer()
                                                   ..onTap = () {
-                                                    Get.to(() => ArticleDetail(title: 'Next-Gen Digital\nHealth & AI', image:  'assets/images/m6.jpeg',));
+                                                    Get.to(() => ArticleDetail(title: 'Next-Gen Digital\nHealth & AI', image:  'assets/images/m2.jpg',));
 
                                                   },
                                               ),
@@ -1430,7 +1418,7 @@ class HomeScreen extends StatelessWidget {
                             SizedBox(width: 10.w),
                             GestureDetector(
                               onTap: () {
-                                Get.to(() => ArticleDetail(title: 'Next-Gen Digital\nHealth & AI', image:  'assets/images/m6.jpeg',));
+                                Get.to(() => ArticleDetail(title: 'Next-Gen Digital\nHealth & AI', image:  'assets/images/m2.jpg',));
                               },
                               child: Stack(
                                 children: [
@@ -1440,11 +1428,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 249.w,
                                     decoration: BoxDecoration(
                                       color: container,
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/Rectangle 22968.png'),
-                                        fit: BoxFit.cover,
-                                      ),
+
                                       borderRadius: BorderRadius.circular(8.r),
                                       border: Border.all(
                                           color: Colors.black, width: 0.5),
@@ -1461,12 +1445,15 @@ class HomeScreen extends StatelessWidget {
                                           fontsize: 14.sp,
                                         ),
                                         SizedBox(height: 8.h),
-                                        Image.asset(
-                                          'assets/images/m6.jpeg',
-                                          height: 133.h,
-                                          width: 215.w,
-                                          fit: BoxFit.cover,
-                                          alignment: Alignment.topLeft,
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(8.r),
+                                          child: Image.asset(
+                                            'assets/images/m2.jpg',
+                                            height: 133.h,
+                                            width: 215.w,
+                                            fit: BoxFit.cover,
+                                            alignment: Alignment.topLeft,
+                                          ),
                                         ),
                                         SizedBox(height: 5.h),
                                         RichText(
