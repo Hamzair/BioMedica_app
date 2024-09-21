@@ -115,7 +115,6 @@ class AppDrawer extends StatelessWidget {
                   onTap: () {
                     Get.to(() => ProgressScreen());
                     print('Home tapped');
-                    // You can navigate to another screen or execute any function
                   },
                 ),
                 CustomHomeItem(
@@ -128,7 +127,7 @@ class AppDrawer extends StatelessWidget {
                   onTap: () {
                     Get.to(() => TechnicalSupportChatScreen());
                     print('Online tapped');
-                    // You can navigate to another screen or execute any function
+
                   },
                 ),
                 CustomHomeItem(
@@ -141,7 +140,6 @@ class AppDrawer extends StatelessWidget {
                   onTap: () {
                     Get.to(() => PrivacyPolicy());
                     print('Home tapped');
-                    // You can navigate to another screen or execute any function
                   },
                 ),
                 SizedBox(
