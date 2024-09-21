@@ -60,7 +60,7 @@ class OnBoardingFour extends StatelessWidget {
                 fontWeight: FontWeight.w500),
           ),
           SizedBox(
-            height: 4.h,
+            height: 15.9.h,
           ),
           /// Background Blue Circle Image & Center Image
           Expanded(

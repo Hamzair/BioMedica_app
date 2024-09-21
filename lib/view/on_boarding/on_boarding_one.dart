@@ -56,16 +56,14 @@ class OnBoardingOne extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 22.19.h,
+            height: 17.19.h,
           ),
           Expanded(
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
-
                 image: DecorationImage(
                   image: AssetImage(AppImages.onboardingellipse,),
-
                   fit: BoxFit.fill,
                 ),
               ),
