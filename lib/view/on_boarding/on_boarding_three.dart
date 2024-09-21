@@ -62,7 +62,7 @@ class OnBoardingThree extends StatelessWidget {
                 fontWeight: FontWeight.w500),
           ),
           SizedBox(
-            height: 15.h,
+            height: 21.9.h,
           ),
           Expanded(
             child: Container(
