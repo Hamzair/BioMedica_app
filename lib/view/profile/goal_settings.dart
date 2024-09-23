@@ -26,7 +26,7 @@ class _GoalSettingsState extends State<GoalSettings> {
   int chapters = 14;
 
   // Create a GlobalKey for the dropdown button
-  final GlobalKey _dropdownKey = GlobalKey();
+  //final GlobalKey _dropdownKey = GlobalKey();
 
   void _openDropdown() {
     // Implementation of dropdown
@@ -123,7 +123,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                 width: 311.w,
                 height: 50.h,
                 child: DropdownButtonFormField<String>(
-                  key: _dropdownKey,
+          //        key: _dropdownKey,
                   value: _selectedCourse,
                   onChanged: (String? newValue) {
                     setState(() {

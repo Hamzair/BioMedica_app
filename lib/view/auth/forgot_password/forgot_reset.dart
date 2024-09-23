@@ -31,7 +31,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
   // final confirmPasswordController = TextEditingController();
   bool isChecked = true;
   bool isChecked1 = true;
-  final _formKey = GlobalKey<FormState>();
+ // final _formKey = GlobalKey<FormState>();
   RegExp pass_valid =
       RegExp(r'^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[!@#\$&*~]).{8,}$');
 
@@ -71,7 +71,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                     ),
                     SizedBox(height: 10.h),
                     Form(
-                      key: _formKey,
+
                       child: SizedBox(
                         height: 43.75.h,
                         child: EmailCustomTextFiled(

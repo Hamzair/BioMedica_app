@@ -12,8 +12,14 @@ import 'package:get/get.dart';
 import '../controller/subscription_controller.dart';
 import '../widget/custom_route.dart';
 
-class SubscriptionScreen extends StatelessWidget {
+class SubscriptionScreen extends StatefulWidget {
   const SubscriptionScreen({super.key});
+
+  @override
+  State<SubscriptionScreen> createState() => _SubscriptionScreenState();
+}
+
+class _SubscriptionScreenState extends State<SubscriptionScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +100,8 @@ class SubscriptionScreen extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                       Navigator.pop(context);
+                        Get.find<SubscriptionService>().resetToFreeTrial();
+                        CustomRoute.navigateTo(context, AppNavBar());
                       },
                       child: Container(
                         width: 134.w,
@@ -164,7 +171,7 @@ class SubscriptionScreen extends StatelessWidget {
                     GestureDetector(
                       onTap: () {
                         Get.find<SubscriptionService>().unlockPremium();
-                        Navigator.pop(context);
+                        CustomRoute.navigateTo(context, AppNavBar());;
 
                       },
                       child: Container(

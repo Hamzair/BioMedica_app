@@ -2,8 +2,12 @@ import 'dart:ui';
 import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
+import 'package:bio_medica/view/homeOptions/Bio-Materials.dart';
+import 'package:bio_medica/view/homeOptions/Clinical%20Engineering/clinical.dart';
 import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceLibrary.dart';
 import 'package:bio_medica/view/homeOptions/Human%20Anatomy/human_anatomy.dart';
+import 'package:bio_medica/view/homeOptions/Therapeutic%20Devices/therapy.dart';
+import 'package:bio_medica/view/homeOptions/prosthetic_Devices.dart';
 import 'package:bio_medica/view/home_Screen/article_detail.dart';
 import 'package:bio_medica/widget/custom_search.dart';
 import 'package:bio_medica/widget/custom_text.dart';
@@ -14,6 +18,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../controller/subscription_controller.dart';
+import '../homeOptions/Bio-Mechanics/bio-mech.dart';
+import '../homeOptions/Human Physiology/humanPhys.dart';
+import '../homeOptions/Medical Imaging/medicalImaging.dart';
+import '../homeOptions/device_design.dart';
 import '../navbar/nav_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -31,12 +39,12 @@ class HomeScreen extends StatelessWidget {
     {
       'image': AppImages.Therapeutic,
       'title': 'Therapeutic\nDevices',
-      'page': DeviceLibrary()
+      'page': Therapy()
     },
     {
       'image': AppImages.ClinicalEngineering,
       'title': 'Clinical\nEngineering',
-      'page': DeviceLibrary()
+      'page': Clinical()
     },
     {
       'image': AppImages.HumanAnatomy,
@@ -46,37 +54,37 @@ class HomeScreen extends StatelessWidget {
     {
       'image': AppImages.HumanPhyscology,
       'title': 'Human\nPhysiology ',
-      'page': DeviceLibrary(),
+      'page': HumanPhysiology(),
       'locked': true
     },
     {
       'image': AppImages.BioMechanics,
       'title': 'Bio-\nmechanics',
-      'page': DeviceLibrary(),
+      'page': BioMechanics(),
       'locked': true
     },
     {
       'image': AppImages.MedicalImaging,
       'title': 'Medical \nImaging',
-      'page': DeviceLibrary(),
+      'page': MedicalIimaging(),
       'locked': true
     },
     {
       'image': AppImages.AdvancedDesign,
       'title': 'Device Design',
-      'page': DeviceLibrary(),
+      'page': DeviceDesign(),
       'locked': true,
     },
     {
       'image': AppImages.BioMaterials,
       'title': 'Biomaterials',
-      'page': DeviceLibrary(),
+      'page': BioMaterials(),
       'locked': true
     },
     {
       'image': AppImages.ProstheicDevice,
       'title': 'Prosthetic\nDevices',
-      'page': DeviceLibrary(),
+      'page': Prosthetic(),
       'locked': true
     },
   ];
@@ -123,8 +131,7 @@ class HomeScreen extends StatelessWidget {
                       child: GestureDetector(
                         onTap: () {
                           // Open the drawer using the scaffold key
-                          navBarController.scaffoldKey.currentState
-                              ?.openDrawer();
+                          navBarController.openDrawer(context);
                         },
                         child: Image(
                           image: AssetImage(

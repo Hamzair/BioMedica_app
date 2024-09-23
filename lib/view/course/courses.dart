@@ -71,8 +71,7 @@ class CoursesScreen extends StatelessWidget {
                       child: GestureDetector(
                         onTap: () {
                           // Open the drawer using the scaffold key
-                          navBarController.scaffoldKey.currentState
-                              ?.openDrawer();
+                          navBarController.openDrawer(context);
                         },
                         child: Image(
                           image: AssetImage(

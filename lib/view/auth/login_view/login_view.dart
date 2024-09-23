@@ -151,7 +151,7 @@ class _LoginViewState extends State<LoginView> {
                   width: double.infinity,
                   color: buttonColor,
                   onTap: () {
-                    CustomRoute.navigateTo(context, AppNavBar());
+                    CustomRoute.navigateTo(context, SubscriptionScreen());
                   },
                   title: 'Login',
                 ),

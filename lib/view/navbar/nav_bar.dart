@@ -65,7 +65,7 @@ class _AppNavBarState extends State<AppNavBar> {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
- key: navBarController.scaffoldKey,
+
       drawer: AppDrawer(),
 
       body: PageView(

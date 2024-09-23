@@ -25,7 +25,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   final NavBarController navBarController=Get.put(NavBarController());
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+//  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _selectedIndex = 0;
 
   @override
@@ -62,7 +62,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         child: GestureDetector(
                           onTap: () {
                             // Open the drawer using the scaffold key
-                            navBarController.scaffoldKey.currentState?.openDrawer();
+                            navBarController.openDrawer(context);
                           },
                           child: Image(
                             image: AssetImage('assets/images/left_side_bar_navigation_Icon.png'),

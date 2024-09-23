@@ -24,7 +24,7 @@ class DeviceLibrary extends StatefulWidget {
 class _DeviceLibraryState extends State<DeviceLibrary> {
   // List of tabs
   List<String> tabs = ['Cardiology', 'Neurology', 'Orthopedics', 'Radiology'];
-   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  // final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int selectedIndex = 1;
   final NavBarController navBarController = Get.put(NavBarController());
 
@@ -84,8 +84,7 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
                       child: GestureDetector(
                         onTap: () {
                           // Open the drawer using the scaffold key
-                          navBarController.scaffoldKey.currentState
-                              ?.openDrawer();
+                          navBarController.openDrawer(context);
                         },
                         child: Image(
                           image: AssetImage(
