@@ -58,26 +58,42 @@ class _SignupViewState extends State<SignupView> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text("Choose an option"),
+          title: CustomText(
+            text: 'Choose an Option',
+            textColor: buttonColor2,
+            fontWeight: FontWeight.w500,
+            textAlign: TextAlign.center,
+          ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
-                  _pickImage();
+                  _pickImage(); // Pick image from gallery
                 },
-                child: Text("Gallery"),
+                child: CustomText(
+                  text: 'Gallery',
+                  textColor: secondaryColor,
+                  fontWeight: FontWeight.w500,
+                  fontsize: 15.sp,
+                ),
               ),
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
-                  _takePhoto();
+                  _takePhoto(); // Take photo with camera
                 },
-                child: Text("Camera"),
+                child: CustomText(
+                  text: 'Camera',
+                  textColor: secondaryColor,
+                  fontWeight: FontWeight.w500,
+                  fontsize: 15.sp,
+                ),
               ),
             ],
           ),
+          backgroundColor: primaryColor, // Change this to your desired color
         );
       },
     );

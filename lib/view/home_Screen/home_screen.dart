@@ -3,6 +3,7 @@ import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceLibrary.dart';
+import 'package:bio_medica/view/homeOptions/Human%20Anatomy/human_anatomy.dart';
 import 'package:bio_medica/view/home_Screen/article_detail.dart';
 import 'package:bio_medica/widget/custom_search.dart';
 import 'package:bio_medica/widget/custom_text.dart';
@@ -40,7 +41,7 @@ class HomeScreen extends StatelessWidget {
     {
       'image': AppImages.HumanAnatomy,
       'title': 'Human\nAnatomy',
-      'page': DeviceLibrary()
+      'page': HumanAnatomy(),
     },
     {
       'image': AppImages.HumanPhyscology,
@@ -1478,7 +1479,7 @@ class HomeScreen extends StatelessWidget {
                                                 recognizer:
                                                 TapGestureRecognizer()
                                                   ..onTap = () {
-                                                    Get.to(() => ArticleDetail(title: 'Next-Gen Digital\nHealth & AI', image:  'assets/images/m6.jpeg',));
+                                                    Get.to(() => ArticleDetail(title: 'Next-Gen Digital\nHealth & AI', image:  'assets/images/m2.jpg',));
 
                                                   },
                                               ),
