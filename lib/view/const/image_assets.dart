@@ -18,11 +18,11 @@ class AppImages {
   static const support = 'assets/images/support.png';
   static const wishlist = 'assets/images/wishlist.png';
   static const drawer = 'assets/images/drawer.png';
-  static const coursesIcon = 'assets/images/coursesIcon.png';
+  static const coursesIcon = 'assets/images/courseIcon.png';
   static const devicesIcon = 'assets/images/device.png';
   static const homeIcon = 'assets/images/homeIcon.png';
   static const search = 'assets/images/search.png';
-  static const profileIcon = 'assets/images/profileIcon.png';
+  static const profileIcon = 'assets/images/person_Icon.png';
   static const tickIcon = 'assets/images/tickIcon.png';
   static const DeviceLibrary = 'assets/images/device.png';
   static const BioMechanics = 'assets/images/bioMec.png';

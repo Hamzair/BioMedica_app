@@ -78,73 +78,138 @@ class _AppNavBarState extends State<AppNavBar> {
       extendBody: true,
       bottomNavigationBar: bottomBarPages.length <= maxCount
           ? AnimatedNotchBottomBar(
-              showBlurBottomBar: false,
-              showShadow: false,
-              itemLabelStyle: TextStyle(
-                color: whiteColor,
-                fontWeight: FontWeight.w400,
-                fontSize: 10.sp,
+        showBlurBottomBar: false,
+        showShadow: false,
+        itemLabelStyle: TextStyle(
+          color: whiteColor,
+          fontWeight: FontWeight.w400,
+          fontSize: 10.sp,
+        ),
+        blurFilterY: 10,
+        blurFilterX: 10,
+        notchBottomBarController: _controller,
+        notchColor: buttonColor,
+        color: Color(0xff001A2E),
+        showLabel: true,
+        shadowElevation: 0,
+        kBottomRadius: 15.0,
+        bottomBarWidth: 100.w,
+        bottomBarHeight: 11.h,
+        removeMargins: false,
+        durationInMilliSeconds: 300,
+        bottomBarItems: [
+          BottomBarItem(
+            inActiveItem: Align(
+              alignment: Alignment.center,
+              child: Image.asset(
+                AppImages.homeIcon,
+                fit: BoxFit.contain, // Fit image to available space
               ),
-              blurFilterY: 10,
-              blurFilterX: 10,
-              notchBottomBarController: _controller,
-              notchColor: buttonColor,
-              color: Color(0xff001A2E),
-              showLabel: true,
-              shadowElevation: 0,
-              kBottomRadius: 15.0,
-              bottomBarWidth: 100.w,
-              bottomBarHeight: 11.h,
-              removeMargins: false,
-              durationInMilliSeconds: 300,
-              bottomBarItems: [
-                BottomBarItem(
-                  inActiveItem: Image.asset(AppImages.homeIcon),
-                  activeItem: Image.asset(
-                    AppImages.homeIcon,
-                    alignment: Alignment.center,
-                    color: whiteColor,
-                  ),
-                  itemLabel: 'Home'.tr,
+            ),
+            activeItem: Align(
+              alignment: Alignment.center,
+              child: Transform.translate(
+                offset: Offset(-2.w, -2.h),
+                child: Image.asset(
+                  AppImages.homeIcon,
+                  alignment: Alignment.center,
+
+                  color: whiteColor,
                 ),
-                BottomBarItem(
-                  inActiveItem: Image.asset(AppImages.devicesIcon),
-                  activeItem: Image.asset(
-                    alignment: Alignment.center,
-                    AppImages.devicesIcon,
-                  ),
-                  itemLabel: 'Devices'.tr,
+              ),
+            ),
+            itemLabel: 'Home'.tr,
+          ),
+          BottomBarItem(
+            inActiveItem: Align(
+              alignment: Alignment.center,
+              child: Image.asset(
+                AppImages.devicesIcon,
+                fit: BoxFit.contain, // Fit image correctly
+              ),
+            ),
+            activeItem: Align(
+              alignment: Alignment.center,
+              child: Transform.translate(
+                offset: Offset(-2, -2),
+                child: Image.asset(
+                  AppImages.devicesIcon,
+                  fit: BoxFit.contain,
                 ),
-                BottomBarItem(
-                  inActiveItem: Image.asset(AppImages.coursesIcon),
-                  activeItem: Image.asset(
-                    alignment: Alignment.center,
-                    AppImages.coursesIcon,
-                  ),
-                  itemLabel: 'Courses'.tr,
+              ),
+            ),
+            itemLabel: 'Devices'.tr,
+          ),
+          BottomBarItem(
+            inActiveItem: Align(
+              alignment: Alignment.center,
+              child: Image.asset(
+                AppImages.coursesIcon,
+                fit: BoxFit.contain,
+              ),
+            ),
+            activeItem: Align(
+              alignment: Alignment.center,
+              child: Transform.translate(
+                offset: Offset(-2, -2), // Move the image up by 5 pixels
+                child: Image.asset(
+                  AppImages.coursesIcon,
+                  fit: BoxFit.contain,
+
                 ),
-                BottomBarItem(
-                  inActiveItem: Image.asset(AppImages.devicesIcon),
-                  activeItem: Image.asset(
-                    AppImages.devicesIcon,
-                  ),
-                  itemLabel: 'Quiz'.tr,
+              ),
+            ),
+            itemLabel: 'Courses'.tr,
+          ),
+
+          BottomBarItem(
+            inActiveItem: Align(
+              alignment: Alignment.center,
+              child: Image.asset(
+                AppImages.devicesIcon,
+                fit: BoxFit.contain,
+              ),
+            ),
+            activeItem: Align(
+              alignment: Alignment.center,
+              child: Transform.translate(
+                offset: Offset(-2,-2),
+                child: Image.asset(
+                  AppImages.devicesIcon,
+                  fit: BoxFit.contain,
                 ),
-                BottomBarItem(
-                  inActiveItem: Image.asset(AppImages.profileIcon),
-                  activeItem: Image.asset(
-                    alignment: Alignment.center,
-                    AppImages.profileIcon,
-                  ),
-                  itemLabel: 'Profile'.tr,
+              ),
+            ),
+            itemLabel: 'Quiz'.tr,
+          ),
+          BottomBarItem(
+            inActiveItem: Align(
+              alignment: Alignment.center,
+              child: Image.asset(
+                AppImages.profileIcon,
+                fit: BoxFit.contain,
+              ),
+            ),
+            activeItem: Align(
+              alignment: Alignment.center,
+              child: Transform.translate(
+                offset: Offset(-2, -2),
+                child: Image.asset(
+                  AppImages.profileIcon,
+                  fit: BoxFit.contain,
                 ),
-              ],
-              onTap: (index) {
-                _pageController.jumpToPage(index);
-              },
-              kIconSize: 23.sp,
-            )
+              ),
+            ),
+            itemLabel: 'Profile'.tr,
+          ),
+        ],
+        onTap: (index) {
+          _pageController.jumpToPage(index);
+        },
+        kIconSize: 23.sp,
+      )
           : null,
+
     );
   }
 }
