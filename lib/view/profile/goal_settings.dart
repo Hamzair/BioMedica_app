@@ -1,4 +1,5 @@
 import 'package:bio_medica/view/const/color.dart';
+import 'package:bio_medica/view/const/image_assets.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,9 +17,9 @@ class GoalSettings extends StatefulWidget {
 
 class _GoalSettingsState extends State<GoalSettings> {
   // List of courses for the dropdown
-  final List<String> _courses = ['Course 1', 'Course 2', 'Course 3'];
+  final List<String> _courses = ['Bio-Mechanics', 'Human Anatomy', 'Clinical Engineering'];
   // Set default selected value to "Course 1"
-  String? _selectedCourse = 'Course 1';
+  String? _selectedCourse = 'Bio-Mechanics';
 
   // Counter variables for Quiz Points and Chapters
   int quizPoints = 20;
@@ -137,7 +138,9 @@ class _GoalSettingsState extends State<GoalSettings> {
                     prefixIcon: Padding(
                       padding: EdgeInsets.only(left: 13.w),
                       child: Image.asset(
-                        'assets/images/coursesIcon.png',
+                       AppImages.coursesIcon,
+                        color: buttonColor,
+
                         width: 24.w,
                         height: 24.h,
                       ),

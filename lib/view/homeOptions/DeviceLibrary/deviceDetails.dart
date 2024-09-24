@@ -354,7 +354,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
         });
       },
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 4.w),
+        padding: EdgeInsets.symmetric(horizontal: 4.w,vertical: 4.h),
         child: Container(
           width: 100.81.w,
           height: 30.34.h,

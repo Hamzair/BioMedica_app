@@ -26,96 +26,109 @@ class _PhoneNumberAuthenticationViewState
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: secondaryColor,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 10.h,
-              ),
-              const ForgetPasswordBackWidget(),
-              SizedBox(
-                height: 25.h,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 22.w),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomText(
-                      text: "Authentication Code",
-                      textColor: primaryColor,
-                      fontWeight: FontWeight.w700,
-                      fontsize: 26.sp,
-                    ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    CustomText(
-                      text: selectedTypeController.selectedType.value == 'email'
-                          ? "Enter 5-digit code for reset password we just\ntexted to your phone number, test@gmail.com"
-                          : "Enter 5-digit code for reset password we just\ntexted to your phone number, +1 8976889043",
-                      fontsize: 12.sp,
-                      textColor: Color(0xff6B7280),
-                      fontWeight: FontWeight.w500,
-                    ),
-                    SizedBox(
-                      height: 24.h,
-                    ),
-                    PinCodeTextField(
-                      appContext: context,
-                      length: 5,
-                      keyboardType: TextInputType.number,
-                      animationType: AnimationType.scale,
-                      controller: controller,
-                      pinTheme: PinTheme(
-                          borderRadius: BorderRadius.circular(11.38.r),
-                          borderWidth: 1,
-                          activeFillColor: primaryColor,
-                          shape: PinCodeFieldShape.box,
-                          activeColor: primaryColor,
-                          selectedColor: primaryColor,
-                          inactiveColor: Colors.white,
-                          fieldHeight: 53.h,
-                          fieldWidth: 53.w),
-                    ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    CustomText(
-                      text: selectedTypeController.selectedType.value == 'email'
-                          ? 'Use different email address'
-                          : "Use different phone number",
-                      fontsize: 15.sp,
-                      textColor: primaryColor,
-                      fontWeight: FontWeight.w700,
-                    ),
-                    SizedBox(
-                      height: 46.32.h,
-                    ),
-                    CustomButton(
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus(); // Close keyboard when tapping outside
+      },
+      child: Scaffold(
+        backgroundColor: secondaryColor,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 10.h,
+                ),
+                const ForgetPasswordBackWidget(),
+                SizedBox(
+                  height: 25.h,
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 22.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        text: "Authentication Code",
+                        textColor: primaryColor,
+                        fontWeight: FontWeight.w700,
+                        fontsize: 26.sp,
+                      ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      CustomText(
+                        text: selectedTypeController.selectedType.value == 'email'
+                            ? "Enter 5-digit code for reset password we just\ntexted to your phone number, test@gmail.com"
+                            : "Enter 5-digit code for reset password we just\ntexted to your phone number, +1 8976889043",
+                        fontsize: 12.sp,
+                        textColor: Color(0xff6B7280),
+                        fontWeight: FontWeight.w500,
+                      ),
+                      SizedBox(
+                        height: 24.h,
+                      ),
+                      PinCodeTextField(
+                        appContext: context,
+                        length: 5,
+                        keyboardType: TextInputType.number,
+                        animationType: AnimationType.scale,
+                        controller: controller,
+                        pinTheme: PinTheme(
+                            borderRadius: BorderRadius.circular(11.38.r),
+                            borderWidth: 1,
+                            activeFillColor: primaryColor,
+                            shape: PinCodeFieldShape.box,
+                            activeColor: primaryColor,
+                            selectedColor: primaryColor,
+                            inactiveColor: Colors.white,
+                            fieldHeight: 53.h,
+                            fieldWidth: 53.w),
+                      ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      CustomText(
+                        text: selectedTypeController.selectedType.value == 'email'
+                            ? 'Use different email address'
+                            : "Use different phone number",
+                        fontsize: 15.sp,
+                        textColor: primaryColor,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      SizedBox(
+                        height: 46.32.h,
+                      ),
+                      CustomButton(
                         height: 51.h,
                         title: "Continue",
                         textSize: 19.sp,
                         onTap: () {
-                          CustomRoute.navigateTo(context,const ResetPasswordView(email: '', password: '',));
-                        }),
-                    SizedBox(
-                      height: 12.25.h,
-                    ),
-                    CustomButton(
+                          CustomRoute.navigateTo(
+                            context,
+                            const ResetPasswordView(
+                              email: '',
+                              password: '',
+                            ),
+                          );
+                        },
+                      ),
+                      SizedBox(
+                        height: 12.25.h,
+                      ),
+                      CustomButton(
                         height: 51,
                         title: "Resend Code",
                         textSize: 19.sp,
                         color: transparentColor,
                         titleColor: primaryColor,
-                        onTap: () {}),
-                  ],
-                ),
-              )
-            ],
+                        onTap: () {},
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

@@ -120,7 +120,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                     decoration: BoxDecoration(
                       color: Color(0xFF001A2E).withOpacity(0.6),
                       borderRadius:
-                          BorderRadius.circular(10.r), // Rounded corners
+                          BorderRadius.circular(11.38.r), // Rounded corners
                     ),
                     child: Row(
                       children: [
@@ -138,7 +138,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                 color: _selectedIndex == 0
                                     ? Colors.cyan
                                     : Colors.transparent,
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(7.r),
                               ),
                               child: Center(
                                 child: CustomText(
@@ -167,7 +167,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                 color: _selectedIndex == 1
                                     ? Colors.cyan
                                     : Colors.transparent,
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(7.r),
                               ),
                               child: Center(
                                 child: CustomText(

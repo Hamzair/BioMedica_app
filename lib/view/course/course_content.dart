@@ -72,10 +72,14 @@ class _CourseContentState extends State<CourseContent> {
                   SizedBox(height: 20.h),
 
                   Container(
+                    height: 41.h,
+                    padding: EdgeInsets.symmetric(horizontal: 3.55.w,vertical: 3.5.h
+                    ),
                     decoration: BoxDecoration(
                       color: Color(0xFF001A2E).withOpacity(0.4),
                       borderRadius:
-                          BorderRadius.circular(10.r), // Rounded corners
+                          BorderRadius.circular(10.78.r),
+                      border: Border.all(width: 1,color: Darkcontainer)// Rounded corners
                     ),
                     child: Row(
                       children: [
@@ -87,8 +91,7 @@ class _CourseContentState extends State<CourseContent> {
                               });
                             },
                             child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 10),
+
                               decoration: BoxDecoration(
                                 color: _selectedIndex == 0
                                     ? Colors.cyan
@@ -102,7 +105,7 @@ class _CourseContentState extends State<CourseContent> {
                                   textColor: whiteColor,
                                   fontWeight: _selectedIndex == 0
                                       ? FontWeight.bold
-                                      : FontWeight.normal,
+                                      : FontWeight.bold,
                                 ),
                               ),
                             ),
@@ -116,8 +119,7 @@ class _CourseContentState extends State<CourseContent> {
                               });
                             },
                             child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 10),
+
                               decoration: BoxDecoration(
                                 color: _selectedIndex == 1
                                     ? Colors.cyan
@@ -131,7 +133,7 @@ class _CourseContentState extends State<CourseContent> {
                                   textColor: whiteColor,
                                   fontWeight: _selectedIndex == 1
                                       ? FontWeight.bold
-                                      : FontWeight.normal,
+                                      : FontWeight.bold,
                                 ),
                               ),
                             ),
@@ -145,8 +147,7 @@ class _CourseContentState extends State<CourseContent> {
                               });
                             },
                             child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 10),
+
                               decoration: BoxDecoration(
                                 color: _selectedIndex == 2
                                     ? Colors.cyan
@@ -160,7 +161,7 @@ class _CourseContentState extends State<CourseContent> {
                                   textColor: whiteColor,
                                   fontWeight: _selectedIndex == 2
                                       ? FontWeight.bold
-                                      : FontWeight.normal,
+                                      : FontWeight.bold,
                                 ),
                               ),
                             ),
@@ -174,7 +175,7 @@ class _CourseContentState extends State<CourseContent> {
                               });
                             },
                             child: Container(
-                              padding: EdgeInsets.symmetric(vertical: 10),
+
                               decoration: BoxDecoration(
                                 color: _selectedIndex == 3
                                     ? Colors.cyan
@@ -188,7 +189,7 @@ class _CourseContentState extends State<CourseContent> {
                                   textColor: whiteColor,
                                   fontWeight: _selectedIndex == 3
                                       ? FontWeight.bold
-                                      : FontWeight.normal,
+                                      : FontWeight.bold,
                                 ),
                               ),
                             ),
@@ -289,10 +290,10 @@ class _CourseContentState extends State<CourseContent> {
                         Align(
                           alignment: Alignment.topLeft,
                           child: CustomText(
-                              text: 'Course Content',
-                              textColor: whiteColor,
+                              text: 'Course content',
+                              textColor: secondaryColor,
                               fontsize: 15.sp,
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w700),
                         ),
                         SizedBox(
                           height: 10.h,
@@ -300,6 +301,7 @@ class _CourseContentState extends State<CourseContent> {
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.r),
+                            border: Border.all(width: 1.w, color: Darkcontainer),
                             color: Color(0xFF001A2E).withOpacity(0.4),
                           ),
                           child: ExpansionTile(
@@ -309,7 +311,8 @@ class _CourseContentState extends State<CourseContent> {
                               textColor: whiteColor,
                               fontsize: 13.sp,
                             ),
-                            collapsedIconColor: whiteColor,
+                            collapsedIconColor: Colors.white,
+                            iconColor: buttonColor,
                           ),
                         ),
                         SizedBox(
@@ -318,6 +321,7 @@ class _CourseContentState extends State<CourseContent> {
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.r),
+                            border: Border.all(width: 1.w, color: Darkcontainer),
                             color: Color(0xFF001A2E).withOpacity(0.4),
                           ),
                           child: Theme(
@@ -334,10 +338,13 @@ class _CourseContentState extends State<CourseContent> {
                                     Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
+
+
                                         GestureDetector(
                                           onTap:(){ Get.to(()=> Chapters());},
                                           child: Row(
                                             children: [
+
                                               Image.asset('assets/images/sbook.png',height: 17.h,),
                                               SizedBox(width: 10.h,),
                                               CustomText(text: 'Overview', textColor:whiteColor, fontWeight: FontWeight.w600,fontsize: 11.sp,),
@@ -441,12 +448,13 @@ class _CourseContentState extends State<CourseContent> {
                               )
                             ],
                               title: CustomText(
-                                text: 'What is Design',
+                                text: 'What is Design?',
                                 fontWeight: FontWeight.w600,
                                 textColor: whiteColor,
                                 fontsize: 13.sp,
                               ),
-                              collapsedIconColor: whiteColor,
+                              collapsedIconColor: Colors.white,
+                              iconColor: buttonColor,
                             ),
                           ),
                         ),

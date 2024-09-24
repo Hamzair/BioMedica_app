@@ -109,7 +109,7 @@ class _AppNavBarState extends State<AppNavBar> {
             activeItem: Align(
               alignment: Alignment.center,
               child: Transform.translate(
-                offset: Offset(-2.w, -2.h),
+                offset: Offset(-2.w, 0.h),
                 child: Image.asset(
                   AppImages.homeIcon,
                   alignment: Alignment.center,
@@ -131,7 +131,7 @@ class _AppNavBarState extends State<AppNavBar> {
             activeItem: Align(
               alignment: Alignment.center,
               child: Transform.translate(
-                offset: Offset(-2, -2),
+                offset: Offset(-2.w, 0.h),
                 child: Image.asset(
                   AppImages.devicesIcon,
                   fit: BoxFit.contain,
@@ -141,22 +141,16 @@ class _AppNavBarState extends State<AppNavBar> {
             itemLabel: 'Devices'.tr,
           ),
           BottomBarItem(
-            inActiveItem: Align(
-              alignment: Alignment.center,
+            inActiveItem: Image.asset(
+              AppImages.coursesIcon,
+              fit: BoxFit.contain,
+            ),
+            activeItem: Transform.translate(
+              offset: Offset(-2.w, 0.h), // Move the image up by 5 pixels
               child: Image.asset(
                 AppImages.coursesIcon,
                 fit: BoxFit.contain,
-              ),
-            ),
-            activeItem: Align(
-              alignment: Alignment.center,
-              child: Transform.translate(
-                offset: Offset(-2, -2), // Move the image up by 5 pixels
-                child: Image.asset(
-                  AppImages.coursesIcon,
-                  fit: BoxFit.contain,
 
-                ),
               ),
             ),
             itemLabel: 'Courses'.tr,
@@ -173,7 +167,7 @@ class _AppNavBarState extends State<AppNavBar> {
             activeItem: Align(
               alignment: Alignment.center,
               child: Transform.translate(
-                offset: Offset(-2,-2),
+                offset: Offset(-2.w,0.h),
                 child: Image.asset(
                   AppImages.devicesIcon,
                   fit: BoxFit.contain,
@@ -193,7 +187,7 @@ class _AppNavBarState extends State<AppNavBar> {
             activeItem: Align(
               alignment: Alignment.center,
               child: Transform.translate(
-                offset: Offset(-2, -2),
+                offset: Offset(-2.w, 0.h),
                 child: Image.asset(
                   AppImages.profileIcon,
                   fit: BoxFit.contain,
