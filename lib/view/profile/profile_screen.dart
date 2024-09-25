@@ -144,8 +144,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 width: double.infinity.w,
                 padding: EdgeInsets.symmetric(vertical: 11.41.h,horizontal: 4.61.w),
                 decoration: BoxDecoration(
-                  color: tapColor,
-                  // Your tapColor can be defined or replaced here
+                  color: Darkcontainer,
+                  // Your Darkcontainer can be defined or replaced here
                   borderRadius: BorderRadius.circular(10.r),
                   border: Border.all(
                     color: Color.fromRGBO(0, 28, 49, 1),
@@ -154,7 +154,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 child:Container(
-                  color: tapColor,
+                  color: Darkcontainer,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -244,8 +244,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: 37.92.h,
                 width: double.infinity.w,
                 decoration: BoxDecoration(
-                  color: tapColor,
-                  // Your tapColor can be defined or replaced here
+                  color: Darkcontainer,
+                  // Your Darkcontainer can be defined or replaced here
                   borderRadius: BorderRadius.circular(11.38.r),
                   border: Border.all(
                     color: Color.fromRGBO(0, 28, 49, 1),
@@ -395,8 +395,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       width: double.infinity.w,
                       // height: 117.h,
                       decoration: BoxDecoration(
-                        color: tapColor,
-                        // Your tapColor can be defined or replaced here
+                        color: Darkcontainer,
+                        // Your Darkcontainer can be defined or replaced here
                         borderRadius: BorderRadius.circular(10.r),
                         border: Border.all(
                           color: Color.fromRGBO(0, 28, 49, 1),
@@ -475,8 +475,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       width: double.infinity.w,
                       // height: 117.h,
                       decoration: BoxDecoration(
-                        color: tapColor,
-                        // Your tapColor can be defined or replaced here
+                        color: Darkcontainer,
+                        // Your Darkcontainer can be defined or replaced here
                         borderRadius: BorderRadius.circular(10.r),
                         border: Border.all(
                           color: Color.fromRGBO(0, 28, 49, 1),
@@ -568,8 +568,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           width: 93.w,
                           height: 28.h,
                           decoration: BoxDecoration(
-                            color: tapColor,
-                            // Your tapColor can be defined or replaced here
+                            color: Darkcontainer,
+                            // Your Darkcontainer can be defined or replaced here
                             borderRadius: BorderRadius.circular(6.r),
                             border: Border.all(
                               color: Color.fromRGBO(0, 28, 49, 1),
@@ -603,8 +603,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       width: double.infinity.w,
                       // height: 125.h,
                       decoration: BoxDecoration(
-                        color: tapColor,
-                        // Your tapColor can be defined or replaced here
+                        color: Darkcontainer,
+                        // Your Darkcontainer can be defined or replaced here
                         borderRadius: BorderRadius.circular(10.r),
                         border: Border.all(
                           color: Color.fromRGBO(0, 28, 49, 1),
@@ -729,8 +729,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       width: double.infinity.w,
                       // height: 73.23.h,
                       decoration: BoxDecoration(
-                        color: tapColor,
-                        // Your tapColor can be defined or replaced here
+                        color: Darkcontainer,
+                        // Your Darkcontainer can be defined or replaced here
                         borderRadius: BorderRadius.circular(10.r),
                         border: Border.all(
                           color: Color.fromRGBO(12, 192, 223, 1),
@@ -793,8 +793,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       width: double.infinity.w,
                       // height: 73.23.h,
                       decoration: BoxDecoration(
-                        color: tapColor,
-                        // Your tapColor can be defined or replaced here
+                        color: Darkcontainer,
+                        // Your Darkcontainer can be defined or replaced here
                         borderRadius: BorderRadius.circular(10.r),
                         border: Border.all(
                           color: Color.fromRGBO(12, 192, 223, 1),
@@ -857,8 +857,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       width: double.infinity.w,
                       // height: 73.23.h,
                       decoration: BoxDecoration(
-                        color: tapColor,
-                        // Your tapColor can be defined or replaced here
+                        color: Darkcontainer,
+                        // Your Darkcontainer can be defined or replaced here
                         borderRadius: BorderRadius.circular(10.r),
                         border: Border.all(
                           color: Color.fromRGBO(12, 192, 223, 1),

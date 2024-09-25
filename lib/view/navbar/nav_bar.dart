@@ -7,6 +7,7 @@ import 'package:bio_medica/view/course/courses.dart';
 import 'package:bio_medica/view/course/quiz.dart';
 import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceLibrary.dart';
 import 'package:bio_medica/view/home_Screen/home_screen.dart';
+import 'package:bio_medica/view/home_Screen/quizdetails.dart';
 import 'package:bio_medica/view/profile/profile_screen.dart';
 import 'package:bio_medica/drawer%20items/subscription_screen.dart';
 import 'package:bio_medica/drawer%20items/drawer.dart';
@@ -46,7 +47,7 @@ class _AppNavBarState extends State<AppNavBar> {
      HomeScreen(),
      DeviceLibrary(),
     CoursesScreen(),
-    HomeScreen(),
+    QuizDetails(),
      ProfileScreen()
   ];
 
@@ -155,12 +156,11 @@ class _AppNavBarState extends State<AppNavBar> {
             ),
             itemLabel: 'Courses'.tr,
           ),
-
           BottomBarItem(
             inActiveItem: Align(
               alignment: Alignment.center,
               child: Image.asset(
-                AppImages.devicesIcon,
+                AppImages.quizIcon,
                 fit: BoxFit.contain,
               ),
             ),
@@ -169,7 +169,7 @@ class _AppNavBarState extends State<AppNavBar> {
               child: Transform.translate(
                 offset: Offset(-2.w,0.h),
                 child: Image.asset(
-                  AppImages.devicesIcon,
+                  AppImages.quizIcon,
                   fit: BoxFit.contain,
                 ),
               ),

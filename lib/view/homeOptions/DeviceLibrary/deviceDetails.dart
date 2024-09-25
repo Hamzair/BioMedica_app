@@ -96,11 +96,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                                    EdgeInsets.symmetric(horizontal: 12.0.w,vertical: 0.h),
                               child: Row(
                                 children: [
-                                  Icon(
-                                    size: 20.sp,
-                                    Icons.quiz,
-                                    color: Colors.yellow,
-                                  ),
+                                 Image.asset(AppImages.quizIcon,scale: 3.5.sp,color: Colors.yellowAccent,),
                                   SizedBox(
                                     width: 5.w,
                                   ),
@@ -118,80 +114,6 @@ class _DeviceDetailsState extends State<DeviceDetails> {
           backgroundColor: secondaryColor,
         ),
       ),
-      // appBar: PreferredSize(
-      //   preferredSize: Size.fromHeight(120.h),
-      //   child: AppBar(
-      //     shape: RoundedRectangleBorder(
-      //         borderRadius: BorderRadius.only(
-      //             bottomLeft: Radius.circular(13.r),
-      //             bottomRight: Radius.circular(13.r))),
-      //     centerTitle: true,
-      //     automaticallyImplyLeading: false,
-      //     flexibleSpace: Column(
-      //       mainAxisAlignment: MainAxisAlignment.center,
-      //       children: [
-      //         SizedBox(
-      //           height: 40.h,
-      //         ),
-      //         Padding(
-      //           padding: const EdgeInsets.all(8.0),
-      //           child: Row(
-      //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //             children: [
-      //               Row(
-      //                 children: [
-      //                   GestureDetector(
-      //                       onTap: () {
-      //                         Get.back();
-      //                       },
-      //                       child: Image.asset('assets/images/back_icon.png',height: 38.sp,)),
-      //                   SizedBox(
-      //                     width: 7.w,
-      //                   ),
-      //                   CustomText(
-      //                     text: widget.deviceName,
-      //                     textColor: primaryColor,
-      //                     fontWeight: FontWeight.bold,
-      //                     fontsize: 22.sp,
-      //                   ),
-      //                 ],
-      //               ),
-      //               GestureDetector(
-      //                 onTap: (){
-      //                   Get.to(()=> QuizPage());
-      //                 },
-      //                 child: Container(
-      //                   height: 38.h,
-      //                   decoration: BoxDecoration(
-      //                       color: Darkcontainer, borderRadius: BorderRadius.circular(15)),
-      //                   child: Padding(
-      //                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      //                     child: Row(
-      //                       children: [
-      //                         Icon(
-      //                           Icons.quiz,
-      //                           color: Colors.yellow,
-      //                         ),
-      //                         SizedBox(
-      //                           width: 5.w,
-      //                         ),
-      //                         CustomText(
-      //                             text: 'Quiz me',
-      //                             textColor: whiteColor,
-      //                             fontWeight: FontWeight.w500),
-      //                       ],
-      //                     ),
-      //                   ),
-      //                 ),
-      //               ),
-      //             ],
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //     backgroundColor: secondaryColor,
-      //   ),
-      // ),
 
       body: SingleChildScrollView(
         child: Column(
@@ -203,7 +125,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
                 height: 303.h,
                 width: 341.w,
                 decoration: BoxDecoration(
-                    color: container, borderRadius: BorderRadius.circular(8.r)),
+                    color: Darkcontainer, borderRadius: BorderRadius.circular(8.r)),
                 child: Column(
                   children: [
                     Stack(

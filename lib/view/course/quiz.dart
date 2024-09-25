@@ -108,7 +108,9 @@ class _QuizPageState extends State<QuizPage> {
               borderRadius: BorderRadius.circular(20.r),
               valueColor: AlwaysStoppedAnimation<Color>(Colors.cyan),
             ),
+
             SizedBox(height: 42.44.h),
+
             Expanded(
               child: PageView.builder(
                 controller: _pageController,
@@ -144,7 +146,7 @@ class _QuizPageState extends State<QuizPage> {
                               SizedBox(height: 18.h),
                               // Dropdown with description
                               Container(
-                                decoration: BoxDecoration(border:  Border.all(color: Darkcontainer,width: 1),borderRadius: BorderRadius.circular(11.34.r),color: tapColor),
+                                decoration: BoxDecoration(border:  Border.all(color: Darkcontainer,width: 1),borderRadius: BorderRadius.circular(11.34.r),color: Darkcontainer),
                                 child: Theme(
                                   data: Theme.of(context).copyWith(
                                     dividerColor: Colors.transparent,
@@ -184,17 +186,18 @@ class _QuizPageState extends State<QuizPage> {
                     // Regular quiz question card
                     return
                       Card(
-                        color: tapColor,
+                        color: Darkcontainer,
                         elevation: 0,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15.r),
                         ),
                         child: Padding(
-                          padding:  EdgeInsets.symmetric(horizontal: 23.w,vertical: 14.h),
+                          padding:  EdgeInsets.symmetric(horizontal: 23.w,),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               // Question Number
+                              SizedBox(height: 14.h,),
                               CustomText(
                                 text: "Question ${index + 1} of ${questions.length}",
                                 textColor: Colors.cyan,
@@ -306,14 +309,14 @@ class _QuizPageState extends State<QuizPage> {
                           ),
 
                       ),
-                    );
+                                          );
                   }
                 },
               ),
             ),
             // Button for "Continue" or "Finish"
             Padding(
-              padding:EdgeInsets.fromLTRB(0.w, 10.h, 0.w, 16.h),
+              padding:EdgeInsets.fromLTRB(0.w, 35.h, 0.w, 16.h),
               child: SizedBox(
                 width: double.infinity,
                 height: 53.h,

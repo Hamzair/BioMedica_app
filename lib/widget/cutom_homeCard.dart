@@ -86,7 +86,7 @@ class InnerCard extends StatelessWidget {
             ),
             width: 249.w,
             decoration: BoxDecoration(
-              color: container,
+              color: Darkcontainer,
               borderRadius: BorderRadius.circular(8.r),
               border: Border.all(color: Colors.black, width: 0.5),
             ),

@@ -36,5 +36,6 @@ class AppImages {
   static const ProstheicDevice = 'assets/images/pros.png';
   static const laptop = 'assets/images/laptop4.png';
   static const backArrow = 'assets/images/backArrow.png';
+  static const quizIcon = 'assets/images/quizIcon.png';
 
 }

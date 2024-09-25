@@ -261,7 +261,7 @@ class CourseCard extends StatelessWidget {
         height: 100.h, // Static height
         child: Container(
           decoration: BoxDecoration(
-            color: tapColor,
+            color: Darkcontainer,
             borderRadius: BorderRadius.circular(9.r),
             border: Border.all(
               width: 1,

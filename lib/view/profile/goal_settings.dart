@@ -139,8 +139,7 @@ class _GoalSettingsState extends State<GoalSettings> {
                       padding: EdgeInsets.only(left: 13.w),
                       child: Image.asset(
                        AppImages.coursesIcon,
-                        color: buttonColor,
-
+                    //    color: buttonColor,
                         width: 24.w,
                         height: 24.h,
                       ),

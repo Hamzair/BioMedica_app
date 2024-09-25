@@ -318,7 +318,7 @@ class Neurology extends StatelessWidget {
         children: [
           // Item 1
           Card(
-            color: tapColor,
+            color: Darkcontainer,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.r), // Border radius
               side: BorderSide(
@@ -426,7 +426,7 @@ class Neurology extends StatelessWidget {
           ),
           // Item 2
           Card(
-            color: tapColor,
+            color: Darkcontainer,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.r), // Border radius
               side: BorderSide(
@@ -534,7 +534,7 @@ class Neurology extends StatelessWidget {
           ),
           // Item 3
           Card(
-            color: tapColor,
+            color: Darkcontainer,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.r), // Border radius
               side: BorderSide(
