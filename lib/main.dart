@@ -5,7 +5,7 @@ import 'package:bio_medica/view/home_Screen/home_screen.dart';
 import 'package:bio_medica/view/navbar/nav_bar.dart';
 import 'package:bio_medica/view/splash_screen/splash_screen.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -13,7 +13,7 @@ import 'controller/subscription_controller.dart';
 import 'drawer items/saveitems/save_controller.dart';
 
 
-void main() {
+Future<void> main() async{
 
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
