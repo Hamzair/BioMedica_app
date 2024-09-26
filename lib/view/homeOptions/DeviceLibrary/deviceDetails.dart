@@ -31,7 +31,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
     'assets/images/pace.png',
     'assets/images/def.png',
     'assets/images/stheth.png',
-    'assets/images/sthetoscope.png',
+    'assets/images/sthethh.jpg',
   ];
 
   @override

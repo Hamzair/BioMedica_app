@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:bio_medica/controller/nav_bar_controller.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/const/image_assets.dart';
+import 'package:bio_medica/view/course/course_content.dart';
 import 'package:bio_medica/view/homeOptions/Bio-Materials.dart';
 import 'package:bio_medica/view/homeOptions/Clinical%20Engineering/clinical.dart';
 import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceLibrary.dart';
@@ -39,52 +40,52 @@ class HomeScreen extends StatelessWidget {
     {
       'image': AppImages.Therapeutic,
       'title': 'Therapeutic\nDevices',
-      'page': Therapy()
+      'page': CourseContent(title: 'Therapeutic Devices', image: 'assets/images/course01.png')
     },
     {
       'image': AppImages.ClinicalEngineering,
       'title': 'Clinical\nEngineering',
-      'page': Clinical()
+      'page':  CourseContent(title: 'Clinical Engineering', image: 'assets/images/course01.png')
     },
     {
       'image': AppImages.HumanAnatomy,
       'title': 'Human\nAnatomy',
-      'page': HumanAnatomy(),
+      'page':  CourseContent(title: 'Human Anatomy', image: 'assets/images/course01.png')
     },
     {
       'image': AppImages.HumanPhyscology,
       'title': 'Human\nPhysiology ',
-      'page': HumanPhysiology(),
+      'page':  CourseContent(title: 'Human Physiology', image: 'assets/images/course01.png'),
       'locked': true
     },
     {
       'image': AppImages.BioMechanics,
       'title': 'Bio-\nmechanics',
-      'page': BioMechanics(),
+      'page':  CourseContent(title: 'Bio-mechanics', image: 'assets/images/course01.png'),
       'locked': true
     },
     {
       'image': AppImages.MedicalImaging,
       'title': 'Medical \nImaging',
-      'page': MedicalIimaging(),
+      'page':  CourseContent(title: 'Medical Imaging', image: 'assets/images/course01.png'),
       'locked': true
     },
     {
       'image': AppImages.AdvancedDesign,
       'title': 'Device Design',
-      'page': DeviceDesign(),
+      'page': CourseContent(title: 'Device Design', image: 'assets/images/course01.png'),
       'locked': true,
     },
     {
       'image': AppImages.BioMaterials,
       'title': 'Biomaterials',
-      'page': BioMaterials(),
+      'page':  CourseContent(title: 'Bio-materials', image: 'assets/images/course01.png'),
       'locked': true
     },
     {
       'image': AppImages.ProstheicDevice,
       'title': 'Prosthetic\nDevices',
-      'page': Prosthetic(),
+      'page':  CourseContent(title: 'Prosthetic Devices', image: 'assets/images/course01.png'),
       'locked': true
     },
   ];

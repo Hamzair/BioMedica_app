@@ -105,7 +105,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                       },
                       child: Container(
                         width: 134.w,
-                        height: 139.h,
+                        height: 160.h,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -128,9 +128,9 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                               text: '1 Week',
                               textColor: Color.fromRGBO(44, 54, 88, 1),
                               fontWeight: FontWeight.w600,
-                              fontsize: 12.sp,
+                              fontsize: 14.sp,
                             ),
-                            SizedBox(height: 6.h),
+                            SizedBox(height: 10.h),
                             SizedBox(
                               height: 32.h,
                               width: 112.w,
@@ -138,27 +138,31 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                                 text: 'Access the 4 free courses',
                                 textColor: Color.fromRGBO(44, 54, 88, 1),
                                 fontWeight: FontWeight.w500,
-                                fontsize: 10.sp,
+                                fontsize: 12.sp,
                                 textAlign: TextAlign.center,
                               ),
                             ),
-                            SizedBox(height: 10.h),
-                            SizedBox(
-                              height: 20.h,
-                              width: 106.w,
-                              child: ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: greenColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25.03.r),
+                            Spacer(),
+
+                            Padding(
+                              padding:  EdgeInsets.symmetric(vertical: 10.0.h),
+                              child: SizedBox(
+                                height: 20.h,
+                                width: 106.w,
+                                child: ElevatedButton(
+                                  onPressed: () {},
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: greenColor,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(25.03.r),
+                                    ),
                                   ),
-                                ),
-                                child: CustomText(
-                                  text: 'Free',
-                                  textColor: whiteColor,
-                                  fontWeight: FontWeight.w700,
-                                  fontsize: 7.51.sp,
+                                  child: CustomText(
+                                    text: 'Free',
+                                    textColor: whiteColor,
+                                    fontWeight: FontWeight.w700,
+                                    fontsize: 7.51.sp,
+                                  ),
                                 ),
                               ),
                             ),
@@ -176,7 +180,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                       },
                       child: Container(
                         width: 134.w,
-                        height: 139.h,
+                        height: 160.h,
                         decoration: BoxDecoration(
                           color: Color.fromRGBO(12, 192, 223, 1),
                           border: Border.all(
@@ -206,7 +210,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 2.h),
+                              SizedBox(height: 4.h),
                               Row(
                                 children: [
                                   CustomText(
@@ -223,6 +227,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                                   ),
                                 ],
                               ),
+                              SizedBox(height: 6.h),
                               SizedBox(
                                 height: 34.h,
                                 width: 112.w,
@@ -230,27 +235,31 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                                   text: 'Access to unlimited premium features.',
                                   textColor: whiteColor,
                                   fontWeight: FontWeight.w500,
-                                  fontsize: 10.sp,
+                                  fontsize: 12.sp,
                                   textAlign: TextAlign.center,
                                 ),
                               ),
                               SizedBox(height: 8.h),
-                              SizedBox(
-                                height: 20.h,
-                                width: 106.w,
-                                child: ElevatedButton(
-                                  onPressed: () {},
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: buttonColor2,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(25.03.r),
+                              Spacer(),
+                              Padding(
+                                padding:  EdgeInsets.symmetric(vertical: 10.0.h),
+                                child: SizedBox(
+                                  height: 20.h,
+                                  width: 106.w,
+                                  child: ElevatedButton(
+                                    onPressed: () {},
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: buttonColor2,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(25.03.r),
+                                      ),
                                     ),
-                                  ),
-                                  child: CustomText(
-                                    text: 'UPGRADE',
-                                    textColor: whiteColor,
-                                    fontWeight: FontWeight.w700,
-                                    fontsize: 7.51.sp,
+                                    child: CustomText(
+                                      text: 'UPGRADE',
+                                      textColor: whiteColor,
+                                      fontWeight: FontWeight.w700,
+                                      fontsize: 7.51.sp,
+                                    ),
                                   ),
                                 ),
                               ),
