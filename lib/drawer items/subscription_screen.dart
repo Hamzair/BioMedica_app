@@ -147,7 +147,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                             Padding(
                               padding:  EdgeInsets.symmetric(vertical: 10.0.h),
                               child: SizedBox(
-                                height: 20.h,
+                                height: 25.h,
                                 width: 106.w,
                                 child: ElevatedButton(
                                   onPressed: () {},
@@ -159,9 +159,9 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                                   ),
                                   child: CustomText(
                                     text: 'Free',
-                                    textColor: whiteColor,
+                                    textColor: secondaryColor,
                                     fontWeight: FontWeight.w700,
-                                    fontsize: 7.51.sp,
+                                    fontsize: 14.51.sp,
                                   ),
                                 ),
                               ),
@@ -199,7 +199,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                                 children: [
                                   CustomText(
                                     text: 'Premium',
-                                    textColor: whiteColor,
+                                    textColor: Colors.white,
                                     fontWeight: FontWeight.w700,
                                     fontsize: 20.sp,
                                   ),
@@ -221,7 +221,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                                   ),
                                   CustomText(
                                     text: '/Month',
-                                    textColor: whiteColor,
+                                    textColor: Colors.white,
                                     fontWeight: FontWeight.w500,
                                     fontsize: 10.sp,
                                   ),
@@ -233,7 +233,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                                 width: 112.w,
                                 child: CustomText(
                                   text: 'Access to unlimited premium features.',
-                                  textColor: whiteColor,
+                                  textColor: Colors.white,
                                   fontWeight: FontWeight.w500,
                                   fontsize: 12.sp,
                                   textAlign: TextAlign.center,
@@ -244,7 +244,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                               Padding(
                                 padding:  EdgeInsets.symmetric(vertical: 10.0.h),
                                 child: SizedBox(
-                                  height: 20.h,
+                                  height: 25.h,
                                   width: 106.w,
                                   child: ElevatedButton(
                                     onPressed: () {},
@@ -256,9 +256,9 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                                     ),
                                     child: CustomText(
                                       text: 'UPGRADE',
-                                      textColor: whiteColor,
+                                      textColor: secondaryColor,
                                       fontWeight: FontWeight.w700,
-                                      fontsize: 7.51.sp,
+                                      fontsize: 10.51.sp,
                                     ),
                                   ),
                                 ),
@@ -278,7 +278,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                     text: TextSpan(
                       text: 'By continuing the purchase, you acknowledge that you have read our ',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: secondaryColor,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.bold,
                         height: 1.5,
@@ -298,7 +298,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                         TextSpan(
                           text: ' and that you agree to our ',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: secondaryColor,
                             fontSize: 14.sp,
                             height: 1.5,
                             fontFamily: 'jost',

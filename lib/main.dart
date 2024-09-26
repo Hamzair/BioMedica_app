@@ -16,11 +16,14 @@ import 'drawer items/saveitems/save_controller.dart';
 Future<void> main() async{
 
 
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  runApp( MyApp());
+
   Get.put(SubscriptionService());
   Get.put(SavedItemsController());
   Get.put(NavBarController());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
