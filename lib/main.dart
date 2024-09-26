@@ -14,6 +14,9 @@ import 'drawer items/saveitems/save_controller.dart';
 
 
 void main() {
+
+
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp( MyApp());
   Get.put(SubscriptionService());
   Get.put(SavedItemsController());
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
               title: 'Bio Medica',
               debugShowCheckedModeBanner: false,
-              home:AppNavBar(),
+              home:SplashScreen(),
               // initialBinding: UserBinding(),
               );
         });
