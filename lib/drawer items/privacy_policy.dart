@@ -90,7 +90,7 @@ class PrivacyPolicy extends StatelessWidget {
                   // height: 538.h,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: tapColor,
+                    color: Color.fromRGBO(0, 28, 49, 1),
                     borderRadius: BorderRadius.circular(5.69.r),
                     border: Border.all(
                       color: Darkcontainer, // Set the border color to dark blue

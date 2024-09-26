@@ -76,7 +76,7 @@ class _CourseContentState extends State<CourseContent> {
                     padding: EdgeInsets.symmetric(horizontal: 3.55.w,vertical: 3.5.h
                     ),
                     decoration: BoxDecoration(
-                      color: Color(0xFF001A2E).withOpacity(0.4),
+                        color: Color.fromRGBO(0, 28, 49, 1),
                       borderRadius:
                           BorderRadius.circular(10.78.r),
                       border: Border.all(width: 1,color: Darkcontainer)// Rounded corners
@@ -302,7 +302,7 @@ class _CourseContentState extends State<CourseContent> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.r),
                             border: Border.all(width: 1.w, color: Darkcontainer),
-                            color: Color(0xFF001A2E).withOpacity(0.4),
+                            color: Color.fromRGBO(0, 28, 49, 1),
                           ),
                           child: ExpansionTile(
                             title: CustomText(
@@ -322,7 +322,7 @@ class _CourseContentState extends State<CourseContent> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.r),
                             border: Border.all(width: 1.w, color: Darkcontainer),
-                            color: Color(0xFF001A2E).withOpacity(0.4),
+                            color: Color.fromRGBO(0, 28, 49, 1),
                           ),
                           child: Theme(
                             data: Theme.of(context).copyWith(

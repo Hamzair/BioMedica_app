@@ -251,7 +251,7 @@ class HomeScreen extends StatelessWidget {
                               Get.snackbar(
                                 'Locked',
                                 'Only accessible for premium members!',
-                                backgroundColor: primaryColor,
+                                // backgroundColor: primaryColor,
                                 colorText: secondaryColor,
                               );
                             } else {

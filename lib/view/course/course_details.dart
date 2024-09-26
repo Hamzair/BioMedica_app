@@ -118,7 +118,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                   Container(
                     height: 38.h,
                     decoration: BoxDecoration(
-                      color: Color(0xFF001A2E).withOpacity(0.6),
+                      color: Color.fromRGBO(0, 28, 49, 1),
                       borderRadius:
                           BorderRadius.circular(11.38.r), // Rounded corners
                     ),
@@ -286,7 +286,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                           fontsize: 16.sp,
                         ),
                         SizedBox(height: 23.h),
-                        SizedBox(
+                        Container(
                           width: double.infinity,
                           child: Column(
                             children: [
@@ -367,7 +367,7 @@ class _LessonCard extends StatelessWidget {
             width: 92.w,
             height: 82.h,
             decoration: BoxDecoration(
-                color: Color(0xFF001A2E).withOpacity(0.4),
+                color: Color.fromRGBO(0, 28, 49, 1),
                 borderRadius: BorderRadius.circular(10.r),
                 border: Border.all(color: Darkcontainer, width: 1.2)),
             child: Center(

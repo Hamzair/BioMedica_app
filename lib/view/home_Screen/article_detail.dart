@@ -49,7 +49,7 @@ class ArticleDetail extends StatelessWidget {
               padding: EdgeInsets.all(16),
               child: Container(
                 decoration: BoxDecoration(
-                    color: tapColor,
+                    color: Color.fromRGBO(0, 28, 49, 1),
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(color: Colors.black, width: 1)),
 

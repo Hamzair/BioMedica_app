@@ -323,7 +323,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                   height: 150.45.h,
                   width: double.infinity.w,
                   decoration: BoxDecoration(
-                    color: tapColor,
+                    color: Color.fromRGBO(0, 28, 49, 1),
                     borderRadius: BorderRadius.circular(13.31.r),
                     border: Border.all(
                       color: Color.fromRGBO(

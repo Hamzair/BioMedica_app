@@ -72,7 +72,7 @@ class ProgressScreen extends StatelessWidget {
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: container,
+                    color: Color.fromRGBO(0, 28, 49, 1),
                     border: Border.all(color: Darkcontainer, width: 1)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -443,7 +443,7 @@ class ProgressScreen extends StatelessWidget {
                     width: double.infinity.w,
                     height: 117.h,
                     decoration: BoxDecoration(
-                      color: tapColor,
+                      color: Color.fromRGBO(0, 28, 49, 1),
                       // Your tapColor can be defined or replaced here
                       borderRadius: BorderRadius.circular(10.r),
                       border: Border.all(
@@ -540,7 +540,7 @@ class ProgressScreen extends StatelessWidget {
                     width: double.infinity.w,
                     height: 117.h,
                     decoration: BoxDecoration(
-                      color: tapColor,
+                      color: Color.fromRGBO(0, 28, 49, 1),
                       // Your tapColor can be defined or replaced here
                       borderRadius: BorderRadius.circular(10.r),
                       border: Border.all(

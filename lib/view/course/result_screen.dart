@@ -72,9 +72,9 @@ class ResultScreen extends StatelessWidget {
                 SizedBox(height: 42.h),
               Container(
               // height: 410.11.h,
-              width: 309.w,
+              width: double.infinity.w,
               decoration: BoxDecoration(
-                color: tapColor,
+                color: Color.fromRGBO(0, 28, 49, 1),
                 borderRadius: BorderRadius.circular(15.12.r),
                 border: Border.all(
                   color: Darkcontainer, // Set the border color to dark blue

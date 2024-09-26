@@ -145,7 +145,7 @@ class TechnicalSupportChatScreen extends StatelessWidget {
             padding: EdgeInsets.all(12),
             margin: EdgeInsets.symmetric(vertical: 6.h),
             decoration: BoxDecoration(
-              color: tapColor, // Support bubble color
+              color: Color.fromRGBO(0, 28, 49, 1), // Support bubble color
               borderRadius: BorderRadius.circular(5.69.r),
             ),
             child: Text(

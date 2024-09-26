@@ -202,10 +202,9 @@ class _GoalSettingsState extends State<GoalSettings> {
               SizedBox(height: 14.h),
               /// Container with Quiz Points and Increment/Decrement Buttons
               Container(
-
-                width: 309.w,
+                width: double.infinity.w,
                 decoration: BoxDecoration(
-                  color: tapColor,
+                  color: Color.fromRGBO(0, 28, 49, 1),
                   borderRadius: BorderRadius.circular(10.r),
                   border: Border.all(
                     color: Color.fromRGBO(0, 28, 49, 1),
@@ -317,10 +316,9 @@ class _GoalSettingsState extends State<GoalSettings> {
               SizedBox(height: 9.h),
               /// Container with Chapters Text and Increment/Decrement Buttons
               Container(
-
-                width: 309.w,
+                width: double.infinity.w,
                 decoration: BoxDecoration(
-                  color: tapColor,
+                  color: Color.fromRGBO(0, 28, 49, 1),
                   borderRadius: BorderRadius.circular(10.r),
                   border: Border.all(
                     color: Color.fromRGBO(0, 28, 49, 1),

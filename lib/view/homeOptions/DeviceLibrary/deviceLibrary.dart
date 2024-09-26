@@ -251,7 +251,7 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
 
       //   padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
       decoration: BoxDecoration(
-        color: isSelected ? primaryColor : container, // Tab background color
+        color: isSelected ? primaryColor : Color.fromRGBO(0, 28, 49, 1),// Tab background color
         borderRadius: BorderRadius.circular(5.r), // Rounded corners
         border: Border.all(
           color: isSelected
