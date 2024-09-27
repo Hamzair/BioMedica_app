@@ -72,7 +72,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
               child: CustomText(
                 text: 'Start Now',
                 fontsize: 18.sp,
-                textColor: whiteColor,
+                textColor: secondaryColor,
                 fontWeight: FontWeight.bold,
               ),
             ),
