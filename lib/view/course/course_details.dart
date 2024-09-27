@@ -51,7 +51,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                       image: widget.image));
                 }else{
                   if(widget.isPremium){
-                    Get.snackbar("title", "message");
+                    Get.snackbar("Locked", "Only for premium members");
                   }else{
                     Get.to(() => CourseContent(
                         title: widget.title,
