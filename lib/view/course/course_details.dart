@@ -1,3 +1,4 @@
+import 'package:bio_medica/controller/subscription_controller.dart';
 import 'package:bio_medica/view/const/color.dart';
 import 'package:bio_medica/view/course/chapters.dart';
 import 'package:bio_medica/view/course/course_content.dart';
@@ -9,16 +10,21 @@ import 'package:get/get.dart';
 class CourseDetailScreen extends StatefulWidget {
   final String title;
   final String image;
+  final bool isPremium;
 
-  CourseDetailScreen({required this.title, required this.image});
+  CourseDetailScreen({required this.title, required this.image , this.isPremium = false});
 
   @override
   _CourseDetailScreenState createState() => _CourseDetailScreenState();
 }
 
+
+
 class _CourseDetailScreenState extends State<CourseDetailScreen> {
   int _selectedIndex = 0;
 
+
+  SubscriptionService service = Get.find<SubscriptionService>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,9 +44,22 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
             width: 249.w,
             child: ElevatedButton(
               onPressed: () {
-                Get.to(() => CourseContent(
-                    title: widget.title,
-                    image: widget.image));
+
+                if(service.isPremium.value){
+                  Get.to(() => CourseContent(
+                      title: widget.title,
+                      image: widget.image));
+                }else{
+                  if(widget.isPremium){
+                    Get.snackbar("title", "message");
+                  }else{
+                    Get.to(() => CourseContent(
+                        title: widget.title,
+                        image: widget.image));
+                  }
+                }
+
+
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(

@@ -37,6 +37,14 @@ class OnBoardingOne extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                     ),
                   ),
+                  TextSpan(
+                    text: '.', // The full stop in orange color
+                    style: TextStyle(
+                      fontSize: 28.sp,
+                      color: buttonColor2, // Set the color to orange
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
                 ],
               ),
             ),
