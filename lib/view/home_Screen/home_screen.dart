@@ -268,6 +268,8 @@ class HomeScreen extends StatelessWidget {
                         final isLocked = item['locked'] == true &&
                             !subscriptionService.isPremium.value;
 
+
+
                         return GestureDetector(
                           onTap: () {
                             Navigator.push(
