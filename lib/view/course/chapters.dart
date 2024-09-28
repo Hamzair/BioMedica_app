@@ -1,9 +1,5 @@
 import 'package:bio_medica/main.dart';
 import 'package:bio_medica/view/const/color.dart';
-import 'package:bio_medica/view/const/image_assets.dart';
-import 'package:bio_medica/view/course/courses.dart';
-import 'package:bio_medica/view/course/quiz.dart';
-import 'package:bio_medica/view/homeOptions/DeviceLibrary/deviceLibrary.dart';
 import 'package:bio_medica/widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -71,7 +67,7 @@ Navigator.pop(context);
               child: Container(
                 padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(0, 28, 49, 1.0).withOpacity(0.4),
+                  color: Darkcontainer,
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(
                     color: Colors.black, // Black border color

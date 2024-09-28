@@ -34,12 +34,12 @@ class _QuizDetailsState extends State<QuizDetails> {
 
   final List<String> QuizNames = [
     'Human Anatomy',
-    'Bio-Mechanics',
+    ' Bio-Materials',
     'Human Physiology',
     'Clinical Engineering',
     'Prosthetic Device',
     'Therapeutic Devices',
-    'Bio-mechanics',
+    ' Bio-Mechanics',
     'Medical Imaging',
     'Device Design',
 
@@ -183,14 +183,16 @@ class QuizCard extends StatelessWidget {
               ),
             ),
             SizedBox(height: 8.h),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.w),
-              child: CustomText(
-                text: name,
-                fontsize: 13.sp,
-                fontWeight: FontWeight.bold,
-                textColor: whiteColor,
-                textAlign: TextAlign.center,
+            Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w),
+                child: CustomText(
+                  text: name,
+                  fontsize: 13.sp,
+                  fontWeight: FontWeight.bold,
+                  textColor: whiteColor,
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
 

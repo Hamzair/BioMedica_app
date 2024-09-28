@@ -44,18 +44,18 @@ class HomeScreen extends StatelessWidget {
       )
     },
     {
-      'image': AppImages.HumanAnatomy,
-      'title': 'Human\nAnatomy',
+      'image': AppImages.HumanPhyscology,
+      'title': 'Human\nPhysiology',
       'page': CourseDetailScreen(
-        title: 'Human Anatomy',
+        title: 'Human Physiology',
         image: 'assets/images/course01.png',
       )
     },
     {
-      'image': AppImages.HumanPhyscology,
-      'title': 'Human\nPhysiology ',
+      'image': AppImages.HumanAnatomy,
+      'title': 'Human\nAnatomy ',
       'page': CourseDetailScreen(
-        title: 'Human Physiology',
+        title: 'Human Anatomy',
         image: 'assets/images/course01.png',
         isPremium: true,
 
@@ -258,7 +258,7 @@ class HomeScreen extends StatelessWidget {
                         }
 
                         if (index == gridItems.length + 1) {
-                          return Container(); // Empty container at the end
+                          return Container();
                         }
 
                         final adjustedIndex = index > 8 ? index - 1 : index;
@@ -285,7 +285,7 @@ class HomeScreen extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   border: Border.all(
                                       color: Darkcontainer, width: 1.w),
-                                  color: Color.fromRGBO(0, 26, 46, 1),
+                                  color: Darkcontainer,
                                   borderRadius: BorderRadius.circular(5.r),
                                 ),
                                 child: Column(
