@@ -51,7 +51,7 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      drawer: const AppDrawer(),
+
       // key: _scaffoldKey,
       backgroundColor: primaryColor,
       appBar: PreferredSize(
@@ -80,7 +80,8 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
                           MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
                           child: GestureDetector(
                             onTap: () {
-                              Scaffold.of(context).openDrawer(); // Access Scaffold here
+                              // Open the drawer using the scaffold key
+                              navBarController.openDrawer(context);
                             },
                             child: Image(
                               image: AssetImage(

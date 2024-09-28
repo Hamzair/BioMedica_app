@@ -29,12 +29,12 @@ class _QuizDetailsState extends State<QuizDetails> {
 
   final List<String> QuizNames = [
     'Human Anatomy',
-    ' Bio-Materials',
+    'Bio-Materials',
     'Human Physiology',
     'Clinical Engineering',
     'Prosthetic Devices',
     'Therapeutic Devices',
-    ' Bio-Mechanics',
+    'Bio-Mechanics',
     'Medical Imaging',
     'Device Design',
   ];
@@ -166,39 +166,37 @@ class QuizCard extends StatelessWidget {
             color: Darkcontainer,
           ),
         ),
-        child: Padding(
-          padding: padding ?? EdgeInsets.zero,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: 6.57.h, vertical: 6.57.h),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10.r),
-                  child: Image.asset(
-                    image,
-                    height: 60.h,
-                    width: double.infinity,
-                    fit: BoxFit.contain,
-                  ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding:
+                  EdgeInsets.symmetric(horizontal: 6.57.h, vertical: 6.57.h),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10.r),
+                child: Image.asset(
+                  image,
+                  height: 60.h,
+                  width: double.infinity,
+                  fit: BoxFit.contain,
                 ),
               ),
-              SizedBox(height: 8.h),
-              Center(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.w),
-                  child: CustomText(
-                    text: name,
-                    fontsize: 13.sp,
-                    fontWeight: FontWeight.bold,
-                    textColor: whiteColor,
-                    textAlign: TextAlign.center,
-                  ),
+            ),
+            SizedBox(height: 8.h),
+            Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w),
+                child: CustomText(
+                  text: name,
+                  fontsize: 13.sp,
+                  fontWeight: FontWeight.bold,
+                  textColor: whiteColor,
+                  textAlign: TextAlign.center,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

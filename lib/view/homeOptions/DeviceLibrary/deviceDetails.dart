@@ -227,7 +227,7 @@ class _DeviceDetailsState extends State<DeviceDetails> {
               child: Container(
                 height: 37.92.h,
                 decoration: BoxDecoration(
-                  color: tapColor,
+                  color: Darkcontainer,
                   borderRadius: BorderRadius.circular(11.38.r),
                   border: Border.all(
                     color: Darkcontainer,

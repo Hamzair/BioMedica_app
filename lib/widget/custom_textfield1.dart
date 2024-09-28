@@ -45,8 +45,8 @@ class _CustomTextFieldState extends State<CustomTextField1> {
   Widget build(BuildContext context) {
     return Container(
 
-      width: 311,
-      height: 43.75,
+      width: 311.w,
+      height: 43.75.h,
       decoration: BoxDecoration(
         color: widget.fillColor, // Keep the specified fill color
         borderRadius: BorderRadius.circular(widget.borderRadius), // Keep the specified radius
