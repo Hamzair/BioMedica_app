@@ -25,6 +25,20 @@ class _QuizDetailsState extends State<QuizDetails> {
     AppImages.BioMechanics,
     AppImages.MedicalImaging,
     AppImages.AdvancedDesign,
+    AppImages.BME,
+    AppImages.Chemistry,
+    AppImages.Biology,
+    AppImages.Modelling,
+    AppImages.Signals,
+    AppImages.Phys,
+    AppImages.MRI,
+    AppImages.Cell,
+    AppImages.Rehab,
+    AppImages.Bio_nan,
+    AppImages.MedicalIm,
+    AppImages.Biostat,
+    AppImages.Biostat,
+
   ];
 
   final List<String> QuizNames = [
@@ -36,7 +50,20 @@ class _QuizDetailsState extends State<QuizDetails> {
     'Therapeutic Devices',
     'Bio-Mechanics',
     'Medical Imaging',
-    'Device Design',
+    'Intro toBME',
+    'Chemistry of life',
+    'Intro into biology',
+    'Modeling and simulation',
+    'Signals and system',
+    'Physiological signals & instrumentation',
+    'Cell & Tissue engineering',
+    'Rehabilitation engineering',
+    'Bio-nanotechnology',
+    'MedicalImaging physics',
+    'Biostatistics',
+    'Biostatistics',
+
+
   ];
 
   @override
@@ -106,30 +133,30 @@ class _QuizDetailsState extends State<QuizDetails> {
               SizedBox(height: 20.h),
               Container(
                 width: Get.width * 1.2,
-                height: Get.height / 1.5,
+                height: Get.height / 1.2,
                 child: GridView.builder(
-                  itemCount: QuizImages.length,
+                  itemCount: QuizImages.length < QuizNames.length ? QuizImages.length : QuizNames.length,
+
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     crossAxisSpacing: 6,
                     mainAxisSpacing: 10,
                     childAspectRatio: 0.7.h,
+
                   ),
                   itemBuilder: (context, index) {
-                    bool isBioMaterials =
-                        QuizNames[index].trim() == 'Bio-Materials';
+
 
                     return QuizCard(
                       image: QuizImages[index], // Pass image
                       name: QuizNames[index],
-                      padding: isBioMaterials
-                          ? EdgeInsets.only(top: 8.0.h)
-                          : EdgeInsets.zero,
+                      padding:
+                           EdgeInsets.zero,
                     );
                   },
                 ),
               ),
-              SizedBox(height: 20.h),
+              SizedBox(height: 70.h),
             ],
           ),
         ),
@@ -189,7 +216,7 @@ class QuizCard extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 8.w),
                 child: CustomText(
                   text: name,
-                  fontsize: 13.sp,
+                  fontsize: 11.sp,
                   fontWeight: FontWeight.bold,
                   textColor: whiteColor,
                   textAlign: TextAlign.center,

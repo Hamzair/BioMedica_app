@@ -57,57 +57,55 @@ class _DeviceLibraryState extends State<DeviceLibrary> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(size.height * 0.076),
         child: AppBar(
+
           centerTitle: false,
           automaticallyImplyLeading: false,
-          flexibleSpace: Builder( // Wrap flexibleSpace with Builder
-            builder: (BuildContext context) {
-              return Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 5.h),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+          flexibleSpace: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 5.h),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 40.h,
+                ),
+                Row(
+
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    // SizedBox(
+                    //   width: 12.w,
+                    // ),
+                    Container(
+                      decoration: BoxDecoration(shape: BoxShape.circle),
+                      width:
+                      MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+                      height:
+                      MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
+                      child: GestureDetector(
+                        onTap: () {
+                          // Open the drawer using the scaffold key
+                          navBarController.openDrawer(context);
+                        },
+                        child: Image(
+                          image: AssetImage(
+                              'assets/images/left_side_bar_navigation_Icon.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
                     SizedBox(
-                      height: 40.h,
+                      width: 11.w,
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(shape: BoxShape.circle),
-                          width:
-                          MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
-                          height:
-                          MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
-                          child: GestureDetector(
-                            onTap: () {
-                              // Open the drawer using the scaffold key
-                              navBarController.openDrawer(context);
-                            },
-                            child: Image(
-                              image: AssetImage(
-                                  'assets/images/left_side_bar_navigation_Icon.png'),
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 11.w,
-                        ),
-                        CustomText(
-                          text: 'Device Library',
-                          textColor: Darkcontainer,
-                          fontWeight: FontWeight.bold,
-                          fontsize: 20.sp,
-                        ),
-                        SizedBox(
-                          width: 12.w,
-                        ),
-                      ],
+                    CustomText(text: 'Device Library', textColor: Darkcontainer, fontWeight: FontWeight.bold,fontsize: 20.sp,),
+
+                    SizedBox(
+                      width: 12.w,
                     ),
+
                   ],
                 ),
-              );
-            },
+              ],
+            ),
           ),
           backgroundColor: secondaryColor,
         ),
