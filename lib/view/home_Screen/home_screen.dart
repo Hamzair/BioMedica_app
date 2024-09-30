@@ -180,7 +180,7 @@ class HomeScreen extends StatelessWidget {
     // !  Grid Item 15
     {
       'image': AppImages.Phys,
-      'title': 'Physiological signals & instrumentation',
+      'title': 'Physiological signals',
       'page': CourseDetailScreen(
         title: 'Physiological signals\n & instrumentation',
         image: 'assets/images/course01.png',
@@ -235,9 +235,9 @@ class HomeScreen extends StatelessWidget {
     // !  Grid Item 20
     {
       'image': AppImages.MedicalIm,
-      'title': 'Medical imaging physics',
+      'title': 'Medical imaging',
       'page': CourseDetailScreen(
-        title: 'Medical imaging physics',
+        title: 'MedicalImaging physics',
         image: 'assets/images/course01.png',
         isPremium: true,
       ),
@@ -461,8 +461,8 @@ class HomeScreen extends StatelessWidget {
                       children: List.generate(rows.length, (rowIndex) {
                         return Container(
                           padding: EdgeInsets.zero,
-                          margin: EdgeInsets.only(bottom: 8.h),
-                          height: 100.h, // Adjust as needed for row height
+
+                          height: 90.h, // Adjust as needed for row height
                           child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemCount: rows[rowIndex].length,
@@ -489,32 +489,35 @@ class HomeScreen extends StatelessWidget {
                                   children: [
                                     Container(
                                       margin: EdgeInsets.only(right: 8.h),
-                                      width: 80.w,
+                                      width: 60.w,
                                       height: 82.h,
                                       decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: Darkcontainer, width: 1.w),
+                                        border: Border.all(color: Darkcontainer, width: 1.w),
                                         color: Darkcontainer,
                                         borderRadius: BorderRadius.circular(5.r),
                                       ),
                                       child: Column(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
                                           Image.asset(
                                             item['image'],
-                                            height: 39.h,
+                                            height: 36.h,
                                           ),
-                                          CustomText(
-                                            text: item['title'],
+                                          Text(
+                                            item['title'],
                                             textAlign: TextAlign.center,
-                                            textColor: secondaryColor,
-                                            fontsize: 12.sp,
-                                            fontWeight: FontWeight.w600,
+                                            style: TextStyle(
+                                              color: secondaryColor,
+                                              fontSize: 9.sp,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                            overflow: TextOverflow.ellipsis,
+                                            maxLines: 5,
                                           ),
                                         ],
                                       ),
                                     ),
+
                                     // if (isLocked)
                                     //   Positioned.fill(
                                     //     child: Container(
@@ -532,7 +535,7 @@ class HomeScreen extends StatelessWidget {
                                     //               // Position it to the top right corner
                                     //               child: Image.asset(
                                     //                 'assets/images/lock.png',
-                                    //                 height: 15
+                                    //                 height: 12
                                     //                     .h, // Adjust the height of the lock icon as per your design
                                     //               ),
                                     //             ),
