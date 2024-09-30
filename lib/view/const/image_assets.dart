@@ -38,4 +38,25 @@ class AppImages {
   static const backArrow = 'assets/images/backArrow.png';
   static const quizIcon = 'assets/images/quizIcon.png';
 
+
+
+  static const BME = 'assets/images/1.png';
+  static const Chemistry = 'assets/images/2.png';
+  static const Biology ='assets/images/3.png';
+  static const Modelling = 'assets/images/4.png';
+  static const Signals = 'assets/images/5.png';
+  static const Phys = 'assets/images/6.png';
+  static const MRI = 'assets/images/7.png';
+  static const Biostat = 'assets/images/8.png';
+  static const Cell = 'assets/images/9.png';
+  static const Rehab = 'assets/images/10.png';
+  static const Bio_nan ='assets/images/11.png';
+  static const MedicalIm ='assets/images/12.png';
+  static const Neuro = 'assets/images/13.png';
+
+
+
+
+
+
 }

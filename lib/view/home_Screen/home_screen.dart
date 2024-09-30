@@ -14,19 +14,21 @@ import 'package:get/get.dart';
 import '../../controller/subscription_controller.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+  HomeScreen({super.key, });
 
   final NavBarController navBarController = Get.put(NavBarController());
 
   final SubscriptionService subscriptionService =
-      Get.find<SubscriptionService>();
+  Get.find<SubscriptionService>();
 
   final List<Map<String, dynamic>> gridItems = [
+    // !  Grid Item 0
     {
       'image': AppImages.DeviceLibrary,
       'title': 'Device\nlibrary',
       'page': DeviceLibrary()
     },
+    // !  Grid Item 1
     {
       'image': AppImages.Therapeutic,
       'title': 'Therapeutic\nDevices',
@@ -35,6 +37,7 @@ class HomeScreen extends StatelessWidget {
         image: 'assets/images/course01.png',
       )
     },
+    // !  Grid Item 2
     {
       'image': AppImages.ClinicalEngineering,
       'title': 'Clinical\nEngineering',
@@ -43,6 +46,7 @@ class HomeScreen extends StatelessWidget {
         image: 'assets/images/course01.png',
       )
     },
+    // !  Grid Item 3
     {
       'image': AppImages.HumanPhyscology,
       'title': 'Human\nPhysiology',
@@ -51,6 +55,7 @@ class HomeScreen extends StatelessWidget {
         image: 'assets/images/course01.png',
       )
     },
+    // !  Grid Item 4
     {
       'image': AppImages.HumanAnatomy,
       'title': 'Human\nAnatomy ',
@@ -58,10 +63,10 @@ class HomeScreen extends StatelessWidget {
         title: 'Human Anatomy',
         image: 'assets/images/course01.png',
         isPremium: true,
-
       ),
       'locked': true
     },
+    // !  Grid Item 5
     {
       'image': AppImages.BioMechanics,
       'title': 'Bio-\nmechanics',
@@ -72,6 +77,7 @@ class HomeScreen extends StatelessWidget {
       ),
       'locked': true
     },
+    // !  Grid Item 6
     {
       'image': AppImages.MedicalImaging,
       'title': 'Medical \nImaging',
@@ -82,6 +88,7 @@ class HomeScreen extends StatelessWidget {
       ),
       'locked': true
     },
+    // !  Grid Item 7
     {
       'image': AppImages.AdvancedDesign,
       'title': 'Device Design',
@@ -92,6 +99,7 @@ class HomeScreen extends StatelessWidget {
       ),
       'locked': true,
     },
+    // !  Grid Item 8
     {
       'image': AppImages.BioMaterials,
       'title': 'Biomaterials',
@@ -102,6 +110,7 @@ class HomeScreen extends StatelessWidget {
       ),
       'locked': true
     },
+    // !  Grid Item 9
     {
       'image': AppImages.ProstheicDevice,
       'title': 'Prosthetic\nDevices',
@@ -112,13 +121,196 @@ class HomeScreen extends StatelessWidget {
       ),
       'locked': true
     },
-  ];
+    // ?  New courses
+    // !  Grid Item 10
+    {
+      'image': AppImages.BME,
+      'title': 'Intro to\nBME',
+      'page': CourseDetailScreen(
+        title: 'Intro toBME',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true
+    },
+    // !  Grid Item 11
+    {
+      'image': AppImages.Chemistry,
+      'title': 'Chemistry of life',
+      'page': CourseDetailScreen(
+        title: 'Chemistry of life',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true
+    },
+    // !  Grid Item 12
+    {
+      'image': AppImages.Biology,
+      'title': 'Intro into biology',
+      'page': CourseDetailScreen(
+        title: 'Intro into biology',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true
+    },
+    // !  Grid Item 13
+    {
+      'image': AppImages.Modelling,
+      'title': 'Modeling and simulation',
+      'page': CourseDetailScreen(
+        title: 'Modeling and simulation',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true
+    },
+    // !  Grid Item 14
+    {
+      'image': AppImages.Signals,
+      'title': 'Signals and system',
+      'page': CourseDetailScreen(
+        title: 'Signals and system',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true
+    },
+    // !  Grid Item 15
+    {
+      'image': AppImages.Phys,
+      'title': 'Physiological signals & instrumentation',
+      'page': CourseDetailScreen(
+        title: 'Physiological signals\n & instrumentation',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true
+    },
+    // !  Grid Item 16
+    {
+      'image': AppImages.MRI,
+      'title': 'MRI',
+      'page': CourseDetailScreen(
+        title: 'MRI',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true
+    },
+    // !  Grid Item 17
+    {
+      'image': AppImages.Cell,
+      'title': 'Cell & Tissue engineering',
+      'page': CourseDetailScreen(
+        title: 'Cell & Tissue engineering',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true
+    },
+    // !  Grid Item 18
+    {
+      'image': AppImages.Rehab,
+      'title': 'Rehabilitation engineering',
+      'page': CourseDetailScreen(
+        title: 'Rehabilitation engineering',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true
+    },
+    // !  Grid Item 19
+    {
+      'image': AppImages.Bio_nan,
+      'title': 'Bio-nanotechnology',
+      'page': CourseDetailScreen(
+        title: 'Bio-nanotechnology',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true
+    },
+    // !  Grid Item 20
+    {
+      'image': AppImages.MedicalIm,
+      'title': 'Medical imaging physics',
+      'page': CourseDetailScreen(
+        title: 'Medical imaging physics',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true
+    },
+    // !  Grid Item 21
+    {
+      'image': AppImages.Biostat,
+      'title': 'Biostatistics',
+      'page': CourseDetailScreen(
+        title: 'Biostatistics',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true
+    },
+    // !  Grid Item 22
+    {
+      'image': AppImages.Neuro,
+      'title': 'Neuro-engineering',
+      'page': CourseDetailScreen(
+        title: 'Neuro-engineering',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true
+    },
 
-//  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+
+  ];
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    var rows = [
+      // Create a list of lists for each row in the grid
+      [
+        // First row
+        gridItems[0],
+        gridItems[1],
+        gridItems[2],
+        gridItems[3],
+        gridItems[4],
+        gridItems[5],
+        gridItems[6],
+        gridItems[7],
+
+      ],
+      [
+        // Second row
+        gridItems[8],
+        gridItems[9],
+        gridItems[10],
+        gridItems[11],
+        gridItems[12],
+        gridItems[13],
+        gridItems[14],
+        gridItems[15],
+      ],
+      [
+        // Third row
+        gridItems[16],
+        gridItems[17],
+        gridItems[18],
+        gridItems[19],
+        gridItems[20],
+        gridItems[21],
+        gridItems[22],
+     
+      ],
+
+    ];
     return Scaffold(
       // drawer:  AppDrawer(),
       // key: navBarController.scaffoldKey,
@@ -150,9 +342,9 @@ class HomeScreen extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(shape: BoxShape.circle),
                       width:
-                          MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+                      MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
                       height:
-                          MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
+                      MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
                       child: GestureDetector(
                         onTap: () {
                           // Open the drawer using the scaffold key
@@ -214,132 +406,149 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 13.h),
+                SizedBox(height: 7.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CustomText(
+                      text: 'Featured Courses',
+                      textColor: buttonColor,
+                      fontWeight: FontWeight.w500,
+                      fontsize: 17.sp,
+                    ),
+                    Row(
+                      children: [
+                        CustomText(
+                          text: 'Scroll for more',
+                          textColor: buttonColor2,
+                          fontWeight: FontWeight.w500,
+                          fontsize: 11.sp,
+                        ),
+                        SizedBox(width: 4.h),
+                        Image.asset(
+                          'assets/images/arrow_forward.png',
+                          height: 17.h,
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                SizedBox(height: 5.h),
                 // Grid View for home options
-                GetBuilder<SubscriptionService>(builder: (subscriptionService) {
-                  double getAppBarHeight(BuildContext context) {
-                    double screenHeight = MediaQuery.of(context).size.height;
-                    print(screenHeight);
+                GetBuilder<SubscriptionService>(
+                  builder: (subscriptionService) {
+                    double getAppBarHeight(BuildContext context) {
+                      double screenHeight = MediaQuery.of(context).size.height;
+                      print(screenHeight);
 
-                    // Define height based on screen size
-                    if (screenHeight < 600) {
-                      return screenHeight /
-                          4; // Example height for small screens
-                    } else if (screenHeight == 667) {
-                      return screenHeight /
-                          2.15; // Default height for larger screens
-                    } else if (screenHeight == 716.6666666666666) {
-                      return screenHeight /
-                          2.5; // Default height for larger screens
-                    } else {
-                      return screenHeight /
-                          2.6; // Default height for larger screens
+                      // Define height based on screen size
+                      if (screenHeight < 600) {
+                        return screenHeight /
+                            4; // Example height for small screens
+                      } else if (screenHeight == 667) {
+                        return screenHeight /
+                            2.15; // Default height for larger screens
+                      } else if (screenHeight == 716.6666666666666) {
+                        return screenHeight /
+                            2.5; // Default height for larger screens
+                      } else {
+                        return screenHeight /
+                            2.6; // Default height for larger screens
+                      }
                     }
-                  }
 
-                  return Container(
-                    height: getAppBarHeight(context),
-                    child: GridView.builder(
-                      shrinkWrap: true, // Add this line
-                      physics: NeverScrollableScrollPhysics(),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 4,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                        childAspectRatio: 0.9,
-                      ),
+                    return Column(
+                      children: List.generate(rows.length, (rowIndex) {
+                        return Container(
+                          padding: EdgeInsets.zero,
+                          margin: EdgeInsets.only(bottom: 8.h),
+                          height: 100.h, // Adjust as needed for row height
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: rows[rowIndex].length,
+                            itemBuilder: (context, index) {
+                              final item = rows[rowIndex][index];
 
-                      itemCount: gridItems.length + 2,
-                      // Adjusted item count
-                      itemBuilder: (context, index) {
-                        //   Empty container at index 8
-                        if (index == 8) {
-                          return Container(); // Empty container at index 8
-                        }
+                              // Check if the item is locked
+                              final isLocked = item['locked'] == true &&
+                                  !subscriptionService.isPremium.value;
 
-                        if (index == gridItems.length + 1) {
-                          return Container();
-                        }
-
-                        final adjustedIndex = index > 8 ? index - 1 : index;
-                        final item = gridItems[adjustedIndex];
-
-                        // Check if the item is locked
-                        final isLocked = item['locked'] == true &&
-                            !subscriptionService.isPremium.value;
-
-
-
-                        return GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    item['page'] ?? const SizedBox.shrink(),
-                              ),
-                            );
-                          },
-                          child: Stack(
-                            children: [
-                              Container(
-                                width: 80.w,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: Darkcontainer, width: 1.w),
-                                  color: Darkcontainer,
-                                  borderRadius: BorderRadius.circular(5.r),
-                                ),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image.asset(
-                                      item['image'],
-                                      height: 42.h,
-                                      //    width: 43.w,
-                                    ),
-                                    // SizedBox(height: 5.h),
-                                    CustomText(
-                                      text: item['title'],
-                                      textAlign: TextAlign.center,
-                                      textColor: secondaryColor,
-                                      fontsize: 12.sp,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              if (isLocked)
-                                Positioned.fill(
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(6.r),
-                                        color: Colors.black.withOpacity(0.5),
+                              return GestureDetector(
+                                onTap: () {
+                                  if (!isLocked) {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                        item['page'] ?? const SizedBox.shrink(),
                                       ),
-                                      child: Stack(
+                                    );
+                                  }
+                                },
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.only(right: 8.h),
+                                      width: 80.w,
+                                      height: 82.h,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: Darkcontainer, width: 1.w),
+                                        color: Darkcontainer,
+                                        borderRadius: BorderRadius.circular(5.r),
+                                      ),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.center,
                                         children: [
-                                          Positioned(
-                                            top: 5,
-                                            right: 5,
-                                            // Position it to the top right corner
-                                            child: Image.asset(
-                                              'assets/images/lock.png',
-
-                                              height: 15
-                                                  .h, // Adjust the height of the lock icon as per your design
-                                            ),
+                                          Image.asset(
+                                            item['image'],
+                                            height: 39.h,
+                                          ),
+                                          CustomText(
+                                            text: item['title'],
+                                            textAlign: TextAlign.center,
+                                            textColor: secondaryColor,
+                                            fontsize: 12.sp,
+                                            fontWeight: FontWeight.w600,
                                           ),
                                         ],
-                                      )),
+                                      ),
+                                    ),
+                                    // if (isLocked)
+                                    //   Positioned.fill(
+                                    //     child: Container(
+                                    //         decoration: BoxDecoration(
+                                    //           borderRadius:
+                                    //           BorderRadius.circular(6.r),
+                                    //           color:
+                                    //           Colors.black.withOpacity(0.5),
+                                    //         ),
+                                    //         child: Stack(
+                                    //           children: [
+                                    //             Positioned(
+                                    //               top: 5,
+                                    //               right: 5,
+                                    //               // Position it to the top right corner
+                                    //               child: Image.asset(
+                                    //                 'assets/images/lock.png',
+                                    //                 height: 15
+                                    //                     .h, // Adjust the height of the lock icon as per your design
+                                    //               ),
+                                    //             ),
+                                    //           ],
+                                    //         )),
+                                    //   ),
+                                  ],
                                 ),
-                            ],
+                              );
+                            },
                           ),
                         );
-                      },
-                    ),
-                  );
-                }),
+                      }),
+                    );
+                  },
+                ),
                 SizedBox(
                   height: 10.h,
                 ),
@@ -359,7 +568,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: AppImages.laptop,
                           description:
-                              'Cutting-edge technologies that\nhave the potential.',
+                          'Cutting-edge technologies that\nhave the potential.',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Revolutionary MED-Tech Breakthroughs',
@@ -370,7 +579,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: AppImages.laptop,
                           description:
-                              'Cutting-edge technologies that\nhave the potential..',
+                          'Cutting-edge technologies that\nhave the potential..',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Another MED-Tech Breakthrough',
@@ -398,7 +607,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m4.jpg',
                           description:
-                              'Cutting-edge technologies that\nhave the potential.',
+                          'Cutting-edge technologies that\nhave the potential.',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Revolutionary MED-Tech Breakthroughs',
@@ -409,7 +618,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m4.jpg',
                           description:
-                              'Cutting-edge technologies that\nhave the potential..',
+                          'Cutting-edge technologies that\nhave the potential..',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Another MED-Tech Breakthrough',
@@ -437,7 +646,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m3.jpg',
                           description:
-                              'Cutting-edge technologies that\nhave the potential.',
+                          'Cutting-edge technologies that\nhave the potential.',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Revolutionary MED-Tech Breakthroughs',
@@ -448,7 +657,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m3.jpg',
                           description:
-                              'Cutting-edge technologies that\nhave the potential..',
+                          'Cutting-edge technologies that\nhave the potential..',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Another MED-Tech Breakthrough',
@@ -476,7 +685,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m4.jpg',
                           description:
-                              'Cutting-edge technologies that\nhave the potential.',
+                          'Cutting-edge technologies that\nhave the potential.',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Revolutionary MED-Tech Breakthroughs',
@@ -487,7 +696,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m4.jpg',
                           description:
-                              'Cutting-edge technologies that\nhave the potential..',
+                          'Cutting-edge technologies that\nhave the potential..',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Another MED-Tech Breakthrough',
@@ -515,7 +724,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m3.jpg',
                           description:
-                              'Cutting-edge technologies that\nhave the potential.',
+                          'Cutting-edge technologies that\nhave the potential.',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Revolutionary MED-Tech Breakthroughs',
@@ -526,7 +735,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m3.jpg',
                           description:
-                              'Cutting-edge technologies that\nhave the potential..',
+                          'Cutting-edge technologies that\nhave the potential..',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Another MED-Tech Breakthrough',
@@ -554,7 +763,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m5.jpg',
                           description:
-                              'Cutting-edge technologies that\nhave the potential.',
+                          'Cutting-edge technologies that\nhave the potential.',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Revolutionary MED-Tech Breakthroughs',
@@ -565,7 +774,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m5.jpg',
                           description:
-                              'Cutting-edge technologies that\nhave the potential..',
+                          'Cutting-edge technologies that\nhave the potential..',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Another MED-Tech Breakthrough',
