@@ -1,4 +1,6 @@
+import 'package:bio_medica/drawer%20items/drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomText extends StatelessWidget {
@@ -22,17 +24,20 @@ class CustomText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      textAlign: textAlign,
-      overflow: overflow,
-      maxLines: maxLines,
-      text,
-      style: GoogleFonts.jost(
-        textStyle: TextStyle(
-            color: textColor,
-            fontSize: fontsize,
-            fontWeight: fontWeight,
-            height: height),
+    return SizedBox(
+      // width: 250.w,
+      child: Text(
+        textAlign: textAlign,
+        overflow: overflow,
+        maxLines: maxLines,
+        text,
+        style: GoogleFonts.jost(
+          textStyle: TextStyle(
+              color: textColor,
+              fontSize: fontsize,
+              fontWeight: fontWeight,
+              height: height),
+        ),
       ),
     );
   }

@@ -100,13 +100,17 @@ class _QuizCoursesState extends State<QuizCourses> {
                         ),
                       ),
                       SizedBox(width: 12.w),
-                      CustomText(
-                        text: widget.QuizNames,
-                        textColor: primaryColor,
-                        fontWeight: FontWeight.bold,
-                        fontsize: 22.sp,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
+                      SizedBox(
+                        width: 250.w
+                        ,
+                        child: CustomText(
+                          text: widget.QuizNames,
+                          textColor: primaryColor,
+                          fontWeight: FontWeight.bold,
+                          fontsize: 22.sp,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                        ),
                       ),
                     ],
                   ),

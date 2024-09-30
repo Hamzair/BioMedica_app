@@ -135,13 +135,15 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                               height: 32.h,
                               width: 112.w,
                               child: CustomText(
-                                text: 'Access the 4 free courses',
+                                text: 'Access the 6 free courses',
                                 textColor: Color.fromRGBO(44, 54, 88, 1),
                                 fontWeight: FontWeight.w500,
                                 fontsize: 12.sp,
                                 textAlign: TextAlign.center,
                               ),
                             ),
+
+
                             Spacer(),
 
                             Padding(
@@ -232,10 +234,10 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                                 height: 34.h,
                                 width: 112.w,
                                 child: CustomText(
-                                  text: 'Access to unlimited premium features.',
-                                  textColor: Colors.white,
+                                  text: 'Access the app’s entire courses and features',
+                                  textColor: Colors.black,
                                   fontWeight: FontWeight.w500,
-                                  fontsize: 12.sp,
+                                  fontsize: 10.sp,
                                   textAlign: TextAlign.center,
                                 ),
                               ),
@@ -366,7 +368,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                           SizedBox(height: 6.61.h),
                           CustomText(
                             text:
-                                "As a Free user, you can only preview 4 courses. To get full access to the entirety of the app's courses and features, become a Premium  member now!",
+                                "As a Free user, you can only preview 6 courses. To get full access to the entirety of the app's courses and features, become a Premium  member now!",
                             textColor: whiteColor,
                             fontWeight: FontWeight.w600,
                             fontsize: 11.57.sp,

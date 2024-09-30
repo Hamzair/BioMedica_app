@@ -22,76 +22,65 @@ class HomeScreen extends StatelessWidget {
   Get.find<SubscriptionService>();
 
   final List<Map<String, dynamic>> gridItems = [
-    // !  Grid Item 0
+    // Row 1
     {
       'image': AppImages.DeviceLibrary,
-      'title': 'Device\nlibrary',
-      'page': DeviceLibrary()
+      'title': 'Device\nLibrary',
+      'page': DeviceLibrary(),
+      'locked': false,
     },
-    // !  Grid Item 1
     {
       'image': AppImages.Therapeutic,
       'title': 'Therapeutic\nDevices',
       'page': CourseDetailScreen(
         title: 'Therapeutic Devices',
         image: 'assets/images/course01.png',
-      )
+      ),
+      'locked': false,
     },
-    // !  Grid Item 2
     {
-      'image': AppImages.ClinicalEngineering,
-      'title': 'Clinical\nEngineering',
+      'image': AppImages.Cell,
+      'title': 'Cell & Tissue\nEngineering',
       'page': CourseDetailScreen(
-        title: 'Clinical Engineering',
-        image: 'assets/images/course01.png',
-      )
-    },
-    // !  Grid Item 3
-    {
-      'image': AppImages.HumanPhyscology,
-      'title': 'Human\nPhysiology',
-      'page': CourseDetailScreen(
-        title: 'Human Physiology',
-        image: 'assets/images/course01.png',
-      )
-    },
-    // !  Grid Item 4
-    {
-      'image': AppImages.HumanAnatomy,
-      'title': 'Human\nAnatomy ',
-      'page': CourseDetailScreen(
-        title: 'Human Anatomy',
+        title: 'Cell & Tissue Engineering',
         image: 'assets/images/course01.png',
         isPremium: true,
       ),
-      'locked': true
+      'locked': true,
     },
-    // !  Grid Item 5
     {
       'image': AppImages.BioMechanics,
-      'title': 'Bio-\nmechanics',
+      'title': 'Bio-\nMechanics',
       'page': CourseDetailScreen(
         title: 'Bio-mechanics',
         image: 'assets/images/course01.png',
         isPremium: true,
       ),
-      'locked': true
+      'locked': true,
     },
-    // !  Grid Item 6
     {
-      'image': AppImages.MedicalImaging,
-      'title': 'Medical \nImaging',
+      'image': AppImages.Chemistry,
+      'title': 'Chemistry of\nLife',
       'page': CourseDetailScreen(
-        title: 'Medical Imaging',
+        title: 'Chemistry of Life',
         image: 'assets/images/course01.png',
-
+        isPremium: true,
       ),
-
+      'locked': true,
     },
-    // !  Grid Item 7
+    {
+      'image': AppImages.BME,
+      'title': 'Intro to\nBME',
+      'page': CourseDetailScreen(
+        title: 'Intro to BME',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true,
+    },
     {
       'image': AppImages.AdvancedDesign,
-      'title': 'Device Design',
+      'title': 'Device\nDesign',
       'page': CourseDetailScreen(
         title: 'Device Design',
         image: 'assets/images/course01.png',
@@ -99,18 +88,27 @@ class HomeScreen extends StatelessWidget {
       ),
       'locked': true,
     },
-    // !  Grid Item 8
     {
-      'image': AppImages.BioMaterials,
-      'title': 'Biomaterials',
+      'image': AppImages.Bio_nan,
+      'title': 'Bio-Nano\ntechnology',
       'page': CourseDetailScreen(
-        title: 'Bio-materials',
+        title: 'Bio-nanotechnology',
         image: 'assets/images/course01.png',
-
+        isPremium: true,
       ),
-
+      'locked': true,
     },
-    // !  Grid Item 9
+
+    // Row 2
+    {
+      'image': AppImages.MedicalImaging,
+      'title': 'Medical\nImaging',
+      'page': CourseDetailScreen(
+        title: 'Medical Imaging',
+        image: 'assets/images/course01.png',
+      ),
+      'locked': false,
+    },
     {
       'image': AppImages.ProstheicDevice,
       'title': 'Prosthetic\nDevices',
@@ -119,131 +117,57 @@ class HomeScreen extends StatelessWidget {
         image: 'assets/images/course01.png',
         isPremium: true,
       ),
-      'locked': true
+      'locked': false,
     },
-    // ?  New courses
-    // !  Grid Item 10
-    {
-      'image': AppImages.BME,
-      'title': 'Intro to\nBME',
-      'page': CourseDetailScreen(
-        title: 'Intro toBME',
-        image: 'assets/images/course01.png',
-        isPremium: true,
-      ),
-      'locked': true
-    },
-    // !  Grid Item 11
-    {
-      'image': AppImages.Chemistry,
-      'title': 'Chemistry of life',
-      'page': CourseDetailScreen(
-        title: 'Chemistry of life',
-        image: 'assets/images/course01.png',
-        isPremium: true,
-      ),
-      'locked': true
-    },
-    // !  Grid Item 12
-    {
-      'image': AppImages.Biology,
-      'title': 'Intro into biology',
-      'page': CourseDetailScreen(
-        title: 'Intro into biology',
-        image: 'assets/images/course01.png',
-        isPremium: true,
-      ),
-      'locked': true
-    },
-    // !  Grid Item 13
-    {
-      'image': AppImages.Modelling,
-      'title': 'Modeling and simulation',
-      'page': CourseDetailScreen(
-        title: 'Modeling and simulation',
-        image: 'assets/images/course01.png',
-        isPremium: true,
-      ),
-      'locked': true
-    },
-    // !  Grid Item 14
-    {
-      'image': AppImages.Signals,
-      'title': 'Signals and system',
-      'page': CourseDetailScreen(
-        title: 'Signals and system',
-        image: 'assets/images/course01.png',
-        isPremium: true,
-      ),
-      'locked': true
-    },
-    // !  Grid Item 15
-    {
-      'image': AppImages.Phys,
-      'title': 'Physiological signals & instrumentation',
-      'page': CourseDetailScreen(
-        title: 'Physiological signals & instrumentation',
-        image: 'assets/images/course01.png',
-        isPremium: true,
-      ),
-      'locked': true
-    },
-    // !  Grid Item 16
     {
       'image': AppImages.MRI,
-      'title': 'MRI',
+      'title': 'MRI Physics',
       'page': CourseDetailScreen(
-        title: 'MRI',
+        title: 'MRI Physics',
         image: 'assets/images/course01.png',
         isPremium: true,
       ),
-      'locked': true
+      'locked': true,
     },
-    // !  Grid Item 17
     {
-      'image': AppImages.Cell,
-      'title': 'Cell & Tissue engineering',
+      'image': AppImages.HumanPhyscology,
+      'title': 'Human\nPhysiology',
       'page': CourseDetailScreen(
-        title: 'Cell & Tissue engineering',
+        title: 'Human Physiology',
+        image: 'assets/images/course01.png',
+      ),
+      'locked': true,
+    },
+    {
+      'image': AppImages.Biology,
+      'title': 'Intro into\nBiology',
+      'page': CourseDetailScreen(
+        title: 'Intro into Biology',
         image: 'assets/images/course01.png',
         isPremium: true,
       ),
-      'locked': true
+      'locked': true,
     },
-    // !  Grid Item 18
     {
-      'image': AppImages.Rehab,
-      'title': 'Rehabilitation engineering',
+      'image': AppImages.HumanAnatomy,
+      'title': 'Human\nAnatomy',
       'page': CourseDetailScreen(
-        title: 'Rehabilitation engineering',
-        image: 'assets/images/course01.png',
-
-      ),
-
-    },
-    // !  Grid Item 19
-    {
-      'image': AppImages.Bio_nan,
-      'title': 'Bio-nanotechnology',
-      'page': CourseDetailScreen(
-        title: 'Bio-nanotechnology',
+        title: 'Human Anatomy',
         image: 'assets/images/course01.png',
         isPremium: true,
       ),
-      'locked': true
+      'locked': true,
     },
-    // !  Grid Item 20
     {
       'image': AppImages.MedicalIm,
-      'title': 'MedicalImaging physics',
+      'title': 'Medical Imaging\nPhysics',
       'page': CourseDetailScreen(
-        title: 'MedicalImaging physics',
+        title: 'Medical Imaging Physics',
         image: 'assets/images/course01.png',
         isPremium: true,
       ),
-      'locked': true
+      'locked': true,
     },
-    // !  Grid Item 21
     {
       'image': AppImages.Biostat,
       'title': 'Biostatistics',
@@ -252,22 +176,76 @@ class HomeScreen extends StatelessWidget {
         image: 'assets/images/course01.png',
         isPremium: true,
       ),
-      'locked': true
+      'locked': true,
     },
-    // !  Grid Item 22
+
+    // Row 3
+    {
+      'image': AppImages.BioMaterials,
+      'title': 'Biomaterials',
+      'page': CourseDetailScreen(
+        title: 'Biomaterials',
+        image: 'assets/images/course01.png',
+      ),
+      'locked': false,
+    },
+    {
+      'image': AppImages.Phys,
+      'title': 'Instrumentation',
+      'page': CourseDetailScreen(
+        title: 'Instrumentation',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': false,
+    },
+    {
+      'image': AppImages.ClinicalEngineering,
+      'title': 'Clinical\nEngineering',
+      'page': CourseDetailScreen(
+        title: 'Clinical Engineering',
+        image: 'assets/images/course01.png',
+      ),
+      'locked': true,
+    },
+    {
+      'image': AppImages.Signals,
+      'title': 'Signals &\nSystems',
+      'page': CourseDetailScreen(
+        title: 'Signals & Systems',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true,
+    },
+    {
+      'image': AppImages.Rehab,
+      'title': 'Rehabilitation\nEngineering',
+      'page': CourseDetailScreen(
+        title: 'Rehabilitation Engineering',
+        image: 'assets/images/course01.png',
+      ),
+      'locked': true,
+    },
+    {
+      'image': AppImages.Modelling,
+      'title': 'Modeling &\nSimulation',
+      'page': CourseDetailScreen(
+        title: 'Modeling & Simulation',
+        image: 'assets/images/course01.png',
+        isPremium: true,
+      ),
+      'locked': true,
+    },
     {
       'image': AppImages.Neuro,
-      'title': 'Neuro-engineering',
+      'title': 'Neuro-\nEngineering',
       'page': CourseDetailScreen(
         title: 'Neuro-engineering',
         image: 'assets/images/course01.png',
-
       ),
-
+      'locked': true,
     },
-
-
-
   ];
 
   @override
@@ -507,20 +485,27 @@ class HomeScreen extends StatelessWidget {
                                       child: Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
-                                          Image.asset(
-                                            item['image'],
-                                            height: 36.h,
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                              left: item['image'] == AppImages.Rehab ? 8.0.w : 0.0,  // Apply left padding if image is Rehab
+                                            ),
+                                            child: Image.asset(
+                                              item['image'],
+                                              height: item['image'] == AppImages.Rehab ? 42.h : 36.h,  // Conditional height
+                                            ),
                                           ),
                                           Text(
                                             item['title'],
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               color: secondaryColor,
-                                              fontSize: 9.sp,
+                                              fontSize:item['title']== 'Instrumentation' || item['title']== 'Bio-nanotechnology'|| item['title']== 'Medical Imaging physics'
+                                                  ||item['title'] == 'Rehabilitation\nEngineering'
+                                                  ? 7.sp :9.sp,
                                               fontWeight: FontWeight.w600,
                                             ),
                                             overflow: TextOverflow.ellipsis,
-                                            maxLines: 5,
+                                            maxLines: 6,
                                           ),
                                         ],
                                       ),

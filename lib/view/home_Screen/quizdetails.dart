@@ -16,60 +16,55 @@ class _QuizDetailsState extends State<QuizDetails> {
   final NavBarController navBarController = Get.put(NavBarController());
 
   final List<String> QuizImages = [
-    AppImages.HumanAnatomy,
-    AppImages.BioMaterials,
-    AppImages.HumanPhyscology,
-    AppImages.ClinicalEngineering,
-    AppImages.ProstheicDevice,
-    AppImages.Therapeutic,
-    AppImages.BioMechanics,
-    AppImages.MedicalImaging,
-    AppImages.AdvancedDesign,
-    AppImages.BME,
-    AppImages.Chemistry,
-    AppImages.Biology,
-    AppImages.Modelling,
-    AppImages.Signals,
-    AppImages.Phys,
-    AppImages.MRI,
-    AppImages.Cell,
-    AppImages.Rehab,
-    AppImages.Bio_nan,
-    AppImages.MedicalIm,
-    AppImages.Biostat,
-    AppImages.Neuro
-
-
+    AppImages.HumanAnatomy,       // Human Anatomy
+    AppImages.BioMaterials,       // Bio-Materials
+    AppImages.HumanPhyscology,    // Human Physiology
+    AppImages.ClinicalEngineering,// Clinical Engineering
+    AppImages.ProstheicDevice,    // Prosthetic Devices
+    AppImages.Therapeutic,        // Therapeutic Devices
+    AppImages.AdvancedDesign,     // Device Design
+    AppImages.BioMechanics,       // Bio-Mechanics
+    AppImages.MedicalImaging,     // Medical Imaging
+    AppImages.BME,                // Intro to BME
+    AppImages.Chemistry,          // Chemistry of Life
+    AppImages.Biology,            // Intro into Biology
+    AppImages.Modelling,          // Modeling and Simulation
+    AppImages.Signals,            // Signals and Systems
+    AppImages.Phys,               // Physiological Signals & Instrumentation
+    AppImages.MRI,                // MRI
+    AppImages.Cell,               // Cell & Tissue Engineering
+    AppImages.Rehab,              // Rehabilitation Engineering
+    AppImages.Bio_nan,            // Bio-Nanotechnology
+    AppImages.MedicalIm,          // Medical Imaging Physics
+    AppImages.Biostat,            // Biostatistics
+    AppImages.Neuro               // Neuro-Engineering
   ];
 
   final List<String> QuizNames = [
-    'Human Anatomy',
-    'Bio-Materials',
-    'Human Physiology',
-    'Clinical Engineering',
-    'Prosthetic Devices',
-    'Therapeutic Devices',
-    'Device Design',
-    'Bio-Mechanics',
-    'Medical Imaging',
-    'Intro to BME',
-    'Chemistry of life',
-    'Intro into biology',
-    'Modeling and simulation',
-    'Signals and system',
-    'Physiological signals & instrumentation',
-    'MRI',
-    'Cell & Tissue engineering',
-    'Rehabilitation engineering',
-    'Bio-nanotechnology',
-    'MedicalImaging physics',
-    'Biostatistics',
-    'Neuro-engineering',
-
-
-
-
+    'Human Anatomy',                     // Matches HumanAnatomy image
+    'Bio-Materials',                     // Matches BioMaterials image
+    'Human Physiology',                  // Matches HumanPhyscology image
+    'Clinical Engineering',              // Matches ClinicalEngineering image
+    'Prosthetic Devices',                // Matches ProstheticDevice image
+    'Therapeutic Devices',               // Matches Therapeutic image
+    'Device Design',                     // Matches AdvancedDesign image
+    'Bio-Mechanics',                     // Matches BioMechanics image
+    'Medical Imaging',                   // Matches MedicalImaging image
+    'Intro to BME',                      // Matches BME image
+    'Chemistry of Life',                 // Matches Chemistry image
+    'Intro into Biology',                // Matches Biology image
+    'Modeling and Simulation',           // Matches Modelling image
+    'Signals and Systems',               // Matches Signals image
+    'Instrumentation', // Matches Phys image
+    'MRI Physics',                               // Matches MRI image
+    'Cell & Tissue Engineering',         // Matches Cell image
+    'Rehabilitation Engineering',        // Matches Rehab image
+    'Bio-Nano\ntechnology',                // Matches Bio_nan image
+    'Medical Imaging Physics',           // Matches MedicalIm image
+    'Biostatistics',                     // Matches Biostat image
+    'Neuro-Engineering'                  // Matches Neuro image
   ];
+
 
   @override
   Widget build(BuildContext context) {
