@@ -84,9 +84,9 @@ class HomeScreen extends StatelessWidget {
       'page': CourseDetailScreen(
         title: 'Medical Imaging',
         image: 'assets/images/course01.png',
-        isPremium: true,
+
       ),
-      'locked': true
+
     },
     // !  Grid Item 7
     {
@@ -106,9 +106,9 @@ class HomeScreen extends StatelessWidget {
       'page': CourseDetailScreen(
         title: 'Bio-materials',
         image: 'assets/images/course01.png',
-        isPremium: true,
+
       ),
-      'locked': true
+
     },
     // !  Grid Item 9
     {
@@ -217,9 +217,9 @@ class HomeScreen extends StatelessWidget {
       'page': CourseDetailScreen(
         title: 'Rehabilitation engineering',
         image: 'assets/images/course01.png',
-        isPremium: true,
+
       ),
-      'locked': true
+
     },
     // !  Grid Item 19
     {
@@ -261,9 +261,9 @@ class HomeScreen extends StatelessWidget {
       'page': CourseDetailScreen(
         title: 'Neuro-engineering',
         image: 'assets/images/course01.png',
-        isPremium: true,
+
       ),
-      'locked': true
+
     },
 
 
@@ -476,11 +476,19 @@ class HomeScreen extends StatelessWidget {
                               return GestureDetector(
                                 onTap: () {
                                   if (!isLocked) {
+                                    // If it's not locked, navigate to the course page
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) =>
-                                        item['page'] ?? const SizedBox.shrink(),
+                                        builder: (context) => item['page'] ?? const SizedBox.shrink(),
+                                      ),
+                                    );
+                                  } else {
+                                    // If it's locked, navigate to the course page but show a premium message
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => item['page'] ?? const SizedBox.shrink(),
                                       ),
                                     );
                                   }
@@ -489,8 +497,8 @@ class HomeScreen extends StatelessWidget {
                                   children: [
                                     Container(
                                       margin: EdgeInsets.only(right: 8.h),
-                                      width: 60.w,
-                                      height: 82.h,
+                                      width: 71.w,
+                                      height: 82.81.h,
                                       decoration: BoxDecoration(
                                         border: Border.all(color: Darkcontainer, width: 1.w),
                                         color: Darkcontainer,
@@ -518,30 +526,34 @@ class HomeScreen extends StatelessWidget {
                                       ),
                                     ),
 
-                                    // if (isLocked)
-                                    //   Positioned.fill(
-                                    //     child: Container(
-                                    //         decoration: BoxDecoration(
-                                    //           borderRadius:
-                                    //           BorderRadius.circular(6.r),
-                                    //           color:
-                                    //           Colors.black.withOpacity(0.5),
-                                    //         ),
-                                    //         child: Stack(
-                                    //           children: [
-                                    //             Positioned(
-                                    //               top: 5,
-                                    //               right: 5,
-                                    //               // Position it to the top right corner
-                                    //               child: Image.asset(
-                                    //                 'assets/images/lock.png',
-                                    //                 height: 12
-                                    //                     .h, // Adjust the height of the lock icon as per your design
-                                    //               ),
-                                    //             ),
-                                    //           ],
-                                    //         )),
-                                    //   ),
+                                    if (isLocked)
+                                  Container(
+                                    margin: EdgeInsets.only(right: 8.w,top: 0.h),
+                                    height: 81.81.h,
+                                    width: 71.w,
+                              decoration: BoxDecoration(
+                                       borderRadius:
+                                       BorderRadius.circular(6.r),
+                                       color:
+                                       Colors.black.withOpacity(0.5),
+                                     ),
+                              child: Stack(
+                                       children: [
+                                         Positioned(
+                                           top: 5,
+                                           right: 5,
+                                           // Position it to the top right corner
+                                           child: Image.asset(
+                                             'assets/images/lock.png',
+                                             height: 15
+                                                 .h, // Adjust the height of the lock icon as per your design
+                                           ),
+                                         ),
+                                       ],
+                                  ),
+                                  )
+
+
                                   ],
                                 ),
                               );
