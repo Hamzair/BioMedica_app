@@ -105,6 +105,8 @@ class _QuizCoursesState extends State<QuizCourses> {
                         textColor: primaryColor,
                         fontWeight: FontWeight.bold,
                         fontsize: 22.sp,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
                       ),
                     ],
                   ),

@@ -180,9 +180,9 @@ class HomeScreen extends StatelessWidget {
     // !  Grid Item 15
     {
       'image': AppImages.Phys,
-      'title': 'Physiological signals',
+      'title': 'Physiological signals & instrumentation',
       'page': CourseDetailScreen(
-        title: 'Physiological signals\n & instrumentation',
+        title: 'Physiological signals & instrumentation',
         image: 'assets/images/course01.png',
         isPremium: true,
       ),
@@ -235,7 +235,7 @@ class HomeScreen extends StatelessWidget {
     // !  Grid Item 20
     {
       'image': AppImages.MedicalIm,
-      'title': 'Medical imaging',
+      'title': 'MedicalImaging physics',
       'page': CourseDetailScreen(
         title: 'MedicalImaging physics',
         image: 'assets/images/course01.png',

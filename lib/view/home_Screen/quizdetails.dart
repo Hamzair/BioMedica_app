@@ -37,7 +37,8 @@ class _QuizDetailsState extends State<QuizDetails> {
     AppImages.Bio_nan,
     AppImages.MedicalIm,
     AppImages.Biostat,
-    AppImages.Biostat,
+    AppImages.Neuro
+
 
   ];
 
@@ -48,20 +49,24 @@ class _QuizDetailsState extends State<QuizDetails> {
     'Clinical Engineering',
     'Prosthetic Devices',
     'Therapeutic Devices',
+    'Device Design',
     'Bio-Mechanics',
     'Medical Imaging',
-    'Intro toBME',
+    'Intro to BME',
     'Chemistry of life',
     'Intro into biology',
     'Modeling and simulation',
     'Signals and system',
     'Physiological signals & instrumentation',
+    'MRI',
     'Cell & Tissue engineering',
     'Rehabilitation engineering',
     'Bio-nanotechnology',
     'MedicalImaging physics',
     'Biostatistics',
-    'Biostatistics',
+    'Neuro-engineering',
+
+
 
 
   ];
