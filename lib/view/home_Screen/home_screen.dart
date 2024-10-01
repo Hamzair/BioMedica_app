@@ -14,12 +14,14 @@ import 'package:get/get.dart';
 import '../../controller/subscription_controller.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key, });
+  HomeScreen({
+    super.key,
+  });
 
   final NavBarController navBarController = Get.put(NavBarController());
 
   final SubscriptionService subscriptionService =
-  Get.find<SubscriptionService>();
+      Get.find<SubscriptionService>();
 
   final List<Map<String, dynamic>> gridItems = [
     // Row 1
@@ -115,9 +117,9 @@ class HomeScreen extends StatelessWidget {
       'page': CourseDetailScreen(
         title: 'Prosthetic Devices',
         image: 'assets/images/course01.png',
-        isPremium: true,
+
       ),
-      'locked': false,
+
     },
     {
       'image': AppImages.MRI,
@@ -252,7 +254,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var rows = [
-      // Create a list of lists for each row in the grid
+
       [
         // First row
         gridItems[0],
@@ -263,7 +265,6 @@ class HomeScreen extends StatelessWidget {
         gridItems[5],
         gridItems[6],
         gridItems[7],
-
       ],
       [
         // Second row
@@ -285,9 +286,7 @@ class HomeScreen extends StatelessWidget {
         gridItems[20],
         gridItems[21],
         gridItems[22],
-     
       ],
-
     ];
     return Scaffold(
       // drawer:  AppDrawer(),
@@ -320,9 +319,9 @@ class HomeScreen extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(shape: BoxShape.circle),
                       width:
-                      MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
+                          MediaQuery.of(context).size.width < 360 ? 30.w : 38.w,
                       height:
-                      MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
+                          MediaQuery.of(context).size.width < 360 ? 30.h : 38.h,
                       child: GestureDetector(
                         onTap: () {
                           // Open the drawer using the scaffold key
@@ -342,9 +341,7 @@ class HomeScreen extends StatelessWidget {
                       width: 237.w,
                       child: CustomSearch(),
                     ),
-                    // Flexible(
-                    //   child: CustomSearch(),
-                    // ),
+
                     SizedBox(
                       width: 12.w,
                     ),
@@ -458,7 +455,9 @@ class HomeScreen extends StatelessWidget {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => item['page'] ?? const SizedBox.shrink(),
+                                        builder: (context) =>
+                                            item['page'] ??
+                                            const SizedBox.shrink(),
                                       ),
                                     );
                                   } else {
@@ -466,7 +465,9 @@ class HomeScreen extends StatelessWidget {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => item['page'] ?? const SizedBox.shrink(),
+                                        builder: (context) =>
+                                            item['page'] ??
+                                            const SizedBox.shrink(),
                                       ),
                                     );
                                   }
@@ -478,20 +479,29 @@ class HomeScreen extends StatelessWidget {
                                       width: 71.w,
                                       height: 82.81.h,
                                       decoration: BoxDecoration(
-                                        border: Border.all(color: Darkcontainer, width: 1.w),
+                                        border: Border.all(
+                                            color: Darkcontainer, width: 1.w),
                                         color: Darkcontainer,
-                                        borderRadius: BorderRadius.circular(5.r),
+                                        borderRadius:
+                                            BorderRadius.circular(5.r),
                                       ),
                                       child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Padding(
                                             padding: EdgeInsets.only(
-                                              left: item['image'] == AppImages.Rehab ? 8.0.w : 0.0,  // Apply left padding if image is Rehab
+                                              left: item['image'] ==
+                                                      AppImages.Rehab
+                                                  ? 8.0.w
+                                                  : 0.0, // Apply left padding if image is Rehab
                                             ),
                                             child: Image.asset(
                                               item['image'],
-                                              height: item['image'] == AppImages.Rehab ? 42.h : 36.h,  // Conditional height
+                                              height: item['image'] ==
+                                                      AppImages.Rehab
+                                                  ? 42.h
+                                                  : 36.h, // Conditional height
                                             ),
                                           ),
                                           Text(
@@ -499,9 +509,15 @@ class HomeScreen extends StatelessWidget {
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               color: secondaryColor,
-                                              fontSize:item['title']== 'Instrumentation' || item['title']== 'Bio-nanotechnology'|| item['title']== 'Medical Imaging physics'
-                                                  ||item['title'] == 'Rehabilitation\nEngineering'
-                                                  ? 7.sp :9.sp,
+                                              fontSize: item['title'] == 'Instrumentation' ||
+                                                      item['title'] ==
+                                                          'Bio-nanotechnology' ||
+                                                      item['title'] ==
+                                                          'Medical Imaging physics' ||
+                                                      item['title'] ==
+                                                          'Rehabilitation\nEngineering'
+                                                  ? 7.sp
+                                                  : 9.sp,
                                               fontWeight: FontWeight.w600,
                                             ),
                                             overflow: TextOverflow.ellipsis,
@@ -510,35 +526,32 @@ class HomeScreen extends StatelessWidget {
                                         ],
                                       ),
                                     ),
-
                                     if (isLocked)
-                                  Container(
-                                    margin: EdgeInsets.only(right: 8.w,top: 0.h),
-                                    height: 81.81.h,
-                                    width: 71.w,
-                              decoration: BoxDecoration(
-                                       borderRadius:
-                                       BorderRadius.circular(6.r),
-                                       color:
-                                       Colors.black.withOpacity(0.5),
-                                     ),
-                              child: Stack(
-                                       children: [
-                                         Positioned(
-                                           top: 5,
-                                           right: 5,
-                                           // Position it to the top right corner
-                                           child: Image.asset(
-                                             'assets/images/lock.png',
-                                             height: 15
-                                                 .h, // Adjust the height of the lock icon as per your design
-                                           ),
-                                         ),
-                                       ],
-                                  ),
-                                  )
-
-
+                                      Container(
+                                        margin: EdgeInsets.only(
+                                            right: 8.w, top: 0.h),
+                                        height: 81.81.h,
+                                        width: 71.w,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(6.r),
+                                          color: Colors.black.withOpacity(0.5),
+                                        ),
+                                        child: Stack(
+                                          children: [
+                                            Positioned(
+                                              top: 5,
+                                              right: 5,
+                                              // Position it to the top right corner
+                                              child: Image.asset(
+                                                'assets/images/lock.png',
+                                                height: 15
+                                                    .h, // Adjust the height of the lock icon as per your design
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      )
                                   ],
                                 ),
                               );
@@ -568,7 +581,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: AppImages.laptop,
                           description:
-                          'Cutting-edge technologies that\nhave the potential.',
+                              'Cutting-edge technologies that\nhave the potential.',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Revolutionary MED-Tech Breakthroughs',
@@ -579,7 +592,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: AppImages.laptop,
                           description:
-                          'Cutting-edge technologies that\nhave the potential..',
+                              'Cutting-edge technologies that\nhave the potential..',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Another MED-Tech Breakthrough',
@@ -607,7 +620,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m4.jpg',
                           description:
-                          'Cutting-edge technologies that\nhave the potential.',
+                              'Cutting-edge technologies that\nhave the potential.',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Revolutionary MED-Tech Breakthroughs',
@@ -618,7 +631,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m4.jpg',
                           description:
-                          'Cutting-edge technologies that\nhave the potential..',
+                              'Cutting-edge technologies that\nhave the potential..',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Another MED-Tech Breakthrough',
@@ -646,7 +659,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m3.jpg',
                           description:
-                          'Cutting-edge technologies that\nhave the potential.',
+                              'Cutting-edge technologies that\nhave the potential.',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Revolutionary MED-Tech Breakthroughs',
@@ -657,7 +670,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m3.jpg',
                           description:
-                          'Cutting-edge technologies that\nhave the potential..',
+                              'Cutting-edge technologies that\nhave the potential..',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Another MED-Tech Breakthrough',
@@ -685,7 +698,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m4.jpg',
                           description:
-                          'Cutting-edge technologies that\nhave the potential.',
+                              'Cutting-edge technologies that\nhave the potential.',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Revolutionary MED-Tech Breakthroughs',
@@ -696,7 +709,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m4.jpg',
                           description:
-                          'Cutting-edge technologies that\nhave the potential..',
+                              'Cutting-edge technologies that\nhave the potential..',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Another MED-Tech Breakthrough',
@@ -724,7 +737,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m3.jpg',
                           description:
-                          'Cutting-edge technologies that\nhave the potential.',
+                              'Cutting-edge technologies that\nhave the potential.',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Revolutionary MED-Tech Breakthroughs',
@@ -735,7 +748,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m3.jpg',
                           description:
-                          'Cutting-edge technologies that\nhave the potential..',
+                              'Cutting-edge technologies that\nhave the potential..',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Another MED-Tech Breakthrough',
@@ -763,7 +776,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m5.jpg',
                           description:
-                          'Cutting-edge technologies that\nhave the potential.',
+                              'Cutting-edge technologies that\nhave the potential.',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Revolutionary MED-Tech Breakthroughs',
@@ -774,7 +787,7 @@ class HomeScreen extends StatelessWidget {
                         InnerCard(
                           image: 'assets/images/m5.jpg',
                           description:
-                          'Cutting-edge technologies that\nhave the potential..',
+                              'Cutting-edge technologies that\nhave the potential..',
                           onTap: () {
                             Get.to(() => ArticleDetail(
                                 title: 'Another MED-Tech Breakthrough',

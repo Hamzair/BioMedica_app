@@ -8,19 +8,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class CourseDetailScreen extends StatefulWidget {
-  final String title;
-  final String image;
-  final bool isPremium;
+class CoursesSubtopics extends StatefulWidget {
+   final String title;
+   final String image;
+   final bool isPremium;
 
-  CourseDetailScreen(
+  CoursesSubtopics(
       {required this.title, required this.image, this.isPremium = false});
 
   @override
-  _CourseDetailScreenState createState() => _CourseDetailScreenState();
+  _CoursesSubtopicsState createState() => _CoursesSubtopicsState();
 }
 
-class _CourseDetailScreenState extends State<CourseDetailScreen> {
+class _CoursesSubtopicsState extends State<CoursesSubtopics> {
   int _selectedIndex = 0;
 
   SubscriptionService service = Get.find<SubscriptionService>();
@@ -28,58 +28,14 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(
-            width: 22.w,
-          ),
-          Image.asset('assets/images/favIcon.png', height: 50.h, width: 50.w),
-          SizedBox(width: 11.w),
-          Container(
-            height: 53.h,
-            width: 249.w,
-            child: ElevatedButton(
-              onPressed: () {
-                if (service.isPremium.value) {
-                  Get.to(() =>
-                      CourseContent(title: widget.title, image: widget.image));
-                } else {
-                  if (widget.isPremium) {
-                    Get.snackbar("Locked", "Only for premium members!",
-                        colorText: secondaryColor,
-                        backgroundColor: primaryColor);
-                  } else {
-                    Get.to(() => CourseContent(
-                        title: widget.title, image: widget.image));
-                  }
-                }
-              },
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 13.h, horizontal: 8.w),
-                backgroundColor: Colors.cyan,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.r),
-                ),
-              ),
-              child: CustomText(
-                text: 'Start Now',
-                fontsize: 18.sp,
-                textColor: secondaryColor,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ],
-      ),
+
       body: Column(
         children: [
           Stack(
             children: [
               ClipRRect(
                 borderRadius:
-                    BorderRadius.vertical(bottom: Radius.circular(30.r)),
+                BorderRadius.vertical(bottom: Radius.circular(30.r)),
                 child: Image.asset(
                   widget.image,
                   //    height: 264.h,
@@ -99,7 +55,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                       height: 31.h,
                       width: 31.w,
                     )),
-              )
+              ),
             ],
           ),
           SizedBox(
@@ -113,28 +69,19 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
               child: ListView(
                 padding: EdgeInsets.zero,
                 children: [
-                  // Course Category and Title
                   CustomText(
-                      text: '• UX Design',
-                      textColor: buttonColor2,
-                      fontsize: 16.sp,
-                      fontWeight: FontWeight.bold),
-
-                  SizedBox(height: 8.h),
-                  CustomText(
-                    text: widget.title, // Use the passed title
+                    text: widget.title,
                     textColor: whiteColor,
                     fontWeight: FontWeight.w600,
                     fontsize: 17.sp,
                   ),
                   SizedBox(height: 18.h),
-
                   Container(
                     height: 38.h,
                     decoration: BoxDecoration(
-                      color: Color.fromRGBO(0, 28, 49, 1),
+                      color:Darkcontainer,
                       borderRadius:
-                          BorderRadius.circular(11.38.r), // Rounded corners
+                      BorderRadius.circular(11.38.r),
                     ),
                     child: Row(
                       children: [
@@ -156,12 +103,12 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                               ),
                               child: Center(
                                 child: CustomText(
-                                  text: 'About',
-                                  fontsize: 13.sp,
+                                  text: 'Topics',
+                                  fontsize: 14.sp,
                                   textColor: whiteColor,
                                   fontWeight: _selectedIndex == 0
                                       ? FontWeight.bold
-                                      : FontWeight.normal,
+                                      : FontWeight.w500,
                                 ),
                               ),
                             ),
@@ -185,12 +132,12 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                               ),
                               child: Center(
                                 child: CustomText(
-                                  text: 'Chapters',
+                                  text: 'Sub-Chapters',
                                   fontsize: 13.sp,
                                   textColor: whiteColor,
                                   fontWeight: _selectedIndex == 1
                                       ? FontWeight.bold
-                                      : FontWeight.normal,
+                                      : FontWeight.w500,
                                 ),
                               ),
                             ),
@@ -204,83 +151,26 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
 
                   // Content based on selected index
                   if (_selectedIndex == 0)
-                    // About Section
+                  // About Section
                     SingleChildScrollView(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+
+
                           CustomText(
-                            text:
-                                'Transformative journey through our comprehensive course, '
-                                '‘Master Digital Product Design: UX Research & UI Design’. Created especially for budding UX/UI designers, '
-                                'this immersive program invites you to explore the intricate art of crafting exceptional digital experiences....',
-                            fontWeight: FontWeight.w500,
-                            textColor: whiteColor,
-                          ),
-                          SizedBox(height: 5.h),
-                          Text(
-                            'Read more',
-                            style: TextStyle(color: buttonColor2),
-                          ),
-                          SizedBox(height: 15.h),
-                          CustomText(
-                              text: 'Key points',
+                              text: 'You will be Learning:',
                               fontsize: 18.sp,
                               fontWeight: FontWeight.bold,
-                              textColor: whiteColor),
-                          SizedBox(height: 15.17.h),
-                          ListTile(
-                            minTileHeight: 0,
-                            minVerticalPadding: 8,
-                            leading:
-                                Icon(Icons.check_circle, color: Colors.cyan),
-                            title: CustomText(
-                              text: 'Critical Thinking',
-                              textColor: whiteColor,
-                              fontWeight: FontWeight.w500,
-                            ),
-                            contentPadding: EdgeInsets.zero,
-                            minLeadingWidth: 0,
-                          ),
-                          ListTile(
-                            minTileHeight: 0,
-                            minVerticalPadding: 0,
-                            leading:
-                                Icon(Icons.check_circle, color: Colors.cyan),
-                            title: CustomText(
-                              text: 'User Experience Research',
-                              textColor: whiteColor,
-                              fontWeight: FontWeight.w500,
-                            ),
-                            contentPadding: EdgeInsets.zero,
-                            minLeadingWidth: 0,
-                          ),
-                          ListTile(
-                            minTileHeight: 0,
-                            minVerticalPadding: 8,
-                            leading:
-                                Icon(Icons.check_circle, color: Colors.cyan),
-                            title: CustomText(
-                              text: 'User Interface Design',
-                              textColor: whiteColor,
-                              fontWeight: FontWeight.w500,
-                            ),
-                            contentPadding: EdgeInsets.zero,
-                            minLeadingWidth: 0,
-                          ),
-                          ListTile(
-                            minTileHeight: 0,
-                            minVerticalPadding: 0,
-                            leading:
-                                Icon(Icons.check_circle, color: Colors.cyan),
-                            title: CustomText(
-                              text: 'Usability Testing',
-                              textColor: whiteColor,
-                              fontWeight: FontWeight.w500,
-                            ),
-                            contentPadding: EdgeInsets.zero,
-                            minLeadingWidth: 0,
-                          ),
+                              textColor: buttonColor2),
+                          SizedBox(height: 10.17.h),
+                          _buildTopicTile('Critical Thinking'),
+                          SizedBox(height: 10.h),
+                          _buildTopicTile('User Experience Research'),
+                          SizedBox(height: 10.h),
+                          _buildTopicTile('User Interface Design'),
+                          SizedBox(height: 10.h),
+                          _buildTopicTile('Usability Testing'),
                           SizedBox(height: 40.h),
                           SizedBox(
                             height: 30.h,
@@ -293,7 +183,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomText(
-                          text: 'Course Chapters',
+                          text: 'Chapters Overview:',
                           textColor: buttonColor2,
                           fontWeight: FontWeight.w700,
                           fontsize: 16.sp,
@@ -305,20 +195,20 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  Get.to(() => CoursesSubtopics(title: widget.title, image: widget.image,));
+                               //   Get.to(() => CoursesSubtopics());
                                 },
                                 child: Row(
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  MainAxisAlignment.spaceBetween,
                                   children: [
                                     _LessonCard(
-                                      title: 'Instructor\nIntroduction',
+                                      title: 'Sub-Chapter\n1',
                                     ),
                                     _LessonCard(
-                                      title: 'Design\nShortage',
+                                      title: 'Sub-Chapter\n2',
                                     ),
                                     _LessonCard(
-                                      title: 'Make it \nPretty',
+                                      title: 'Sub-Chapter\n3',
                                     ),
                                   ],
                                 ),
@@ -326,20 +216,20 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                               SizedBox(height: 20.h),
                               GestureDetector(
                                 onTap: () {
-                                  Get.to(() =>CoursesSubtopics(title: widget.title, image: widget.image,));
+                           //       Get.to(() => CoursesSubtopics());
                                 },
                                 child: Row(
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  MainAxisAlignment.spaceBetween,
                                   children: [
                                     _LessonCard(
-                                      title: 'Copy\nInspiration',
+                                      title: 'Sub-Chapter\n4',
                                     ),
                                     _LessonCard(
-                                      title: 'Make it \nPretty',
+                                      title: 'Sub-Chapter\n5',
                                     ),
                                     _LessonCard(
-                                      title: 'Design \nShortage',
+                                      title: 'Sub-Chapter\n6',
                                     ),
                                   ],
                                 ),
@@ -361,6 +251,26 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
       ),
     );
   }
+}
+
+Widget _buildTopicTile(String title) {
+  return Card(
+    color: Darkcontainer,
+    elevation: 5,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10.r), // Rounded corners
+    ),
+    child: ListTile(
+      leading: Icon(Icons.check_circle, color: Colors.cyanAccent),
+      title: CustomText(
+        text: title,
+        textColor: whiteColor,
+        fontWeight: FontWeight.w500,
+        fontsize: 18.sp, // Custom font size
+      ),
+      contentPadding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
+    ),
+  );
 }
 
 class _LessonCard extends StatelessWidget {
